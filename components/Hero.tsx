@@ -6,13 +6,8 @@ import { ChevronDown } from 'lucide-react';
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/80 z-10" />
-        <div className="w-full h-full bg-gradient-to-b from-black via-black/50 to-black z-20 absolute" />
-        {/* Video Placeholder */}
-        <div className="w-full h-full bg-neutral-950" />
-      </div>
+      {/* Black Background */}
+      <div className="absolute inset-0 z-0 bg-black" />
 
       {/* Content */}
       <div className="relative z-30 max-w-7xl mx-auto px-6 text-center">
