@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0a0a0a] border-t border-white/5 py-20 px-6">
+    <footer className="relative bg-[#0a0a0a] border-t border-white/5 py-20 px-6 transform-gpu will-change-auto">
       <div className="max-w-7xl mx-auto">
         
         {/* Main Content */}
@@ -34,8 +34,9 @@ export default function Footer() {
                 <motion.a
                   key={link}
                   href={`#${link.toLowerCase()}`}
-                  className="text-white/60 hover:text-white transition-colors duration-300 text-sm"
+                  className="text-white/60 hover:text-white transition-colors duration-300 text-sm will-change-transform"
                   whileHover={{ x: 5 }}
+                  transition={{ type: 'tween', duration: 0.2 }}
                 >
                   {link}
                 </motion.a>

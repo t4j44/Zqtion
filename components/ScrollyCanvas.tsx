@@ -153,14 +153,15 @@ export default function ScrollyCanvas() {
   }, [isLoaded, images, smoothProgress]);
 
   return (
-    <div ref={containerRef} className="relative h-[400vh] bg-neutral-900">
-        <div className="sticky top-0 h-screen w-full overflow-hidden">
+    <div ref={containerRef} className="relative h-[400vh] bg-neutral-900 will-change-scroll">
+        <div className="sticky top-0 h-screen w-full overflow-hidden transform-gpu">
             <canvas 
                 ref={canvasRef} 
                 className="block w-full h-full object-cover touch-none will-change-transform"
                 style={{
                     filter: "contrast(1.08) saturate(1.15) brightness(1.02)", // Color grading to mask compression
-                    imageRendering: 'auto'
+                    imageRendering: 'auto',
+                    transform: 'translateZ(0)'
                 }}
             />
             {/* Vignette: darkens edges to hide stretched pixels at borders */}

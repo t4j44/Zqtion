@@ -5,8 +5,8 @@ import { motion } from 'framer-motion'
 
 export default function PhoneDemo() {
   return (
-    <section className="relative z-20 bg-zqtion-black py-32 px-6 border-t border-white/5 overflow-hidden">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="relative z-20 bg-zqtion-black py-32 px-6 border-t border-white/5 overflow-hidden transform-gpu">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center will-change-scroll">
         
         {/* Left: Copy */}
         <div className="space-y-8">
