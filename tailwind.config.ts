@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '475px',
+      },
       colors: {
         'zqtion-black': '#000000',
         'zqtion-blue': '#0B63FF',

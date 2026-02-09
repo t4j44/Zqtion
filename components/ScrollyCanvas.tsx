@@ -157,7 +157,7 @@ export default function ScrollyCanvas({ children }: { children?: React.ReactNode
         <div className="sticky top-0 h-screen w-full overflow-hidden">
             <canvas 
                 ref={canvasRef} 
-                className="block w-full h-full object-cover touch-none will-change-transform"
+                className="block w-full h-full object-cover will-change-transform"
                 style={{
                     filter: "contrast(1.08) saturate(1.15) brightness(1.02)", // Color grading to mask compression
                     imageRendering: 'auto'

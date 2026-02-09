@@ -24,7 +24,7 @@ export default function Navbar() {
 
       {/* Right: CTA */}
       <motion.button
-        className="hidden md:flex items-center gap-2 px-6 py-2 border border-white/20 rounded-full text-sm font-medium text-white hover:bg-white hover:text-black transition-all duration-300"
+        className="flex items-center gap-2 px-4 md:px-6 py-2 border border-white/20 rounded-full text-xs md:text-sm font-medium text-white hover:bg-white hover:text-black transition-all duration-300"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => {
