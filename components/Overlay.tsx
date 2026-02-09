@@ -31,14 +31,14 @@ export default function Overlay() {
   const promiseOpacity = useTransform(scrollYProgress, [0.55, 0.65, 0.75, 0.85], [0, 1, 1, 0])
   const promiseX = useTransform(scrollYProgress, [0.55, 0.65], [50, 0])
 
-  // Hide overlay completely once past the hero section to prevent mix-blend-difference glitches
+  // Hide overlay completely once past the hero section
   const overlayOpacity = useTransform(scrollYProgress, [0.85, 0.95], [1, 0])
   const overlayVisibility = useTransform(scrollYProgress, (v) => v >= 0.98 ? 'hidden' as const : 'visible' as const)
 
   return (
     <motion.div 
       style={{ opacity: overlayOpacity, visibility: overlayVisibility }}
-      className="pointer-events-none fixed inset-0 z-10 flex items-center justify-center mix-blend-difference">
+      className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center mix-blend-difference">
       
       {/* Brand Name */}
       <motion.div 

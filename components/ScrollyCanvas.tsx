@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useScroll, useTransform, useSpring, motion, AnimatePresence } from 'framer-motion';
 import { FRAME_COUNT, preloadImages } from '@/lib/canvas-utils';
 
-export default function ScrollyCanvas() {
+export default function ScrollyCanvas({ children }: { children?: React.ReactNode }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [images, setImages] = useState<HTMLImageElement[]>([]);
@@ -188,6 +188,9 @@ export default function ScrollyCanvas() {
                     </motion.div>
                 )}
             </AnimatePresence>
+            
+            {/* Overlay Content */}
+            {children}
         </div>
     </div>
   );

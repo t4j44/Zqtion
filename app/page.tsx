@@ -12,10 +12,11 @@ export default function Home() {
         
         {/* SECTION A: The Hero Engine (Scroll Depth: 500vh) */}
         {/* The ScrollyCanvas component handles the tall 'height' internally to drive the scroll animation */}
-        {/* The Overlay sits fixed on top of it */}
+        {/* The Overlay sits inside it to scroll away with the sticky container */}
         <div className="relative">
-          <ScrollyCanvas />
-          <Overlay />
+          <ScrollyCanvas>
+            <Overlay />
+          </ScrollyCanvas>
         </div>
 
         {/* SECTION B: The Service Ecosystem */}

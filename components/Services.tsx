@@ -111,11 +111,11 @@ export default function Services() {
       <div className="mt-20 text-center">
         <a 
           href="/services" 
-          className="inline-flex items-center gap-3 text-sm font-bold tracking-[0.2em] text-neutral-500 hover:text-white transition-all duration-300 uppercase group hover:scale-105"
+          className="inline-flex items-center gap-4 text-lg md:text-xl font-bold tracking-[0.2em] text-white hover:text-zqtion-blue transition-all duration-300 uppercase group hover:scale-105 border border-white/20 px-8 py-4 rounded-full bg-white/5 backdrop-blur-sm hover:border-zqtion-blue/50"
         >
           VIEW FULL OPERATIONAL MENU 
-          <span className="bg-white/10 p-1 rounded-full group-hover:bg-white group-hover:text-black transition-colors">
-            <ArrowUpRight className="w-4 h-4" />
+          <span className="bg-white/10 p-2 rounded-full group-hover:bg-zqtion-blue group-hover:text-white transition-colors">
+            <ArrowUpRight className="w-5 h-5" />
           </span>
         </a>
       </div>
