@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -8,20 +8,13 @@ const inter = Inter({
   display: "swap",
 });
 
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 5,
-}
-
 export const metadata: Metadata = {
-  metadataBase: new URL('https://zqtion.com'),
-  title: "ZQTION - Creative Developer | Awwwards-Level Portfolio",
-  description: "High-performance scrollytelling portfolio showcasing cutting-edge web experiences. Specializing in Next.js, Framer Motion, and WebGL.",
-  keywords: ["Creative Developer", "Scrollytelling", "Canvas Animation", "Framer Motion", "Next.js", "Portfolio", "Web Experience", "Awwwards"],
-  authors: [{ name: "ZQTION" }],
-  creator: "ZQTION",
-  publisher: "ZQTION",
+  title: "Zqtion - Execution, Automated",
+  description: "We turn static assets into viral systems. AI Video. High-Perf Web. Visual Ops.",
+  keywords: ["AI Video", "Web Development", "Visual Ops", "Automation", "Next.js", "High Performance"],
+  authors: [{ name: "Zqtion" }],
+  creator: "Zqtion",
+  publisher: "Zqtion",
   robots: {
     index: true,
     follow: true,
@@ -37,23 +30,14 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://zqtion.com',
-    title: 'ZQTION - Creative Developer',
-    description: 'Awwwards-level portfolio with scroll-driven canvas animations and high-performance web experiences.',
-    siteName: 'ZQTION',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'ZQTION Portfolio',
-      },
-    ],
+    title: 'Zqtion - Execution, Automated',
+    description: 'We turn static assets into viral systems. AI Video. High-Perf Web. Visual Ops.',
+    siteName: 'Zqtion',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ZQTION - Creative Developer',
-    description: 'Awwwards-level portfolio with scroll-driven canvas animations.',
-    images: ['/og-image.jpg'],
+    title: 'Zqtion - Execution, Automated',
+    description: 'We turn static assets into viral systems. AI Video. High-Perf Web. Visual Ops.',
   },
   verification: {
     // Add your verification codes here when available
@@ -62,15 +46,27 @@ export const metadata: Metadata = {
   },
 };
 
+import type { Viewport } from "next";
+import Navbar from "@/components/Navbar";
+import WhatsAppButton from "@/components/WhatsAppButton";
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} font-sans bg-zqtion-black text-white antialiased overflow-x-hidden`}>
+    <html lang="en">
+      <body className={`${inter.variable} font-sans bg-[#050505] text-white antialiased overflow-x-hidden selection:bg-white selection:text-black`}>
+        <Navbar />
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

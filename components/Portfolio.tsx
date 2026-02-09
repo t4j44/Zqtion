@@ -18,10 +18,11 @@ const VideoEmbed = ({
         <iframe
           width="100%"
           height="100%"
-          src={`https://www.youtube.com/embed/${videoId}?controls=1&modestbranding=1&rel=0&loop=1&playlist=${videoId}`}
+          src={`https://www.youtube.com/embed/${videoId}?controls=1&modestbranding=1&rel=0`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          loading="lazy"
           className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
         />
       </div>

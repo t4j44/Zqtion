@@ -45,8 +45,8 @@ export default function PhoneDemo() {
               <div className="flex-1 overflow-hidden relative">
                 {/* Looping Content */}
                 <motion.div
-                  className="absolute w-full px-4 py-4 space-y-3"
-                  animate={{ y: [-300, 0] }}
+                  className="absolute w-full px-4 py-4 space-y-3 will-change-transform"
+                  animate={{ y: [0, -300] }}
                   transition={{
                     duration: 10,
                     ease: "linear",

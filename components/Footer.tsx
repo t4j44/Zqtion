@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import { Youtube, Linkedin, Twitter, Github, Mail, Phone } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { Linkedin, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
@@ -14,8 +14,8 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-white to-white/60 rounded-xl flex items-center justify-center">
-                <span className="text-black font-black text-2xl">Z</span>
+              <div className="relative overflow-hidden rounded-xl w-12 h-12 border border-white/10 shadow-lg shadow-white/5">
+                 <img src="/logo.png" alt="ZQTION Logo" className="object-cover w-full h-full" />
               </div>
               <div>
                 <h3 className="text-white font-black text-2xl tracking-tight">ZQTION</h3>
@@ -58,17 +58,19 @@ export default function Footer() {
                 href="https://wa.me/8801340347975" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-300 text-sm"
+                className="flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-300 text-sm group"
               >
-                <Phone className="w-4 h-4" />
+                <div className="w-4 h-4 fill-current group-hover:text-[#25D366] transition-colors">
+                  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382C17.112 14.202 15.344 13.332 15.013 13.256C14.685 13.178 14.444 13.136 14.204 13.498C13.966 13.856 13.279 14.664 13.068 14.903C12.859 15.143 12.651 15.174 12.291 14.993C11.931 14.814 10.771 14.433 9.395 13.208C8.307 12.239 7.572 11.042 7.362 10.683C7.152 10.323 7.34 10.128 7.519 9.95C7.68 9.79 7.877 9.534 8.057 9.324C8.237 9.115 8.297 8.966 8.417 8.725C8.537 8.486 8.477 8.277 8.357 8.038C8.236 7.796 7.276 5.432 6.885 4.475C6.495 3.548 6.109 3.668 5.841 3.668C5.599 3.668 5.328 3.668 5.06 3.668C4.788 3.668 4.337 3.771 3.978 4.162C3.616 4.552 2.625 5.483 2.625 7.373C2.625 9.263 3.977 11.093 4.19 11.362C4.4 11.632 6.946 15.556 10.843 17.238C11.77 17.638 12.493 17.876 13.051 18.053C14.225 18.428 15.289 18.375 16.126 18.25C17.062 18.11 19.006 17.072 19.412 15.932C19.816 14.793 19.816 13.834 19.696 13.623C19.578 13.414 19.278 13.293 18.917 13.111H18.919V13.113H17.472V14.382Z" />
+                  </svg>
+                </div>
                 +880 1340-347975
               </a>
               <div className="flex items-center gap-4 pt-4">
                 {[
-                  { Icon: Twitter, href: 'https://twitter.com' },
-                  { Icon: Github, href: 'https://github.com' },
-                  { Icon: Linkedin, href: 'https://www.linkedin.com/company/zqtion/about/' },
-                  // { Icon: Youtube, href: 'https://youtube.com' },
+                  { Icon: Linkedin, href: 'https://www.linkedin.com/company/zqtion/' },
+                  { Icon: Mail, href: 'mailto:zqtioncontact@gmail.com' },
                 ].map(({ Icon, href }, idx) => (
                   <motion.a
                     key={idx}
@@ -105,5 +107,5 @@ export default function Footer() {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-t from-purple-500/10 to-transparent blur-3xl pointer-events-none" />
       </div>
     </footer>
-  )
+  );
 }

@@ -39,7 +39,7 @@ export default function Services() {
   const [sliderValue, setSliderValue] = useState(50)
 
   return (
-    <section className="relative z-20 bg-zqtion-black py-32 px-6">
+    <section className="relative z-20 bg-black py-32 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]">
         
         {services.map((service) => (
@@ -47,11 +47,11 @@ export default function Services() {
             key={service.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
             className={`
               group relative overflow-hidden rounded-3xl border border-neutral-800 
-              bg-neutral-900/40 backdrop-blur-md hover:border-zqtion-blue/30 transition-all duration-500
+              bg-neutral-900/40 backdrop-blur-md hover:border-zqtion-blue/30 transition-all duration-500 will-change-transform
               ${service.colSpan}
             `}
           >
@@ -69,7 +69,7 @@ export default function Services() {
                         BEFORE
                     </div>
                     <div 
-                        className="absolute inset-0 bg-zqtion-blue overflow-hidden flex items-center border-r-2 border-white"
+                        className="absolute inset-0 bg-zqtion-blue overflow-hidden flex items-center border-r-2 border-white will-change-transform transition-[width] duration-75 ease-out"
                         style={{ width: `${sliderValue}%` }}
                     >
                          <div 
@@ -94,22 +94,30 @@ export default function Services() {
 
             {/* Content Overlay */}
             <div className={`relative h-full flex flex-col justify-end p-8 z-10 pointer-events-none ${service.interactive ? 'bg-gradient-to-t from-black/80 to-transparent' : ''}`}>
-               <div className="w-12 h-12 mb-4 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm">
+               <div className="w-12 h-12 mb-4 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/10">
                   <service.icon className="w-5 h-5 text-white" />
                </div>
                
-               <h3 className="text-3xl font-bold text-white mb-2">{service.title}</h3>
-               <p className="text-white/60 mb-2">{service.subtitle}</p>
-               <p className="text-sm text-white/40">{service.description}</p>
-               
-               <div className="absolute top-8 right-8 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ArrowUpRight className="w-8 h-8 text-white" />
-               </div>
+               <h3 className="text-3xl font-bold tracking-tight mb-2 text-white">{service.title}</h3>
+               <p className="text-sm font-medium text-zqtion-blue uppercase tracking-widest mb-4">{service.subtitle}</p>
+               <p className="text-neutral-400 group-hover:text-neutral-300 transition-colors duration-500 leading-relaxed">
+                 {service.description}
+               </p>
             </div>
-
           </motion.div>
         ))}
+      </div>
 
+      <div className="mt-20 text-center">
+        <a 
+          href="/services" 
+          className="inline-flex items-center gap-3 text-sm font-bold tracking-[0.2em] text-neutral-500 hover:text-white transition-all duration-300 uppercase group hover:scale-105"
+        >
+          VIEW FULL OPERATIONAL MENU 
+          <span className="bg-white/10 p-1 rounded-full group-hover:bg-white group-hover:text-black transition-colors">
+            <ArrowUpRight className="w-4 h-4" />
+          </span>
+        </a>
       </div>
     </section>
   )

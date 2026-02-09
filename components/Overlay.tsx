@@ -1,17 +1,22 @@
 'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 
 export default function Overlay() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  // We share the same scroll context as the ScrollyCanvas parent
-  // But since this component sits *inside* the sticky container conceptually (or parallel to it),
-  // we might need to reference the whole page scroll or just trust the viewport position if it's fixed.
-  // Ideally, this component is placed INSIDE the sticky container of ScrollyCanvas or parallel to it.
-  // For simplicity, let's assume this component is rendered FIXED on top of the viewport.
+  const [scrollContainer, setScrollContainer] = useState<HTMLElement | null>(null)
   
-  const { scrollYProgress } = useScroll()
+  useEffect(() => {
+    // Find the ScrollyCanvas container div (h-[400vh])
+    const container = document.querySelector('[class*="h-[400vh]"]') as HTMLElement
+    setScrollContainer(container)
+  }, [])
+
+  // Track scroll progress of the ScrollyCanvas container
+  const { scrollYProgress } = useScroll({
+    target: scrollContainer as any,
+    offset: ['start start', 'end end']
+  })
 
   // 0% - 20%: Brand Name "ZQTION"
   const brandOpacity = useTransform(scrollYProgress, [0, 0.1, 0.2, 0.25], [0, 1, 1, 0])
@@ -32,7 +37,7 @@ export default function Overlay() {
       {/* Brand Name */}
       <motion.div 
         style={{ opacity: brandOpacity, scale: brandScale, y: brandY }}
-        className="absolute text-center"
+        className="absolute text-center will-change-transform"
       >
         <h1 className="text-[12vw] md:text-[15vw] font-bold tracking-tighter text-white leading-none">
           ZQTION
@@ -42,7 +47,7 @@ export default function Overlay() {
       {/* Tagline */}
       <motion.div
         style={{ opacity: taglineOpacity, x: taglineX }}
-        className="absolute left-8 md:left-24 top-1/2 -translate-y-1/2 max-w-2xl"
+        className="absolute left-8 md:left-24 top-1/2 -translate-y-1/2 max-w-2xl will-change-transform"
       >
         <h2 className="text-4xl md:text-7xl font-bold tracking-tight text-white leading-tight">
           EXECUTION,<br />
@@ -53,7 +58,7 @@ export default function Overlay() {
       {/* The Promise */}
       <motion.div
         style={{ opacity: promiseOpacity, x: promiseX }}
-        className="absolute right-8 md:right-24 bottom-1/3 max-w-2xl text-right"
+        className="absolute right-8 md:right-24 bottom-1/3 max-w-2xl text-right will-change-transform"
       >
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
           Ideas are cheap.<br />
