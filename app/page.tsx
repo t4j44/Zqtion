@@ -19,7 +19,9 @@ export default function Home() {
         </div>
 
         {/* SECTION B: The Service Ecosystem */}
-        <Services />
+        <div className="isolate">
+          <Services />
+        </div>
 
         {/* SECTION C: The 'Killer Feature' Demo */}
         <PhoneDemo />

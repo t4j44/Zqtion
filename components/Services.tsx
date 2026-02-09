@@ -39,8 +39,8 @@ export default function Services() {
   const [sliderValue, setSliderValue] = useState(50)
 
   return (
-    <section className="relative z-20 bg-black py-32 px-6 transform-gpu">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px] will-change-scroll">
+    <section className="relative z-20 bg-black py-32 px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]">
         
         {services.map((service) => (
           <motion.div

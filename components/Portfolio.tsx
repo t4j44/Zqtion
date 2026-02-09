@@ -13,8 +13,8 @@ const VideoEmbed = ({
   isVertical?: boolean;
 }) => {
   return (
-    <div className="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900/50 hover:border-zqtion-blue/50 transition-all duration-300 group flex flex-col h-full will-change-transform transform translate-z-0">
-      <div className={`relative w-full ${isVertical ? 'aspect-[9/16]' : 'aspect-video'} bg-black contain-intrinsic-size-auto`}>
+    <div className="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900/50 hover:border-zqtion-blue/50 transition-all duration-300 group flex flex-col h-full" style={{ transform: 'translateZ(0)' }}>
+      <div className={`relative w-full ${isVertical ? 'aspect-[9/16]' : 'aspect-video'} bg-black`}>
         <iframe
           width="100%"
           height="100%"
@@ -23,7 +23,7 @@ const VideoEmbed = ({
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity will-change-opacity"
+          className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
           style={{ transform: 'translateZ(0)' }}
         />
       </div>
@@ -56,8 +56,8 @@ export default function Portfolio() {
 
   return (
     <>
-      <section className="relative z-20 bg-zqtion-black py-32 px-6 border-t border-white/5 transform-gpu">
-        <div className="max-w-7xl mx-auto space-y-24 will-change-scroll">
+      <section className="relative z-20 bg-zqtion-black py-32 px-6 border-t border-white/5 isolate">
+        <div className="max-w-7xl mx-auto space-y-24">
           
           {/* Header */}
           <div className="max-w-xl">
@@ -85,7 +85,7 @@ export default function Portfolio() {
               <span className="w-2 h-2 rounded-full bg-zqtion-blue"></span>
               Viral Shorts & Reels
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 transform-gpu">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {shorts.map((video, idx) => (
                 <VideoEmbed 
                   key={idx} 
@@ -101,8 +101,8 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-20 bg-black border-t border-neutral-900 py-12 px-6 transform-gpu">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 will-change-auto">
+      <footer className="relative z-20 bg-black border-t border-neutral-900 py-12 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           
           {/* Logo */}
           <div className="flex items-center gap-2">
