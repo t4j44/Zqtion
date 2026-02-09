@@ -5,20 +5,20 @@ import { motion } from 'framer-motion'
 
 export default function PhoneDemo() {
   return (
-    <section className="relative z-20 bg-zqtion-black py-32 px-6 border-t border-white/5 overflow-hidden">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="relative z-20 bg-zqtion-black py-16 md:py-32 px-4 md:px-6 border-t border-white/5 overflow-hidden">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         
         {/* Left: Copy */}
-        <div className="space-y-8">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-white leading-tight">
+        <div className="space-y-6 md:space-y-8 text-center lg:text-left">
+          <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
             Your PDF menu is<br/> 
             <span className="text-white/40">losing customers.</span>
           </h2>
-          <p className="text-xl text-white/60 max-w-lg leading-relaxed">
+          <p className="text-lg md:text-xl text-white/60 max-w-lg mx-auto lg:mx-0 leading-relaxed">
             Static files are dead. We build 0.5s load-time systems that convert traffic into revenue. Zero friction. Zero latency.
           </p>
           
-          <div className="flex gap-4 pt-4">
+          <div className="flex gap-4 pt-4 justify-center lg:justify-start">
             <button className="px-8 py-4 bg-zqtion-blue hover:bg-blue-600 text-white font-bold rounded-full transition-all">
               See the Difference
             </button>
@@ -26,12 +26,12 @@ export default function PhoneDemo() {
         </div>
 
         {/* Right: Phone Demo */}
-        <div className="relative flex justify-center lg:justify-end">
+        <div className="relative flex justify-center lg:justify-end mt-8 lg:mt-0">
           {/* Phone Frame */}
-          <div className="relative w-[300px] h-[600px] bg-black border-8 border-neutral-900 rounded-[3rem] shadow-2xl overflow-hidden ring-1 ring-white/10">
+          <div className="relative w-[280px] xs:w-[300px] h-[550px] xs:h-[600px] bg-black border-8 border-neutral-900 rounded-[2.5rem] md:rounded-[3rem] shadow-2xl overflow-hidden ring-1 ring-white/10 shrink-0">
             
             {/* Dynamic Notch */}
-            <div className="absolute top-0 inset-x-0 h-7 bg-black z-20 mx-auto w-40 rounded-b-2xl" />
+            <div className="absolute top-0 inset-x-0 h-6 md:h-7 bg-black z-20 mx-auto w-32 md:w-40 rounded-b-xl md:rounded-b-2xl" />
             
             {/* Screen Content */}
             <div className="absolute inset-0 bg-neutral-950 flex flex-col">

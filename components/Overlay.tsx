@@ -45,7 +45,7 @@ export default function Overlay() {
         style={{ opacity: brandOpacity, scale: brandScale, y: brandY }}
         className="absolute text-center will-change-transform"
       >
-        <h1 className="text-[12vw] md:text-[15vw] font-bold tracking-tighter text-white leading-none">
+        <h1 className="text-[15vw] md:text-[15vw] font-bold tracking-tighter text-white leading-none">
           ZQTION
         </h1>
       </motion.div>
@@ -53,9 +53,9 @@ export default function Overlay() {
       {/* Tagline */}
       <motion.div
         style={{ opacity: taglineOpacity, x: taglineX }}
-        className="absolute left-8 md:left-24 top-1/2 -translate-y-1/2 max-w-2xl will-change-transform"
+        className="absolute left-6 md:left-24 top-1/2 -translate-y-1/2 max-w-[90vw] md:max-w-2xl will-change-transform"
       >
-        <h2 className="text-4xl md:text-7xl font-bold tracking-tight text-white leading-tight">
+        <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
           EXECUTION,<br />
           <span className="text-zqtion-blue">AUTOMATED.</span>
         </h2>
@@ -64,9 +64,9 @@ export default function Overlay() {
       {/* The Promise */}
       <motion.div
         style={{ opacity: promiseOpacity, x: promiseX }}
-        className="absolute right-8 md:right-24 bottom-1/3 max-w-2xl text-right will-change-transform"
+        className="absolute right-6 md:right-24 bottom-1/3 max-w-[90vw] md:max-w-2xl text-right will-change-transform"
       >
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
           Ideas are cheap.<br />
           We build systems.
         </h2>

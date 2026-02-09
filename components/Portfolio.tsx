@@ -1,8 +1,9 @@
 'use client'
 
-import { Twitter, Github, Linkedin, Mail } from 'lucide-react'
+import { Twitter, Github, Linkedin, Mail, Play } from 'lucide-react'
+import { useState } from 'react'
 
-// Enhanced Video Embed Component with Aspect Ratio Support
+// Enhanced Video Embed Component with Facade Pattern (Lite Embed) to fix scroll shaking
 const VideoEmbed = ({ 
   videoId, 
   title, 
@@ -12,20 +13,47 @@ const VideoEmbed = ({
   title: string;
   isVertical?: boolean;
 }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
-    <div className="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900/50 hover:border-zqtion-blue/50 transition-all duration-300 group flex flex-col h-full" style={{ transform: 'translateZ(0)' }}>
+    <div 
+      className="rounded-2xl overflow-hidden border border-neutral-800 bg-neutral-900/50 hover:border-zqtion-blue/50 transition-all duration-300 group flex flex-col h-full transform-gpu"
+      style={{ transform: 'translateZ(0)' }}
+    >
       <div className={`relative w-full ${isVertical ? 'aspect-[9/16]' : 'aspect-video'} bg-black`}>
-        <iframe
-          width="100%"
-          height="100%"
-          src={`https://www.youtube.com/embed/${videoId}?controls=1&modestbranding=1&rel=0`}
-          title={title}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
-          style={{ transform: 'translateZ(0)' }}
-        />
+        {!isPlaying ? (
+          // Thumbnail Facade
+          <button 
+            onClick={() => setIsPlaying(true)}
+            className="absolute inset-0 w-full h-full group/play focus:outline-none cursor-pointer"
+            aria-label={`Play ${title}`}
+          >
+            <img 
+              src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`}
+              alt={title}
+              className="w-full h-full object-cover opacity-80 group-hover/play:opacity-100 transition-opacity duration-500 will-change-transform"
+            />
+            {/* Play Button Overlay */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover/play:scale-110 group-hover/play:bg-zqtion-blue group-hover/play:border-zqtion-blue transition-all duration-300 shadow-xl">
+                 <Play className="w-6 h-6 text-white fill-white ml-1" />
+              </div>
+            </div>
+            {/* Hover Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 pointer-events-none" />
+          </button>
+        ) : (
+          // Actual Iframe (Loads only on click)
+          <iframe
+            width="100%"
+            height="100%"
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1&rel=0`}
+            title={title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        )}
       </div>
       <div className="p-4 border-t border-white/5">
         <h3 className="text-sm font-bold text-white truncate">{title}</h3>
@@ -56,21 +84,21 @@ export default function Portfolio() {
 
   return (
     <>
-      <section className="relative z-20 bg-zqtion-black py-32 px-6 border-t border-white/5 isolate">
-        <div className="max-w-7xl mx-auto space-y-24">
+      <section className="relative z-20 bg-zqtion-black py-16 md:py-32 px-4 md:px-6 border-t border-white/5 isolate">
+        <div className="max-w-7xl mx-auto space-y-16 md:space-y-24">
           
           {/* Header */}
           <div className="max-w-xl">
-             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Selected Works</h2>
+             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Selected Works</h2>
              <div className="h-1 w-20 bg-zqtion-blue mb-8" />
-             <p className="text-xl text-neutral-400">
+             <p className="text-lg md:text-xl text-neutral-400">
                High-impact visuals engineered for conversion. From long-form narratives to viral shorts.
              </p>
           </div>
 
           {/* 1. Main Feature Video */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-2">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-6 md:mb-8 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-zqtion-blue"></span>
               Featured Production
             </h3>
@@ -81,11 +109,11 @@ export default function Portfolio() {
 
           {/* 2. Shorts Grid */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-2">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-6 md:mb-8 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-zqtion-blue"></span>
               Viral Shorts & Reels
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
               {shorts.map((video, idx) => (
                 <VideoEmbed 
                   key={idx} 
