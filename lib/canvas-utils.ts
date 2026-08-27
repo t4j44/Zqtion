@@ -24,7 +24,7 @@ export async function preloadImages(
   // though for ~100 images, modern browsers handle parallel requests well.
   
   const loadSingleImage = (index: number): Promise<void> => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const img = new Image();
       img.src = getFrameUrl(index);
       

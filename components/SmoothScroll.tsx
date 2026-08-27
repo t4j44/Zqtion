@@ -1,37 +1,32 @@
-'use client'
+"use client";
 
-import { ReactNode, useEffect } from 'react'
-import Lenis from 'lenis'
+import { ReactNode, useEffect } from "react";
+import Lenis from "lenis";
 
-interface SmoothScrollProps {
-  children: ReactNode
-}
-
-export default function SmoothScroll({ children }: SmoothScrollProps) {
+export default function SmoothScroll({ children }: { children: ReactNode }) {
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential easing for "luxury" feel
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
+      duration: 0.9,
+      easing: (t) => 1 - Math.pow(1 - t, 4),
       smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
-      infinite: false,
-    })
+      wheelMultiplier: 0.95,
+      touchMultiplier: 1.2,
+    });
+    let frame = 0;
 
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
+    const tick = (time: number) => {
+      lenis.raf(time);
+      frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
 
-    requestAnimationFrame(raf)
-    
-    // Cleanup
     return () => {
-      lenis.destroy()
-    }
-  }, [])
+      cancelAnimationFrame(frame);
+      lenis.destroy();
+    };
+  }, []);
 
-  return <>{children}</>
+  return <>{children}</>;
 }

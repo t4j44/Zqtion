@@ -1,0 +1,40 @@
+# Zqtion
+
+> Zqtion is a founder-led AI execution company working globally across AI creative production, web products and rapid MVPs, practical automation, and AI consultancy or prototyping.
+
+Canonical website: https://zqtion.com
+Contact: zqtioncontact@gmail.com
+LinkedIn: https://www.linkedin.com/company/zqtion/
+YouTube portfolio: https://www.youtube.com/@BuildwithTajuddin/videos
+
+## Primary pages
+
+- [Services](https://zqtion.com/services): Current capabilities and engagement model.
+- [Work](https://zqtion.com/work): Selected work with explicit project-relationship disclosures.
+- [Process](https://zqtion.com/process): How Zqtion frames, prototypes, executes, launches, and learns.
+- [About](https://zqtion.com/about): Company context, team, and operating principles.
+- [Insights](https://zqtion.com/insights): Original practical guides on creative, products, and automation.
+- [AI Audit](https://zqtion.com/ai-audit): A decision framework for useful AI opportunities.
+- [Contact](https://zqtion.com/contact): Project brief and direct contact details.
+
+## Current services
+
+1. AI creative production: campaign films, product visuals, short-form creative, concept development, editing, and motion.
+2. Web products and rapid MVPs: marketing websites, landing pages, prototypes, MVP development, design systems, and SEO foundations.
+3. AI automation and systems: workflow audits, AI-assisted content systems, internal tools, data handoffs, and human approval controls.
+4. AI consultancy and prototyping: AI opportunity audits, use-case prioritization, prototype sprints, tool selection, and adoption roadmaps.
+
+## Project-truth policy
+
+Zqtion's public portfolio is not represented as a list of commissioned clients. Project pages label the relationship as competition entry, independent concept, founder venture, or creative lab. Brand-inspired and fan-inspired work is identified as independent and unaffiliated. No public client results, awards, or performance outcomes should be inferred unless the relevant page explicitly documents them.
+
+## Public team
+
+- Tajuddin Ahamed — Founder · AI Strategy & Consulting
+- Mohammad Abu Ubayda — AI Creative Lead
+- Mehide Hasan Emon — Technical Lead
+- Syed Nabil Yaseen — Post-Production Lead
+
+## Commercial policy
+
+Zqtion does not currently publish universal fixed prices or guaranteed delivery times. Scope, assumptions, deliverables, timeline, and commercial terms are confirmed in writing before execution.

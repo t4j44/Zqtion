@@ -1,69 +1,74 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import "@fontsource-variable/instrument-sans/wght.css";
+import "@fontsource/instrument-serif/latin-400-italic.css";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
+import Navbar from "@/components/Navbar";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Zqtion - Execution, Automated",
-  description: "We turn static assets into viral systems. AI Video. High-Perf Web. Visual Ops.",
-  keywords: ["AI Video", "Web Development", "Visual Ops", "Automation", "Next.js", "High Performance"],
-  authors: [{ name: "Zqtion" }],
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: "Zqtion — Create. Build. Automate.",
+    template: "%s | Zqtion",
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  authors: [{ name: "Zqtion", url: siteConfig.url }],
   creator: "Zqtion",
   publisher: "Zqtion",
+  category: "technology",
+  alternates: { canonical: "/" },
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+      "max-snippet": -1,
     },
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://zqtion.com',
-    title: 'Zqtion - Execution, Automated',
-    description: 'We turn static assets into viral systems. AI Video. High-Perf Web. Visual Ops.',
-    siteName: 'Zqtion',
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: "Zqtion — Create. Build. Automate.",
+    description: siteConfig.description,
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Zqtion — Create, build, and automate" }],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Zqtion - Execution, Automated',
-    description: 'We turn static assets into viral systems. AI Video. High-Perf Web. Visual Ops.',
-  },
-  verification: {
-    // Add your verification codes here when available
-    // google: 'your-google-verification-code',
-    // yandex: 'your-yandex-verification-code',
+    card: "summary_large_image",
+    title: "Zqtion — Create. Build. Automate.",
+    description: siteConfig.description,
+    images: ["/og-image.png"],
   },
 };
-
-import type { Viewport } from "next";
-import Navbar from "@/components/Navbar";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  themeColor: "#050608",
+  colorScheme: "dark",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans bg-[#050505] text-white antialiased overflow-x-hidden selection:bg-white selection:text-black`}>
+      <body>
+        <a className="skip-link" href="#main-content">Skip to content</a>
         <Navbar />
         {children}
         <WhatsAppButton />

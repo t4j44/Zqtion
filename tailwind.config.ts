@@ -12,7 +12,7 @@ const config: Config = {
         'xs': '475px',
       },
       colors: {
-        'zqtion-black': '#000000',
+        'zqtion-black': '#050505',
         'zqtion-blue': '#0B63FF',
         electric: "#0B63FF", // Keeping for backward compatibility
       },
