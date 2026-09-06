@@ -45,12 +45,6 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.zqtion.com' }],
-        destination: 'https://zqtion.com/:path*',
-        permanent: true,
-      },
-      {
         source: '/pricing',
         destination: '/services#engagements',
         permanent: true,
