@@ -1,314 +1,70 @@
-# 📐 Project Architecture
+# Architecture
 
-## Component Hierarchy
+## Request and rendering model
 
-```
-┌─────────────────────────────────────────┐
-│         App Layout (layout.tsx)         │
-│   ✓ Inter Font                          │
-│   ✓ Metadata & Viewport                 │
-│   ✓ Global CSS                          │
-└──────────────┬──────────────────────────┘
-               │
-┌──────────────▼──────────────────────────┐
-│          Page (page.tsx)                │
-│                                         │
-│  ┌───────────────────────────────────┐ │
-│  │   SmoothScroll Wrapper            │ │
-│  │                                   │ │
-│  │  ┌─────────────────────────────┐ │ │
-│  │  │  ScrollIndicator            │ │ │
-│  │  │  ├─ Progress Bar (top)      │ │ │
-│  │  │  └─ Scroll Hint (bottom)    │ │ │
-│  │  └─────────────────────────────┘ │ │
-│  │                                   │ │
-│  │  ┌─────────────────────────────┐ │ │
-│  │  │  Scrollytelling Section     │ │ │
-│  │  │                             │ │ │
-│  │  │  ┌───────────────────────┐  │ │ │
-│  │  │  │  ScrollyCanvas        │  │ │ │
-│  │  │  │  • Preload 117 frames │  │ │ │
-│  │  │  │  • Canvas rendering   │  │ │ │
-│  │  │  │  • Scroll → Frame     │  │ │ │
-│  │  │  └───────────────────────┘  │ │ │
-│  │  │                             │ │ │
-│  │  │  ┌───────────────────────┐  │ │ │
-│  │  │  │  ScrollOverlay        │  │ │ │
-│  │  │  │  (z-index: 10)        │  │ │ │
-│  │  │  │  ├─ Hero (0-25%)      │  │ │ │
-│  │  │  │  ├─ Left Text (25-50%)│  │ │ │
-│  │  │  │  ├─ Right Text (50-75%)│ │ │ │
-│  │  │  │  └─ CTA (75-100%)     │  │ │ │
-│  │  │  └───────────────────────┘  │ │ │
-│  │  └─────────────────────────────┘ │ │
-│  │                                   │ │
-│  │  ┌─────────────────────────────┐ │ │
-│  │  │  ProjectsGrid               │ │ │
-│  │  │  ├─ Section Header          │ │ │
-│  │  │  ├─ Project Card 1          │ │ │
-│  │  │  ├─ Project Card 2          │ │ │
-│  │  │  ├─ Project Card 3          │ │ │
-│  │  │  ├─ Project Card 4          │ │ │
-│  │  │  └─ CTA Button              │ │ │
-│  │  └─────────────────────────────┘ │ │
-│  │                                   │ │
-│  │  ┌─────────────────────────────┐ │ │
-│  │  │  Footer                     │ │ │
-│  │  │  ├─ Brand Section           │ │ │
-│  │  │  ├─ Quick Links             │ │ │
-│  │  │  ├─ Social Links            │ │ │
-│  │  │  └─ Copyright               │ │ │
-│  │  └─────────────────────────────┘ │ │
-│  └───────────────────────────────────┘ │
-└─────────────────────────────────────────┘
+Next.js Server Components render the route content and metadata. Client Components are limited to interaction: the navbar, hero enhancement, reveals, video facade, contact form, analytics, and floating WhatsApp action.
+
+Launchpad index and track content are server rendered from `data/careers.ts`. The application is a client interaction island with a shared validator; its intake flag stays server-side. Track pages use static parameters, while index/apply read current server configuration. Unknown tracks return 404. The application page is noindex and excluded from the sitemap.
+
+```text
+Browser
+  -> Next.js App Router
+      -> server-rendered route content + metadata + JSON-LD
+      -> small client interaction islands
+          -> CSS/DOM hero available immediately
+          -> optional dynamic Three.js desktop enhancement
+          -> YouTube iframe only after Play
 ```
 
-## Data Flow
+## Main areas
 
-```
-┌──────────────┐
-│   Browser    │
-│   Scroll     │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────────────┐
-│  Framer Motion       │
-│  useScroll()         │
-│  scrollYProgress     │
-│  (0 → 1)            │
-└──────┬───────────────┘
-       │
-       ├─────────────────────────────┐
-       │                             │
-       ▼                             ▼
-┌──────────────┐           ┌─────────────────┐
-│ ScrollyCanvas│           │  ScrollOverlay  │
-│              │           │                 │
-│ progress *   │           │ useTransform()  │
-│ frameCount   │           │ - opacity       │
-│ = frameIndex │           │ - y position    │
-└──────┬───────┘           └─────────────────┘
-       │
-       ▼
-┌──────────────┐
-│  Canvas 2D   │
-│  Context     │
-│              │
-│ drawImage()  │
-│ images[i]    │
-└──────────────┘
-```
+- `app/`: pages, metadata routes, and server API routes
+- `components/`: shared presentation and interaction components
+- `components/seo/`: JSON-LD builders
+- `data/`: typed services, people, work, and insight content
+- `supabase/migrations/`: inquiry, analytics, and rate-limit schema
+- `public/`: optimized brand and discovery assets
 
-## File Structure
+## Hero tiers
 
-```
-zqtion-portfolio/
-│
-├── app/
-│   ├── layout.tsx              ← Root layout with metadata
-│   ├── page.tsx                ← Main page composition
-│   ├── globals.css             ← Global styles, scrollbar, glass effects
-│   ├── robots.ts               ← SEO robots.txt
-│   └── sitemap.ts              ← SEO sitemap
-│
-├── components/
-│   ├── ScrollyCanvas.tsx       ← 🎬 Canvas renderer (117 frames)
-│   ├── ScrollOverlay.tsx       ← 🎭 Parallax text layers
-│   ├── ProjectsGrid.tsx        ← 💎 Featured projects with cards
-│   ├── ScrollIndicator.tsx     ← 📊 Progress bar & scroll hint
-│   ├── SmoothScroll.tsx        ← 🌊 Smooth scroll wrapper
-│   └── Footer.tsx              ← 👣 Enhanced footer
-│
-├── lib/
-│   ├── canvas-utils.ts         ← Canvas helper functions
-│   ├── performance.ts          ← Performance monitoring
-│   └── supabase/
-│       ├── client.ts           ← Client-side Supabase
-│       └── server.ts           ← Server-side Supabase
-│
-├── public/
-│   └── sequence/
-│       ├── frame_000_delay-0.067s.webp
-│       ├── frame_001_delay-0.066s.webp
-│       └── ... (117 frames total)
-│
-├── middleware.ts               ← Rate limiting & security
-├── next.config.js              ← Next.js + Supabase config
-├── vercel.json                 ← Vercel deployment config
-├── .env.example                ← Environment variables template
-├── package.json                ← Dependencies
-│
-└── Documentation/
-    ├── README_SCROLLYTELLING.md
-    ├── QUICKSTART.md
-    ├── DEPLOYMENT.md
-    └── PROJECT_SUMMARY.md
+- Full WebGL: non-touch desktop with adequate network, motion, and hardware signals.
+- Balanced WebGL: laptop/tablet-sized viewports use lower antialiasing, fewer particles, capped pixel ratio, and a 45 fps render target.
+- CSS motion: ordinary phones keep the persistent DOM/CSS Z and scroll story without a WebGL context.
+- Static: reduced motion, Save Data, very slow connections, and constrained hardware avoid the persistent animation path.
+
+Three.js is dynamically imported after first paint. Resize and intersection observers control rendering, document visibility pauses it, and cleanup disposes geometry, materials, timers, the renderer, and the WebGL context.
+
+The hero artwork stays local to its first section. On phones it is 280–340px high, above the copy; desktop retains two columns. `ExecutionStory` separately transforms the same thirteen DOM pieces through four layouts in `lib/story-layout.ts`, using native scroll plus one requestAnimationFrame update per scroll tick. Reduced-motion/data-saving tiers show a static arrangement. There is no scroll hijacking or continuous story render loop.
+
+Instrument fonts use `next/font/local` with the existing installed font files, preload and adjusted fallback metrics. No build-time Google Fonts request is needed.
+
+## Launchpad application flow
+
+`LaunchpadApplicationForm` → `/api/applications` → closed-intake gate → same-origin/JSON/body bounds → honeypot and strict field validation → persistent rate limit → Turnstile action/hostname verification → private application insert → optional reference-only notification.
+
+The disabled preview never reaches the API. The enabled path must persist an application before reporting receipt; notification failure does not erase receipt. A stable UUID and answer fingerprint make unchanged retries idempotent without overwriting an existing application. This is not applicant authentication or an admin dashboard. Authorized review is through the private database, not a public browser endpoint.
+
+The shared explicit `TurnstileWidget` supports separate inquiry/launchpad actions, route remount, expiry, retry, reset and teardown. No applicant fields enter anonymous analytics, email notifications, logs or browser storage.
+
+## Inquiry flow
+
+```text
+ContactForm
+  -> POST /api/inquiries
+      -> size and field validation
+      -> honeypot
+      -> Supabase persistent rate-limit RPC using a hashed IP key
+      -> Turnstile server verification
+      -> Supabase inquiry insert and Resend notification in parallel
+      -> success if either configured delivery path succeeds
 ```
 
-## State Management
+Lead attribution stores landing path, referrer, and UTM fields. It never stores personal form values in analytics.
 
-```
-┌─────────────────────────────────────────┐
-│        Component State                  │
-└─────────────────────────────────────────┘
+## Analytics flow
 
-ScrollyCanvas:
-├─ images: HTMLImageElement[]     ← Preloaded frames
-├─ imagesLoaded: boolean          ← Loading complete?
-├─ loadProgress: number (0-100)   ← Loading progress %
-└─ canvasRef: RefObject           ← Canvas element
+`components/Analytics.tsx` records a documented event allow-list, route context, anonymous session identifier, attribution, and Web Vitals. `/api/analytics` validates same-origin production requests and writes best-effort events to Supabase. Missing analytics configuration never blocks the user.
 
-ScrollOverlay:
-├─ section1Opacity: MotionValue   ← Fade animations
-├─ section1Y: MotionValue         ← Position animations
-├─ section2Opacity: MotionValue
-├─ section2Y: MotionValue
-└─ ... (per section)
+## SEO
 
-ProjectsGrid:
-└─ projects: Array<Project>       ← Static project data
-
-ScrollIndicator:
-├─ scrollYProgress: MotionValue   ← Global scroll
-└─ width: MotionValue             ← Progress bar width
-```
-
-## Animation Timeline
-
-```
-Scroll Position (vh):
-0vh     ├─────────────────────────────┐
-        │  Hero Intro                 │
-        │  "ZQTION"                   │ Section 1
-        │  opacity: 1 → 0             │ (0-25%)
-125vh   ├─────────────────────────────┤
-        │  Philosophy                 │
-        │  "I build digital..."       │ Section 2
-        │  opacity: 0 → 1 → 0         │ (25-50%)
-250vh   ├─────────────────────────────┤
-        │  Approach                   │
-        │  "Bridging design..."       │ Section 3
-        │  opacity: 0 → 1 → 0         │ (50-75%)
-375vh   ├─────────────────────────────┤
-        │  Call to Action             │
-        │  "Selected Work"            │ Section 4
-        │  opacity: 0 → 1             │ (75-100%)
-500vh   └─────────────────────────────┘
-        │
-        ↓
-        ┌─────────────────────────────┐
-        │  Projects Grid              │ Regular scroll
-        │  (static, not animated)     │ (auto height)
-        └─────────────────────────────┘
-        │
-        ↓
-        ┌─────────────────────────────┐
-        │  Footer                     │ Regular scroll
-        │  (static)                   │ (auto height)
-        └─────────────────────────────┘
-```
-
-## Performance Optimizations
-
-```
-┌──────────────────────────────────────────┐
-│   Image Preloading Strategy              │
-└──────────────────────────────────────────┘
-
-1. Component Mount
-   ├─ Create 117 Image objects
-   ├─ Set src for each frame
-   └─ Listen for onload events
-
-2. Loading Progress
-   ├─ Track loaded count
-   ├─ Update progress bar (0-100%)
-   └─ Set imagesLoaded when complete
-
-3. Canvas Rendering
-   ├─ Only render when loaded
-   ├─ Use requestAnimationFrame
-   └─ Handle device pixel ratio
-
-┌──────────────────────────────────────────┐
-│   Scroll Performance                     │
-└──────────────────────────────────────────┘
-
-✓ Use refs to avoid re-renders
-✓ Canvas rendering (not DOM)
-✓ Framer Motion hardware acceleration
-✓ Debounced resize handlers
-✓ Transform-based animations (GPU)
-```
-
-## Integration Points
-
-```
-┌──────────────┐
-│   Vercel     │
-│              │
-│  ├─ Deploy   │
-│  ├─ Edge     │
-│  └─ Analytics│
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐      ┌──────────────┐
-│  Next.js 14  │◄─────┤   Supabase   │
-│  App Router  │      │              │
-│              │      │  ├─ Database │
-│  ├─ SSR      │      │  ├─ Auth     │
-│  ├─ ISR      │      │  ├─ Storage  │
-│  └─ API      │      │  └─ Edge Fn  │
-└──────────────┘      └──────────────┘
-```
-
-## Deployment Flow
-
-```
-┌─────────────┐
-│   GitHub    │
-│   Push      │
-└──────┬──────┘
-       │
-       ▼
-┌──────────────┐
-│   Vercel     │
-│   Webhook    │
-└──────┬───────┘
-       │
-       ├─ Install dependencies
-       ├─ Build Next.js
-       ├─ Optimize assets
-       └─ Deploy to Edge
-       │
-       ▼
-┌──────────────┐
-│  Production  │
-│  URL         │
-└──────────────┘
-```
-
----
-
-**Key Technologies:**
-- Next.js 14 (App Router)
-- Framer Motion (Animations)
-- HTML5 Canvas (Rendering)
-- Tailwind CSS (Styling)
-- TypeScript (Type Safety)
-- Vercel (Hosting)
-- Supabase (Backend)
-
-**Performance Targets:**
-- First Contentful Paint: < 1s
-- Time to Interactive: < 2s
-- Lighthouse Score: 90+
-- 60 FPS scrolling
-
-**Browser Support:**
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
+Route metadata uses the apex `https://zqtion.com` canonical host. Root metadata covers Open Graph and Twitter defaults; insight and work routes override them. JSON-LD includes organization, website, service, FAQ, breadcrumb, article, and video entities. Video upload dates remain omitted until sourced accurately.

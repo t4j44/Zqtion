@@ -25,14 +25,14 @@ export default function Footer() {
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/35">Explore</p>
             <nav className="mt-5 flex flex-col items-start gap-3" aria-label="Footer navigation">
               {navigation.map((item) => <Link key={item.href} href={item.href} className="text-sm text-white/62 transition hover:text-white">{item.label}</Link>)}
-              <Link href="/contact" className="text-sm text-white/62 transition hover:text-white">Contact</Link>
+              <Link href="/contact" className="text-sm text-white/62 transition hover:text-white" data-analytics="service_contact_click" data-analytics-location="footer">Contact</Link>
             </nav>
           </div>
 
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/35">Connect</p>
             <div className="mt-5 flex flex-col items-start gap-3">
-              <a href={`mailto:${siteConfig.email}`} className="text-sm text-white/62 transition hover:text-white">Email</a>
+              <a href={`mailto:${siteConfig.email}`} className="text-sm text-white/62 transition hover:text-white" data-analytics="email_click" data-analytics-location="footer">Email</a>
               <a href={siteConfig.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm text-white/62 transition hover:text-white">LinkedIn <ArrowUpRight className="h-3.5 w-3.5" /></a>
               <a href={siteConfig.youtube} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm text-white/62 transition hover:text-white">YouTube <ArrowUpRight className="h-3.5 w-3.5" /></a>
             </div>

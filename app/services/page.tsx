@@ -48,7 +48,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section-shell section-pad"><Reveal className="panel grid gap-8 p-8 sm:p-12 lg:grid-cols-[1fr_auto] lg:items-end"><div><p className="eyebrow">Not sure which service?</p><h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-[-0.045em] sm:text-6xl">Start with the outcome, not the label.</h2><p className="mt-5 max-w-2xl leading-7 text-white/52">Send the current situation, desired change, and deadline. If a smaller diagnostic is the better first step, that is what we will recommend.</p></div><Link href="/contact" className="button-primary">Send the brief <ArrowUpRight className="h-4 w-4" /></Link></Reveal></section>
+      <section className="section-shell section-pad"><Reveal className="panel grid gap-8 p-8 sm:p-12 lg:grid-cols-[1fr_auto] lg:items-end"><div><p className="eyebrow">Not sure which service?</p><h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-[-0.045em] sm:text-6xl">Start with the outcome, not the label.</h2><p className="mt-5 max-w-2xl leading-7 text-white/52">Send the current situation, desired change, and deadline. If a smaller diagnostic is the better first step, that is what we will recommend.</p></div><div className="flex flex-wrap gap-3"><Link href="/ai-audit" className="button-secondary" data-analytics="ai_audit_click" data-analytics-location="services_cta">Explore the AI audit</Link><Link href="/contact" className="button-primary" data-analytics="service_contact_click" data-analytics-location="services_cta">Send the brief <ArrowUpRight className="h-4 w-4" /></Link></div></Reveal></section>
       <Footer />
     </main>
   );

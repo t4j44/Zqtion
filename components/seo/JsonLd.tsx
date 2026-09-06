@@ -100,3 +100,18 @@ export function getArticleSchema(article: { title: string; description: string; 
     image: `${siteConfig.url}/og-image.png`,
   };
 }
+
+export function getVideoSchema(video: { title: string; description: string; videoId: string; videoUrl: string; pageUrl: string }): Schema {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: video.title,
+    description: video.description,
+    thumbnailUrl: `https://i.ytimg.com/vi/${video.videoId}/hqdefault.jpg`,
+    embedUrl: `https://www.youtube-nocookie.com/embed/${video.videoId}`,
+    url: video.videoUrl,
+    mainEntityOfPage: video.pageUrl,
+    publisher: { "@id": `${siteConfig.url}/#organization` },
+    isFamilyFriendly: true,
+  };
+}

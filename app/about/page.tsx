@@ -53,7 +53,7 @@ export default function AboutPage() {
         ["Prototype before scale", "Test the fragile part before creating a large inventory of work."],
         ["Speed includes performance", "A rich experience that is slow, inaccessible, or fragile is not finished."],
       ].map(([title, text]) => <Reveal key={title} className="bg-[#050608] p-8"><h3 className="text-2xl font-semibold tracking-[-0.035em]">{title}</h3><p className="mt-4 leading-7 text-white/52">{text}</p></Reveal>)}</div></section>
-      <section className="section-shell pb-12"><Reveal className="panel flex flex-col gap-8 p-8 sm:p-12 lg:flex-row lg:items-end lg:justify-between"><div><p className="eyebrow">Remote by design · Working globally</p><h2 className="mt-6 max-w-4xl text-4xl font-semibold tracking-[-0.045em] sm:text-6xl">Build with a small team that shows its assumptions.</h2></div><Link href="/contact" className="button-primary shrink-0">Start a conversation <ArrowUpRight className="h-4 w-4" /></Link></Reveal></section>
+      <section className="section-shell pb-12"><Reveal className="panel flex flex-col gap-8 p-8 sm:p-12 lg:flex-row lg:items-end lg:justify-between"><div><p className="eyebrow">Remote by design · Working globally</p><h2 className="mt-6 max-w-4xl text-4xl font-semibold tracking-[-0.045em] sm:text-6xl">Build with a small team that shows its assumptions.</h2></div><Link href="/contact" className="button-primary shrink-0" data-analytics="service_contact_click" data-analytics-location="about_cta">Start a conversation <ArrowUpRight className="h-4 w-4" /></Link></Reveal></section>
       <Footer />
     </main>
   );

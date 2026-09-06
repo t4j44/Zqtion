@@ -1,10 +1,33 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource-variable/instrument-sans/wght.css";
-import "@fontsource/instrument-serif/latin-400-italic.css";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { siteConfig } from "@/data/site";
+
+async function OptionalAnalytics() {
+  if (process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== "true") return null;
+  const Analytics = (await import("@/components/Analytics")).default;
+  return <Analytics />;
+}
+
+const instrumentSans = localFont({
+  src: "../node_modules/@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2",
+  variable: "--font-instrument-sans",
+  weight: "400 700",
+  display: "swap",
+  preload: false,
+  adjustFontFallback: "Arial",
+});
+const instrumentSerif = localFont({
+  src: "../node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2",
+  variable: "--font-instrument-serif",
+  weight: "400",
+  style: "italic",
+  display: "swap",
+  preload: false,
+  adjustFontFallback: "Times New Roman",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -66,11 +89,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${instrumentSans.variable} ${instrumentSerif.variable}`}>
       <body>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <Navbar />
         {children}
+        <OptionalAnalytics />
         <WhatsAppButton />
       </body>
     </html>

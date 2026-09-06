@@ -35,7 +35,6 @@ export default function VideoFacade({
             src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
             alt={`Video still from ${title}`}
             fill
-            unoptimized
             priority={priority}
             sizes={portrait ? "(max-width: 768px) 100vw, 40vw" : "(max-width: 768px) 100vw, 70vw"}
             className="object-cover transition duration-700 group-hover:scale-[1.025]"
@@ -46,6 +45,8 @@ export default function VideoFacade({
             onClick={() => setActive(true)}
             className="absolute inset-0 flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-cyan-300"
             aria-label={`Play ${title}`}
+            data-analytics="work_view"
+            data-analytics-video={videoId}
           >
             <span className="flex h-16 w-16 items-center justify-center rounded-full border border-white/25 bg-black/55 text-white backdrop-blur-xl transition duration-300 hover:scale-105 hover:bg-white hover:text-black">
               <Play className="ml-1 h-5 w-5" fill="currentColor" />

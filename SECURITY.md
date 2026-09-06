@@ -1,179 +1,46 @@
-# Zqtion Security Configuration
+# Security
 
-## ✅ Security Features Implemented
+## Implemented controls
 
-### 1. **HTTP Security Headers**
-Located in: `next.config.js`
+- Production security headers and CSP are defined in `next.config.js`.
+- Inquiry bodies are size-limited, trimmed, length-limited, validated, and HTML-escaped before email rendering.
+- A hidden honeypot rejects automated submissions without exposing that decision.
+- Production Turnstile verification fails securely when the secret is missing or a token is invalid.
+- Rate limiting uses a Supabase function and a keyed hash of the visitor IP; raw IP addresses are not stored in the rate-limit table.
+- Supabase and Resend credentials are server-only. Never prefix secrets with `NEXT_PUBLIC_`.
+- Inquiry and event tables have Row Level Security enabled and no anonymous policies.
+- Analytics is opt-in by deployment configuration, uses event and metadata allow-lists, honors Do Not Track, strips URL queries and referrer paths, and never sends form fields.
+- All JSON intake routes enforce actual streamed body size, even without a trustworthy Content-Length header.
+- Public error messages do not include provider or database details.
 
-- **Strict-Transport-Security**: Forces HTTPS connections
-- **X-Frame-Options**: Prevents clickjacking attacks
-- **X-Content-Type-Options**: Prevents MIME-type sniffing
-- **X-XSS-Protection**: Enables browser XSS protection
-- **Referrer-Policy**: Controls referrer information
-- **Permissions-Policy**: Disables unnecessary browser features
+## Production requirements
 
-### 2. **Bot Protection & Rate Limiting**
-Located in: `middleware.ts`
+Apply migrations 001 and 002 before enabling inquiry delivery, and migration 003 before separately enabling Launchpad. Applying any hosted migration requires explicit authorization. Configure `SUPABASE_URL`, a server-only Supabase secret, both Turnstile keys, and the intended delivery path. `RATE_LIMIT_SECRET` should be a long random server-only value; inquiries retain a Supabase-secret fallback, but Launchpad requires the dedicated value.
 
-- **Rate Limiting**: 100 requests per 15 minutes per IP
-- **Suspicious User Agent Blocking**: Blocks common scrapers and bots
-- **Allow List**: Googlebot and Bingbot are permitted
-- **429 Response**: Returns "Too Many Requests" for rate limit violations
+## Launchpad safeguards
 
-### 3. **Robots.txt Configuration**
-Located in: `app/robots.ts`
+- Intake is closed by default; disabled requests return 503 before external services are called.
+- Enabled requests require an allowed Origin, JSON content type, at most 32 KiB, allowlisted tracks/options, bounded text, valid links, and explicit age/unpaid-program/privacy acknowledgement.
+- URLs are stored as applicant-supplied text, never fetched. No uploads, identity documents, date of birth, passwords or raw IPs are collected by the implementation.
+- Application data is separate from sales inquiries; migration 003 enables RLS and revokes public/anonymous/authenticated access. Only authorized server operations may read or change it.
+- Five attempts per ten minutes use a keyed, purpose-specific IP hash and the persistent limiter. Turnstile must return the expected `launchpad` action and approved hostname. Provider timeouts/errors fail closed.
+- Success requires durable storage. Unchanged UUID retries confirm the same receipt, while changed answers cannot overwrite that record. Notifications contain only a reference and track.
+- Preview checkbox checks are local tests, not submitted consent. Real consent is recorded only with an enabled, successful application.
+- Before activation, approve eligible jurisdictions, learning/supervision capacity, retention duration, deletion/access requests, reviewer access and applicant-facing terms. These are not established by the source code.
 
-**Blocked Bots:**
-- GPTBot, ChatGPT-User (AI training bots)
-- CCBot, anthropic-ai, Claude-Web (AI scraping)
-- AhrefsBot, SemrushBot (SEO tools)
-- DotBot, MJ12bot (aggressive crawlers)
+Do not weaken the production fail-secure behavior to make a broken deployment appear healthy. If the persistent limit or bot verification is unavailable, direct users to email or WhatsApp while configuration is repaired.
 
-**Allowed:**
-- Googlebot (2 second crawl delay)
-- Bingbot (2 second crawl delay)
-- General crawlers with restrictions
+## Known trade-offs
 
-### 4. **Environment Variables**
-Located in: `.env.local` (gitignored for security)
+The CSP permits inline scripts/styles because of the current Next.js, JSON-LD, and Turnstile integration. Replacing this with per-request nonces is a future hardening task and must be tested against static rendering and caching.
 
-- Stores sensitive configuration
-- Rate limit settings
-- API keys (if needed)
-- CORS origins
+The analytics endpoint intentionally returns success when analytics storage is unavailable so measurement never interrupts navigation or lead delivery.
 
-### 5. **SEO & Metadata**
-Located in: `app/layout.tsx`
+## Verification
 
-- OpenGraph tags for social sharing
-- Twitter Card metadata
-- Robots meta tags
-- Viewport configuration
-- Verification codes ready
-
-### 6. **Sitemap**
-Located in: `app/sitemap.ts`
-
-- Automatic sitemap generation
-- Weekly change frequency
-- Proper URL structure
-
-## 🔒 Additional Security Recommendations
-
-### Production Deployment:
-
-1. **Use a CDN with DDoS Protection**
-   - Cloudflare (Free tier includes DDoS protection)
-   - Vercel (built-in protection)
-
-2. **Implement Redis for Rate Limiting**
-   ```bash
-   npm install @upstash/redis @upstash/ratelimit
-   ```
-   Replace in-memory Map in `middleware.ts`
-
-3. **Add CAPTCHA for Forms**
-   - Google reCAPTCHA v3
-   - hCaptcha
-   - Cloudflare Turnstile
-
-4. **Enable CSP (Content Security Policy)**
-   Add to `next.config.js` headers:
-   ```js
-   {
-     key: 'Content-Security-Policy',
-     value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
-   }
-   ```
-
-5. **Monitor & Logging**
-   - Set up Sentry for error tracking
-   - Use Vercel Analytics
-   - Monitor rate limit violations
-
-6. **API Route Protection** (when added)
-   - JWT authentication
-   - API key validation
-   - Input sanitization
-   - CORS configuration
-
-7. **Environment Variables**
-   - Never commit `.env.local`
-   - Use environment-specific configs
-   - Rotate API keys regularly
-
-## 🚀 Current Protection Level
-
-✅ **Protected Against:**
-- Bot scraping (AI training, SEO tools)
-- Basic DDoS (rate limiting)
-- Clickjacking
-- XSS attacks
-- MIME-type sniffing
-- Unsafe referrers
-- Excessive crawling
-
-⚠️ **Additional Protection Needed for Production:**
-- Advanced DDoS (use CDN)
-- Form spam (add CAPTCHA)
-- API abuse (when APIs added)
-- Database injection (if backend added)
-
-## 📝 Configuration Files
-
-1. **next.config.js** - HTTP security headers
-2. **middleware.ts** - Rate limiting & bot blocking
-3. **app/robots.ts** - Crawler rules
-4. **app/sitemap.ts** - SEO sitemap
-5. **.env.local** - Sensitive configuration (gitignored)
-6. **.env.example** - Template for environment variables
-
-## 🔧 Customization
-
-### Adjust Rate Limits:
-Edit `middleware.ts`:
-```typescript
-const RATE_LIMIT_MAX = 100 // requests
-const RATE_LIMIT_WINDOW = 15 * 60 * 1000 // milliseconds
-```
-
-### Block Additional Bots:
-Edit `app/robots.ts` - add to disallow array
-
-### Whitelist User Agents:
-Edit `middleware.ts` - modify suspiciousUserAgents array
-
-## 🎯 Testing
-
-1. **Test Rate Limiting:**
-   ```bash
-   # Linux/Mac
-   for i in {1..101}; do curl http://localhost:3000; done
-   
-   # Windows PowerShell
-   1..101 | ForEach-Object { Invoke-WebRequest http://localhost:3000 }
-   ```
-
-2. **Check Headers:**
-   ```bash
-   curl -I http://localhost:3000
-   ```
-
-3. **Verify Robots.txt:**
-   Visit: http://localhost:3000/robots.txt
-
-4. **Check Sitemap:**
-   Visit: http://localhost:3000/sitemap.xml
-
-## 📊 Performance Impact
-
-- **Middleware overhead**: ~1-5ms per request
-- **Header addition**: Negligible
-- **Rate limiting**: ~0.5ms lookup time
-- **Total impact**: < 10ms (acceptable for security)
-
----
-
-**Last Updated:** February 3, 2026
-**Security Level:** Medium (suitable for landing pages)
-**Recommended for Production:** Yes, with CDN
+- Confirm `.env*` secrets are ignored and absent from client bundles.
+- Submit invalid, oversized, honeypot, missing-token, expired-token, and over-limit requests.
+- Confirm six attempts inside one ten-minute window are rejected across separate function instances.
+- Confirm only a hash—not a raw IP—is present in `website_rate_limits`.
+- Confirm anonymous database roles cannot read or insert inquiry/event data.
+- Confirm production responses expose no provider error details.

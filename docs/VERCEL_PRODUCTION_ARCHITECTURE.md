@@ -1,5 +1,7 @@
 # Vercel Production Architecture
 
+> Historical proposal, not the current architecture or launch status. Use the root ARCHITECTURE.md and DEPLOYMENT.md. Provider pricing and plans in this snapshot require fresh verification before purchase.
+
 Updated: 2026-08-08
 
 ## Critical hosting constraint

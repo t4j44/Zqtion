@@ -17,6 +17,7 @@ export type WorkItem = {
   disclosure: string;
   summary: string;
   challenge: string;
+  whatThisProved: string;
   approach: string[];
   deliverables: string[];
   videoId: string;
@@ -40,6 +41,8 @@ export const workItems: WorkItem[] = [
       "A speculative short film that imagines Dhaka in 2050 through a story shaped around the idea of a more sustainable and equitable future.",
     challenge:
       "Turn a broad future-facing social theme into a compact story with a coherent world, emotional pace, and cinematic visual language.",
+    whatThisProved:
+      "A narrative-first workflow can hold a speculative world together across generated shots without turning the film into a technology montage.",
     approach: [
       "Built a clear narrative spine before generating visual sequences.",
       "Used a consistent near-future Dhaka design language across environments and characters.",
@@ -63,6 +66,8 @@ export const workItems: WorkItem[] = [
       "A compact emotional commercial exploring distance, family, and connection through an AI-assisted production workflow.",
     challenge:
       "Create an emotionally legible one-minute story while maintaining character continuity and a restrained commercial tone.",
+    whatThisProved:
+      "A compact AI-assisted film can sustain an emotional idea when continuity, sound, and edit rhythm are treated as the system rather than afterthoughts.",
     approach: [
       "Started with the emotional beat and audience takeaway, not the generation tool.",
       "Designed shots around continuity, eye-lines, and pacing.",
@@ -86,6 +91,8 @@ export const workItems: WorkItem[] = [
       "A 1:26 AI microfilm built around an encounter between a present self and a past self inside an imagined AI future.",
     challenge:
       "Make a time-bending premise understandable inside a compact runtime while keeping the emotional idea ahead of the technology.",
+    whatThisProved:
+      "A single readable encounter can carry a time-bending concept more clearly than a larger sequence of disconnected generated images.",
     approach: [
       "Centered the film on one immediately readable encounter rather than a montage of generated scenes.",
       "Used a compact setup, reveal, and resolution suited to short-form viewing.",
@@ -109,6 +116,8 @@ export const workItems: WorkItem[] = [
       "Two compact visual stories built around a panda pull-up gag and a playful response to city traffic.",
     challenge:
       "Make a complete visual premise understandable in under ninety seconds without depending on a long explanation.",
+    whatThisProved:
+      "Short-form AI stories work best when each release is built around one setup, one visual turn, and one clear ending.",
     approach: [
       "Kept each release centered on one immediately readable idea.",
       "Used a compact setup, visual turn, and ending suited to short-form viewing.",
@@ -138,6 +147,8 @@ export const workItems: WorkItem[] = [
       "A kinetic sports concept using transformation and momentum to explore the feeling of pushing past a limit.",
     challenge:
       "Create premium sports energy without relying on a recognizable campaign, athlete endorsement, or unsupported brand claim.",
+    whatThisProved:
+      "Movement, lighting, and match-cut discipline can create campaign energy without relying on an endorsement or a copied campaign narrative.",
     approach: [
       "Designed the film around a simple movement metaphor.",
       "Used lighting, camera energy, and match cuts to create continuity.",
@@ -161,6 +172,8 @@ export const workItems: WorkItem[] = [
       "A set of short beverage studies exploring ice, particles, portals, urban energy, and packshot-focused visual direction.",
     challenge:
       "Build several distinct product worlds while keeping the pack recognizable and the execution suitable for short-form viewing.",
+    whatThisProved:
+      "A product can remain the visual anchor across multiple effects-led worlds when silhouette, reveal timing, and small-screen legibility are protected.",
     approach: [
       "Developed each film around one clear physical or environmental idea.",
       "Prioritized the product silhouette and reveal before effects density.",
@@ -183,6 +196,8 @@ export const workItems: WorkItem[] = [
       "A fast-moving short-form laboratory for testing transformation effects, character consistency, compositing, and cinematic prompt systems.",
     challenge:
       "Turn trend-driven experiments into transferable production learning rather than presenting popularity as client proof.",
+    whatThisProved:
+      "Narrow experiments can produce reusable continuity, compositing, and prompt-system lessons without being misrepresented as client outcomes.",
     approach: [
       "Tested one visual or continuity problem per short.",
       "Recorded repeatable prompting and compositing patterns.",

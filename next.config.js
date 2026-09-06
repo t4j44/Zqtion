@@ -45,6 +45,12 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.zqtion.com' }],
+        destination: 'https://zqtion.com/:path*',
+        permanent: true,
+      },
+      {
         source: '/pricing',
         destination: '/services#engagements',
         permanent: true,
@@ -54,7 +60,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/sequence/:path*',
+        source: '/hero/:path*',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
       {
@@ -65,4 +71,8 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = process.env.ANALYZE === 'true'
+  // The analyzer is CommonJS-only and is loaded only for the explicit analysis build.
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  ? require('@next/bundle-analyzer')({ enabled: true, openAnalyzer: false })(nextConfig)
+  : nextConfig;

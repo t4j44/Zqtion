@@ -10,7 +10,6 @@ export default defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    "Squences updated/**",
-    "squences/**",
+    ".gstack/**",
   ]),
 ]);

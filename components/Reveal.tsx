@@ -1,27 +1,17 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
-
 export default function Reveal({
   children,
   className = "",
   delay = 0,
+  variant = "text",
 }: {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  variant?: "text" | "card" | "visual";
 }) {
-  const reducedMotion = useReducedMotion();
-
   return (
-    <motion.div
-      className={className}
-      initial={reducedMotion ? false : { opacity: 0, y: 24 }}
-      whileInView={reducedMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.18 }}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
-    >
+    <div className={`reveal reveal-${variant} ${className}`} style={{ "--reveal-delay": `${delay}s` } as React.CSSProperties}>
       {children}
-    </motion.div>
+    </div>
   );
 }

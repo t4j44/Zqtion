@@ -17,6 +17,7 @@ export const navigation = [
   { href: "/process", label: "Process" },
   { href: "/about", label: "About" },
   { href: "/insights", label: "Insights" },
+  { href: "/careers", label: "Careers" },
 ] as const;
 
 export type Service = {

@@ -4,33 +4,80 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { navigation } from "@/data/site";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const reducedMotion = useReducedMotion();
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const navRootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      navRootRef.current?.querySelector(".site-header")?.classList.toggle("site-header-active", window.scrollY > 24);
+    };
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    if (!open) return;
+
+    const focusableSelector = "a[href], button:not([disabled]), [tabindex]:not([tabindex='-1'])";
+    const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const trigger = menuButtonRef.current;
+    const focusFirst = window.requestAnimationFrame(() => {
+      menuRef.current?.querySelector<HTMLElement>(focusableSelector)?.focus();
+    });
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setOpen(false);
+        return;
+      }
+
+      if (event.key !== "Tab" || !navRootRef.current) return;
+      const focusable = Array.from(navRootRef.current.querySelectorAll<HTMLElement>(focusableSelector))
+        .filter((element) => element.getClientRects().length > 0);
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const closeOnDesktop = () => { if (desktop.matches) setOpen(false); };
+    desktop.addEventListener("change", closeOnDesktop);
     return () => {
+      window.cancelAnimationFrame(focusFirst);
+      document.removeEventListener("keydown", onKeyDown);
+      desktop.removeEventListener("change", closeOnDesktop);
       document.body.style.overflow = "";
+      (previouslyFocused || trigger)?.focus();
     };
   }, [open]);
 
   return (
-    <>
-      <header className={`fixed inset-x-0 top-0 z-50 transition duration-300 ${scrolled || open ? "border-b border-white/10 bg-[#050608]/82 backdrop-blur-xl" : "bg-transparent"}`}>
+    <div ref={navRootRef} role={open ? "dialog" : undefined} aria-modal={open ? true : undefined} aria-label={open ? "Navigation menu" : undefined}>
+      <header className={`site-header fixed inset-x-0 top-0 z-50 transition duration-300 ${open ? "site-header-active" : "bg-transparent"}`}>
         <div className="mx-auto flex h-[4.75rem] max-w-[90rem] items-center justify-between px-5 sm:px-8 lg:px-16">
           <Link href="/" className="group flex items-center gap-3" aria-label="Zqtion home" onClick={() => setOpen(false)}>
             <span className="relative h-9 w-9 overflow-hidden rounded-xl border border-white/10 bg-black">
@@ -51,44 +98,37 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden lg:block">
-            <Link href="/contact" className="button-primary">
+            <Link href="/contact" className="button-primary" data-analytics="service_contact_click" data-analytics-location="navbar">
               Start a project <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
 
-          <button type="button" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] lg:hidden" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close menu" : "Open menu"}>
+          <button ref={menuButtonRef} type="button" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] lg:hidden" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close menu" : "Open menu"}>
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </header>
 
-      <AnimatePresence>
-        {open ? (
-          <motion.div
+      {open ? (
+          <div
+            ref={menuRef}
             id="mobile-menu"
-            className="fixed inset-0 z-40 flex bg-[#050608] px-5 pb-10 pt-28 lg:hidden"
-            initial={reducedMotion ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            role="dialog"
-            aria-modal="true"
-            aria-label="Navigation menu"
+            className="mobile-menu-enter fixed inset-0 z-40 flex bg-[#050608] px-5 pb-10 pt-28 lg:hidden"
           >
             <nav className="flex w-full flex-col justify-between" aria-label="Mobile navigation">
               <div className="border-t border-white/10">
                 {navigation.map((item, index) => (
-                  <motion.div key={item.href} initial={reducedMotion ? false : { opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.04 }}>
+                  <div className="mobile-menu-item" key={item.href} style={{ "--menu-index": index } as React.CSSProperties}>
                     <Link href={item.href} onClick={() => setOpen(false)} className="flex items-center justify-between border-b border-white/10 py-5 text-3xl font-semibold tracking-[-0.04em]">
                       {item.label}<span className="text-sm text-white/35">0{index + 1}</span>
                     </Link>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-              <Link href="/contact" onClick={() => setOpen(false)} className="button-primary w-full">Start a project <ArrowUpRight className="h-4 w-4" /></Link>
+              <Link href="/contact" onClick={() => setOpen(false)} className="button-primary w-full" data-analytics="service_contact_click" data-analytics-location="mobile_menu">Start a project <ArrowUpRight className="h-4 w-4" /></Link>
             </nav>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
-    </>
+          </div>
+      ) : null}
+    </div>
   );
 }

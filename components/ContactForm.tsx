@@ -1,18 +1,20 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
-import Script from "next/script";
+import TurnstileWidget, { type TurnstileHandle } from "@/components/TurnstileWidget";
+import { getAttribution, trackEvent } from "@/components/Analytics";
 
 type Status = "idle" | "sending" | "success" | "error";
 
 const inputClass =
-  "mt-2 w-full rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3.5 text-base text-white outline-none transition placeholder:text-white/25 focus:border-cyan-300/60 focus:bg-white/[0.065] focus:ring-4 focus:ring-cyan-300/10";
+  "mt-2 min-w-0 w-full rounded-2xl border border-white/10 bg-white/[0.045] px-4 py-3.5 text-base text-white outline-none transition placeholder:text-white/50 focus:border-cyan-300/60 focus:bg-white/[0.065] focus:ring-4 focus:ring-cyan-300/10";
 
 export default function ContactForm({ defaultService = "" }: { defaultService?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
-  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  const startedRef = useRef(false);
+  const turnstileRef = useRef<TurnstileHandle>(null);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -20,13 +22,15 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
     setMessage("");
 
     const form = event.currentTarget;
-    const payload = Object.fromEntries(new FormData(form).entries());
+    const payload = { ...Object.fromEntries(new FormData(form).entries()), ...getAttribution() };
+    trackEvent("form_submit");
 
     try {
       const response = await fetch("/api/inquiries", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(35000),
       });
       const result = await response.json();
 
@@ -35,10 +39,14 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
       }
 
       form.reset();
+      turnstileRef.current?.reset();
       setStatus("success");
+      trackEvent("form_success");
       setMessage("Your brief was delivered. Zqtion will reply using the email you provided.");
     } catch (error) {
+      turnstileRef.current?.reset();
       setStatus("error");
+      trackEvent("form_error");
       setMessage(
         error instanceof Error
           ? error.message
@@ -49,18 +57,30 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
 
   return (
     <>
-      {siteKey ? <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="afterInteractive" /> : null}
-      <form onSubmit={onSubmit} className="grid gap-5" aria-describedby="form-status">
+      <form
+        onSubmit={onSubmit}
+        onFocusCapture={() => {
+          if (startedRef.current) return;
+          startedRef.current = true;
+          trackEvent("form_start");
+        }}
+        className="grid gap-5"
+        aria-describedby="form-status"
+      >
         <div className="grid gap-5 sm:grid-cols-2">
           <label className="text-sm font-medium text-white/70">
             Name <span className="text-cyan-300">*</span>
             <input className={inputClass} name="name" required minLength={2} maxLength={80} autoComplete="name" />
           </label>
           <label className="text-sm font-medium text-white/70">
-            Work email <span className="text-cyan-300">*</span>
+            Email <span className="text-cyan-300">*</span>
             <input className={inputClass} name="email" required type="email" maxLength={160} autoComplete="email" />
           </label>
         </div>
+        <label className="text-sm font-medium text-white/70">
+          Website or product link (optional)
+          <input className={inputClass} name="projectUrl" type="url" maxLength={500} inputMode="url" autoComplete="url" placeholder="https://" />
+        </label>
         <div className="grid gap-5 sm:grid-cols-2">
           <label className="text-sm font-medium text-white/70">
             Company or project
@@ -103,11 +123,11 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
         <div className="sr-only" aria-hidden="true">
           <label>
             Leave this field empty
-            <input name="website" tabIndex={-1} autoComplete="off" />
+            <input name="fax_number" tabIndex={-1} autoComplete="off" />
           </label>
         </div>
 
-        {siteKey ? <div className="cf-turnstile" data-sitekey={siteKey} data-theme="dark" /> : null}
+        <TurnstileWidget ref={turnstileRef} action="inquiry" />
 
         <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-md text-xs leading-5 text-white/40">

@@ -83,7 +83,7 @@ export default function CapabilityArtifacts() {
     <div className="capability-artifact-grid mt-16">
       {capabilities.map((item, index) => (
         <Reveal key={item.id} delay={index * 0.07}>
-          <Link href={item.href} className="capability-artifact-link block h-full rounded-[2rem]" aria-label={`Explore ${item.label} services`}>
+          <Link href={item.href} className="capability-artifact-link block h-full rounded-[2rem]">
             <article className={`capability-artifact-card capability-artifact-card-${item.id}`}>
               <div className="capability-artifact-visual">{visuals[item.id]}</div>
               <div className="capability-artifact-copy">

@@ -1,5 +1,7 @@
 # Zqtion Website Master Execution Plan
 
+> Historical planning snapshot, not the current implementation. Use the root README, ARCHITECTURE, SECURITY, DEPLOYMENT, and PERFORMANCE documents for current operating instructions.
+
 Updated: 2026-08-07
 Status: Discovery and foundation
 Source of truth: `Zqtion_Animated_Website_A_to_Z_Project_Context.md`
