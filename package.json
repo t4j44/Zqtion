@@ -12,7 +12,12 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "prompts:inspect": "node scripts/prompts/pipeline.mjs inspect",
+    "prompts:normalize": "node scripts/prompts/pipeline.mjs normalize",
+    "prompts:sync": "node scripts/prompts/pipeline.mjs sync",
+    "prompts:validate": "node scripts/prompts/pipeline.mjs validate",
+    "prompts:seo": "node scripts/prompts/seo-audit.mjs"
   },
   "dependencies": {
     "@fontsource-variable/instrument-sans": "^5.3.0",
@@ -27,6 +32,7 @@
     "three": "^0.185.1"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.8",
     "@next/bundle-analyzer": "^16.3.0",
     "@types/node": "^20.11.0",
     "@types/react": "^19.2.18",

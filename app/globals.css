@@ -1750,3 +1750,7 @@ textarea.launchpad-input { resize: vertical; min-height: 7rem; }
   .mobile-menu-enter, .mobile-menu-item, .reveal { animation: none; }
   .launchpad-track:hover, .launchpad-track:focus-within { transform: none; }
 }
+
+/* Compact, touch-friendly footer on phones; desktop keeps its column rhythm. */
+.site-footer nav a,.footer-connect a,.footer-legal a{display:inline-flex;align-items:center;min-height:44px;overflow-wrap:anywhere}
+@media(max-width:639px){.site-footer p{overflow-wrap:anywhere}.site-footer .footer-explore a,.site-footer .footer-connect a{font-size:14px}.footer-legal{padding-bottom:env(safe-area-inset-bottom,0px)}}

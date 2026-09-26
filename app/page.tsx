@@ -123,6 +123,10 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section className="home-deferred section-shell py-10">
+          <div className="flex flex-col justify-between gap-6 border-y border-white/10 py-10 sm:flex-row sm:items-center"><div><p className="eyebrow">Zqtion Prompt Library</p><h2 className="mt-3 text-3xl tracking-tight">Start with a better brief.</h2><p className="mt-3 text-sm text-white/65">Original prompts for design, image creation and building with AI.</p></div><Link href="/prompts" className="button-secondary shrink-0">Explore the library <ArrowUpRight className="h-4 w-4" /></Link></div>
+        </section>
+
         <section className="home-deferred section-shell launchpad-teaser">
           <div><p className="eyebrow">Build with us</p><h2>Start before <span className="font-editorial font-normal">you feel ready.</span></h2><p>Zqtion Launchpad is a planned 12-week learning program for students and early-career builders inside an AI-native execution studio.</p><p className="text-sm">14 tracks · Up to 3 places per track · Remote-first · Part-time · Unpaid</p></div>
           <Link href="/careers" className="button-secondary">Explore Launchpad <ArrowUpRight className="h-4 w-4" /></Link>

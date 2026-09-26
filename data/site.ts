@@ -17,6 +17,8 @@ export const navigation = [
   { href: "/process", label: "Process" },
   { href: "/about", label: "About" },
   { href: "/insights", label: "Insights" },
+  { href: "/prompts", label: "Prompts" },
+  { href: "/ai-experiences", label: "Community" },
   { href: "/careers", label: "Careers" },
 ] as const;
 

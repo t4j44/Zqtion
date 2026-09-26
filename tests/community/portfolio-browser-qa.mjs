@@ -1,0 +1,91 @@
+import {createRequire} from 'node:module';
+import {mkdir,writeFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const require=createRequire(import.meta.url);
+const {chromium}=require(process.env.COMMUNITY_PLAYWRIGHT_PATH||'C:/Users/hp/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const base='http://localhost:3219'; const fixture=await(await fetch('http://127.0.0.1:4319/__fixtures')).json();
+const browser=await chromium.launch({headless:true});
+const context=await browser.newContext({bypassCSP:true,viewport:{width:1440,height:1000},permissions:['clipboard-read','clipboard-write']});
+const page=await context.newPage(); page.setDefaultTimeout(12000);
+const passed=[],failures=[],errors=[],responsive=[];
+const commit=async (button)=>{const done=page.waitForResponse(r=>r.url().endsWith('/api/community/actions')&&r.request().method()==='POST');await button.click();const response=await done;assert.equal(response.status(),200,await response.text());};
+page.on('pageerror',e=>errors.push(e.message));
+const go=async path=>{const r=await page.goto(base+path,{waitUntil:'networkidle'});assert.equal(r.status(),200,path);};
+const check=async(name,fn)=>{try{await fn();passed.push(name);console.log('PASS '+name);}catch(e){failures.push({name,error:e.message});console.log('FAIL '+name+': '+e.message);await page.screenshot({path:`artifacts/community/portfolio-failure-${failures.length}.png`}).catch(()=>{});}};
+const signIn=async name=>{await go('/community/account'); if(await page.getByRole('button',{name:'Sign out',exact:true}).count())await page.getByRole('button',{name:'Sign out',exact:true}).click();await page.getByLabel('Email (private)').fill(name+'@community.test');await page.getByLabel('Password',{exact:true}).fill('fixture-password-123');await page.getByRole('button',{name:'Sign in',exact:true}).last().click();await page.getByRole('button',{name:'Sign out',exact:true}).waitFor();};
+await mkdir('artifacts/community',{recursive:true});
+await check('Public portfolio: SSR, real counts, no private email or owner controls',async()=>{
+ await go('/u/alice');assert.equal(await page.locator('h1').innerText(),'Fixture alice');assert.ok(!(await page.content()).includes('alice@community.test'));assert.equal(await page.getByRole('link',{name:'Edit Profile',exact:true}).count(),0);assert.equal(await page.getByText('Manage Featured Work',{exact:false}).count(),0);
+ assert.equal(await page.locator('.cq-featured-grid > article').count(),3);assert.equal(await page.locator('section[aria-labelledby=public-work] article').count(),20);assert.match(await page.title(),/AI Portfolio/);
+ assert.match(await page.locator('script[type="application/ld+json"]').last().textContent(),/ProfilePage/);
+ const html=await(await fetch(base+'/u/alice')).text();assert.ok(html.includes('What I learned from a repeatable AI image workflow'));assert.ok(html.includes('Featured Work'));
+});
+await check('Logo and wordmark navigate home on phone and desktop; mobile menu Escape restores focus',async()=>{
+ for(const width of [393,1440]){await page.setViewportSize({width,height:852});await go('/ai-experiences');await page.locator('header a[aria-label="Zqtion home"] img').click();await page.waitForURL(base+'/');await go('/ai-experiences');await page.locator('header a[aria-label="Zqtion home"]').getByText('ZQTION',{exact:true}).click();await page.waitForURL(base+'/');}
+ await page.setViewportSize({width:393,height:852});await go('/ai-experiences');await page.getByRole('button',{name:'Open menu'}).click();await page.keyboard.press('Escape');assert.equal(await page.getByRole('button',{name:'Open menu'}).evaluate(e=>e===document.activeElement),true);
+});
+await check('Phone filters use a dialog; Escape returns focus; search/filter URLs work',async()=>{
+ await page.getByRole('button',{name:'Filters',exact:true}).click();await page.getByRole('dialog').waitFor();await page.keyboard.press('Escape');assert.equal(await page.getByRole('button',{name:'Filters',exact:true}).evaluate(e=>e===document.activeElement),true);
+ await page.getByRole('button',{name:'Filters',exact:true}).click();await page.getByRole('dialog').getByLabel('Post type').selectOption('question');await page.getByRole('dialog').getByRole('button',{name:'Apply filters'}).click();await page.waitForURL('**kind=question**');assert.match(await page.locator('main').innerText(),/preserve product packaging/);
+ await page.getByRole('searchbox',{name:'Search community',exact:true}).fill('zzzz-no-match-qa');await page.getByRole('button',{name:'Search',exact:true}).click();await page.getByRole('heading',{name:'No matching discussions yet.'}).waitFor();
+});
+await check('Card preview expands without navigation; card surface and all author identity parts work',async()=>{
+ await page.setViewportSize({width:1280,height:900});await go('/ai-experiences?kind=experience');const card=page.locator('.cq-card').filter({has:page.getByRole('heading',{name:fixture.experience.title,exact:true})});
+ await card.getByRole('button',{name:'See more',exact:true}).click();assert.ok(page.url().includes('kind=experience'));await card.getByRole('button',{name:'Show less',exact:true}).click();
+ const author=card.locator('.cq-identity-link');assert.equal(await author.getAttribute('href'),'/u/alice');assert.equal(await author.locator('.cq-avatar').count(),1);assert.match(await author.innerText(),/@alice/);
+ await author.locator('.cq-avatar').click();await page.waitForURL('**/u/alice');await go('/ai-experiences?kind=experience');await page.locator('.cq-card .cq-body').first().click();await page.waitForURL('**/ai-experiences/'+fixture.experience.id);
+});
+await check('Portfolio tabs, meaningful answer context, result media, pagination and canonical share',async()=>{
+ await go('/u/alice');await page.locator('.cq-portfolio-tabs').getByRole('link',{name:'Prompts',exact:true}).click();await page.waitForURL('**tab=prompts');assert.equal(await page.locator('section[aria-labelledby=public-work] article').count(),1);
+ await page.locator('.cq-portfolio-tabs').getByRole('link',{name:'Showcases & Results'}).click();await page.waitForURL('**tab=results');assert.equal(await page.locator('.cq-results-grid img').count(),2);await page.getByRole('button',{name:'Share Profile',exact:true}).click();assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),'https://zqtion.com/u/alice');
+ await go('/u/alice');await page.getByRole('link',{name:'Next',exact:true}).click();await page.waitForURL('**page=2');assert.ok(await page.locator('section[aria-labelledby=public-work] article').count()>0);
+ await go('/u/bob?tab=answers');assert.match(await page.locator('section[aria-labelledby=public-work]').innerText(),/Answer to/);assert.match(await page.locator('section[aria-labelledby=public-work]').innerText(),/preserve product packaging/);assert.match(await page.locator('section[aria-labelledby=public-work]').innerText(),/accepted/i);
+});
+await check('Upvote/remove/save immediate state and persisted server totals; share excludes query state',async()=>{
+ await signIn('bob');await go(`/ai-experiences/${fixture.experience.id}?sort=newest`);const root=page.locator('.cq-root-post');const vote=root.getByRole('button',{name:/^Upvote/});await commit(vote);await root.getByRole('button',{name:/^Remove upvote/}).waitFor();await page.reload({waitUntil:'networkidle'});await commit(root.getByRole('button',{name:/^Remove upvote/}));await root.getByRole('button',{name:/^Upvote/}).waitFor();
+ await commit(root.getByRole('button',{name:'Save',exact:true}));await root.getByRole('button',{name:'Saved ✓',exact:true}).waitFor();await page.reload({waitUntil:'networkidle'});await root.getByRole('button',{name:'Saved ✓',exact:true}).waitFor();await root.getByRole('button',{name:'Share',exact:true}).click();assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),`https://zqtion.com/ai-experiences/${fixture.experience.id}`);
+});
+await check('Accepted answer first, ten-item initial conversation, Top/Newest, incremental comments',async()=>{
+ await go(`/ai-experiences/${fixture.question.id}`);assert.match(await page.locator('.cq-conversation > .cq-reply').first().innerText(),/Accepted Answer/);assert.equal(await page.locator('.cq-thread-list > article').count(),10);await page.getByRole('button',{name:'View more comments',exact:true}).click();await page.waitForFunction(()=>document.querySelectorAll('.cq-thread-list > article').length>10);
+ await page.locator('.cq-sort').getByRole('link',{name:'Newest',exact:true}).click();await page.waitForURL('**sort=newest**');assert.equal(await page.locator('.cq-sort a[aria-current]').innerText(),'Newest');
+});
+await check('Inline comment failure preserves draft; retry posts without identity collection or page reload',async()=>{
+ await page.getByRole('button',{name:'Write a comment…',exact:true}).click();const form=page.locator('.cq-inline-composer').filter({has:page.getByLabel('Write a comment…',{exact:true})});
+ const text='LOCAL QA portfolio phase comment. I kept the original image and recorded each mask revision.';await form.getByLabel('Write a comment…',{exact:true}).fill(text);await page.route('**/api/community/actions',r=>r.fulfill({status:503,contentType:'application/json',body:JSON.stringify({error:'Local QA temporary failure. Try again.'})}));await form.getByRole('button',{name:'Post Comment',exact:true}).click();await form.getByRole('status').waitFor();assert.equal(await form.getByLabel('Write a comment…',{exact:true}).inputValue(),text);
+ await page.unroute('**/api/community/actions');await commit(form.getByRole('button',{name:'Post Comment',exact:true}));await page.locator('.cq-thread-list').getByText(text,{exact:true}).waitFor();assert.equal(await page.getByLabel('Email (private)').count(),0);
+});
+await check('Reply, view/hide replies and controlled nested thread work',async()=>{
+ const comment=page.locator(`#entry-${fixture.comment.id}`);await comment.getByRole('button',{name:'View 1 reply',exact:true}).click();await page.locator(`#entry-${fixture.reply.id}`).waitFor();await comment.getByRole('button',{name:'Hide replies',exact:true}).first().click();await page.locator(`#entry-${fixture.reply.id}`).waitFor({state:'detached'});
+ await comment.getByRole('button',{name:'Reply',exact:true}).click();const replyForm=comment.locator('.cq-inline-composer');await replyForm.getByLabel('Write a comment…',{exact:true}).fill('LOCAL QA reply from the portfolio phase, with context preserved.');await replyForm.getByRole('button',{name:'Post Comment',exact:true}).click();await comment.getByText('LOCAL QA reply from the portfolio phase, with context preserved.',{exact:true}).waitFor();
+});
+await check('Public answer permalink reveals a contribution beyond the first page; result links stay in prompts',async()=>{
+ await go(`/prompts/community/${fixture.prompt.id}#entry-${fixture.resultId}`);await page.locator(`#entry-${fixture.resultId}`).waitFor();await go(`/ai-experiences/${fixture.question.id}#entry-${fixture.reply.id}`);await page.locator(`#entry-${fixture.reply.id}`).waitFor();
+ await go('/u/alice?tab=results');assert.ok((await page.locator('.cq-results-grid h2 a').all()).length>0);const hrefs=await page.locator('.cq-results-grid h2 a').evaluateAll(es=>es.map(e=>e.getAttribute('href')));assert.ok(hrefs.some(h=>h.startsWith('/prompts/community/')));
+});
+await check('Owner can feature/unfeature/reorder; other profiles have no owner controls',async()=>{
+ await signIn('alice');await go('/u/alice');await page.getByText('Manage Featured Work · 3/6',{exact:true}).click();const order=page.locator('.cq-feature-order');const titles=await order.locator('li>span').allTextContents();await order.getByRole('button',{name:/^Move .* down$/}).first().click();await page.waitForFunction(first=>document.querySelector('.cq-feature-order li>span')?.textContent!==first,titles[0]);
+ await go(`/ai-experiences/${fixture.question.id}`);const root=page.locator('.cq-root-post');await root.locator('summary[aria-label="More actions"]').click();await commit(root.getByRole('button',{name:'Feature on portfolio',exact:true}));await go('/u/alice');await page.getByText('Manage Featured Work · 4/6',{exact:true}).waitFor();await page.getByText('Manage Featured Work · 4/6',{exact:true}).click();await page.locator('.cq-feature-order li').filter({hasText:fixture.question.title}).getByRole('button',{name:'Unfeature',exact:true}).click();await page.getByText('Manage Featured Work · 3/6',{exact:true}).waitFor();
+ await go('/u/bob');assert.equal(await page.getByRole('link',{name:'Edit Profile',exact:true}).count(),0);
+});
+await check('Create post keeps optional fields collapsed and publishes exact wording',async()=>{
+ await go('/share');await page.getByRole('button',{name:'Share an AI Tip',exact:true}).click();await page.getByLabel('Title',{exact:true}).fill('How I record image workflow experiments for later review');await page.getByLabel('Context / description',{exact:true}).fill('LOCAL QA portfolio creation flow. Record the original, the settings, the editing boundary, and the output comparison so another person can repeat the experiment.');assert.equal(await page.getByLabel('Image description').isVisible(),false);
+ await page.getByRole('button',{name:'Review before publishing',exact:true}).click();const preview=page.getByRole('region',{name:'Publication preview'});if(await preview.getByRole('button',{name:'Continue with my post'}).count())await preview.getByRole('button',{name:'Continue with my post'}).click();await preview.getByRole('button',{name:'Publish',exact:true}).click();await page.getByRole('heading',{name:'Published',exact:true}).waitFor();
+});
+await check('Search labels public profiles and answers; native share receives only a canonical URL',async()=>{
+ await go('/ai-experiences?q=alice');await page.getByRole('region',{name:'Matching profiles'}).waitFor();assert.match(await page.getByRole('region',{name:'Matching profiles'}).innerText(),/@alice/);
+ await go('/ai-experiences?q=background');await page.getByRole('region',{name:'Matching answers'}).waitFor();
+ await go('/u/alice?tab=prompts');await page.evaluate(()=>Object.defineProperty(navigator,'share',{configurable:true,value:async value=>{window.__qaShare=value;}}));await page.getByRole('button',{name:'Share Profile',exact:true}).click();assert.equal(await page.evaluate(()=>window.__qaShare.url),'https://zqtion.com/u/alice');
+});
+await check('Mobile footer two columns, touch areas and chat avoidance at all phone widths',async()=>{
+ for(const width of [320,360,375,390,393,400,412,430]){await page.setViewportSize({width,height:width===400?689:852});await go('/');await page.locator('footer').scrollIntoViewIfNeeded();const nav=page.locator('.footer-explore');const columns=await nav.evaluate(e=>getComputedStyle(e).gridTemplateColumns.split(' ').length);assert.equal(columns,2);for(const link of await nav.locator('a').all())assert.ok((await link.boundingBox()).height>=44);assert.equal(await page.locator('.footer-connect').evaluate(e=>getComputedStyle(e).gridTemplateColumns.split(' ').length),2);assert.equal(await page.locator('.whatsapp-float:visible').count(),0);await page.locator('.footer-legal').scrollIntoViewIfNeeded();assert.equal(await page.locator('.whatsapp-float:visible').count(),0);if(width===393)await page.screenshot({path:'artifacts/community/portfolio-footer-393.png'});}
+});
+await check('Responsive routes: thirteen widths, no page overflow, visible media and controls',async()=>{
+ const paths=['/ai-experiences',`/ai-experiences/${fixture.question.id}`,`/ai-experiences/${fixture.experience.id}`,`/ai-experiences/${fixture.showcase.id}`,'/prompts/community',`/prompts/community/${fixture.prompt.id}`,'/u/alice','/share','/community/account','/prompts'];
+ for(const width of [320,360,375,390,393,400,412,430,768,1024,1280,1440,1920]){await page.setViewportSize({width,height:width===400?689:width===393?852:900});for(const path of paths){await go(path);const size=await page.evaluate(()=>({scroll:document.documentElement.scrollWidth,width:innerWidth}));assert.ok(size.scroll<=size.width+1,`${path} at ${width}: ${JSON.stringify(size)}`);assert.equal(await page.locator('h1').count(),1);assert.equal(await page.locator('.whatsapp-float:visible').count(),0);responsive.push({width,path,overflow:0});}console.log('WIDTH PASS '+width);}
+});
+await check('Keyboard actions, menu Escape, visible focus and reduced motion',async()=>{
+ await page.setViewportSize({width:400,height:689});await page.emulateMedia({reducedMotion:'reduce'});await go(`/ai-experiences/${fixture.experience.id}`);const more=page.locator('.cq-root-post summary[aria-label="More actions"]');await more.focus();await page.keyboard.press('Enter');assert.equal(await more.locator('..').getAttribute('open'),'');await page.keyboard.press('Escape');assert.equal(await more.locator('..').getAttribute('open'),null);assert.equal(await more.evaluate(e=>document.activeElement===e),true);assert.notEqual(await more.evaluate(e=>getComputedStyle(e).outlineStyle),'none');
+ for(const selector of ['.cq-root-post .cq-actions button','.cq-inline-composer button','.cq-sort a'])for(const control of await page.locator(selector).all()){if(await control.isVisible())assert.ok((await control.boundingBox()).height>=44);}
+ await page.screenshot({path:'artifacts/community/portfolio-discussion-400.png'});await go('/u/alice');await page.screenshot({path:'artifacts/community/portfolio-mobile-400.png'});await page.setViewportSize({width:393,height:852});await go('/ai-experiences');await page.screenshot({path:'artifacts/community/portfolio-feed-393.png'});await page.setViewportSize({width:1440,height:1000});await go('/u/alice');await page.screenshot({path:'artifacts/community/portfolio-desktop.png'});
+});
+const report={fixture:'Local production build; real PostgreSQL/RLS with simulated Auth/Storage. HTTP fixture CSP bypass only. Not physical-device or hosted acceptance.',passed,failures,errors,responsive};await writeFile('artifacts/community/portfolio-browser-qa.json',JSON.stringify(report,null,2));await browser.close();console.log(JSON.stringify({passed,failures,errors,responsiveChecks:responsive.length},null,2));if(failures.length||errors.length)process.exitCode=1;

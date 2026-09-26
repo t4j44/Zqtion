@@ -1,0 +1,11 @@
+"use client";
+import { useRef } from "react";
+import { categories, postKinds } from "@/lib/community/types";
+export default function FeedFilters({ path, q, kind, category, prompts }: { path: string; q: string; kind: string; category: string; prompts: boolean }) {
+  const dialog = useRef<HTMLDialogElement>(null); const trigger = useRef<HTMLButtonElement>(null);
+  const fields = <>{!prompts ? <label>Post type<select name="kind" defaultValue={kind}><option value="experiences">All discussions</option>{postKinds.filter(k => k !== "prompt").map(k => <option key={k} value={k}>{k === "discussion" ? "Tool discussion" : k}</option>)}</select></label> : <input type="hidden" name="kind" value="prompt" />}<label>Category<select name="category" defaultValue={category}><option value="">All categories</option>{categories.map(c => <option key={c} value={c}>{c}</option>)}</select></label></>;
+  return <><form className="cq-search" action={path}><label>Search community<input name="q" type="search" defaultValue={q} maxLength={180} placeholder="A problem, a tool, an idea…" /></label><input type="hidden" name="kind" value={kind} /><input type="hidden" name="category" value={category} /><button className="cq-button cq-button-primary">Search</button><button ref={trigger} type="button" className="cq-button cq-mobile-filters" onClick={() => dialog.current?.showModal()}>Filters{category || (!prompts && kind !== "experiences") ? " · Active" : ""}</button></form>
+    <form className="cq-desktop-filters" action={path}><input type="hidden" name="q" value={q} />{fields}<button className="cq-button">Apply filters</button></form>
+    <dialog ref={dialog} className="cq-filter-dialog" aria-labelledby="cq-filter-title" onClose={() => trigger.current?.focus()} onClick={e => { if (e.target === e.currentTarget) dialog.current?.close(); }}><div><div className="cq-heading-row"><h2 id="cq-filter-title">Filter discussions</h2><button className="cq-button" type="button" onClick={() => dialog.current?.close()} aria-label="Close filters">×</button></div><form className="cq-form" action={path}><input type="hidden" name="q" value={q} />{fields}<button className="cq-button cq-button-primary">Apply filters</button></form></div></dialog>
+  </>;
+}

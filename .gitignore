@@ -23,11 +23,18 @@ yarn-error.log*
 debug.log
 .gstack/
 artifacts/
+brag-output/
 graphify-out/
+.prompt-research/
 
 # Local env files
 .env
 .env*.local
+.env.*
+!.env.example
+*.log
+test-storage/
+*.tmp
 
 # Vercel
 .vercel

@@ -21,6 +21,10 @@ The detailed briefs resolve the program to **12 weeks, 14 tracks, up to 3 places
 
 No ShaderGradient, liquid-glass, React Three Fiber, carousel, or second smooth-scroll dependency is used. Their visual principles are implemented with existing Three.js, CSS, and browser APIs.
 
+## Prompt Library
+
+The original prompt library lives at `/prompts`. It includes editable briefs, search, local saves, prompting methods and tool guides. See [Prompt Library maintenance](docs/PROMPT_LIBRARY.md) for read-only corpus integration, sync/QA commands, content authoring and future MCP boundaries. A production build uses the generated public dataset and does not need the local research corpus.
+
 ## Local development
 
 ```bash

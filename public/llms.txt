@@ -39,3 +39,8 @@ Zqtion's public portfolio is not represented as a list of commissioned clients. 
 ## Commercial policy
 
 Zqtion does not currently publish universal fixed prices or guaranteed delivery times. Scope, assumptions, deliverables, timeline, and commercial terms are confirmed in writing before execution.
+# Prompt Library
+
+- [Original prompt library](https://zqtion.com/prompts): Editable briefs for UI, image creation and coding.
+- [Prompting methods](https://zqtion.com/prompts/methods): Definitions, structures, examples and review criteria.
+- [Prompt methodology](https://zqtion.com/prompts/methodology): Research boundaries, quality checks and preview disclosures.

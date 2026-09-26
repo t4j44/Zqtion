@@ -62,7 +62,7 @@ export function safeReferrer(value: unknown) {
 
 export function cleanEventMetadata(value: unknown) {
   if (!value || typeof value !== "object" || Array.isArray(value)) return {};
-  const allowed = new Set(["location", "work", "video", "name", "value", "rating"]);
+  const allowed = new Set(["location", "work", "video", "name", "value", "rating", "slug", "category", "tool", "count"]);
   return Object.fromEntries(Object.entries(value as Record<string, unknown>)
     .filter(([key, entry]) => allowed.has(key) && ["string", "number", "boolean"].includes(typeof entry))
     .map(([key, entry]) => [key, String(entry).slice(0, 200)]));

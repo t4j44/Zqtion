@@ -6,6 +6,8 @@ import { cleanEventMetadata, readJsonObject, RequestBodyError, safePath, safeRef
 export const runtime = "nodejs";
 
 const allowedEvents = new Set([
+  "community_publish", "community_search", "community_remix", "community_share",
+  "prompt_view", "prompt_copy", "prompt_search", "prompt_filter", "prompt_customize", "related_prompt_click",
   "page_view", "hero_primary_cta", "hero_secondary_cta", "work_view", "work_contact_click",
   "service_contact_click", "ai_audit_click", "whatsapp_click", "email_click", "form_start",
   "form_submit", "form_success", "form_error", "web_vital",

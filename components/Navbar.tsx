@@ -63,7 +63,7 @@ export default function Navbar() {
     };
 
     document.addEventListener("keydown", onKeyDown);
-    const desktop = window.matchMedia("(min-width: 1024px)");
+    const desktop = window.matchMedia("(min-width: 1280px)");
     const closeOnDesktop = () => { if (desktop.matches) setOpen(false); };
     desktop.addEventListener("change", closeOnDesktop);
     return () => {
@@ -79,14 +79,14 @@ export default function Navbar() {
     <div ref={navRootRef} role={open ? "dialog" : undefined} aria-modal={open ? true : undefined} aria-label={open ? "Navigation menu" : undefined}>
       <header className={`site-header fixed inset-x-0 top-0 z-50 transition duration-300 ${open ? "site-header-active" : "bg-transparent"}`}>
         <div className="mx-auto flex h-[4.75rem] max-w-[90rem] items-center justify-between px-5 sm:px-8 lg:px-16">
-          <Link href="/" className="group flex items-center gap-3" aria-label="Zqtion home" onClick={() => setOpen(false)}>
+          <Link href="/" className="group inline-flex min-h-11 shrink-0 items-center gap-3" aria-label="Zqtion home" onClick={() => setOpen(false)}>
             <span className="relative h-9 w-9 overflow-hidden rounded-xl border border-white/10 bg-black">
               <Image src="/logo.png" alt="" fill sizes="36px" priority className="object-cover" />
             </span>
             <span className="text-sm font-extrabold tracking-[0.18em] text-white">ZQTION</span>
           </Link>
 
-          <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
+          <nav className="hidden items-center gap-4 xl:gap-7 xl:flex" aria-label="Primary navigation">
             {navigation.map((item) => {
               const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
               return (
@@ -97,13 +97,13 @@ export default function Navbar() {
             })}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <Link href="/contact" className="button-primary" data-analytics="service_contact_click" data-analytics-location="navbar">
               Start a project <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
 
-          <button ref={menuButtonRef} type="button" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] lg:hidden" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close menu" : "Open menu"}>
+          <button ref={menuButtonRef} type="button" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] xl:hidden" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close menu" : "Open menu"}>
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
@@ -113,9 +113,9 @@ export default function Navbar() {
           <div
             ref={menuRef}
             id="mobile-menu"
-            className="mobile-menu-enter fixed inset-0 z-40 flex bg-[#050608] px-5 pb-10 pt-28 lg:hidden"
+            className="mobile-menu-enter fixed inset-0 z-40 flex overflow-y-auto bg-[#050608] px-5 pb-10 pt-28 xl:hidden"
           >
-            <nav className="flex w-full flex-col justify-between" aria-label="Mobile navigation">
+            <nav className="flex h-fit min-h-full w-full flex-col justify-between gap-8" aria-label="Mobile navigation">
               <div className="border-t border-white/10">
                 {navigation.map((item, index) => (
                   <div className="mobile-menu-item" key={item.href} style={{ "--menu-index": index } as React.CSSProperties}>
