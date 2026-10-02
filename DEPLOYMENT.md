@@ -32,7 +32,7 @@ Use `.env.example` as the name-only source. Never commit values. Production requ
 - `NEXT_PUBLIC_SITE_URL=https://zqtion.com`
 - Supabase URL and server secret
 - `RATE_LIMIT_SECRET`
-- Resend sender/recipient configuration if email delivery is enabled
+- Resend sender/recipient configuration for both internal alerts and customer confirmations; see `docs/INQUIRY_EMAIL_SETUP.md` for the storage-first acceptance policy, monitoring, and Zoho-safe DNS setup
 - public and secret Turnstile keys
 - `NEXT_PUBLIC_ANALYTICS_ENABLED=true` only when measurement is approved and migration 002 is applied
 
@@ -47,9 +47,9 @@ The production-mode application API intentionally permits only the approved prod
 ## 4. Preview acceptance
 
 - Every generated route returns the expected status.
-- A controlled form submission creates an attributed inquiry and sends the expected notification.
+- A controlled form submission creates an attributed inquiry and sends both the internal alert and visitor confirmation with correct Reply-To addresses.
 - Anonymous events contain no form content.
-- Missing or invalid Turnstile, failed providers, and rate limits show honest fallback messages.
+- Missing or invalid Turnstile, failed storage, and rate limits show honest fallback messages. Email-only failures preserve a saved inquiry and report channel status in server logs; the UI never claims a confirmation was sent without provider acceptance.
 - Mobile uses native scroll and the CSS hero; desktop progressively loads Three.js.
 - Menu focus trap, Escape close, focus restoration, video keyboard controls, and skip link work.
 - No console/hydration errors, broken links, horizontal overflow, or early YouTube iframe.

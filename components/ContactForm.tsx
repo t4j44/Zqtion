@@ -4,6 +4,7 @@ import { FormEvent, useRef, useState } from "react";
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import TurnstileWidget, { type TurnstileHandle } from "@/components/TurnstileWidget";
 import { getAttribution, trackEvent } from "@/components/Analytics";
+import { siteConfig } from "@/data/site";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -22,7 +23,9 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
     setMessage("");
 
     const form = event.currentTarget;
-    const payload = { ...Object.fromEntries(new FormData(form).entries()), ...getAttribution() };
+    const formData = new FormData(form);
+    const submittedEmail = String(formData.get("email") || "the email you provided").trim();
+    const payload = { ...Object.fromEntries(formData.entries()), ...getAttribution() };
     trackEvent("form_submit");
 
     try {
@@ -30,11 +33,11 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
-        signal: AbortSignal.timeout(35000),
+        signal: AbortSignal.timeout(45000),
       });
       const result = await response.json();
 
-      if (!response.ok) {
+      if (!response.ok || result.ok !== true) {
         throw new Error(result.error || "The brief could not be delivered.");
       }
 
@@ -42,15 +45,18 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
       turnstileRef.current?.reset();
       setStatus("success");
       trackEvent("form_success");
-      setMessage("Your brief was delivered. Zqtion will reply using the email you provided.");
+      const confirmation = result.confirmation === "accepted"
+        ? `A confirmation is on its way to ${submittedEmail}.`
+        : "Your brief is saved, but we couldn't confirm the confirmation email was sent. You don't need to submit again.";
+      setMessage(`Brief received. ${confirmation} Our team will review the context before recommending the next step.`);
     } catch (error) {
       turnstileRef.current?.reset();
       setStatus("error");
       trackEvent("form_error");
       setMessage(
-        error instanceof Error
+        error instanceof Error && !["TimeoutError", "TypeError", "SyntaxError", "AbortError"].includes(error.name)
           ? error.message
-          : "The brief could not be delivered. Please use email or WhatsApp instead.",
+          : `We couldn't confirm whether your brief was received. Please email ${siteConfig.email} or use WhatsApp before submitting again.`,
       );
     }
   }
@@ -142,11 +148,12 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
 
         <div id="form-status" aria-live="polite" className="min-h-6">
           {message ? (
-            <p className={`flex items-start gap-2 text-sm ${status === "success" ? "text-emerald-300" : "text-rose-300"}`}>
+            <p className={`flex min-w-0 items-start gap-2 text-sm [overflow-wrap:anywhere] ${status === "success" ? "text-emerald-300" : "text-rose-300"}`}>
               {status === "success" ? <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" /> : null}
               {message}
             </p>
           ) : null}
+          {status === "error" ? <p className="mt-3 text-sm text-white/70">Contact us: <a className="inline-flex min-h-11 items-center text-cyan-300 underline underline-offset-4" href={`mailto:${siteConfig.email}`} data-analytics="email_click" data-analytics-location="contact_form_error">{siteConfig.email}</a> or <a className="inline-flex min-h-11 items-center text-cyan-300 underline underline-offset-4" href={siteConfig.whatsapp} target="_blank" rel="noreferrer" data-analytics="whatsapp_click" data-analytics-location="contact_form_error">WhatsApp</a>.</p> : null}
         </div>
       </form>
     </>

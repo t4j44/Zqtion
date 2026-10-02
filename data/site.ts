@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Zqtion",
   url: "https://zqtion.com",
-  email: "zqtioncontact@gmail.com",
+  email: "info@zqtion.com",
   phone: "+880 1340-347975",
   whatsapp: "https://wa.me/8801340347975",
   linkedin: "https://www.linkedin.com/company/zqtion/",
