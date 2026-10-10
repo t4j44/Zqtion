@@ -125,7 +125,10 @@ export default function Navbar() {
                   </div>
                 ))}
               </div>
-              <Link href="/contact" onClick={() => setOpen(false)} className="button-primary w-full" data-analytics="service_contact_click" data-analytics-location="mobile_menu">Start a project <ArrowUpRight className="h-4 w-4" /></Link>
+              <div className="grid gap-3">
+                <Link href="/contact" onClick={() => setOpen(false)} className="button-primary w-full" data-analytics="service_contact_click" data-analytics-location="mobile_menu">Start a project <ArrowUpRight className="h-4 w-4" /></Link>
+                <Link href="/community/account?next=%2Fai-experiences" onClick={() => setOpen(false)} className="button-secondary w-full" data-analytics="community_join_click" data-analytics-location="mobile_menu">Join the community</Link>
+              </div>
             </nav>
           </div>
       ) : null}

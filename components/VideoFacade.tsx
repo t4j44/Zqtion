@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { ExternalLink, Play } from "lucide-react";
+import YouTubeThumb from "@/components/YouTubeThumb";
 
 export default function VideoFacade({
   videoId,
@@ -31,8 +31,8 @@ export default function VideoFacade({
         />
       ) : (
         <>
-          <Image
-            src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
+          <YouTubeThumb
+            videoId={videoId}
             alt={`Video still from ${title}`}
             fill
             priority={priority}

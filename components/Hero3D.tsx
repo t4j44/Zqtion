@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import {
   lazy,
   Suspense,
@@ -14,6 +14,7 @@ import {
 import { isWebGLMode, selectHeroRenderMode, type HeroRenderMode } from "@/lib/hero-mode";
 
 const HeroWebGLScene = lazy(() => import("./HeroWebGLScene"));
+const HeroLoopVideo = lazy(() => import("./HeroLoopVideo"));
 
 type NetworkInformation = EventTarget & { saveData?: boolean; effectiveType?: string };
 type NavigatorWithConnection = Navigator & { connection?: NetworkInformation; deviceMemory?: number };
@@ -41,8 +42,18 @@ function StaticScene() {
       <div className="hero-poster-frame">
         <div className="hero-poster-object">
           <picture>
-            <source media="(max-width: 767px)" type="image/avif" srcSet="/hero/z-poster-512.avif" />
-            <source media="(max-width: 767px)" type="image/webp" srcSet="/hero/z-poster-512.webp" />
+            <source
+              media="(max-width: 767px)"
+              type="image/avif"
+              srcSet="/hero/z-poster-512.avif 512w, /hero/z-poster-768.avif 768w, /hero/z-poster-1024.avif 1024w"
+              sizes="min(82vw, 340px)"
+            />
+            <source
+              media="(max-width: 767px)"
+              type="image/webp"
+              srcSet="/hero/z-poster-512.webp 512w, /hero/z-poster-768.webp 768w, /hero/z-poster-1024.webp 1024w"
+              sizes="min(82vw, 340px)"
+            />
             <source
               type="image/avif"
               srcSet="/hero/z-poster-768.avif 768w, /hero/z-poster-1280.avif 1280w"
@@ -80,12 +91,14 @@ function SceneStage({
   sceneFailed,
   onReady,
   onError,
+  onVideoPlaying,
 }: {
   mode: HeroRenderMode;
   sceneReady: boolean;
   sceneFailed: boolean;
   onReady: () => void;
   onError: () => void;
+  onVideoPlaying: (playing: boolean) => void;
 }) {
   const interactionRef = useRef<HTMLDivElement>(null);
   const pulseTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
@@ -144,6 +157,9 @@ function SceneStage({
       <div ref={interactionRef} className="hero-interaction-surface">
         <div className="hero-3d-stage-grid" aria-hidden="true" />
         <StaticScene />
+        {mode === "mobile-poster" ? (
+          <Suspense fallback={null}><HeroLoopVideo onPlaying={onVideoPlaying} /></Suspense>
+        ) : null}
         {webglEnabled ? (
           <Suspense fallback={null}>
             <HeroWebGLScene
@@ -192,6 +208,7 @@ export default function Hero3D() {
   const [mode, setMode] = useState<HeroRenderMode>("static");
   const [sceneReady, setSceneReady] = useState(false);
   const [sceneFailed, setSceneFailed] = useState(false);
+  const [videoPlaying, setVideoPlaying] = useState(false);
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -279,7 +296,7 @@ export default function Hero3D() {
   const effectiveMode: HeroRenderMode = sceneFailed ? "static" : mode;
 
   return (
-    <div className="hero-journey relative isolate bg-[#050608]" data-hero-mode={effectiveMode} data-hero-tier={effectiveMode}>
+    <div className="hero-journey relative isolate bg-[#050608]" data-hero-mode={effectiveMode} data-hero-tier={effectiveMode} data-hero-video={videoPlaying && effectiveMode === "mobile-poster" ? "playing" : "idle"}>
       <section ref={heroRef} className="hero-3d relative min-h-svh overflow-hidden border-b border-white/10" aria-label="Zqtion introduction">
         <div className="signal-grid absolute inset-0 opacity-35" aria-hidden="true" />
         <div className="hero-3d-glow hero-3d-glow-blue" aria-hidden="true" />
@@ -295,16 +312,21 @@ export default function Hero3D() {
               <Link href="/work" className="button-primary" data-analytics="hero_primary_cta">Explore the work <ArrowUpRight className="h-4 w-4" /></Link>
               <Link href="/contact" className="button-secondary" data-analytics="hero_secondary_cta">Start a project</Link>
             </div>
-            <div className="hero-capability-list mt-10 flex flex-wrap gap-x-6 gap-y-3 text-[0.67rem] font-semibold uppercase tracking-[0.16em] text-white/35">
+            <Link href="/community/account?next=%2Fai-experiences" className="hero-community" data-analytics="community_join_click" data-analytics-location="hero">
+              <span className="hero-community-dot" aria-hidden="true" />
+              <span><strong>Join the community</strong><span className="hero-community-sub"> · ask, share, learn</span></span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <div className="hero-capability-list mt-8 flex flex-wrap gap-x-6 gap-y-3 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white/35">
               <span>Creative systems</span><span>Digital products</span><span>AI automation</span>
             </div>
           </div>
           <div className="hero-artwork relative z-20 mx-auto w-full max-w-[46rem]">
-            <SceneStage mode={effectiveMode} sceneReady={sceneReady} sceneFailed={sceneFailed} onReady={handleReady} onError={handleError} />
+            <SceneStage mode={effectiveMode} sceneReady={sceneReady} sceneFailed={sceneFailed} onReady={handleReady} onError={handleError} onVideoPlaying={setVideoPlaying} />
           </div>
         </div>
         <div className="hero-scroll-cue pointer-events-none absolute inset-x-0 bottom-4 z-30 justify-center" aria-hidden="true">
-          <span className="flex items-center gap-2 text-[0.64rem] font-semibold uppercase tracking-[0.18em] text-white/28">Scroll to explore <ArrowDown className="h-3.5 w-3.5" /></span>
+          <span className="flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white/28">Scroll to explore <ArrowDown className="h-3.5 w-3.5" /></span>
         </div>
       </section>
     </div>

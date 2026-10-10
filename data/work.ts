@@ -22,6 +22,10 @@ export type WorkItem = {
   deliverables: string[];
   videoId: string;
   videoUrl: string;
+  /** Optional curated still (path under /public, e.g. "/work/spark.jpg", 16:9, at least 1600px wide). Falls back to the YouTube still. */
+  poster?: string;
+  /** Crops baked-in letterbox bars from the still (1 = none). */
+  thumbZoom?: number;
   additionalVideos?: WorkVideo[];
   featured?: boolean;
   orientation?: "landscape" | "portrait";
@@ -50,6 +54,7 @@ export const workItems: WorkItem[] = [
     ],
     deliverables: ["2:11 short film", "Concept and narrative", "AI-assisted visual production", "Edit and sound direction"],
     videoId: "myz4yRXFE2M",
+    thumbZoom: 1.1,
     videoUrl: "https://www.youtube.com/watch?v=myz4yRXFE2M",
     featured: true,
   },
@@ -100,6 +105,7 @@ export const workItems: WorkItem[] = [
     ],
     deliverables: ["1:26 AI microfilm", "Narrative concept", "AI-assisted visual production", "YouTube release"],
     videoId: "q_4me0VwaZo",
+    thumbZoom: 1.4,
     videoUrl: "https://youtu.be/q_4me0VwaZo",
     featured: true,
   },

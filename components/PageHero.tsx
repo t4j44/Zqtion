@@ -18,6 +18,12 @@ export default function PageHero({
     <header className="page-hero section-shell overflow-hidden">
       <div className="signal-grid absolute inset-0 opacity-40" aria-hidden="true" />
       <div className="orb orb-blue -left-40 top-20" aria-hidden="true" />
+      <div className="page-hero-artifact" aria-hidden="true">
+        <picture>
+          <source type="image/avif" srcSet="/hero/z-poster-512.avif 512w, /hero/z-poster-768.avif 768w" sizes="22vw" />
+          <img src="/hero/z-poster-512.webp" width="512" height="512" alt="" decoding="async" fetchPriority="low" draggable="false" />
+        </picture>
+      </div>
       <div className="relative z-10 max-w-6xl pt-28 sm:pt-36">
         <p className="eyebrow">{eyebrow}</p>
         <h1 className="mt-7 max-w-6xl text-balance text-5xl font-semibold leading-[0.9] tracking-[-0.055em] text-white sm:text-7xl lg:text-[7.8rem]">

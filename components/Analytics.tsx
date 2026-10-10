@@ -6,7 +6,7 @@ import { useReportWebVitals } from "next/web-vitals";
 import { safePath, safeReferrer } from "@/lib/request-validation";
 
 export type AnalyticsEvent =
-  | "community_publish" | "community_search" | "community_remix" | "community_share"
+  | "community_publish" | "community_search" | "community_remix" | "community_share" | "community_join_click"
   | "prompt_view" | "prompt_copy" | "prompt_search" | "prompt_filter" | "prompt_customize" | "related_prompt_click"
   | "page_view"
   | "hero_primary_cta"
