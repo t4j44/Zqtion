@@ -1,6 +1,6 @@
 # Prompt library SEO audit
 
-Origin: http://localhost:3219
+Origin: http://localhost:3100
 Pages inspected via actual HTTP HTML: 29
 Failures: 0
 

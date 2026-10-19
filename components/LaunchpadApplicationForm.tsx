@@ -90,7 +90,7 @@ export default function LaunchpadApplicationForm({ tracks, defaultTrack, accepti
     } finally { turnstileRef.current?.reset(); }
   }
 
-  if (status === "success") return <section className="launchpad-application-success" aria-live="polite"><CheckCircle2 className="h-10 w-10 text-cyan-300" /><h2 tabIndex={-1} ref={headingRef}>Application received.</h2><p>Your application is stored for review. This confirms receipt, not selection or enrollment.</p><p className="break-all text-sm text-white/70">Reference: {reference}</p><p>Keep this reference for questions. No response deadline or place is guaranteed.</p><Link className="button-secondary" href="/careers">Back to Launchpad</Link></section>;
+  if (status === "success") return <section className="launchpad-application-success" aria-live="polite"><CheckCircle2 className="h-10 w-10 text-cyan-300" /><h2 tabIndex={-1} ref={headingRef}>Application received.</h2><p>Your application is stored for review. This confirms receipt, not selection or enrollment.</p><p className="break-all text-sm text-white/70">Reference: {reference}</p><p>Keep this reference for questions. If you need to add or update a resume later, email <a href="mailto:info@zqtion.com" className="text-cyan-300 underline underline-offset-4">info@zqtion.com</a> with your reference.</p><p>No response deadline or place is guaranteed.</p><Link className="button-secondary" href="/careers">Back to Launchpad</Link></section>;
 
   return <form ref={formRef} onSubmit={onSubmit} noValidate className="launchpad-application" onChange={() => { submissionIdRef.current = ""; if (status !== "sending") { setStatus("idle"); setMessage(""); } }} onFocusCapture={() => { if (accepting && !startedRef.current) { startedRef.current = true; trackEvent("form_start", { location: "launchpad" }); } }}>
     <ol className="launchpad-form-progress" aria-label="Application steps">{["About you", "Your direction", "Review & agree"].map((label, index) => <li key={label}><button type="button" onClick={() => moveTo(index)} disabled={index > step || status === "sending"} aria-current={step === index ? "step" : undefined}><span>0{index + 1}</span>{label}</button></li>)}</ol>
@@ -111,6 +111,7 @@ export default function LaunchpadApplicationForm({ tracks, defaultTrack, accepti
       <Field name="linkedin" label="LinkedIn profile" type="url" errors={errors} />
       <Field name="portfolio" label="Portfolio or work sample" type="url" errors={errors} hint="A learning experiment is enough. A polished portfolio is not required." />
       <Field name="github" label="GitHub profile, if relevant" type="url" errors={errors} />
+      <Field name="resumeUrl" label="Resume / CV — Google Drive link" type="url" errors={errors} hint="Upload your resume to Google Drive, grant viewing access to Zqtion's designated reviewer, and paste the link here. You can also apply without a CV." />
       <Field name="otherLinks" label="Other project or social links" multiline max={1200} hint="Up to three complete http(s) links, one per line. Share only what you have permission to share." errors={errors} />
       <Field name="whyZqtion" label="Why Zqtion Launchpad?" required multiline min={20} max={1500} errors={errors} />
       <Field name="learningGoals" label="What do you want to learn?" required multiline min={20} max={1500} errors={errors} />

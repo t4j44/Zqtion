@@ -24,8 +24,11 @@ debug.log
 .gstack/
 artifacts/
 brag-output/
+brag-output-*/
 graphify-out/
 .prompt-research/
+.resource-research/
+__pycache__/
 
 # Local env files
 .env

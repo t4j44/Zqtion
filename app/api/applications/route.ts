@@ -2,6 +2,7 @@ import { createHash, createHmac } from "node:crypto";
 import { createClient } from "@supabase/supabase-js";
 import { careerTracks } from "@/data/careers";
 import { handleLaunchpadApplication } from "@/lib/launchpad-intake";
+import { resolveAllowedOriginsAndHosts } from "@/lib/launchpad-origin";
 import type { LaunchpadApplication } from "@/lib/launchpad-validation";
 
 export const runtime = "nodejs";
@@ -24,7 +25,7 @@ async function rateLimit(ip: string) {
   return data === true;
 }
 
-async function verify(token: string, ip: string) {
+async function verify(token: string, ip: string, allowedHosts?: string[]) {
   const secret = process.env.TURNSTILE_SECRET_KEY;
   if (!secret) throw new Error("Verification unavailable");
   if (!token) return false;
@@ -33,7 +34,9 @@ async function verify(token: string, ip: string) {
   const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body: form, cache: "no-store", signal: AbortSignal.timeout(8000) });
   if (!response.ok) return false;
   const result = await response.json() as { success?: boolean; action?: string; hostname?: string };
-  const hosts = process.env.NODE_ENV === "production" ? ["zqtion.com", "www.zqtion.com"] : ["zqtion.com", "www.zqtion.com", "localhost", "127.0.0.1"];
+  const hosts = allowedHosts && allowedHosts.length > 0
+    ? allowedHosts
+    : (process.env.NODE_ENV === "production" ? ["zqtion.com", "www.zqtion.com"] : ["zqtion.com", "www.zqtion.com", "localhost", "127.0.0.1"]);
   return result.success === true && result.action === "launchpad" && hosts.includes(result.hostname || "");
 }
 
@@ -53,21 +56,51 @@ async function save(application: LaunchpadApplication) {
   return submissionId;
 }
 
-async function notify(reference: string, track: string) {
+async function notify(reference: string, track: string, applicantEmail?: string) {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.APPLICATION_TO_EMAIL;
-  const from = process.env.INQUIRY_FROM_EMAIL;
+  const to = process.env.APPLICATION_TO_EMAIL || "info@zqtion.com";
+  const from = process.env.INQUIRY_FROM_EMAIL || "Zqtion <info@zqtion.com>";
   if (!apiKey || !to || !from) return;
-  // Keep the applicant's private answers out of email and logs.
-  const response = await fetch("https://api.resend.com/emails", { method: "POST", cache: "no-store", signal: AbortSignal.timeout(5000), headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" }, body: JSON.stringify({ from, to: [to], subject: "New Zqtion Launchpad application", text: `An application is stored for authorized review.\nReference: ${reference}\nTrack: ${track}\nReview in the private Supabase application table. Do not forward applicant information.` }) });
-  if (!response.ok) throw new Error("Notification unavailable");
+
+  // 1. Internal notification (keep private answers and CV link out of email)
+  const internalPromise = fetch("https://api.resend.com/emails", {
+    method: "POST", cache: "no-store", signal: AbortSignal.timeout(5000),
+    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      from, to: [to], subject: "New Zqtion Launchpad application",
+      text: `An application is stored for authorized review.\nReference: ${reference}\nTrack: ${track}\nReview in the private Supabase application table. Do not forward applicant information.`
+    })
+  });
+
+  // 2. Optional applicant confirmation (brief receipt, without private answers or CV link)
+  let applicantPromise: Promise<Response> | null = null;
+  if (applicantEmail && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(applicantEmail) && !/[\r\n]/.test(applicantEmail)) {
+    applicantPromise = fetch("https://api.resend.com/emails", {
+      method: "POST", cache: "no-store", signal: AbortSignal.timeout(5000),
+      headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from, to: [applicantEmail], subject: `Zqtion Launchpad — Application received (${reference})`,
+        text: `Hello,\n\nWe have received your application for Zqtion Launchpad (${track}).\n\nYour submission reference: ${reference}\n\nYour application has been stored for authorized review. This confirms receipt, not selection or enrollment.\n\nIf you need to add or update a resume link later, email info@zqtion.com with your reference.\n\nBest regards,\nZqtion Team`
+      })
+    });
+  }
+
+  const results = await Promise.allSettled(applicantPromise ? [internalPromise, applicantPromise] : [internalPromise]);
+  const internalResult = results[0];
+  if (internalResult.status === "rejected" || (internalResult.status === "fulfilled" && !internalResult.value.ok)) {
+    throw new Error("Internal notification unavailable");
+  }
 }
 
 export async function POST(request: Request) {
-  const origins = ["https://zqtion.com", "https://www.zqtion.com"];
-  if (process.env.NODE_ENV !== "production") {
-    const url = new URL(request.url);
-    if (["localhost", "127.0.0.1"].includes(url.hostname)) origins.push(url.origin);
-  }
-  return handleLaunchpadApplication(request, { enabled: process.env.LAUNCHPAD_APPLICATIONS_ENABLED === "true", origins, tracks: careerTracks.map(({ slug }) => slug), rateLimit, verify, save, notify });
+  const { origins, hosts } = resolveAllowedOriginsAndHosts(request.url);
+  return handleLaunchpadApplication(request, {
+    enabled: process.env.LAUNCHPAD_APPLICATIONS_ENABLED === "true",
+    origins,
+    tracks: careerTracks.map(({ slug }) => slug),
+    rateLimit,
+    verify: (token, ip) => verify(token, ip, hosts),
+    save,
+    notify
+  });
 }

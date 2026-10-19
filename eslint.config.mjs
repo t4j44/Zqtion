@@ -13,5 +13,6 @@ export default defineConfig([
     ".gstack/**",
     "artifacts/**",
     "brag-output/**",
+    "brag-output-*/**",
   ]),
 ]);

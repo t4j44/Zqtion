@@ -1,0 +1,248 @@
+[
+  {
+    "slug": "ai-lead-research-hubspot-automation-stack",
+    "goal": "AI Lead Research, Website Verification, Decision-Maker Enrichment, and HubSpot CRM Automation",
+    "summary": "Automated B2B research engine that crawls company websites, extracts verified technology stacks and executive contacts, and stages qualified leads directly in HubSpot CRM under $100/mo budget.",
+    "target_budget_monthly": "$20\u2013$50/month",
+    "recommended_stack": [
+      {
+        "role": "Discovery",
+        "name": "Exa Search / Brave Search API",
+        "type": "tool",
+        "estimated_cost": "$5\u2013$15/mo"
+      },
+      {
+        "role": "Crawling",
+        "name": "Crawl4AI (Self-Hosted Async Engine)",
+        "type": "repository",
+        "slug": "crawl4ai-web-crawler-framework",
+        "estimated_cost": "$0/mo"
+      },
+      {
+        "role": "Enrichment",
+        "name": "Claude 3.7 Sonnet Structured Extraction",
+        "type": "tool",
+        "estimated_cost": "$10\u2013$25/mo"
+      },
+      {
+        "role": "Orchestration",
+        "name": "n8n (Self-Hosted / Cloud)",
+        "type": "workflow",
+        "slug": "n8n-b2b-lead-enrichment-hubspot",
+        "estimated_cost": "$0\u2013$20/mo"
+      },
+      {
+        "role": "CRM Destination",
+        "name": "HubSpot CRM",
+        "type": "tool",
+        "estimated_cost": "Free tier ($0/mo)"
+      },
+      {
+        "role": "LLM Engine",
+        "name": "Claude 3.7 Sonnet & GPT-4o",
+        "type": "model",
+        "estimated_cost": "Pay-per-token"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Company Research Agent Skill",
+        "slug": "skill-claude-repeatable-research-pipeline",
+        "source": "anthropic-skills"
+      },
+      {
+        "name": "Lead Qualification & Web Analysis",
+        "slug": "skill-visual-hierarchy-spacing-reviewer",
+        "source": "zqtion"
+      }
+    ],
+    "open_source_repos": [
+      {
+        "name": "Crawl4AI",
+        "repo": "unclecode/crawl4ai",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "Model Context Protocol Servers",
+        "repo": "modelcontextprotocol/servers",
+        "license": "MIT"
+      }
+    ],
+    "mcp_servers": [
+      {
+        "name": "Official PostgreSQL MCP Server",
+        "slug": "official-postgresql-mcp-server",
+        "transport": "stdio"
+      },
+      {
+        "name": "Official GitHub MCP Server",
+        "slug": "official-github-mcp-server",
+        "transport": "stdio"
+      },
+      {
+        "name": "Official Filesystem Sandbox MCP Server",
+        "slug": "official-filesystem-mcp-server",
+        "transport": "stdio"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "B2B Prospect Qualification & Tech Stack Analyzer",
+        "slug": "prompt-b2b-prospect-qualification-tech-stack"
+      },
+      {
+        "title": "Senior Code Reviewer and Security Vulnerability Screener",
+        "slug": "prompt-senior-code-reviewer-security-screener"
+      }
+    ],
+    "workflow": [
+      {
+        "step": 1,
+        "title": "Discovery",
+        "action": "Query Exa or Brave Search API for target agency domains."
+      },
+      {
+        "step": 2,
+        "title": "Crawling",
+        "action": "Execute Crawl4AI headless crawler to generate clean token-optimized markdown."
+      },
+      {
+        "step": 3,
+        "title": "Extraction",
+        "action": "Pass markdown through Claude prompt with strict JSON schema output."
+      },
+      {
+        "step": 4,
+        "title": "Verification",
+        "action": "Check phone/email DNS and filter out hallucinated metrics."
+      },
+      {
+        "step": 5,
+        "title": "Score & Review",
+        "action": "Calculate lead qualification score (1-100); route P0 leads to Slack."
+      },
+      {
+        "step": 6,
+        "title": "CRM Upsert",
+        "action": "Dispatch enriched company record into HubSpot via n8n node or HubSpot MCP."
+      }
+    ],
+    "evidence_level": "verified",
+    "verified_at": "2026-10-15T00:00:00Z"
+  },
+  {
+    "slug": "autonomous-coding-agent-enterprise-guardrails-stack",
+    "goal": "Autonomous Coding Agent with Token-Saving Checkpoints and Enterprise Guardrails",
+    "summary": "High-reliability engineering environment pairing Claude Code or Cursor with git commit checkpointing, AST security screening, and local test verification loops to reduce token consumption by 70%.",
+    "target_budget_monthly": "$20\u2013$40/month",
+    "recommended_stack": [
+      {
+        "role": "Terminal Agent",
+        "name": "Claude Code CLI / Antigravity IDE",
+        "type": "tool",
+        "estimated_cost": "$20/mo"
+      },
+      {
+        "role": "Local Engine",
+        "name": "Qwen 2.5 Coder 32B (Ollama / vLLM)",
+        "type": "model",
+        "slug": "qwen-2-5-coder-open-agent-model",
+        "estimated_cost": "$0/mo (Local GPU)"
+      },
+      {
+        "role": "Context Management",
+        "name": "CLAUDE.md & Token Checkpoint Loops",
+        "type": "workflow",
+        "slug": "token-saving-checkpoint-strategy-coding-agents",
+        "estimated_cost": "$0/mo"
+      },
+      {
+        "role": "Security Screener",
+        "name": "OWASP Code Review Prompts",
+        "type": "prompt",
+        "slug": "prompt-senior-code-reviewer-security-screener",
+        "estimated_cost": "$0/mo"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Anthropic Code Review Skill",
+        "slug": "skill-code-review-security-screener",
+        "source": "anthropic-skills"
+      },
+      {
+        "name": "Filesystem Sandbox Controller",
+        "slug": "official-filesystem-mcp-server",
+        "source": "mcp-official-registry"
+      }
+    ],
+    "open_source_repos": [
+      {
+        "name": "Hugging Face Smolagents",
+        "repo": "huggingface/smolagents",
+        "license": "Apache-2.0"
+      },
+      {
+        "name": "MCP Reference Servers",
+        "repo": "modelcontextprotocol/servers",
+        "license": "MIT"
+      }
+    ],
+    "mcp_servers": [
+      {
+        "name": "Official Filesystem MCP",
+        "slug": "official-filesystem-mcp-server",
+        "transport": "stdio"
+      },
+      {
+        "name": "PostgreSQL MCP Server",
+        "slug": "official-postgresql-mcp-server",
+        "transport": "stdio"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "Senior Code Reviewer and Security Vulnerability Screener",
+        "slug": "prompt-senior-code-reviewer-security-screener"
+      },
+      {
+        "title": "Prompt: Senior Software Architect & System Designer",
+        "slug": "prompt-cc0-senior-software-architect"
+      }
+    ],
+    "workflow": [
+      {
+        "step": 1,
+        "title": "Context Staging",
+        "action": "Load concise architectural rules from CLAUDE.md into agent prompt."
+      },
+      {
+        "step": 2,
+        "title": "Test-Driven Draft",
+        "action": "Agent writes failing unit test in test directory."
+      },
+      {
+        "step": 3,
+        "title": "Implementation",
+        "action": "Agent modifies code files in isolated local branch."
+      },
+      {
+        "step": 4,
+        "title": "Automated Verification",
+        "action": "Execute local npm test / pytest runner; intercept errors."
+      },
+      {
+        "step": 5,
+        "title": "Security Screening",
+        "action": "Run prompt-senior-code-reviewer-security-screener on git diff."
+      },
+      {
+        "step": 6,
+        "title": "Git Commit Checkpoint",
+        "action": "Commit green passing diff and compact conversational context."
+      }
+    ],
+    "evidence_level": "verified",
+    "verified_at": "2026-10-15T00:00:00Z"
+  }
+]

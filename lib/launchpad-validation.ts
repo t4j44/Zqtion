@@ -6,6 +6,7 @@ const fieldRules = {
   fullName: [2, 100], email: [5, 160], phone: [6, 40], location: [2, 160], institution: [0, 160],
   studyLevel: [1, 100], primaryTrack: [1, 100], secondaryTrack: [0, 100],
   linkedin: [0, 500], portfolio: [0, 500], github: [0, 500], otherLinks: [0, 1200],
+  resumeUrl: [0, 500],
   whyZqtion: [20, 1500], learningGoals: [20, 1500], priorExperiment: [10, 1500],
   strongestSkill: [2, 300], improveSkill: [2, 300], weeklyAvailability: [1, 100], laptopAccess: [1, 100],
   toolsUsed: [2, 500], startAvailability: [2, 160], roleAnswer: [20, 1500], submissionId: [36, 36],
@@ -21,12 +22,48 @@ function isPublicLink(value: string) {
   } catch { return false; }
 }
 
+export function isGoogleDriveResumeLink(value: string): boolean {
+  if (!value) return true;
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:") return false;
+    if (url.username || url.password) return false;
+    if (url.port && url.port !== "443") return false;
+
+    const host = url.hostname.toLowerCase();
+    const pathname = url.pathname;
+
+    if (host === "drive.google.com") {
+      if (/^\/(?:drive\/)?(?:u\/\d+\/)?file\/d\/[a-zA-Z0-9_-]{10,}/.test(pathname)) return true;
+      if (/^\/(?:drive\/)?(?:u\/\d+\/)?folders\/[a-zA-Z0-9_-]{10,}/.test(pathname)) return true;
+      if (pathname === "/open" || pathname === "/uc") {
+        const id = url.searchParams.get("id");
+        return Boolean(id && /^[a-zA-Z0-9_-]{10,}$/.test(id));
+      }
+      return false;
+    }
+
+    if (host === "docs.google.com") {
+      if (/^\/(?:document|presentation|spreadsheets|file)\/(?:u\/\d+\/)?d\/[a-zA-Z0-9_-]{10,}/.test(pathname)) return true;
+      if (pathname === "/open" || pathname === "/uc") {
+        const id = url.searchParams.get("id");
+        return Boolean(id && /^[a-zA-Z0-9_-]{10,}$/.test(id));
+      }
+      return false;
+    }
+
+    return false;
+  } catch {
+    return false;
+  }
+}
+
 export function validateApplication(body: Record<string, unknown>, trackSlugs: readonly string[]) {
   const fields = {} as ApplicationFields;
   const errors: ApplicationErrors = {};
   for (const [key, [minimum, maximum]] of Object.entries(fieldRules)) {
     const name = key as keyof ApplicationFields;
-    const raw = body[name];
+    const raw = name === "resumeUrl" ? (body.resumeUrl ?? body.resumeLink) : body[name];
     const value = typeof raw === "string" ? raw.trim() : "";
     fields[name] = value;
     if (raw !== undefined && typeof raw !== "string") errors[name] = "Please enter a text value.";
@@ -43,6 +80,9 @@ export function validateApplication(body: Record<string, unknown>, trackSlugs: r
   if (!(studyOptions as readonly string[]).includes(fields.studyLevel)) errors.studyLevel = "Choose your current learning or career stage.";
   for (const name of ["linkedin", "portfolio", "github"] as const) {
     if (fields[name] && !isPublicLink(fields[name])) errors[name] = "Use a complete http(s) link without embedded credentials.";
+  }
+  if (fields.resumeUrl && !isGoogleDriveResumeLink(fields.resumeUrl)) {
+    errors.resumeUrl = "Provide a valid HTTPS Google Drive or Google Docs sharing link, or leave this field empty.";
   }
   if (fields.otherLinks && (fields.otherLinks.split(/\s+/).length > 3 || fields.otherLinks.split(/\s+/).some((link) => !isPublicLink(link)))) errors.otherLinks = "Use up to three complete http(s) links, one per line.";
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(fields.submissionId)) errors.submissionId = "Please retry the application.";

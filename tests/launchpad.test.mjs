@@ -6,8 +6,11 @@ const careers = await import(await moduleUrl("data/careers.ts"));
 const validationUrl = await moduleUrl("lib/launchpad-validation.ts");
 const validation = await import(validationUrl);
 const requestUrl = await moduleUrl("lib/request-validation.ts");
-const { handleLaunchpadApplication } = await import(await moduleUrl("lib/launchpad-intake.ts", { "./request-validation": requestUrl, "./launchpad-validation": validationUrl }));
+const intakeUrl = await moduleUrl("lib/launchpad-intake.ts", { "./request-validation": requestUrl, "./launchpad-validation": validationUrl });
+const { handleLaunchpadApplication } = await import(intakeUrl);
 const { storyLayouts, storyPoint } = await import(await moduleUrl("lib/story-layout.ts"));
+const originUrl = await moduleUrl("lib/launchpad-origin.ts");
+const { resolveAllowedOriginsAndHosts } = await import(originUrl);
 const tracks = careers.careerTracks.map(({ slug }) => slug);
 const valid = () => ({
   fullName: "QA Applicant", email: "qa@example.test", phone: "+880 1000000000", location: "Dhaka, Bangladesh",
@@ -129,4 +132,178 @@ test("successful storage returns only a receipt and notification errors do not l
     assert.deepEqual(await response.json(), { ok: true, reference: valid().submissionId });
     assert.equal(response.headers.get("cache-control"), "no-store");
   }
+});
+
+test("empty resume link is accepted and optional", () => {
+  for (const emptyVal of ["", "   ", undefined]) {
+    const result = validation.validateApplication({ ...valid(), resumeUrl: emptyVal }, tracks);
+    assert.equal(result.valid, true);
+    assert.equal(result.application.resumeUrl, "");
+    assert.equal(result.errors.resumeUrl, undefined);
+  }
+});
+
+test("valid Google Drive and Google Docs file links are accepted", () => {
+  const validLinks = [
+    "https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view?usp=sharing",
+    "https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view",
+    "https://drive.google.com/open?id=1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+    "https://drive.google.com/uc?id=1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+    "https://drive.google.com/drive/folders/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms",
+    "https://drive.google.com/drive/u/0/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view",
+    "https://docs.google.com/document/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit?usp=sharing",
+    "https://docs.google.com/document/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/preview",
+    "https://docs.google.com/presentation/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit",
+    "https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit",
+    "https://docs.google.com/document/u/1/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit"
+  ];
+  for (const link of validLinks) {
+    const result = validation.validateApplication({ ...valid(), resumeUrl: link }, tracks);
+    assert.equal(result.valid, true, `Expected valid for: ${link}`);
+    assert.equal(result.application.resumeUrl, link);
+    assert.equal(result.errors.resumeUrl, undefined);
+  }
+});
+
+test("invalid, non-Google, credential-bearing and deceptive resume links are rejected", () => {
+  const invalidLinks = [
+    "http://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view",
+    "https://drive.google.com.evil.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view",
+    "https://evil.com/?url=https://drive.google.com/file/d/123",
+    "https://user:password@drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view",
+    "https://drive.google.com:8443/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view",
+    "javascript:alert(1)",
+    "data:text/html,<script>alert(1)</script>",
+    "not-a-valid-url",
+    "https://google.com/search?q=resume",
+    "https://drive.google.com/",
+    "https://drive.google.com/file/d/",
+    "https://docs.google.com/document/d/",
+    "https://docs.google.com/about"
+  ];
+  for (const link of invalidLinks) {
+    const result = validation.validateApplication({ ...valid(), resumeUrl: link }, tracks);
+    assert.equal(result.valid, false, `Expected invalid for: ${link}`);
+    assert.ok(result.errors.resumeUrl, `Expected error for: ${link}`);
+  }
+});
+
+test("optional resume link is stored correctly inside application answers", async () => {
+  const testResume = "https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view";
+  let savedApplication = null;
+  const { deps } = dependencies({
+    save: async (app) => {
+      savedApplication = app;
+      return app.submissionId;
+    }
+  });
+  const res = await handleLaunchpadApplication(request({ ...valid(), resumeUrl: testResume }), deps);
+  assert.equal(res.status, 200);
+  assert.ok(savedApplication);
+  assert.equal(savedApplication.resumeUrl, testResume);
+});
+
+test("private answers and resume link are never leaked to notification callback", async () => {
+  const testResume = "https://drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view";
+  let notificationArgs = null;
+  const { deps } = dependencies({
+    notify: async (...args) => {
+      notificationArgs = args;
+    }
+  });
+  const res = await handleLaunchpadApplication(request({
+    ...valid(),
+    resumeUrl: testResume,
+    secretField: "SUPER_SECRET",
+    whyZqtion: "I want to practice creative work with structured feedback."
+  }), deps);
+  assert.equal(res.status, 200);
+  assert.ok(notificationArgs);
+  // notify receives (reference, track, applicantEmail)
+  assert.equal(notificationArgs[0], valid().submissionId);
+  assert.equal(notificationArgs[1], tracks[0]);
+  assert.equal(notificationArgs[2], "qa@example.test");
+  // Ensure private answers and CV links are NOT passed in notification
+  const stringifiedArgs = JSON.stringify(notificationArgs);
+  assert.ok(!stringifiedArgs.includes(testResume));
+  assert.ok(!stringifiedArgs.includes("SUPER_SECRET"));
+  assert.ok(!stringifiedArgs.includes("I want to practice creative work"));
+});
+
+test("staging and preview origins: allowed staging origin is accepted, unauthorized is rejected", async () => {
+  const allowedPreview = "https://zqtion-preview.vercel.app";
+  const { deps } = dependencies({ origins: ["https://zqtion.com", allowedPreview] });
+
+  // 1. Allowed preview origin succeeds
+  const reqAllowed = new Request("https://zqtion.com/api/applications", {
+    method: "POST",
+    headers: { origin: allowedPreview, "content-type": "application/json" },
+    body: JSON.stringify(valid())
+  });
+  const resAllowed = await handleLaunchpadApplication(reqAllowed, deps);
+  assert.equal(resAllowed.status, 200);
+
+  // 2. Arbitrary unauthorized origin is rejected with 403
+  const reqDenied = new Request("https://zqtion.com/api/applications", {
+    method: "POST",
+    headers: { origin: "https://arbitrary-unauthorized.vercel.app", "content-type": "application/json" },
+    body: JSON.stringify(valid())
+  });
+  const resDenied = await handleLaunchpadApplication(reqDenied, deps);
+  assert.equal(resDenied.status, 403);
+});
+
+test("resolveAllowedOriginsAndHosts correctly configures preview hosts and rejects wildcards", () => {
+  const origEnv = { ...process.env };
+  try {
+    delete process.env.LAUNCHPAD_PREVIEW_HOSTNAME;
+    delete process.env.LAUNCHPAD_ALLOWED_STAGING_ORIGINS;
+
+    // Default production origins
+    const defaultRes = resolveAllowedOriginsAndHosts();
+    assert.deepEqual(defaultRes.origins, ["https://zqtion.com", "https://www.zqtion.com"]);
+    assert.deepEqual(defaultRes.hosts, ["zqtion.com", "www.zqtion.com"]);
+
+    // With explicit preview hostname
+    process.env.LAUNCHPAD_PREVIEW_HOSTNAME = "zqtion-preview-abc123.vercel.app";
+    const previewRes = resolveAllowedOriginsAndHosts();
+    assert.ok(previewRes.origins.includes("https://zqtion-preview-abc123.vercel.app"));
+    assert.ok(previewRes.hosts.includes("zqtion-preview-abc123.vercel.app"));
+
+    // Wildcards are strictly rejected
+    process.env.LAUNCHPAD_PREVIEW_HOSTNAME = "*.vercel.app";
+    const wildcardRes = resolveAllowedOriginsAndHosts();
+    assert.ok(!wildcardRes.origins.some(o => o.includes("*")));
+    assert.ok(!wildcardRes.hosts.some(h => h.includes("*")));
+
+    // With explicit staging origins
+    process.env.LAUNCHPAD_ALLOWED_STAGING_ORIGINS = "https://staging.zqtion.com, https://test.zqtion.com";
+    const stagingRes = resolveAllowedOriginsAndHosts();
+    assert.ok(stagingRes.origins.includes("https://staging.zqtion.com"));
+    assert.ok(stagingRes.origins.includes("https://test.zqtion.com"));
+    assert.ok(stagingRes.hosts.includes("staging.zqtion.com"));
+    assert.ok(stagingRes.hosts.includes("test.zqtion.com"));
+  } finally {
+    process.env = origEnv;
+  }
+});
+
+test("duplicate application submission returns existing reference idempotently", async () => {
+  let saveCount = 0;
+  const { deps } = dependencies({
+    save: async (app) => {
+      saveCount++;
+      return app.submissionId;
+    }
+  });
+
+  const payload = valid();
+  const res1 = await handleLaunchpadApplication(request(payload), deps);
+  assert.equal(res1.status, 200);
+  assert.deepEqual(await res1.json(), { ok: true, reference: payload.submissionId });
+
+  const res2 = await handleLaunchpadApplication(request(payload), deps);
+  assert.equal(res2.status, 200);
+  assert.deepEqual(await res2.json(), { ok: true, reference: payload.submissionId });
+  assert.equal(saveCount, 2);
 });
