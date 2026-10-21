@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import { getResourceBySlug, getRelatedResources, getCatalogue } from "@/lib/resources/service";
 import { PromptCopyBlock } from "@/components/resources/PromptCopyBlock";
@@ -62,23 +63,23 @@ export default async function ResourceDetailPage({ params }: ResourceDetailPageP
   const evidenceBadges: Record<string, { label: string; className: string }> = {
     verified: {
       label: "Verified Source",
-      className: "bg-emerald-950/60 text-emerald-400 border-emerald-800/60"
+      className: "bg-accent-soft text-success border-[var(--line)]"
     },
     zqtion_tested: {
       label: "Zqtion Tested",
-      className: "bg-sky-950/60 text-sky-400 border-sky-800/60"
+      className: "bg-accent-soft text-accent border-[var(--line)]"
     },
     source_reported: {
       label: "Source Reported",
-      className: "bg-amber-950/60 text-amber-400 border-amber-800/60"
+      className: "bg-accent-soft text-warning border-[var(--line)]"
     },
     community_reported: {
       label: "Community",
-      className: "bg-purple-950/60 text-purple-400 border-purple-800/60"
+      className: "bg-accent-soft text-accent border-[var(--line)]"
     },
     unverified: {
       label: "Unverified Draft",
-      className: "bg-zinc-900 text-zinc-400 border-zinc-800"
+      className: "bg-raised text-muted border-[var(--line)]"
     }
   };
 
@@ -104,64 +105,64 @@ export default async function ResourceDetailPage({ params }: ResourceDetailPageP
   };
 
   return (
-    <main className="min-h-screen bg-[#0D0D0E] text-white">
+    <><main id="main-content" className="resource-page min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
       {/* Top Breadcrumb Header */}
-      <div className="border-b border-[#1F2128] pt-28 pb-8 lg:pt-32">
+      <div className="border-b border-[var(--line)] pt-28 pb-8 lg:pt-32">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <nav aria-label="Breadcrumb" className="mb-4 flex items-center gap-2 text-xs text-zinc-400">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <nav aria-label="Breadcrumb" className="mb-4 flex items-center gap-2 text-xs text-muted">
+            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/resources" className="hover:text-white transition-colors">Resources</Link>
+            <Link href="/resources" className="hover:text-foreground transition-colors">Resources</Link>
             <span>/</span>
-            <span className="capitalize text-zinc-300">{resource.category}</span>
+            <span className="capitalize text-secondary">{resource.category}</span>
             <span>/</span>
-            <span className="text-zinc-500 truncate max-w-[200px]">{resource.title}</span>
+            <span className="text-muted truncate max-w-[200px]">{resource.title}</span>
           </nav>
 
           <div className="flex flex-wrap items-center gap-2 mb-4">
-            <span className="rounded-md bg-white/5 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-zinc-300 border border-white/10">
+            <span className="rounded-md bg-white/5 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-secondary border border-white/10">
               {resource.resourceType}
             </span>
             <span className={`rounded-full border px-2.5 py-0.5 text-xs font-medium ${badge.className}`}>
               {badge.label}
             </span>
-            <span className="ml-auto text-xs text-zinc-500 font-mono">
+            <span className="ml-auto text-xs text-muted font-mono">
               Verified: {resource.verifiedAt ? new Date(resource.verifiedAt).toLocaleDateString("en-US", { month: "short", year: "numeric" }) : "October 2026"}
             </span>
           </div>
 
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl font-sans leading-tight">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl font-sans leading-tight">
             {resource.title}
           </h1>
 
-          <p className="mt-4 text-base text-zinc-300 leading-relaxed max-w-3xl">
+          <p className="mt-4 text-base text-secondary leading-relaxed max-w-3xl">
             {resource.summary}
           </p>
 
           {/* Quick Facts Strip */}
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 rounded-xl border border-[#22242C] bg-[#121316] p-4 text-xs">
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 rounded-xl border border-[var(--line)] bg-surface p-4 text-xs">
             <div>
-              <span className="text-zinc-500 block">Difficulty</span>
-              <span className="font-semibold text-white capitalize">{resource.difficulty}</span>
+              <span className="text-muted block">Difficulty</span>
+              <span className="font-semibold text-foreground capitalize">{resource.difficulty}</span>
             </div>
             <div>
-              <span className="text-zinc-500 block">Target Audience</span>
-              <span className="font-semibold text-white">{String(resource.metadata?.target_user || "Engineers & Teams")}</span>
+              <span className="text-muted block">Target Audience</span>
+              <span className="font-semibold text-foreground">{String(resource.metadata?.target_user || "Engineers & Teams")}</span>
             </div>
             <div>
-              <span className="text-zinc-500 block">Primary Tools</span>
-              <span className="font-semibold text-white truncate block">
+              <span className="text-muted block">Primary Tools</span>
+              <span className="font-semibold text-foreground truncate block">
                 {resource.tools?.join(", ") || "Modern AI Stack"}
               </span>
             </div>
             <div>
-              <span className="text-zinc-500 block">Estimated Cost</span>
-              <span className="font-semibold text-emerald-400">Free to $20/mo</span>
+              <span className="text-muted block">Estimated Cost</span>
+              <span className="font-semibold text-success">Free to $20/mo</span>
             </div>
           </div>
         </div>
@@ -169,9 +170,9 @@ export default async function ResourceDetailPage({ params }: ResourceDetailPageP
 
       {/* Main Body */}
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <article className="prose prose-invert max-w-none prose-headings:font-sans prose-headings:text-white prose-p:text-zinc-300 prose-p:leading-relaxed prose-a:text-[#38BDF8] prose-code:text-[#38BDF8] prose-pre:border prose-pre:border-[#22242C] prose-pre:bg-[#0A0A0C]">
+        <article className="prose prose-invert max-w-none prose-headings:font-sans prose-headings:text-foreground prose-p:text-secondary prose-p:leading-relaxed prose-a:text-accent prose-code:text-accent prose-pre:border prose-pre:border-[var(--line)] prose-pre:bg-surface">
           {/* Render markdown content sections */}
-          <div className="whitespace-pre-wrap font-sans text-sm leading-relaxed text-zinc-300">
+          <div className="whitespace-pre-wrap font-sans text-sm leading-relaxed text-secondary">
             {resource.contentMarkdown}
           </div>
         </article>
@@ -186,15 +187,15 @@ export default async function ResourceDetailPage({ params }: ResourceDetailPageP
 
         {/* Related Graph Nodes */}
         {related.length > 0 && (
-          <section className="mt-16 border-t border-[#1F2128] pt-12">
+          <section className="mt-16 border-t border-[var(--line)] pt-12">
             <div className="mb-6 flex items-center justify-between">
               <div>
-                <h2 className="text-xl font-bold text-white">Related Building Blocks</h2>
-                <p className="text-xs text-zinc-400 mt-1">
+                <h2 className="text-xl font-bold text-foreground">Related Building Blocks</h2>
+                <p className="text-xs text-muted mt-1">
                   Connected via shared tools, category taxonomy, and workflow graph.
                 </p>
               </div>
-              <Link href="/resources" className="text-xs font-semibold text-[#38BDF8] hover:underline">
+              <Link href="/resources" className="text-xs font-semibold text-accent hover:underline">
                 Explore All &rarr;
               </Link>
             </div>
@@ -207,10 +208,10 @@ export default async function ResourceDetailPage({ params }: ResourceDetailPageP
         )}
 
         {/* Bottom Navigation */}
-        <div className="mt-16 flex items-center justify-between border-t border-[#1F2128] pt-8">
+        <div className="mt-16 flex items-center justify-between border-t border-[var(--line)] pt-8">
           <Link
             href="/resources"
-            className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-400 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-muted hover:text-foreground transition-colors"
           >
             &larr; Back to all building blocks
           </Link>
@@ -222,6 +223,6 @@ export default async function ResourceDetailPage({ params }: ResourceDetailPageP
           </Link>
         </div>
       </div>
-    </main>
+    </main><Footer /></>
   );
 }

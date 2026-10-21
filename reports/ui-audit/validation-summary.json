@@ -1,0 +1,100 @@
+{
+  "dateLocal": "2026-10-21",
+  "timezone": "Asia/Dhaka",
+  "branch": "feature/zqtion-community",
+  "head": "7577ab9366773e44b6d5b55e1d8d1482c90336d4",
+  "buildId": "9PwW-KFPmzbLXssN7HTn4",
+  "fingerprint": "36343a80c2f48866ec1e9a38905f35bec172533c40062e33829f19fd8f6d8154",
+  "sourceFingerprintMatches": true,
+  "fingerprintMismatches": [],
+  "protectedSourceChanges": [],
+  "requiredCommands": {
+    "npm test": {
+      "status": "PASS",
+      "tests": 113,
+      "failed": 0
+    },
+    "npm run typecheck": {
+      "status": "PASS"
+    },
+    "npm run lint": {
+      "status": "PASS"
+    },
+    "npm run build": {
+      "status": "PASS",
+      "generatedStaticPages": 105
+    },
+    "npm run prompts:seo": {
+      "status": "PASS",
+      "pages": 29,
+      "failed": 0
+    },
+    "git diff --check": {
+      "status": "PASS"
+    }
+  },
+  "responsive": {
+    "checks": 360,
+    "routes": 30,
+    "overflows": 0,
+    "pageErrors": [],
+    "httpFailures": 0,
+    "headingFailures": 0
+  },
+  "accessibility": {
+    "scans": 56,
+    "automatedViolations": 0,
+    "manualReviewRuleOccurrences": 56,
+    "manualReviewRuleIds": [
+      "color-contrast"
+    ],
+    "solidTokenPairs": 26,
+    "solidTokenFailures": 0
+  },
+  "interactions": {
+    "passed": 22,
+    "failures": [],
+    "errors": []
+  },
+  "portfolio": {
+    "passed": 16,
+    "failures": [],
+    "responsiveChecks": 130
+  },
+  "community": {
+    "passed": 15,
+    "failures": [],
+    "consoleErrors": [],
+    "responsiveSubcases": 78
+  },
+  "links": {
+    "checked": 214,
+    "failures": []
+  },
+  "webkit": {
+    "status": "BLOCKED",
+    "reason": "Playwright expected webkit-2336 executable is missing; no Safari result claimed"
+  },
+  "idleInteractionMaxMs": 232,
+  "performanceVerdict": "PARTIAL: final LCP 3.679s exceeds 2.5s; Lighthouse final 85 vs baseline 89; no field INP; synthetic idle maximum 232ms",
+  "productionReady": false,
+  "actionsNotTaken": [
+    "commit",
+    "push",
+    "merge",
+    "deploy",
+    "DNS",
+    "hosted migration",
+    "hosted provider mutation",
+    "Launchpad activation"
+  ],
+  "finalScreenshotFiles": 263,
+  "deliverablePresence": "PASS",
+  "homeRetest": {
+    "layoutChecks": 28,
+    "axeScans": 4,
+    "nativeScrollCaptures": 2
+  },
+  "finalHomeLiveScroll": "Verified after sequential scroll and layout settlement; closing heading bbox y=376.94 at 390x844",
+  "evidenceScope": "Original broad UI audit before subsequent mobile-light/desktop-dark preference change. Current follow-up checks and source fingerprint: theme-default-validation.json."
+}

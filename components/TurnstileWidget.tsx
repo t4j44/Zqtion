@@ -47,7 +47,7 @@ const TurnstileWidget = forwardRef<TurnstileHandle, { action: "inquiry" | "launc
     <Script id="zqtion-turnstile" src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" strategy="afterInteractive" onReady={mount} onError={() => setMessage("Verification is unavailable. Your form has not been sent; please try again later.")} />
     <div ref={hostRef} className="min-w-0" />
     <input type="hidden" name="cf-turnstile-response" value={token} />
-    <div aria-live="polite">{message ? <p className="mt-3 text-sm leading-6 text-rose-200">{message} {window.turnstile ? <button className="min-h-11 underline underline-offset-4" type="button" onClick={reset}>Retry verification</button> : null}</p> : null}</div>
+    <div aria-live="polite">{message ? <p className="mt-3 text-sm leading-6 text-error">{message} {window.turnstile ? <button className="min-h-11 underline underline-offset-4" type="button" onClick={reset}>Retry verification</button> : null}</p> : null}</div>
   </div>;
 });
 export default TurnstileWidget;

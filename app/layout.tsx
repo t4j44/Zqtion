@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "./interface.css";
 import Navbar from "@/components/Navbar";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { siteConfig } from "@/data/site";
+import { themeInitScript } from "@/lib/theme";
 
 async function OptionalAnalytics() {
   if (process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== "true") return null;
@@ -16,7 +18,7 @@ const instrumentSans = localFont({
   variable: "--font-instrument-sans",
   weight: "400 700",
   display: "swap",
-  preload: false,
+  preload: true,
   adjustFontFallback: "Arial",
 });
 const instrumentSerif = localFont({
@@ -83,13 +85,13 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#050608",
-  colorScheme: "dark",
+  colorScheme: "light dark",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${instrumentSans.variable} ${instrumentSerif.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${instrumentSans.variable} ${instrumentSerif.variable}`}>
+      <head><meta name="theme-color" content="#050608" suppressHydrationWarning /><script id="zqtion-theme-init" dangerouslySetInnerHTML={{ __html: themeInitScript }} /></head>
       <body>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <Navbar />

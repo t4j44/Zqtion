@@ -40,10 +40,10 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
     <main id="main-content">
       <JsonLd schema={[getBreadcrumbSchema([{ name: "Home", url: siteConfig.url }, { name: "Work", url: `${siteConfig.url}/work` }, { name: item.shortTitle, url: pageUrl }]), ...videoSchemas]} />
       <header className="section-shell pb-14 pt-32 sm:pb-20 sm:pt-40">
-        <Link href="/work" className="inline-flex items-center gap-2 text-sm text-white/48 hover:text-white"><ArrowLeft className="h-4 w-4" /> All work</Link>
+        <Link href="/work" className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground"><ArrowLeft className="h-4 w-4" /> All work</Link>
         <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_0.34fr] lg:items-end">
           <div><p className="eyebrow">{item.relationship} · {item.year}</p><h1 className="mt-6 max-w-5xl text-balance text-5xl font-semibold leading-[0.92] tracking-[-0.055em] sm:text-7xl lg:text-8xl">{item.title}</h1></div>
-          <p className="text-lg leading-8 text-white/56">{item.summary}</p>
+          <p className="text-lg leading-8 text-muted">{item.summary}</p>
         </div>
       </header>
       <section className="section-shell"><VideoFacade videoId={item.videoId} title={item.title} videoUrl={item.videoUrl} portrait={item.orientation === "portrait"} priority /></section>
@@ -54,13 +54,13 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
               <p className="eyebrow">Also in this collection</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">More moving-image experiments</h2>
             </div>
-            <p className="max-w-lg text-sm leading-6 text-white/48">Loaded only when you press play, keeping the page fast across mobile, tablet, and desktop.</p>
+            <p className="max-w-lg text-sm leading-6 text-muted">Loaded only when you press play, keeping the page fast across mobile, tablet, and desktop.</p>
           </div>
           <div className="mt-8 grid gap-8 md:grid-cols-2">
             {item.additionalVideos.map((video) => (
               <article key={video.videoId} className="min-w-0">
                 <VideoFacade videoId={video.videoId} title={video.title} videoUrl={video.videoUrl} portrait={video.orientation === "portrait"} />
-                <h3 className="mx-auto mt-4 max-w-2xl text-xl font-semibold tracking-[-0.025em] text-white">{video.title}</h3>
+                <h3 className="mx-auto mt-4 max-w-2xl text-xl font-semibold tracking-[-0.025em] text-foreground">{video.title}</h3>
               </article>
             ))}
           </div>
@@ -68,12 +68,12 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
       ) : null}
       <section className="section-shell section-pad">
         <div className="grid gap-12 lg:grid-cols-[0.32fr_0.68fr]">
-          <aside><p className="text-xs font-bold uppercase tracking-[0.17em] text-white/35">Project truth</p><div className="mt-5 rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.055] p-5"><p className="text-sm font-semibold text-cyan-200">{item.relationship}</p><p className="mt-3 text-sm leading-6 text-white/55">{item.disclosure}</p></div><p className="mt-7 text-xs font-bold uppercase tracking-[0.17em] text-white/35">Discipline</p><p className="mt-3 text-sm leading-6 text-white/62">{item.discipline}</p></aside>
+          <aside><p className="text-xs font-bold uppercase tracking-[0.17em] text-muted">Project truth</p><div className="mt-5 rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.055] p-5"><p className="text-sm font-semibold text-accent">{item.relationship}</p><p className="mt-3 text-sm leading-6 text-muted">{item.disclosure}</p></div><p className="mt-7 text-xs font-bold uppercase tracking-[0.17em] text-muted">Discipline</p><p className="mt-3 text-sm leading-6 text-secondary">{item.discipline}</p></aside>
           <div className="grid gap-12">
-            <div><p className="eyebrow">The challenge</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.045em]">What the work needed to solve</h2><p className="mt-5 max-w-3xl text-lg leading-8 text-white/56">{item.challenge}</p></div>
-            <div><p className="eyebrow">What this proved</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.045em]">The transferable learning</h2><p className="mt-5 max-w-3xl text-lg leading-8 text-white/62">{item.whatThisProved}</p></div>
-            <div><p className="eyebrow">The approach</p><ul className="mt-6 grid gap-4">{item.approach.map((step) => <li key={step} className="flex items-start gap-3 border-b border-white/10 pb-4 text-base leading-7 text-white/58"><Check className="mt-1 h-4 w-4 shrink-0 text-cyan-300" />{step}</li>)}</ul></div>
-            <div><p className="eyebrow">Deliverables</p><div className="mt-6 flex flex-wrap gap-2">{item.deliverables.map((deliverable) => <span key={deliverable} className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/56">{deliverable}</span>)}</div></div>
+            <div><p className="eyebrow">The challenge</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.045em]">What the work needed to solve</h2><p className="mt-5 max-w-3xl text-lg leading-8 text-muted">{item.challenge}</p></div>
+            <div><p className="eyebrow">What this proved</p><h2 className="mt-5 text-4xl font-semibold tracking-[-0.045em]">The transferable learning</h2><p className="mt-5 max-w-3xl text-lg leading-8 text-secondary">{item.whatThisProved}</p></div>
+            <div><p className="eyebrow">The approach</p><ul className="mt-6 grid gap-4">{item.approach.map((step) => <li key={step} className="flex items-start gap-3 border-b border-white/10 pb-4 text-base leading-7 text-muted"><Check className="mt-1 h-4 w-4 shrink-0 text-accent" />{step}</li>)}</ul></div>
+            <div><p className="eyebrow">Deliverables</p><div className="mt-6 flex flex-wrap gap-2">{item.deliverables.map((deliverable) => <span key={deliverable} className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-muted">{deliverable}</span>)}</div></div>
             <a href={item.videoUrl} target="_blank" rel="noreferrer" className="button-secondary w-fit">Watch on YouTube <ArrowUpRight className="h-4 w-4" /></a>
           </div>
         </div>

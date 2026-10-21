@@ -1,0 +1,54 @@
+[
+  {
+    "route": "/",
+    "theme": "dark",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 112
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 109
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/",
+    "theme": "light",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 112
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/",
+    "theme": "light",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 109
+      }
+    ],
+    "violations": []
+  }
+]

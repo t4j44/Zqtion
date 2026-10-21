@@ -1,0 +1,1661 @@
+[
+  {
+    "route": "/",
+    "theme": "dark",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 112
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/work",
+    "theme": "dark",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 32
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/services",
+    "theme": "dark",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 88
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/about",
+    "theme": "dark",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 33
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "theme": "dark",
+    "width": 390,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 28
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers",
+    "theme": "dark",
+    "width": 390,
+    "passes": 25,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 230
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers/apply",
+    "theme": "dark",
+    "width": 390,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 9
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/prompts",
+    "theme": "dark",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 11
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".pl-preview-landing > .pl-preview-caption"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.67 (foreground color: #d5dce7, background color: #9fafa0, font size: 5.3pt (7px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-preview-caption\">ZQTION CONCEPT</span>"
+          },
+          {
+            "target": [
+              ".pl-mini-pricing > small"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.49 (foreground color: #48576c, background color: #10151c, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<small>EXAMPLE PRICING</small>"
+          },
+          {
+            "target": [
+              ".pl-still-citrus > .pl-composition-mark"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #3a5353, background color: #b6c2a9, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-composition-mark\">MATERIAL / LIGHT / FORM</span>"
+          },
+          {
+            "target": [
+              ".pl-still-speaker > .pl-composition-mark"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.17 (foreground color: #3a5353, background color: #c2b7a4, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-composition-mark\">MATERIAL / LIGHT / FORM</span>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/prompts/ui/fieldwork-research-dashboard",
+    "theme": "dark",
+    "width": 390,
+    "passes": 31,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 8
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".pl-mini-pricing > small"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.49 (foreground color: #48576c, background color: #10151c, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<small>EXAMPLE PRICING</small>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/ai-experiences",
+    "theme": "dark",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 20
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 22
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/u/alice",
+    "theme": "dark",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 23
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 25
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/community/account",
+    "theme": "dark",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 2
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources",
+    "theme": "dark",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources/guide/ai-lead-research-verification-pipeline",
+    "theme": "dark",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": [
+      {
+        "id": "scrollable-region-focusable",
+        "impact": "serious",
+        "help": "Scrollable region must have keyboard access",
+        "nodes": [
+          {
+            "target": [
+              "pre"
+            ],
+            "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable",
+            "html": "<pre class=\"max-h-[480px] overflow-x-auto p-4 font-mono text-xs leading-relaxed text-secondary\"><code class=\"language-text\">// Execute via Zqtion MCP Server\n{\n  \"tool\": \"get_resource\",\n  \"args\": {\n    \"slug\": \"ai-lead-research-verification-pipeline\"\n  }\n}</code></pre>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 109
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/work",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 36
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/services",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 92
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/about",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 38
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 33
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 25,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 235
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers/apply",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 14
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/prompts",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 9
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".pl-mini-pricing > small"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.49 (foreground color: #48576c, background color: #10151c, font size: 3.8pt (5px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<small>EXAMPLE PRICING</small>"
+          },
+          {
+            "target": [
+              ".pl-still-citrus > .pl-composition-mark"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #3a5353, background color: #b6c2a9, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-composition-mark\">MATERIAL / LIGHT / FORM</span>"
+          },
+          {
+            "target": [
+              ".pl-still-speaker > .pl-composition-mark"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.17 (foreground color: #3a5353, background color: #c2b7a4, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-composition-mark\">MATERIAL / LIGHT / FORM</span>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/prompts/ui/fieldwork-research-dashboard",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 30,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 8
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".pl-mini-pricing > small"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.49 (foreground color: #48576c, background color: #10151c, font size: 3.8pt (5px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<small>EXAMPLE PRICING</small>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/ai-experiences",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 20
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 22
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/u/alice",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 23
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 25
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/community/account",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 2
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources/guide/ai-lead-research-verification-pipeline",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/",
+    "theme": "light",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 112
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(1) > .tracking-\\[0\\.18em\\].font-bold.text-accent"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.25 (foreground color: #006b86, background color: #080a0e, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"text-xs font-bold uppercase tracking-[0.18em] text-accent\">Create</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(1) > .text-3xl.tracking-\\[-0\\.04em\\].mt-5"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 22.5pt (30px), font weight: normal). Expected contrast ratio of 3:1",
+            "html": "<h3 class=\"mt-5 text-3xl font-semibold tracking-[-0.04em]\">AI creative production</h3>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(1) > .mt-4.text-base.leading-7"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"mt-4 text-base leading-7 text-muted\">Concept, direction, and production for campaign films, product visuals, social content, and experimental brand worlds.</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(1) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(1)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">AI commercials and brand films</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(1) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(2)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Product and food visuals</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(1) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(3)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Short-form creative</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(1) > .service-link.hover\\:text-accent.mt-8"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<a class=\"service-link mt-8 inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent\" href=\"/services#ai-creative-production\">"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(2) > .tracking-\\[0\\.18em\\].font-bold.text-accent"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.25 (foreground color: #006b86, background color: #080a0e, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"text-xs font-bold uppercase tracking-[0.18em] text-accent\">Build</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(2) > .text-3xl.tracking-\\[-0\\.04em\\].mt-5"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 22.5pt (30px), font weight: normal). Expected contrast ratio of 3:1",
+            "html": "<h3 class=\"mt-5 text-3xl font-semibold tracking-[-0.04em]\">Web products and rapid MVPs</h3>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(2) > .mt-4.text-base.leading-7"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"mt-4 text-base leading-7 text-muted\">Conversion-focused websites, product prototypes, and focused MVPs designed to make an offer or idea real quickly.</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(2) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(1)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Marketing websites</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(2) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(2)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Landing pages</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(2) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(3)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Product prototypes</span>"
+          },
+          {
+            "target": [
+              ".service-link.hover\\:text-accent[href=\"/services#web-products-mvps\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<a class=\"service-link mt-8 inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent\" href=\"/services#web-products-mvps\">"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(3) > .tracking-\\[0\\.18em\\].font-bold.text-accent"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.25 (foreground color: #006b86, background color: #080a0e, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"text-xs font-bold uppercase tracking-[0.18em] text-accent\">Automate</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(3) > .text-3xl.tracking-\\[-0\\.04em\\].mt-5"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 22.5pt (30px), font weight: normal). Expected contrast ratio of 3:1",
+            "html": "<h3 class=\"mt-5 text-3xl font-semibold tracking-[-0.04em]\">AI automation and systems</h3>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(3) > .mt-4.text-base.leading-7"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"mt-4 text-base leading-7 text-muted\">Practical workflow design that removes repetitive work while keeping people in control of important decisions.</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(3) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(1)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Workflow audits</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(3) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(2)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">AI-assisted content systems</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(3) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(3)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Internal tools</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(3) > .service-link.hover\\:text-accent.mt-8"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<a class=\"service-link mt-8 inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent\" href=\"/services#ai-automation-systems\">"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(4) > .tracking-\\[0\\.18em\\].font-bold.text-accent"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.25 (foreground color: #006b86, background color: #080a0e, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"text-xs font-bold uppercase tracking-[0.18em] text-accent\">Consult</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(4) > .text-3xl.tracking-\\[-0\\.04em\\].mt-5"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 22.5pt (30px), font weight: normal). Expected contrast ratio of 3:1",
+            "html": "<h3 class=\"mt-5 text-3xl font-semibold tracking-[-0.04em]\">AI consultancy and prototyping</h3>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(4) > .mt-4.text-base.leading-7"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"mt-4 text-base leading-7 text-muted\">Practical advisory for teams deciding where AI can create value, what to test first, and how to move from opportunity to an evidence-backed prototype.</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(4) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(1)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">AI opportunity audits</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(4) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(2)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Use-case prioritization</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(4) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(3)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Prototype sprints</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(4) > .service-link.hover\\:text-accent.mt-8"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<a class=\"service-link mt-8 inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent\" href=\"/services#ai-strategy-prototyping\">"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/work",
+    "theme": "light",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 32
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/services",
+    "theme": "light",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 88
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/about",
+    "theme": "light",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 33
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "theme": "light",
+    "width": 390,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 28
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers",
+    "theme": "light",
+    "width": 390,
+    "passes": 25,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 230
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".launchpad-core-list > li:nth-child(1)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check h-4 w-4\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>AI fundamentals</li>"
+          },
+          {
+            "target": [
+              ".launchpad-core-list > li:nth-child(2)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              ".launchpad-core-list > li:nth-child(3)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              ".launchpad-core-list > li:nth-child(4)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              ".launchpad-core-list > li:nth-child(5)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              ".launchpad-core-list > li:nth-child(6)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check h-4 w-4\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>Task management</li>"
+          },
+          {
+            "target": [
+              "li:nth-child(7)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              "li:nth-child(8)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              "li:nth-child(9)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              "li:nth-child(10)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              "li:nth-child(11)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check h-4 w-4\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>Responsible AI</li>"
+          },
+          {
+            "target": [
+              "li:nth-child(12)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check h-4 w-4\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>Confidentiality</li>"
+          },
+          {
+            "target": [
+              "li:nth-child(13)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              "li:nth-child(14)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/careers/apply",
+    "theme": "light",
+    "width": 390,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 9
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/prompts",
+    "theme": "light",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 11
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".pl-preview-landing > .pl-preview-caption"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.67 (foreground color: #d5dce7, background color: #9fafa0, font size: 5.3pt (7px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-preview-caption\">ZQTION CONCEPT</span>"
+          },
+          {
+            "target": [
+              ".pl-mini-pricing > small"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.49 (foreground color: #48576c, background color: #10151c, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<small>EXAMPLE PRICING</small>"
+          },
+          {
+            "target": [
+              ".pl-still-citrus > .pl-composition-mark"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #3a5353, background color: #b6c2a9, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-composition-mark\">MATERIAL / LIGHT / FORM</span>"
+          },
+          {
+            "target": [
+              ".pl-still-speaker > .pl-composition-mark"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.17 (foreground color: #3a5353, background color: #c2b7a4, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-composition-mark\">MATERIAL / LIGHT / FORM</span>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/prompts/ui/fieldwork-research-dashboard",
+    "theme": "light",
+    "width": 390,
+    "passes": 31,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 8
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".pl-preview-disclosure"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.75 (foreground color: #929dab, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"pl-preview-disclosure\">Illustrative Zqtion concept — not a model output</p>"
+          },
+          {
+            "target": [
+              ".pl-mini-pricing > small"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.49 (foreground color: #48576c, background color: #10151c, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<small>EXAMPLE PRICING</small>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/ai-experiences",
+    "theme": "light",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 20
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 22
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/u/alice",
+    "theme": "light",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 23
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 25
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/community/account",
+    "theme": "light",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 2
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources",
+    "theme": "light",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources/guide/ai-lead-research-verification-pipeline",
+    "theme": "light",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              "code"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.6 (foreground color: #46556a, background color: #0a0a0c, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<code class=\"language-text\">// Execute via Zqtion MCP Server\n{\n  \"tool\": \"get_resource\",\n  \"args\": {\n    \"slug\": \"ai-lead-research-verification-pipeline\"\n  }\n}</code>"
+          }
+        ]
+      },
+      {
+        "id": "scrollable-region-focusable",
+        "impact": "serious",
+        "help": "Scrollable region must have keyboard access",
+        "nodes": [
+          {
+            "target": [
+              "pre"
+            ],
+            "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable",
+            "html": "<pre class=\"max-h-[480px] overflow-x-auto p-4 font-mono text-xs leading-relaxed text-secondary\"><code class=\"language-text\">// Execute via Zqtion MCP Server\n{\n  \"tool\": \"get_resource\",\n  \"args\": {\n    \"slug\": \"ai-lead-research-verification-pipeline\"\n  }\n}</code></pre>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "theme": "light",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 109
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(1) > .tracking-\\[0\\.18em\\].font-bold.text-accent"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.25 (foreground color: #006b86, background color: #080a0e, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"text-xs font-bold uppercase tracking-[0.18em] text-accent\">Create</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(1) > .text-3xl.tracking-\\[-0\\.04em\\].mt-5"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 22.5pt (30px), font weight: normal). Expected contrast ratio of 3:1",
+            "html": "<h3 class=\"mt-5 text-3xl font-semibold tracking-[-0.04em]\">AI creative production</h3>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(1) > .mt-4.text-base.leading-7"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"mt-4 text-base leading-7 text-muted\">Concept, direction, and production for campaign films, product visuals, social content, and experimental brand worlds.</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(1) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(1)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">AI commercials and brand films</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(1) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(2)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Product and food visuals</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(1) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(3)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Short-form creative</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(1) > .service-link.hover\\:text-accent.mt-8"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<a class=\"service-link mt-8 inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent\" href=\"/services#ai-creative-production\">"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(2) > .tracking-\\[0\\.18em\\].font-bold.text-accent"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.25 (foreground color: #006b86, background color: #080a0e, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"text-xs font-bold uppercase tracking-[0.18em] text-accent\">Build</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(2) > .text-3xl.tracking-\\[-0\\.04em\\].mt-5"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 22.5pt (30px), font weight: normal). Expected contrast ratio of 3:1",
+            "html": "<h3 class=\"mt-5 text-3xl font-semibold tracking-[-0.04em]\">Web products and rapid MVPs</h3>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(2) > .mt-4.text-base.leading-7"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"mt-4 text-base leading-7 text-muted\">Conversion-focused websites, product prototypes, and focused MVPs designed to make an offer or idea real quickly.</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(2) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(1)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Marketing websites</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(2) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(2)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Landing pages</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(2) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(3)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Product prototypes</span>"
+          },
+          {
+            "target": [
+              ".service-link.hover\\:text-accent[href=\"/services#web-products-mvps\"]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<a class=\"service-link mt-8 inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent\" href=\"/services#web-products-mvps\">"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(3) > .tracking-\\[0\\.18em\\].font-bold.text-accent"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.25 (foreground color: #006b86, background color: #080a0e, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"text-xs font-bold uppercase tracking-[0.18em] text-accent\">Automate</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(3) > .text-3xl.tracking-\\[-0\\.04em\\].mt-5"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 22.5pt (30px), font weight: normal). Expected contrast ratio of 3:1",
+            "html": "<h3 class=\"mt-5 text-3xl font-semibold tracking-[-0.04em]\">AI automation and systems</h3>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(3) > .mt-4.text-base.leading-7"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"mt-4 text-base leading-7 text-muted\">Practical workflow design that removes repetitive work while keeping people in control of important decisions.</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(3) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(1)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Workflow audits</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(3) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(2)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">AI-assisted content systems</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(3) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(3)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Internal tools</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(3) > .service-link.hover\\:text-accent.mt-8"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<a class=\"service-link mt-8 inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent\" href=\"/services#ai-automation-systems\">"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(4) > .tracking-\\[0\\.18em\\].font-bold.text-accent"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.25 (foreground color: #006b86, background color: #080a0e, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"text-xs font-bold uppercase tracking-[0.18em] text-accent\">Consult</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(4) > .text-3xl.tracking-\\[-0\\.04em\\].mt-5"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 22.5pt (30px), font weight: normal). Expected contrast ratio of 3:1",
+            "html": "<h3 class=\"mt-5 text-3xl font-semibold tracking-[-0.04em]\">AI consultancy and prototyping</h3>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(4) > .mt-4.text-base.leading-7"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"mt-4 text-base leading-7 text-muted\">Practical advisory for teams deciding where AI can create value, what to test first, and how to move from opportunity to an evidence-backed prototype.</p>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(4) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(1)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">AI opportunity audits</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(4) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(2)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Use-case prioritization</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(4) > .flex-wrap.mt-7.gap-2 > .px-3.py-1\\.5.rounded-full:nth-child(3)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #53647a, background color: #080a0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted\">Prototype sprints</span>"
+          },
+          {
+            "target": [
+              ".sm\\:p-9.bg-\\[\\#080a0e\\].reveal-card:nth-child(4) > .service-link.hover\\:text-accent.mt-8"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.23 (foreground color: #182231, background color: #080a0e, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<a class=\"service-link mt-8 inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent\" href=\"/services#ai-strategy-prototyping\">"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/work",
+    "theme": "light",
+    "width": 1440,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 36
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/services",
+    "theme": "light",
+    "width": 1440,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 92
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/about",
+    "theme": "light",
+    "width": 1440,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 38
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "theme": "light",
+    "width": 1440,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 33
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers",
+    "theme": "light",
+    "width": 1440,
+    "passes": 25,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 235
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".launchpad-core-list > li:nth-child(1)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check h-4 w-4\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>AI fundamentals</li>"
+          },
+          {
+            "target": [
+              ".launchpad-core-list > li:nth-child(2)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              ".launchpad-core-list > li:nth-child(3)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              ".launchpad-core-list > li:nth-child(4)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              ".launchpad-core-list > li:nth-child(5)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              ".launchpad-core-list > li:nth-child(6)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check h-4 w-4\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>Task management</li>"
+          },
+          {
+            "target": [
+              "li:nth-child(7)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              "li:nth-child(8)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              "li:nth-child(9)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              "li:nth-child(10)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              "li:nth-child(11)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check h-4 w-4\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>Responsible AI</li>"
+          },
+          {
+            "target": [
+              "li:nth-child(12)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check h-4 w-4\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>Confidentiality</li>"
+          },
+          {
+            "target": [
+              "li:nth-child(13)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          },
+          {
+            "target": [
+              "li:nth-child(14)"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.63 (foreground color: #c3cbd6, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<li>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/careers/apply",
+    "theme": "light",
+    "width": 1440,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 14
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/prompts",
+    "theme": "light",
+    "width": 1440,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 9
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".pl-mini-pricing > small"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.49 (foreground color: #48576c, background color: #10151c, font size: 3.8pt (5px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<small>EXAMPLE PRICING</small>"
+          },
+          {
+            "target": [
+              ".pl-still-citrus > .pl-composition-mark"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #3a5353, background color: #b6c2a9, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-composition-mark\">MATERIAL / LIGHT / FORM</span>"
+          },
+          {
+            "target": [
+              ".pl-still-speaker > .pl-composition-mark"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.17 (foreground color: #3a5353, background color: #c2b7a4, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-composition-mark\">MATERIAL / LIGHT / FORM</span>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/prompts/ui/fieldwork-research-dashboard",
+    "theme": "light",
+    "width": 1440,
+    "passes": 30,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 8
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".pl-preview-disclosure"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.75 (foreground color: #929dab, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<p class=\"pl-preview-disclosure\">Illustrative Zqtion concept — not a model output</p>"
+          },
+          {
+            "target": [
+              ".pl-mini-pricing > small"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.49 (foreground color: #48576c, background color: #10151c, font size: 3.8pt (5px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<small>EXAMPLE PRICING</small>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/ai-experiences",
+    "theme": "light",
+    "width": 1440,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 20
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 22
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/u/alice",
+    "theme": "light",
+    "width": 1440,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 23
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 25
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/community/account",
+    "theme": "light",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 2
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources",
+    "theme": "light",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources/guide/ai-lead-research-verification-pipeline",
+    "theme": "light",
+    "width": 1440,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              "code"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.6 (foreground color: #46556a, background color: #0a0a0c, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<code class=\"language-text\">// Execute via Zqtion MCP Server\n{\n  \"tool\": \"get_resource\",\n  \"args\": {\n    \"slug\": \"ai-lead-research-verification-pipeline\"\n  }\n}</code>"
+          }
+        ]
+      }
+    ]
+  }
+]

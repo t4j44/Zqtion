@@ -42,7 +42,7 @@ export default function WhatsAppButton() {
       aria-label="Message Zqtion on WhatsApp"
       data-analytics="whatsapp_click"
       data-analytics-location="floating_button"
-      className="whatsapp-float fixed right-4 z-30 flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-[#101319]/90 text-white shadow-2xl backdrop-blur-xl hover:bg-[#25D366] sm:right-6"
+      className="whatsapp-float fixed right-4 z-30 flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-surface/90 text-foreground shadow-2xl backdrop-blur-xl hover:bg-[#25D366] sm:right-6"
       style={{ bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))" }}
     >
       <WhatsAppGlyph />

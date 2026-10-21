@@ -30,18 +30,18 @@ export default function HomePage() {
 
         <WorkReel items={featuredWork} />
 
-        <section style={{ "--cis": "1330px", "--cis-m": "2280px" } as React.CSSProperties} className="home-deferred relative overflow-hidden border-y border-white/10 bg-[#080a0e]">
+        <section style={{ "--cis": "1330px", "--cis-m": "2280px" } as React.CSSProperties} className="home-deferred relative overflow-hidden border-y border-white/10 bg-surface">
           <div className="signal-grid absolute inset-0 opacity-35" aria-hidden="true" />
           <div className="section-shell section-pad relative z-10">
             <Reveal><SectionIntro align="center" icon="services" eyebrow="Capabilities" title="Choose the outcome. The execution model follows." description="Each engagement starts with the smallest credible path to evidence. Scope expands only when the risk and value are visible." /></Reveal>
             <div className="mt-14 grid gap-px overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/10 md:grid-cols-2">
               {services.map((service) => (
-                <Reveal variant="card" key={service.slug} className="bg-[#080a0e] p-7 sm:p-9">
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-cyan-300">{service.eyebrow}</p>
+                <Reveal variant="card" key={service.slug} className="bg-surface p-7 sm:p-9">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">{service.eyebrow}</p>
                   <h3 className="mt-5 text-3xl font-semibold tracking-[-0.04em]">{service.title}</h3>
-                  <p className="mt-4 text-base leading-7 text-white/52">{service.summary}</p>
-                  <div className="mt-7 flex flex-wrap gap-2">{service.capabilities.slice(0, 3).map((capability) => <span key={capability} className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/48">{capability}</span>)}</div>
-                  <Link href={`/services#${service.slug}`} className="service-link mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-cyan-300">Explore service <ArrowUpRight className="h-4 w-4" /></Link>
+                  <p className="mt-4 text-base leading-7 text-muted">{service.summary}</p>
+                  <div className="mt-7 flex flex-wrap gap-2">{service.capabilities.slice(0, 3).map((capability) => <span key={capability} className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-muted">{capability}</span>)}</div>
+                  <Link href={`/services#${service.slug}`} className="service-link mt-8 inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-accent">Explore service <ArrowUpRight className="h-4 w-4" /></Link>
                 </Reveal>
               ))}
             </div>
@@ -53,9 +53,9 @@ export default function HomePage() {
           <div className="mt-14 border-t border-white/10">
             {processSteps.map((step) => (
               <Reveal key={step.number} className="grid gap-5 border-b border-white/10 py-8 md:grid-cols-[0.18fr_0.5fr_1fr] md:items-start">
-                <span className="text-xs font-bold tracking-[0.18em] text-cyan-300">{step.number}</span>
+                <span className="text-xs font-bold tracking-[0.18em] text-accent">{step.number}</span>
                 <h3 className="text-2xl font-semibold tracking-[-0.035em]">{step.title}</h3>
-                <p className="max-w-2xl text-base leading-7 text-white/52">{step.text}</p>
+                <p className="max-w-2xl text-base leading-7 text-muted">{step.text}</p>
               </Reveal>
             ))}
           </div>
@@ -64,7 +64,7 @@ export default function HomePage() {
             <div className="border-t border-white/10">
               {faqs.map((item, index) => (
                 <details key={item.question} className="faq-item group border-b border-white/10">
-                  <summary><span className="text-cyan-300">{String(index + 1).padStart(2, "0")}</span><strong>{item.question}</strong><span className="faq-toggle" aria-hidden="true">+</span></summary>
+                  <summary><span className="text-accent">{String(index + 1).padStart(2, "0")}</span><strong>{item.question}</strong><span className="faq-toggle" aria-hidden="true">+</span></summary>
                   <p>{item.answer}</p>
                 </details>
               ))}
@@ -77,10 +77,10 @@ export default function HomePage() {
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
             {engagements.map((item) => (
               <Reveal variant="card" key={item.name} className="panel p-7 sm:p-8">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-cyan-300">{item.duration}</p>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent">{item.duration}</p>
                 <h3 className="mt-5 text-3xl font-semibold tracking-[-0.04em]">{item.name}</h3>
-                <p className="mt-4 leading-7 text-white/52">{item.description}</p>
-                <p className="mt-7 flex items-center gap-2 text-sm text-white/66"><Check className="h-4 w-4 text-cyan-300" /> Written scope before execution</p>
+                <p className="mt-4 leading-7 text-muted">{item.description}</p>
+                <p className="mt-7 flex items-center gap-2 text-sm text-secondary"><Check className="h-4 w-4 text-accent" /> Written scope before execution</p>
               </Reveal>
             ))}
           </div>
@@ -95,13 +95,13 @@ export default function HomePage() {
               { href: "/careers", label: "Launchpad", text: "A planned 12-week learning program for students and early-career builders inside an AI-native execution studio." },
               { href: "/about", label: "About Zqtion", text: "Zqtion uses AI to explore, produce, and systemize faster, with human judgment kept visible." },
             ].map((item) => (
-              <Reveal key={item.href} className="more-tile bg-[#050608]">
+              <Reveal key={item.href} className="more-tile bg-[var(--background)]">
                 <Link href={item.href} className="group flex h-full min-h-[13rem] flex-col justify-between gap-8 p-7 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-cyan-300 sm:p-8">
                   <div>
                     <h3 className="text-2xl font-semibold tracking-[-0.035em]">{item.label}</h3>
-                    <p className="mt-4 text-sm leading-6 text-white/55">{item.text}</p>
+                    <p className="mt-4 text-sm leading-6 text-muted">{item.text}</p>
                   </div>
-                  <span className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-white group-hover:text-cyan-300">Open <ArrowUpRight className="h-4 w-4" /></span>
+                  <span className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-foreground group-hover:text-accent">Open <ArrowUpRight className="h-4 w-4" /></span>
                 </Link>
               </Reveal>
             ))}
@@ -109,11 +109,11 @@ export default function HomePage() {
         </section>
 
         <section style={{ "--cis": "540px", "--cis-m": "560px" } as React.CSSProperties} className="home-deferred section-shell pb-8 sm:pb-12">
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-blue-500/22 via-[#0a0d14] to-cyan-300/10 px-6 py-16 sm:px-12 sm:py-20 lg:px-16">
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-blue-500/10 via-[var(--surface)] to-cyan-300/10 px-6 py-16 sm:px-12 sm:py-20 lg:px-16">
             <div className="signal-grid absolute inset-0 opacity-25" aria-hidden="true" />
             <ClosingArtifact />
             <Reveal className="relative z-10 grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
-              <div><p className="eyebrow">Start with the problem</p><h2 className="mt-6 max-w-4xl text-balance text-5xl font-semibold leading-[0.92] tracking-[-0.055em] sm:text-7xl">Tell us what <span className="font-editorial font-normal italic text-white/92">needs to change.</span></h2><p className="mt-6 max-w-2xl text-lg leading-8 text-white/58">If the scope is still unclear, that is useful context. We will recommend a diagnostic, sprint, or a reason not to build yet.</p></div>
+              <div><p className="eyebrow">Start with the problem</p><h2 className="mt-6 max-w-4xl text-balance text-5xl font-semibold leading-[0.92] tracking-[-0.055em] sm:text-7xl">Tell us what <span className="font-editorial font-normal italic text-foreground">needs to change.</span></h2><p className="mt-6 max-w-2xl text-lg leading-8 text-muted">If the scope is still unclear, that is useful context. We will recommend a diagnostic, sprint, or a reason not to build yet.</p></div>
               <Link href="/contact" className="button-primary" data-analytics="service_contact_click" data-analytics-location="home_closing_cta">Send a project brief <ArrowUpRight className="h-4 w-4" /></Link>
             </Reveal>
           </div>

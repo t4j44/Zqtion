@@ -17,6 +17,6 @@ export default function PromptBlock({ slug, template, variables }: { slug: strin
       <div className="pl-button-row"><button type="submit" className="pl-button">Customize prompt <span aria-hidden="true">↗</span></button><button type="button" className="pl-action" onClick={() => { setValues({}); setApplied({}); setMessage("Default values restored."); }}>Reset fields</button></div>
       <p className="pl-muted pl-small">Your entries stay in this page. No AI request is made.</p><p role="status" className="pl-small">{message}</p>
     </form>
-    <pre className="pl-prompt-text" tabIndex={0} aria-label="Prompt text"><code>{text}</code></pre>
+    <pre className="pl-prompt-text" role="region" tabIndex={0} aria-label="Prompt text"><code>{text}</code></pre>
   </section>;
 }

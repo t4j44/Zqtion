@@ -37,11 +37,11 @@ export default function CapabilityArtifacts() {
               <div className="capability-artifact-visual"><LoopVideo name={item.id} /></div>
               <div className="capability-artifact-copy">
                 <div className="flex items-center justify-between gap-4">
-                  <span className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-white/60">{item.detail}</span>
-                  <span className="capability-artifact-action inline-flex items-center gap-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-cyan-200/70">Explore <ArrowUpRight className="h-3.5 w-3.5" /></span>
+                  <span className="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-secondary">{item.detail}</span>
+                  <span className="capability-artifact-action inline-flex items-center gap-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-accent">Explore <ArrowUpRight className="h-3.5 w-3.5" /></span>
                 </div>
                 <h3 className="mt-5 text-4xl font-semibold tracking-[-0.05em]">{item.label}</h3>
-                <p className="mt-4 text-base leading-7 text-white/52">{item.text}</p>
+                <p className="mt-4 text-base leading-7 text-muted">{item.text}</p>
               </div>
             </article>
           </Link>

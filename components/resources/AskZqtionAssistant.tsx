@@ -68,16 +68,16 @@ export function AskZqtionAssistant() {
   };
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-[#22242C] bg-[#121316] p-6 lg:p-8">
+    <div className="relative overflow-hidden rounded-2xl border border-[var(--line)] bg-surface p-6 lg:p-8">
       <div className="max-w-2xl">
-        <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-sky-500/20 bg-sky-500/10 px-3 py-1 text-xs font-medium text-sky-400">
+        <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-sky-500/20 bg-sky-500/10 px-3 py-1 text-xs font-medium text-accent">
           <span className="h-1.5 w-1.5 rounded-full bg-sky-400 animate-pulse" />
           <span>Natural Language Assistant</span>
         </div>
-        <h2 className="mb-2 text-2xl font-bold tracking-tight text-white lg:text-3xl">
+        <h2 className="mb-2 text-2xl font-bold tracking-tight text-foreground lg:text-3xl">
           Ask Zqtion Resource Intelligence
         </h2>
-        <p className="mb-6 text-sm text-zinc-400 leading-relaxed">
+        <p className="mb-6 text-sm text-muted leading-relaxed">
           Describe what you want to build or automate. The engine synthesizes verified tools, repositories, agent skills, prompts, and MCP connectors tailored to your budget.
         </p>
       </div>
@@ -93,10 +93,11 @@ export function AskZqtionAssistant() {
         <div className="relative flex-1">
           <input
             type="text"
+            aria-label="Describe what you want to build or automate"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="e.g. I run a 3-person agency and want to automate lead research for less than $50/mo..."
-            className="w-full min-h-[48px] rounded-xl border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-white placeholder-zinc-500 focus:border-[#38BDF8] focus:outline-none focus:ring-1 focus:ring-[#38BDF8]"
+            className="w-full min-h-[48px] rounded-xl border border-white/10 bg-black/50 px-4 py-2.5 text-sm text-foreground placeholder-zinc-500 focus:border-[#38BDF8] focus:outline-none focus:ring-1 focus:ring-[#38BDF8]"
           />
         </div>
         <button
@@ -110,7 +111,7 @@ export function AskZqtionAssistant() {
 
       {/* Sample question chips */}
       <div className="flex flex-wrap items-center gap-2">
-        <span className="text-xs text-zinc-500">Try asking:</span>
+        <span className="text-xs text-muted">Try asking:</span>
         {sampleQuestions.map((q, idx) => (
           <button
             key={idx}
@@ -119,7 +120,7 @@ export function AskZqtionAssistant() {
               setQuery(q);
               handleAsk(q);
             }}
-            className="rounded-lg border border-white/5 bg-white/[0.02] px-2.5 py-1 text-xs text-zinc-400 hover:border-white/20 hover:text-white transition-colors text-left"
+            className="rounded-lg border border-white/5 bg-white/[0.02] px-2.5 py-1 text-xs text-muted hover:border-white/20 hover:text-foreground transition-colors text-left"
           >
             {q.length > 55 ? `${q.slice(0, 55)}...` : q}
           </button>
@@ -128,7 +129,7 @@ export function AskZqtionAssistant() {
 
       {/* Error state */}
       {error && (
-        <div className="mt-6 rounded-xl border border-red-900/40 bg-red-950/20 p-4 text-xs text-red-400">
+        <div role="alert" className="mt-6 rounded-xl border border-red-900/40 bg-red-950/20 p-4 text-xs text-error">
           {error}
         </div>
       )}
@@ -137,10 +138,10 @@ export function AskZqtionAssistant() {
       {response && (
         <div className="mt-8 rounded-xl border border-[#38BDF8]/30 bg-black/60 p-6 animate-in fade-in duration-300">
           <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-3">
-            <h3 className="text-base font-semibold text-white">
+            <h3 className="text-base font-semibold text-foreground">
               {response.answer || "Recommended Execution Stack"}
             </h3>
-            <span className="text-xs font-mono text-emerald-400">
+            <span className="text-xs font-mono text-success">
               Verified: {response.verified_at || "October 2026"}
             </span>
           </div>
@@ -148,16 +149,16 @@ export function AskZqtionAssistant() {
           {/* Stack items */}
           {response.resources?.[0]?.recommendedStack && (
             <div className="mb-6 space-y-3">
-              <h4 className="text-xs font-medium uppercase tracking-wider text-zinc-400">
+              <h4 className="text-xs font-medium uppercase tracking-wider text-muted">
                 Recommended Components
               </h4>
               <div className="grid gap-3 sm:grid-cols-3">
                 {response.resources[0].recommendedStack.map((item: StackItem, i: number) => (
                   <div key={i} className="rounded-lg border border-white/10 bg-white/[0.03] p-3.5">
-                    <div className="mb-1 text-xs font-semibold text-[#38BDF8]">{item.name}</div>
-                    <div className="mb-2 text-xs text-zinc-400">{item.role}</div>
-                    <div className="text-[11px] font-mono text-emerald-400">Cost: {item.estimatedCost}</div>
-                    <p className="mt-1.5 text-[11px] text-zinc-500 leading-normal">{item.tradeoffs}</p>
+                    <div className="mb-1 text-xs font-semibold text-accent">{item.name}</div>
+                    <div className="mb-2 text-xs text-muted">{item.role}</div>
+                    <div className="text-[11px] font-mono text-success">Cost: {item.estimatedCost}</div>
+                    <p className="mt-1.5 text-[11px] text-muted leading-normal">{item.tradeoffs}</p>
                   </div>
                 ))}
               </div>
@@ -167,15 +168,15 @@ export function AskZqtionAssistant() {
           {/* Cost and Guide Link */}
           <div className="flex flex-wrap items-center justify-between gap-4 rounded-lg bg-white/[0.02] p-3 border border-white/5">
             <div>
-              <span className="text-xs text-zinc-400">Estimated Total Cost: </span>
-              <span className="text-xs font-bold text-white">
+              <span className="text-xs text-muted">Estimated Total Cost: </span>
+              <span className="text-xs font-bold text-foreground">
                 {response.resources?.[0]?.totalEstimatedMonthlyCost || "$20/month"}
               </span>
             </div>
             {response.resources?.[0]?.relatedGuideSlug && (
               <Link
                 href={`/resources/guide/${response.resources[0].relatedGuideSlug}`}
-                className="text-xs font-semibold text-[#38BDF8] hover:underline"
+                className="text-xs font-semibold text-accent hover:underline"
               >
                 Read Complete Implementation Guide &rarr;
               </Link>

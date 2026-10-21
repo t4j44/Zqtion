@@ -26,11 +26,11 @@ export default function PageHero({
       </div>
       <div className="relative z-10 max-w-6xl pt-28 sm:pt-36">
         <p className="eyebrow">{eyebrow}</p>
-        <h1 className="mt-7 max-w-6xl text-balance text-5xl font-semibold leading-[0.9] tracking-[-0.055em] text-white sm:text-7xl lg:text-[7.8rem]">
+        <h1 className="mt-7 max-w-6xl text-balance text-[length:var(--type-h1)] font-semibold leading-[1.02] tracking-[-0.055em] text-foreground">
           {title}
         </h1>
         <div className="mt-10 grid gap-8 border-t border-white/10 pt-7 lg:grid-cols-[1fr_auto] lg:items-end">
-          <p className="max-w-2xl text-pretty text-lg leading-8 text-white/58 sm:text-xl">
+          <p className="max-w-2xl text-pretty text-lg leading-8 text-muted sm:text-xl">
             {description}
           </p>
           {primary || secondary ? (

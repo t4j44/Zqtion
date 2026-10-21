@@ -17,6 +17,7 @@ const columns = [
   {
     title: "Resources",
     links: [
+      { href: "/resources", label: "Resource Intelligence" },
       { href: "/insights", label: "Insights" },
       { href: "/prompts", label: "Prompts" },
       { href: "/prompts/methods", label: "Prompting methods" },
@@ -35,7 +36,7 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="site-footer relative overflow-hidden border-t border-white/10 bg-[#050608]">
+    <footer className="site-footer relative overflow-hidden border-t border-white/10 bg-[var(--background)]">
       <div className="footer-wordmark" aria-hidden="true">ZQTION</div>
       <div className="section-shell relative z-10 pb-8 pt-10 sm:pt-14">
         <div className="footer-grid">
@@ -46,10 +47,10 @@ export default function Footer() {
               </span>
               <span className="font-extrabold tracking-[0.18em]">ZQTION</span>
             </Link>
-            <p className="mt-5 max-w-sm text-lg font-medium leading-snug tracking-[-0.02em] text-white/80">
+            <p className="mt-5 max-w-sm text-lg font-medium leading-snug tracking-[-0.02em] text-secondary">
               Founder-led execution for creative, digital products, and practical automation.
             </p>
-            <p className="mt-3 text-sm text-white/60">Remote collaboration for teams worldwide.</p>
+            <p className="mt-3 text-sm text-secondary">Remote collaboration for teams worldwide.</p>
             <div className="footer-connect mt-6 flex flex-wrap items-center gap-2">
               <a href={`mailto:${siteConfig.email}`} className="footer-pill" data-analytics="email_click" data-analytics-location="footer">{siteConfig.email}</a>
               <a href={siteConfig.linkedin} target="_blank" rel="noreferrer" className="footer-pill">LinkedIn <ArrowUpRight className="h-3.5 w-3.5" /></a>
@@ -73,9 +74,9 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="footer-legal mt-10 flex flex-col gap-1 border-t border-white/10 pt-4 text-xs text-white/60 sm:mt-14 sm:flex-row sm:items-center sm:justify-between">
+        <div className="footer-legal mt-10 flex flex-col gap-1 border-t border-white/10 pt-4 text-xs text-secondary sm:mt-14 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Zqtion. Execution, automated.</p>
-          <div className="flex gap-2"><Link href="/privacy" className="hover:text-white">Privacy</Link><Link href="/terms" className="hover:text-white">Terms</Link></div>
+          <div className="flex gap-2"><Link href="/privacy" className="hover:text-foreground">Privacy</Link><Link href="/terms" className="hover:text-foreground">Terms</Link></div>
         </div>
       </div>
     </footer>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getCatalogue } from "@/lib/resources/service";
 import { ResourceSearchFilter } from "@/components/resources/ResourceSearchFilter";
 import { AskZqtionAssistant } from "@/components/resources/AskZqtionAssistant";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "AI Resources, Workflows & Building Blocks | Zqtion Resource Intelligence",
@@ -38,7 +39,7 @@ export default async function ResourcesPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#0D0D0E] text-white">
+    <><main id="main-content" className="resource-page min-h-screen">
       {/* Schema.org Structured Data */}
       <script
         type="application/ld+json"
@@ -46,21 +47,21 @@ export default async function ResourcesPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative border-b border-[#1F2128] pt-32 pb-16 lg:pt-36 lg:pb-20">
+      <section className="relative border-b border-[var(--line)] pt-32 pb-16 lg:pt-36 lg:pb-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-500/20 bg-sky-500/10 px-3 py-1 text-xs font-semibold text-sky-400 uppercase tracking-widest">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-500/20 bg-sky-500/10 px-3 py-1 text-xs font-semibold text-accent uppercase tracking-widest">
               <span>Knowledge &amp; Discovery Layer</span>
             </div>
-            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl font-sans">
-              Find the right <span className="text-[#38BDF8]">AI building block</span>.
+            <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl font-sans">
+              Find the right <span className="text-accent">AI building block</span>.
             </h1>
-            <p className="mt-4 text-lg text-zinc-400 sm:text-xl leading-relaxed">
+            <p className="mt-4 text-lg text-muted sm:text-xl leading-relaxed">
               Prompts, tools, agent skills, open-source repositories, workflows, and MCP integrations—organized around what you are actually trying to accomplish.
             </p>
 
             {/* Quick stats banner */}
-            <div className="mt-8 flex flex-wrap items-center gap-6 text-xs font-medium text-zinc-400">
+            <div className="mt-8 flex flex-wrap items-center gap-6 text-xs font-medium text-muted">
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
                 <span>100% Original Zqtion Implementations</span>
@@ -90,6 +91,6 @@ export default async function ResourcesPage() {
           <ResourceSearchFilter initialItems={catalogue} />
         </section>
       </div>
-    </main>
+    </main><Footer /></>
   );
 }

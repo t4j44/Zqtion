@@ -296,18 +296,18 @@ export default function Hero3D() {
   const effectiveMode: HeroRenderMode = sceneFailed ? "static" : mode;
 
   return (
-    <div className="hero-journey relative isolate bg-[#050608]" data-hero-mode={effectiveMode} data-hero-tier={effectiveMode} data-hero-video={videoPlaying && effectiveMode === "mobile-poster" ? "playing" : "idle"}>
+    <div className="hero-journey relative isolate bg-[var(--background)]" data-hero-mode={effectiveMode} data-hero-tier={effectiveMode} data-hero-video={videoPlaying && effectiveMode === "mobile-poster" ? "playing" : "idle"}>
       <section ref={heroRef} className="hero-3d relative min-h-svh overflow-hidden border-b border-white/10" aria-label="Zqtion introduction">
         <div className="signal-grid absolute inset-0 opacity-35" aria-hidden="true" />
         <div className="hero-3d-glow hero-3d-glow-blue" aria-hidden="true" />
         <div className="hero-3d-glow hero-3d-glow-cyan" aria-hidden="true" />
         <div className="hero-layout section-shell grid min-h-svh items-center gap-8 pb-12 pt-28 lg:grid-cols-[1.04fr_0.96fr] lg:gap-4 lg:pb-16 lg:pt-28">
           <div className="hero-copy relative z-30">
-            <h1 className="hero-headline mt-6 max-w-5xl text-balance text-white">
+            <h1 className="hero-headline mt-6 max-w-5xl text-balance text-foreground">
               <span className="hero-headline-primary">Create what gets noticed.</span>
               <span className="font-editorial hero-headline-accent">Build what gets used.</span>
             </h1>
-            <p className="hero-description mt-7 max-w-2xl text-pretty text-base leading-7 text-white/62 sm:text-lg sm:leading-8">Zqtion turns ambitious ideas into campaign-ready creative, focused digital products, and practical AI systems.</p>
+            <p className="hero-description mt-7 max-w-2xl text-pretty text-base leading-7 text-secondary sm:text-lg sm:leading-8">Zqtion turns ambitious ideas into campaign-ready creative, focused digital products, and practical AI systems.</p>
             <div className="hero-actions mt-8 flex flex-wrap gap-3">
               <Link href="/work" className="button-primary" data-analytics="hero_primary_cta">Explore the work <ArrowUpRight className="h-4 w-4" /></Link>
               <Link href="/contact" className="button-secondary" data-analytics="hero_secondary_cta">Start a project</Link>
@@ -317,7 +317,7 @@ export default function Hero3D() {
               <span><strong>Join the community</strong><span className="hero-community-sub"> · ask, share, learn</span></span>
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <div className="hero-capability-list mt-8 flex flex-wrap gap-x-6 gap-y-3 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white/35">
+            <div className="hero-capability-list mt-8 flex flex-wrap gap-x-6 gap-y-3 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-muted">
               <span>Creative systems</span><span>Digital products</span><span>AI automation</span>
             </div>
           </div>
@@ -326,7 +326,7 @@ export default function Hero3D() {
           </div>
         </div>
         <div className="hero-scroll-cue pointer-events-none absolute inset-x-0 bottom-4 z-30 justify-center" aria-hidden="true">
-          <span className="flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-white/28">Scroll to explore <ArrowDown className="h-3.5 w-3.5" /></span>
+          <span className="flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted">Scroll to explore <ArrowDown className="h-3.5 w-3.5" /></span>
         </div>
       </section>
     </div>

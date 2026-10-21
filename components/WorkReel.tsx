@@ -100,10 +100,10 @@ export default function WorkReel({ items }: { items: WorkItem[] }) {
           <div>
             <SectionIcon name="work" />
             <p className="eyebrow">Selected work</p>
-            <h2 id="work-reel-title" className="mt-5 text-balance text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
+            <h2 id="work-reel-title" className="mt-5 text-balance text-4xl font-semibold leading-[0.98] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl">
               Proof with the relationship made clear.
             </h2>
-            <p className="mt-5 max-w-xl text-pretty text-base leading-7 text-white/55 sm:text-lg sm:leading-8">
+            <p className="mt-5 max-w-xl text-pretty text-base leading-7 text-muted sm:text-lg sm:leading-8">
               Competition entries, founder-venture work, and independent experiments are labeled—not passed off as client results.
             </p>
           </div>
