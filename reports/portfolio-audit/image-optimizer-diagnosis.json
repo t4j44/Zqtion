@@ -1,0 +1,13 @@
+{
+  "scope": "Observed local diagnostic before WebP preference; recorded from command output. Low-level encoder/cache cause is not established.",
+  "resource": "/_next/image?url=%2Fwork%2Fmicrofilms.webp&w=750&q=75",
+  "comparison": [
+    {"accept":"image/avif,image/webp,image/*,*/*;q=0.8","result":"timeout","elapsedMs":10006},
+    {"accept":"image/webp,image/*,*/*;q=0.8","result":"HTTP 200","contentType":"image/webp","bytes":21762,"elapsedMs":71}
+  ],
+  "otherAffectedSources": ["/work/product-lab.webp","/work/creative-lab.webp"],
+  "directOriginalFiles": "All three responded HTTP 200 with valid WebP originals.",
+  "prefetchIsolation": "Aborting route prefetch did not resolve the three pending image optimizer requests.",
+  "change": "Prefer WebP before AVIF in the existing Next image optimizer. Native hero AVIF files and security headers remain unchanged.",
+  "postFixEvidence": "image-delivery-check.json records all eleven stills complete with natural dimensions and zero asset failures after native scrolling."
+}

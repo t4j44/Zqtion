@@ -1,0 +1,116 @@
+{
+  "baseHead": "db34e39f2ea18ea296ac072557721731f9d8d70d",
+  "buildId": "5waZFY_KtfsDPJlSv6P1W",
+  "aggregateSha256": "80451438b98441b1f94aa8a88c04dfd784a89ee35591bd837fa7e64517aff6b1",
+  "algorithm": "sha256 of newline-joined path:sha256 entries",
+  "files": [
+    {
+      "path": "app/globals.css",
+      "sha256": "f4438286519c068d90230a1a44762222006e4a313b4dce36f1415d85579cc90e"
+    },
+    {
+      "path": "app/page.tsx",
+      "sha256": "13e8fe9432b9563932667f269d102f2817a4c8b392ee65cb5de429b272adeb26"
+    },
+    {
+      "path": "app/work/[slug]/page.tsx",
+      "sha256": "80854987f60a9f5fbc7f15137daf3cbd9da16e37305204bc0664387bf16fc25f"
+    },
+    {
+      "path": "app/work/page.tsx",
+      "sha256": "791e99f8c8708dc0f2440441bc5ed81ec70a5496c2f5958262df3859e7495156"
+    },
+    {
+      "path": "components/Hero3D.tsx",
+      "sha256": "ad227d193980ae90772408a24a8fa8ba15e93d58a4436a17b5fca2aa1e1bc513"
+    },
+    {
+      "path": "components/VideoFacade.tsx",
+      "sha256": "92707122ff80d2eac3a4b3ef773a811554e271958434287f4c652e23b20ece0a"
+    },
+    {
+      "path": "components/WorkCard.tsx",
+      "sha256": "288860667cb108e0caeb0ac915107457f444ac6081022b0c684fed8c0c2e0dfc"
+    },
+    {
+      "path": "components/WorkReel.tsx",
+      "sha256": "f5f7a59bd2990dda6a365128f558a2b3bfa8cceb2a8109f40820455aec82fdb2"
+    },
+    {
+      "path": "components/WorkReelScroller.tsx",
+      "sha256": "202d8008d22d3115381cedcf991f392a51f55a36773bd9fde460010aa1342a22"
+    },
+    {
+      "path": "data/work.ts",
+      "sha256": "107907324ad8ab2c7162300161e8ea2056fda10ca5cc542929ff7bb324e3eefc"
+    },
+    {
+      "path": "next.config.js",
+      "sha256": "e6a7fdafe6fdd1521143be0dffd034b526b387c6813deba771c04734379cb93b"
+    },
+    {
+      "path": "public/work/Gruffet-LICENSE.txt",
+      "sha256": "f7ac958b93afd2dcd5f6c24d4c2150b75e2596d1954ccdaa8c103c15c529f673"
+    },
+    {
+      "path": "public/work/creative-lab.webp",
+      "sha256": "4a8d70f313a04055ad4dfe560b909a32a04de54e6748f2a618c5626fd70c1b21"
+    },
+    {
+      "path": "public/work/gforce-desktop.webp",
+      "sha256": "a6eec5e1855385a5b23439719ff0140290f2d320dfa07e7df442e4768047433a"
+    },
+    {
+      "path": "public/work/gforce-guidance.webp",
+      "sha256": "b85fc2beda124412453c83c95486a9ebd24ac3e14b067799db5798fd9e49c8ae"
+    },
+    {
+      "path": "public/work/gforce-mobile.webp",
+      "sha256": "deb3aec4fee00cf041a4a6fb68d4412bd047ac832c880074863b4f19aaf3582e"
+    },
+    {
+      "path": "public/work/gruffet-explainer.webp",
+      "sha256": "179605cd48ccfd9b3087f3d192b8a169f8cec6cb0cd48698955858ee3dfb2f60"
+    },
+    {
+      "path": "public/work/gruffet-mark.svg",
+      "sha256": "c92485979caa9724f6f23aadde9db35588a7aa4481a23c17f720aae646b8b584"
+    },
+    {
+      "path": "public/work/gruffet-social.webp",
+      "sha256": "237a8c16c8aeb1ff11cbbe6c6e3f16b6ea73b86c61a9ac63ef3e094e0931c495"
+    },
+    {
+      "path": "public/work/kinetic-type.webp",
+      "sha256": "cceb0a70e0fdb927bca9b957f9e3b3c904c47a53ac623e263758560a21307b1e"
+    },
+    {
+      "path": "public/work/microfilms.webp",
+      "sha256": "e3d652db40128d4cd693ce7b932fef3f9ec04e92adcc6fa1f8c37199d6d11911"
+    },
+    {
+      "path": "public/work/past-self.webp",
+      "sha256": "fda084be214483e3664e77a36359b8ded32bf36075528227499aa7974f028b41"
+    },
+    {
+      "path": "public/work/product-lab.webp",
+      "sha256": "c1f802d393f44d7fffe5dc461c3224c3fb8f6c1db3c85ac61d07832acec4e6aa"
+    },
+    {
+      "path": "public/work/spark.webp",
+      "sha256": "f0de52e7f41359bbd4f320f1ad51f4f55ead484c581a55cd46fa12d1a0d5b21d"
+    },
+    {
+      "path": "public/work/the-call.webp",
+      "sha256": "c9839994a2a2bef51c123e6039639e433e3c1409edf175aca8a3270af8a7450c"
+    },
+    {
+      "path": "public/work/the-leap.webp",
+      "sha256": "790daa286199ac82ed4dc32b1d54b79f2a2bc8c061d8738e8c756ee9238ea29a"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "12c57465dbf8ad71932a8086d88180122286c6876d5c5e835020b102295c8e83"
+    }
+  ]
+}

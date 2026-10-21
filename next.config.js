@@ -36,7 +36,8 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
-    formats: ['image/avif', 'image/webp'],
+    // Prefer the verified low-latency WebP path; retain AVIF as a fallback.
+    formats: ['image/webp', 'image/avif'],
     remotePatterns: [
       { protocol: 'https', hostname: 'i.ytimg.com' },
       { protocol: 'https', hostname: '*.supabase.co' },

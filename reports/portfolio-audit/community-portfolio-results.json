@@ -1,0 +1,675 @@
+{
+  "fixture": "Local production build; real PostgreSQL/RLS with simulated Auth/Storage. HTTP fixture CSP bypass only. Not physical-device or hosted acceptance.",
+  "passed": [
+    "Public portfolio: SSR, real counts, no private email or owner controls",
+    "Logo and wordmark navigate home on phone and desktop; mobile menu Escape restores focus",
+    "Phone filters use a dialog; Escape returns focus; search/filter URLs work",
+    "Card preview expands without navigation; card surface and all author identity parts work",
+    "Portfolio tabs, meaningful answer context, result media, pagination and canonical share",
+    "Upvote/remove/save immediate state and persisted server totals; share excludes query state",
+    "Accepted answer first, ten-item initial conversation, Top/Newest, incremental comments",
+    "Inline comment failure preserves draft; retry posts without identity collection or page reload",
+    "Reply, view/hide replies and controlled nested thread work",
+    "Public answer permalink reveals a contribution beyond the first page; result links stay in prompts",
+    "Owner can feature/unfeature/reorder; other profiles have no owner controls",
+    "Create post keeps optional fields collapsed and publishes exact wording",
+    "Search labels public profiles and answers; native share receives only a canonical URL",
+    "Mobile footer two columns, touch areas and chat avoidance at all phone widths",
+    "Responsive routes: thirteen widths, no page overflow, visible media and controls",
+    "Keyboard actions, menu Escape, visible focus and reduced motion"
+  ],
+  "failures": [],
+  "errors": [],
+  "responsive": [
+    {
+      "width": 320,
+      "path": "/ai-experiences",
+      "overflow": 0
+    },
+    {
+      "width": 320,
+      "path": "/ai-experiences/7de8db04-eb86-44e4-8227-aad88d4f203c",
+      "overflow": 0
+    },
+    {
+      "width": 320,
+      "path": "/ai-experiences/359d3622-4bb5-488e-9feb-63b083d59082",
+      "overflow": 0
+    },
+    {
+      "width": 320,
+      "path": "/ai-experiences/82e12029-c4d6-4fa9-b08a-26fea89b6c60",
+      "overflow": 0
+    },
+    {
+      "width": 320,
+      "path": "/prompts/community",
+      "overflow": 0
+    },
+    {
+      "width": 320,
+      "path": "/prompts/community/edb06f15-4052-4904-87da-bae30f1ea778",
+      "overflow": 0
+    },
+    {
+      "width": 320,
+      "path": "/u/alice",
+      "overflow": 0
+    },
+    {
+      "width": 320,
+      "path": "/share",
+      "overflow": 0
+    },
+    {
+      "width": 320,
+      "path": "/community/account",
+      "overflow": 0
+    },
+    {
+      "width": 320,
+      "path": "/prompts",
+      "overflow": 0
+    },
+    {
+      "width": 360,
+      "path": "/ai-experiences",
+      "overflow": 0
+    },
+    {
+      "width": 360,
+      "path": "/ai-experiences/7de8db04-eb86-44e4-8227-aad88d4f203c",
+      "overflow": 0
+    },
+    {
+      "width": 360,
+      "path": "/ai-experiences/359d3622-4bb5-488e-9feb-63b083d59082",
+      "overflow": 0
+    },
+    {
+      "width": 360,
+      "path": "/ai-experiences/82e12029-c4d6-4fa9-b08a-26fea89b6c60",
+      "overflow": 0
+    },
+    {
+      "width": 360,
+      "path": "/prompts/community",
+      "overflow": 0
+    },
+    {
+      "width": 360,
+      "path": "/prompts/community/edb06f15-4052-4904-87da-bae30f1ea778",
+      "overflow": 0
+    },
+    {
+      "width": 360,
+      "path": "/u/alice",
+      "overflow": 0
+    },
+    {
+      "width": 360,
+      "path": "/share",
+      "overflow": 0
+    },
+    {
+      "width": 360,
+      "path": "/community/account",
+      "overflow": 0
+    },
+    {
+      "width": 360,
+      "path": "/prompts",
+      "overflow": 0
+    },
+    {
+      "width": 375,
+      "path": "/ai-experiences",
+      "overflow": 0
+    },
+    {
+      "width": 375,
+      "path": "/ai-experiences/7de8db04-eb86-44e4-8227-aad88d4f203c",
+      "overflow": 0
+    },
+    {
+      "width": 375,
+      "path": "/ai-experiences/359d3622-4bb5-488e-9feb-63b083d59082",
+      "overflow": 0
+    },
+    {
+      "width": 375,
+      "path": "/ai-experiences/82e12029-c4d6-4fa9-b08a-26fea89b6c60",
+      "overflow": 0
+    },
+    {
+      "width": 375,
+      "path": "/prompts/community",
+      "overflow": 0
+    },
+    {
+      "width": 375,
+      "path": "/prompts/community/edb06f15-4052-4904-87da-bae30f1ea778",
+      "overflow": 0
+    },
+    {
+      "width": 375,
+      "path": "/u/alice",
+      "overflow": 0
+    },
+    {
+      "width": 375,
+      "path": "/share",
+      "overflow": 0
+    },
+    {
+      "width": 375,
+      "path": "/community/account",
+      "overflow": 0
+    },
+    {
+      "width": 375,
+      "path": "/prompts",
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "path": "/ai-experiences",
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "path": "/ai-experiences/7de8db04-eb86-44e4-8227-aad88d4f203c",
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "path": "/ai-experiences/359d3622-4bb5-488e-9feb-63b083d59082",
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "path": "/ai-experiences/82e12029-c4d6-4fa9-b08a-26fea89b6c60",
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "path": "/prompts/community",
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "path": "/prompts/community/edb06f15-4052-4904-87da-bae30f1ea778",
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "path": "/u/alice",
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "path": "/share",
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "path": "/community/account",
+      "overflow": 0
+    },
+    {
+      "width": 390,
+      "path": "/prompts",
+      "overflow": 0
+    },
+    {
+      "width": 393,
+      "path": "/ai-experiences",
+      "overflow": 0
+    },
+    {
+      "width": 393,
+      "path": "/ai-experiences/7de8db04-eb86-44e4-8227-aad88d4f203c",
+      "overflow": 0
+    },
+    {
+      "width": 393,
+      "path": "/ai-experiences/359d3622-4bb5-488e-9feb-63b083d59082",
+      "overflow": 0
+    },
+    {
+      "width": 393,
+      "path": "/ai-experiences/82e12029-c4d6-4fa9-b08a-26fea89b6c60",
+      "overflow": 0
+    },
+    {
+      "width": 393,
+      "path": "/prompts/community",
+      "overflow": 0
+    },
+    {
+      "width": 393,
+      "path": "/prompts/community/edb06f15-4052-4904-87da-bae30f1ea778",
+      "overflow": 0
+    },
+    {
+      "width": 393,
+      "path": "/u/alice",
+      "overflow": 0
+    },
+    {
+      "width": 393,
+      "path": "/share",
+      "overflow": 0
+    },
+    {
+      "width": 393,
+      "path": "/community/account",
+      "overflow": 0
+    },
+    {
+      "width": 393,
+      "path": "/prompts",
+      "overflow": 0
+    },
+    {
+      "width": 400,
+      "path": "/ai-experiences",
+      "overflow": 0
+    },
+    {
+      "width": 400,
+      "path": "/ai-experiences/7de8db04-eb86-44e4-8227-aad88d4f203c",
+      "overflow": 0
+    },
+    {
+      "width": 400,
+      "path": "/ai-experiences/359d3622-4bb5-488e-9feb-63b083d59082",
+      "overflow": 0
+    },
+    {
+      "width": 400,
+      "path": "/ai-experiences/82e12029-c4d6-4fa9-b08a-26fea89b6c60",
+      "overflow": 0
+    },
+    {
+      "width": 400,
+      "path": "/prompts/community",
+      "overflow": 0
+    },
+    {
+      "width": 400,
+      "path": "/prompts/community/edb06f15-4052-4904-87da-bae30f1ea778",
+      "overflow": 0
+    },
+    {
+      "width": 400,
+      "path": "/u/alice",
+      "overflow": 0
+    },
+    {
+      "width": 400,
+      "path": "/share",
+      "overflow": 0
+    },
+    {
+      "width": 400,
+      "path": "/community/account",
+      "overflow": 0
+    },
+    {
+      "width": 400,
+      "path": "/prompts",
+      "overflow": 0
+    },
+    {
+      "width": 412,
+      "path": "/ai-experiences",
+      "overflow": 0
+    },
+    {
+      "width": 412,
+      "path": "/ai-experiences/7de8db04-eb86-44e4-8227-aad88d4f203c",
+      "overflow": 0
+    },
+    {
+      "width": 412,
+      "path": "/ai-experiences/359d3622-4bb5-488e-9feb-63b083d59082",
+      "overflow": 0
+    },
+    {
+      "width": 412,
+      "path": "/ai-experiences/82e12029-c4d6-4fa9-b08a-26fea89b6c60",
+      "overflow": 0
+    },
+    {
+      "width": 412,
+      "path": "/prompts/community",
+      "overflow": 0
+    },
+    {
+      "width": 412,
+      "path": "/prompts/community/edb06f15-4052-4904-87da-bae30f1ea778",
+      "overflow": 0
+    },
+    {
+      "width": 412,
+      "path": "/u/alice",
+      "overflow": 0
+    },
+    {
+      "width": 412,
+      "path": "/share",
+      "overflow": 0
+    },
+    {
+      "width": 412,
+      "path": "/community/account",
+      "overflow": 0
+    },
+    {
+      "width": 412,
+      "path": "/prompts",
+      "overflow": 0
+    },
+    {
+      "width": 430,
+      "path": "/ai-experiences",
+      "overflow": 0
+    },
+    {
+      "width": 430,
+      "path": "/ai-experiences/7de8db04-eb86-44e4-8227-aad88d4f203c",
+      "overflow": 0
+    },
+    {
+      "width": 430,
+      "path": "/ai-experiences/359d3622-4bb5-488e-9feb-63b083d59082",
+      "overflow": 0
+    },
+    {
+      "width": 430,
+      "path": "/ai-experiences/82e12029-c4d6-4fa9-b08a-26fea89b6c60",
+      "overflow": 0
+    },
+    {
+      "width": 430,
+      "path": "/prompts/community",
+      "overflow": 0
+    },
+    {
+      "width": 430,
+      "path": "/prompts/community/edb06f15-4052-4904-87da-bae30f1ea778",
+      "overflow": 0
+    },
+    {
+      "width": 430,
+      "path": "/u/alice",
+      "overflow": 0
+    },
+    {
+      "width": 430,
+      "path": "/share",
+      "overflow": 0
+    },
+    {
+      "width": 430,
+      "path": "/community/account",
+      "overflow": 0
+    },
+    {
+      "width": 430,
+      "path": "/prompts",
+      "overflow": 0
+    },
+    {
+      "width": 768,
+      "path": "/ai-experiences",
+      "overflow": 0
+    },
+    {
+      "width": 768,
+      "path": "/ai-experiences/7de8db04-eb86-44e4-8227-aad88d4f203c",
+      "overflow": 0
+    },
+    {
+      "width": 768,
+      "path": "/ai-experiences/359d3622-4bb5-488e-9feb-63b083d59082",
+      "overflow": 0
+    },
+    {
+      "width": 768,
+      "path": "/ai-experiences/82e12029-c4d6-4fa9-b08a-26fea89b6c60",
+      "overflow": 0
+    },
+    {
+      "width": 768,
+      "path": "/prompts/community",
+      "overflow": 0
+    },
+    {
+      "width": 768,
+      "path": "/prompts/community/edb06f15-4052-4904-87da-bae30f1ea778",
+      "overflow": 0
+    },
+    {
+      "width": 768,
+      "path": "/u/alice",
+      "overflow": 0
+    },
+    {
+      "width": 768,
+      "path": "/share",
+      "overflow": 0
+    },
+    {
+      "width": 768,
+      "path": "/community/account",
+      "overflow": 0
+    },
+    {
+      "width": 768,
+      "path": "/prompts",
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "path": "/ai-experiences",
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "path": "/ai-experiences/7de8db04-eb86-44e4-8227-aad88d4f203c",
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "path": "/ai-experiences/359d3622-4bb5-488e-9feb-63b083d59082",
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "path": "/ai-experiences/82e12029-c4d6-4fa9-b08a-26fea89b6c60",
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "path": "/prompts/community",
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "path": "/prompts/community/edb06f15-4052-4904-87da-bae30f1ea778",
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "path": "/u/alice",
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "path": "/share",
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "path": "/community/account",
+      "overflow": 0
+    },
+    {
+      "width": 1024,
+      "path": "/prompts",
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "path": "/ai-experiences",
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "path": "/ai-experiences/7de8db04-eb86-44e4-8227-aad88d4f203c",
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "path": "/ai-experiences/359d3622-4bb5-488e-9feb-63b083d59082",
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "path": "/ai-experiences/82e12029-c4d6-4fa9-b08a-26fea89b6c60",
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "path": "/prompts/community",
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "path": "/prompts/community/edb06f15-4052-4904-87da-bae30f1ea778",
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "path": "/u/alice",
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "path": "/share",
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "path": "/community/account",
+      "overflow": 0
+    },
+    {
+      "width": 1280,
+      "path": "/prompts",
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "path": "/ai-experiences",
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "path": "/ai-experiences/7de8db04-eb86-44e4-8227-aad88d4f203c",
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "path": "/ai-experiences/359d3622-4bb5-488e-9feb-63b083d59082",
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "path": "/ai-experiences/82e12029-c4d6-4fa9-b08a-26fea89b6c60",
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "path": "/prompts/community",
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "path": "/prompts/community/edb06f15-4052-4904-87da-bae30f1ea778",
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "path": "/u/alice",
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "path": "/share",
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "path": "/community/account",
+      "overflow": 0
+    },
+    {
+      "width": 1440,
+      "path": "/prompts",
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "path": "/ai-experiences",
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "path": "/ai-experiences/7de8db04-eb86-44e4-8227-aad88d4f203c",
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "path": "/ai-experiences/359d3622-4bb5-488e-9feb-63b083d59082",
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "path": "/ai-experiences/82e12029-c4d6-4fa9-b08a-26fea89b6c60",
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "path": "/prompts/community",
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "path": "/prompts/community/edb06f15-4052-4904-87da-bae30f1ea778",
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "path": "/u/alice",
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "path": "/share",
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "path": "/community/account",
+      "overflow": 0
+    },
+    {
+      "width": 1920,
+      "path": "/prompts",
+      "overflow": 0
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "dateLocal": "2026-10-21",
+  "branch": "feature/zqtion-community",
+  "baseHead": "db34e39f2ea18ea296ac072557721731f9d8d70d",
+  "buildId": "5waZFY_KtfsDPJlSv6P1W",
+  "sourceFingerprint": "80451438b98441b1f94aa8a88c04dfd784a89ee35591bd837fa7e64517aff6b1",
+  "observedSessionCommandResults": {
+    "basis": "Observed exit codes in this release session; this aggregation script does not rerun those commands",
+    "unitTests": {
+      "passed": 117,
+      "failed": 0
+    },
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "productionBuild": {
+      "status": "PASS",
+      "staticPages": 109
+    },
+    "promptsSeo": {
+      "pages": 29,
+      "failures": 0
+    },
+    "diffCheck": "PASS"
+  },
+  "portfolio": {
+    "checks": 112,
+    "overflows": 0,
+    "pageErrors": 0
+  },
+  "layout": {
+    "checks": 392,
+    "overflows": 0,
+    "pageErrors": 0,
+    "scope": "Full broad matrix plus 16 final work-page samples after grouping refinement; unaffected route evidence retained."
+  },
+  "accessibility": {
+    "scans": 80,
+    "automatedViolations": 0,
+    "incompleteRuleOccurrences": 80,
+    "incompleteRuleIds": [
+      "color-contrast"
+    ],
+    "scope": "28 final portfolio scans replace the affected routes in the 80-scan matrix; unaffected routes retained. Automation is not WCAG certification."
+  },
+  "interactions": {
+    "newPortfolio": 13,
+    "existingUi": 22,
+    "failures": 0
+  },
+  "community": {
+    "passed": 15,
+    "failures": 0
+  },
+  "communityPortfolio": {
+    "passed": 16,
+    "responsiveChecks": 130,
+    "failures": 0
+  },
+  "links": {
+    "pages": 232,
+    "failures": 0
+  },
+  "screenshots": 404,
+  "performanceAcceptance": "PARTIAL",
+  "productionReady": false,
+  "physicalDevices": "UNVERIFIED",
+  "webkit": "BLOCKED: missing webkit-2336 executable",
+  "protectedChanges": []
+}

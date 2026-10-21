@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <link rel="preload" as="image" type="image/avif" imageSrcSet="/hero/z-poster-512.avif 512w, /hero/z-poster-768.avif 768w, /hero/z-poster-1024.avif 1024w, /hero/z-poster-1280.avif 1280w" imageSizes="(max-width: 767px) min(82vw, 340px), min(26vw, 368px)" fetchPriority="high" />
       <SmoothScroll />
       <main id="main-content">
         <JsonLd schema={[getOrganizationSchema(), getWebSiteSchema(), getServicesSchema(services), getFAQSchema(faqs)]} />

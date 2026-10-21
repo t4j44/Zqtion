@@ -1,0 +1,7 @@
+{
+  "results": [],
+  "errors": [
+    "browserType.launch: Executable doesn't exist at C:\\Users\\hp\\AppData\\Local\\ms-playwright\\webkit-2336\\Playwright.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+  ],
+  "scope": "Playwright WebKit on Windows; not physical iOS Safari"
+}

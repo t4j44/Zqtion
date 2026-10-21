@@ -1,4 +1,5 @@
-export type WorkRelationship = "Competition entry" | "Independent concept" | "Creative lab";
+export type WorkRelationship = "Delivered website" | "Zqtion open source" | "Competition entry" | "Independent concept" | "Creative lab";
+export type WorkGroup = "Digital products & websites" | "Open source & AI tools" | "Motion design & commercials" | "AI films & experiments";
 
 export type WorkVideo = {
   title: string;
@@ -7,7 +8,7 @@ export type WorkVideo = {
   orientation?: "landscape" | "portrait";
 };
 
-export type WorkItem = {
+type WorkItemBase = {
   slug: string;
   title: string;
   shortTitle: string;
@@ -20,18 +21,25 @@ export type WorkItem = {
   whatThisProved: string;
   approach: string[];
   deliverables: string[];
-  videoId: string;
-  videoUrl: string;
+  group?: WorkGroup;
+  links?: { label: string; url: string }[];
+  gallery?: { src: string; alt: string; caption: string; width: number; height: number }[];
+  sourceTitle?: string;
+  socialImage?: string;
   /** Optional curated still (path under /public, e.g. "/work/spark.jpg", 16:9, at least 1600px wide). Falls back to the YouTube still. */
   poster?: string;
   /** Crops baked-in letterbox bars from the still (1 = none). */
   thumbZoom?: number;
-  additionalVideos?: WorkVideo[];
   featured?: boolean;
   orientation?: "landscape" | "portrait";
 };
 
-export const workItems: WorkItem[] = [
+export type WorkItem = WorkItemBase & (
+  | { kind?: "video"; videoId: string; videoUrl: string; additionalVideos?: WorkVideo[] }
+  | { kind: "website" | "product"; poster: string; videoId?: never; videoUrl?: never; additionalVideos?: never }
+);
+
+const legacyWork: WorkItem[] = [
   {
     slug: "spark-dhaka-2050",
     title: "SPARK — A Social Fiction Short Film",
@@ -142,50 +150,54 @@ export const workItems: WorkItem[] = [
   },
   {
     slug: "sports-film-the-leap",
-    title: "The Leap — Sports Film Concept",
-    shortTitle: "The Leap",
+    title: "MOJO — VFX Product Study",
+    shortTitle: "MOJO VFX",
+    sourceTitle: "MOJO VFX 4",
     year: "2026",
-    discipline: "AI commercial · Sports · Visual metaphor",
+    discipline: "Product film · VFX study · Short-form",
+    group: "Motion design & commercials",
     relationship: "Independent concept",
     disclosure:
-      "A self-initiated sportswear concept inspired by the visual language of global athletic campaigns. It is not commissioned by, endorsed by, or affiliated with Nike.",
+      "An independent, uncommissioned product study using MOJO packaging as a creative reference. The published film is titled MOJO VFX 4 on Zqtion's channel. No client relationship or brand endorsement is claimed. The legacy case-study URL is preserved.",
     summary:
-      "A kinetic sports concept using transformation and momentum to explore the feeling of pushing past a limit.",
+      "A short beverage VFX study centered on MOJO packaging and product-led visual experimentation.",
     challenge:
-      "Create premium sports energy without relying on a recognizable campaign, athlete endorsement, or unsupported brand claim.",
+      "Keep a recognizable product at the center of a compact effects-led visual sequence.",
     whatThisProved:
-      "Movement, lighting, and match-cut discipline can create campaign energy without relying on an endorsement or a copied campaign narrative.",
+      "The published release demonstrates product-led VFX and a clear packaging anchor. Commercial impact and the production software used were not independently verified.",
     approach: [
-      "Designed the film around a simple movement metaphor.",
-      "Used lighting, camera energy, and match cuts to create continuity.",
-      "Kept brand-inspired references disclosed and separate from authorship.",
+      "The product and packaging remain the visible anchor of the study.",
+      "The release presents a short-form VFX concept rather than a documented client campaign.",
+      "The original public video remains available for viewers to assess the work.",
     ],
-    deliverables: ["Spec film", "Visual direction", "AI-assisted production", "Edit and motion"],
+    deliverables: ["Beverage VFX study", "Published YouTube film"],
     videoId: "tlUPzwuj7ck",
     videoUrl: "https://www.youtube.com/watch?v=tlUPzwuj7ck",
     featured: true,
   },
   {
     slug: "mojo-product-visual-lab",
-    title: "Beverage Product Visual Lab",
-    shortTitle: "Product Lab",
+    title: "Chicken Tikka — Photo-to-Reel Study",
+    shortTitle: "Food in motion",
+    sourceTitle: "Chiceken tikka reel 3. (Photo to Reel)",
     year: "2026",
-    discipline: "Product film · VFX study · Short-form",
+    discipline: "Food visuals · Photo-to-reel · Short-form",
+    group: "Motion design & commercials",
     relationship: "Independent concept",
     disclosure:
-      "Independent, uncommissioned product studies using MOJO packaging as a creative reference. Zqtion does not claim a client relationship or brand endorsement.",
+      "An independent, uncommissioned food-visual study published on Zqtion's channel as Chiceken tikka reel 3. (Photo to Reel). No restaurant client, commercial commission, production software or campaign outcome is claimed. The legacy case-study URL is preserved.",
     summary:
-      "A set of short beverage studies exploring ice, particles, portals, urban energy, and packshot-focused visual direction.",
+      "A chicken-tikka product reel exploring how a food image can become a compact moving visual.",
     challenge:
-      "Build several distinct product worlds while keeping the pack recognizable and the execution suitable for short-form viewing.",
+      "Keep food texture and the subject immediately legible in a short photo-to-reel format.",
     whatThisProved:
-      "A product can remain the visual anchor across multiple effects-led worlds when silhouette, reveal timing, and small-screen legibility are protected.",
+      "The public release demonstrates food-led composition and a photo-to-reel format. The published title and imagery establish that scope; no conversion result is inferred.",
     approach: [
-      "Developed each film around one clear physical or environmental idea.",
-      "Prioritized the product silhouette and reveal before effects density.",
-      "Cut for immediate visual comprehension on small screens.",
+      "Food remains the principal visual subject.",
+      "Close-up composition emphasizes the product's texture and appearance.",
+      "The original published reel is retained as the evidence for the work.",
     ],
-    deliverables: ["Vertical product reels", "Packshot studies", "Motion and VFX concepts", "Social-ready edits"],
+    deliverables: ["Food photo-to-reel study", "Published YouTube release"],
     videoId: "GkyqartrbWo",
     videoUrl: "https://www.youtube.com/watch?v=GkyqartrbWo",
   },
@@ -230,7 +242,59 @@ export const workItems: WorkItem[] = [
   },
 ];
 
-export const featuredWork = workItems.filter((item) => item.featured);
+const newWork: WorkItem[] = [
+  {
+    slug: "g-force-tyres-mobile", title: "G Force Tyres Mobile — Website Development", shortTitle: "G Force Tyres", year: "2026",
+    discipline: "Website development · Responsive experience", relationship: "Delivered website", group: "Digital products & websites", kind: "website", poster: "/work/gforce-desktop.webp",
+    disclosure: "Website development by Zqtion, as supplied by the owner. The public website and responsive navigation were inspected for this case study. No independent commissioning document, client endorsement or commercial result is claimed.",
+    summary: "A mobile tyre-fitting website that starts with the fitting location, makes tyre-size entry clear and explains the route to an appointment.",
+    challenge: "Help visitors understand the fitting journey on a phone: where the vehicle is, which tyre size they need and what happens before a booking is confirmed.",
+    whatThisProved: "The published site demonstrates a location-first search interface, a responsive navigation system and clear fitting guidance. Live stock, payment handling and completed bookings were outside this portfolio review.",
+    approach: ["Organized the public experience around postcode and manual tyre-size entry.", "Connected service information, tyre guides and booking guidance through a responsive navigation system.", "Made availability and payment-confirmation conditions visible rather than implying an instant confirmed fitting."],
+    deliverables: ["Responsive public website", "Tyre-search interface", "Service and fitting guidance", "Desktop and mobile navigation"],
+    links: [{label:"Visit website",url:"https://www.gforcetyres-mobile.co.uk/"}],
+    gallery: [{src:"/work/gforce-mobile.webp",alt:"G Force Tyres homepage at a 390px phone viewport",caption:"The live homepage on a phone. Genuine site capture, 21 October 2026.",width:381,height:824},{src:"/work/gforce-guidance.webp",alt:"G Force Tyres public booking guidance on a phone",caption:"Published guidance explains postcode, tyre-size and booking conditions. No booking was submitted.",width:390,height:843}]
+  },
+  {
+    slug: "gruffet", title: "Gruffet — Open-source Business Research", shortTitle: "Gruffet", year: "2026",
+    discipline: "Open-source product · Business research", relationship: "Zqtion open source", group: "Open source & AI tools", kind: "product", poster:"/work/gruffet-mark.svg", socialImage:"/work/gruffet-social.webp",
+    disclosure: "A Zqtion open-source product, released under the MIT license. v0.1.0 is an early preview. The repository and implementation were inspected; this case study does not certify contact accuracy or production reliability.",
+    summary: "Discover local businesses, investigate their public websites and keep the evidence behind each contact and competitor finding.",
+    challenge: "A spreadsheet of names is difficult to trust when nobody can explain the source, the checks performed or which records still need human review.",
+    whatThisProved: "The early release implements a repeatable discovery, enrichment, verification, review and Excel-export workflow. Evidence can be inspected alongside the result; agreement between sources still does not guarantee that a contact is current or sales-qualified.",
+    approach: ["Discover businesses through OpenStreetMap and investigate publicly available website information.", "Separate rule-based contact and identity checks from uncertain records that need coding-agent or human review.", "Export research, source evidence, review tiers and competitor findings into an Excel workbook."],
+    deliverables: ["Python command-line tool", "Local business discovery", "Public website research", "Contact verification rules", "Competitor research", "Evidence-backed Excel exports"],
+    links: [{label:"View on GitHub",url:"https://github.com/Zqtion/Gruffet"},{label:"Read documentation",url:"https://github.com/Zqtion/Gruffet#-quick-start"},{label:"Watch introduction",url:"https://youtu.be/EKDWPiF0M6c"}]
+  },
+  {
+    slug: "gruffet-product-explainer",title:"Gruffet — Product Motion Explainer",shortTitle:"Gruffet in motion",year:"2026",
+    discipline:"Motion design · Product storytelling",relationship:"Creative lab",group:"Motion design & commercials",poster:"/work/gruffet-explainer.webp",
+    videoId:"EKDWPiF0M6c",videoUrl:"https://youtu.be/EKDWPiF0M6c",sourceTitle:"Tired of paying for B2B lead lists full of dead numbers and fake names? 📉",
+    disclosure:"A founder-supplied promotional film for Zqtion's own Gruffet product, published by Tajuddin Ahamed on BuildwithTajuddin. The interface sequences illustrate the workflow; they are not independently validated live output. No third-party SaaS client is claimed.",
+    summary:"A 56-second product explainer that makes a research workflow visible through type, interface-led motion and a clear problem-to-process narrative.",
+    challenge:"Explain the difference between an unsupported lead list and a research process that retains its sources, within a compact introduction.",
+    whatThisProved:"The published film demonstrates concise product storytelling and interface-led motion. It is promotional communication, not a reliability benchmark or a guarantee that any contact is accurate.",
+    approach:["Opened with the problem of unreliable business-contact lists.","Organized the explanation around discovery, verification, agent review and sourced export.","Used animated typography and illustrative interface sequences to connect the stages."],
+    deliverables:["56-second landscape explainer","Kinetic typography","Illustrative interface motion","Published YouTube film"]
+  },
+  {
+    slug:"bold-kinetic-type-showreel",title:"Bold Kinetic Type Showreel",shortTitle:"Type in motion",year:"2026",
+    discipline:"Motion design · Kinetic typography",relationship:"Creative lab",group:"Motion design & commercials",poster:"/work/kinetic-type.webp",
+    videoId:"osWc8m3qnhI",videoUrl:"https://youtu.be/osWc8m3qnhI",sourceTitle:"Bold kinetic type showreel",
+    disclosure:"A self-published motion study supplied by the owner, released by Tajuddin Ahamed on BuildwithTajuddin. No third-party client, production software or campaign result is claimed.",
+    summary:"A 31-second typography study that uses repetition, scale and contrasting blue and orange fields to make language move.",
+    challenge:"Give a typography-only sequence variety and rhythm without relying on a product render, cinematic footage or a borrowed client story.",
+    whatThisProved:"The release demonstrates type-led composition, rhythmic transitions and a consistent visual vocabulary across a short landscape sequence.",
+    approach:["Made typography the primary visual material.","Used repeated words, changes in scale and contrasting color fields to establish hierarchy.","Connected compositions through motion rather than adding unrelated footage."],
+    deliverables:["31-second landscape showreel","Type-led compositions","Motion transitions","Published YouTube film"]
+  }
+];
+
+const legacyPosters: Record<string,string> = {"spark-dhaka-2050":"spark","emotional-telecom-concept":"the-call","meeting-my-past-self":"past-self","ai-microfilm-collection":"microfilms","sports-film-the-leap":"the-leap","mojo-product-visual-lab":"product-lab","ai-vfx-creative-lab":"creative-lab"};
+export const workItems: WorkItem[] = [...newWork,...legacyWork.map(item=>({...item,poster:`/work/${legacyPosters[item.slug]}.webp`,group: item.group ?? "AI films & experiments" as const}))];
+export const workGroups: WorkGroup[] = ["Digital products & websites","Open source & AI tools","Motion design & commercials","AI films & experiments"];
+const featuredSlugs = ["g-force-tyres-mobile","gruffet","bold-kinetic-type-showreel","spark-dhaka-2050"];
+export const featuredWork = featuredSlugs.map(slug=>{const item=workItems.find(item=>item.slug===slug);if(!item)throw new Error(`Missing featured project: ${slug}`);return item;});
 
 export function getWorkBySlug(slug: string) {
   return workItems.find((item) => item.slug === slug);

@@ -1,0 +1,146 @@
+[
+  {
+    "source": "reports/portfolio-audit/sources/gforce-home-desktop.png",
+    "output": "public/work/gforce-desktop.webp",
+    "bytes": 92356,
+    "format": "webp",
+    "mediaType": "image/webp",
+    "size": 92356,
+    "width": 1430,
+    "height": 894,
+    "space": "srgb",
+    "channels": 3,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": false,
+    "autoOrient": {
+      "width": 1430,
+      "height": 894
+    }
+  },
+  {
+    "source": "reports/portfolio-audit/sources/gforce-home-mobile.png",
+    "output": "public/work/gforce-mobile.webp",
+    "bytes": 39266,
+    "format": "webp",
+    "mediaType": "image/webp",
+    "size": 39266,
+    "width": 381,
+    "height": 824,
+    "space": "srgb",
+    "channels": 3,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": false,
+    "autoOrient": {
+      "width": 381,
+      "height": 824
+    }
+  },
+  {
+    "source": "reports/portfolio-audit/sources/gforce-how-it-works-mobile.png",
+    "output": "public/work/gforce-guidance.webp",
+    "bytes": 38584,
+    "format": "webp",
+    "mediaType": "image/webp",
+    "size": 38584,
+    "width": 390,
+    "height": 843,
+    "space": "srgb",
+    "channels": 3,
+    "depth": "uchar",
+    "isProgressive": false,
+    "isPalette": false,
+    "hasProfile": false,
+    "hasAlpha": false,
+    "autoOrient": {
+      "width": 390,
+      "height": 843
+    }
+  },
+  {
+    "source": "https://i.ytimg.com/vi/EKDWPiF0M6c/maxresdefault.jpg",
+    "output": "public/work/gruffet-explainer.webp",
+    "width": 1280,
+    "height": 720,
+    "sourceBytes": 103722,
+    "bytes": 43888,
+    "sourceSha256": "f08a09054ac071e9fbabdc15eb11081f25db7b37ab79319bfd55e78fd4c20ee9"
+  },
+  {
+    "source": "https://i.ytimg.com/vi/osWc8m3qnhI/maxresdefault.jpg",
+    "output": "public/work/kinetic-type.webp",
+    "width": 1280,
+    "height": 720,
+    "sourceBytes": 80839,
+    "bytes": 40620,
+    "sourceSha256": "8cd0ec9b6bca9be03cd46a1c3f5b1f27c3a5a1712baa7362e59d6e9429c4ddbd"
+  },
+  {
+    "source": "https://i.ytimg.com/vi/myz4yRXFE2M/maxresdefault.jpg",
+    "output": "public/work/spark.webp",
+    "width": 1280,
+    "height": 720,
+    "sourceBytes": 93658,
+    "bytes": 61064,
+    "sourceSha256": "1fde9569111375c8d953e0c656b1c06320c067f49127d603d0b09030ec7d06ca"
+  },
+  {
+    "source": "https://i.ytimg.com/vi/8UU5R8v3XMk/maxresdefault.jpg",
+    "output": "public/work/the-call.webp",
+    "width": 1280,
+    "height": 720,
+    "sourceBytes": 85967,
+    "bytes": 81954,
+    "sourceSha256": "249b748c67dc3ed73f04a9bd7f0d54e26cf3c62eed8122371a7758855666be56"
+  },
+  {
+    "source": "https://i.ytimg.com/vi/q_4me0VwaZo/maxresdefault.jpg",
+    "output": "public/work/past-self.webp",
+    "width": 1280,
+    "height": 720,
+    "sourceBytes": 80040,
+    "bytes": 83026,
+    "sourceSha256": "e7090cb7bd72c54ef61000d2343a72c3b135cfd8f5c42d9ab16ca702505924ef"
+  },
+  {
+    "source": "https://i.ytimg.com/vi/RtBa4fjEjbc/maxresdefault.jpg",
+    "output": "public/work/microfilms.webp",
+    "width": 1280,
+    "height": 720,
+    "sourceBytes": 104600,
+    "bytes": 71606,
+    "sourceSha256": "c649c179298addaab8c81562ea51a13d3bdd787b13b22eacf05edb860f5b7a49"
+  },
+  {
+    "source": "https://i.ytimg.com/vi/tlUPzwuj7ck/maxresdefault.jpg",
+    "output": "public/work/the-leap.webp",
+    "width": 1280,
+    "height": 720,
+    "sourceBytes": 94411,
+    "bytes": 58636,
+    "sourceSha256": "e57606f1ded9c2ad704c9bda546fdd7dab80a8fc55a55541c6de665b003df777"
+  },
+  {
+    "source": "https://i.ytimg.com/vi/GkyqartrbWo/maxresdefault.jpg",
+    "output": "public/work/product-lab.webp",
+    "width": 1280,
+    "height": 720,
+    "sourceBytes": 120362,
+    "bytes": 87342,
+    "sourceSha256": "0b9a3dda7e19884203d65cf1d09b3973da728398e469b6b9739ebda54401cbfe"
+  },
+  {
+    "source": "https://i.ytimg.com/vi/d9apZlb22gE/maxresdefault.jpg",
+    "output": "public/work/creative-lab.webp",
+    "width": 1280,
+    "height": 720,
+    "sourceBytes": 185427,
+    "bytes": 122866,
+    "sourceSha256": "afd02d88cd67b67ac91adaf216027ba9ce522e7dd2ee231da0c36dbfbfb42e0c"
+  }
+]

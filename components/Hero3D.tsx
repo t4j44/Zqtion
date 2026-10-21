@@ -56,12 +56,12 @@ function StaticScene() {
             />
             <source
               type="image/avif"
-              srcSet="/hero/z-poster-768.avif 768w, /hero/z-poster-1280.avif 1280w"
+              srcSet="/hero/z-poster-512.avif 512w, /hero/z-poster-768.avif 768w, /hero/z-poster-1024.avif 1024w, /hero/z-poster-1280.avif 1280w"
               sizes="min(26vw, 368px)"
             />
             <source
               type="image/webp"
-              srcSet="/hero/z-poster-768.webp 768w, /hero/z-poster-1280.webp 1280w"
+              srcSet="/hero/z-poster-512.webp 512w, /hero/z-poster-768.webp 768w, /hero/z-poster-1024.webp 1024w, /hero/z-poster-1280.webp 1280w"
               sizes="min(26vw, 368px)"
             />
             <img
@@ -70,8 +70,9 @@ function StaticScene() {
               width="512"
               height="512"
               alt=""
-              decoding="sync"
+              decoding="async"
               fetchPriority="high"
+              onLoad={event=>{const image=event.currentTarget;const frame=image.closest<HTMLElement>(".hero-poster-frame");if(frame){frame.style.setProperty("--hero-mask-image",`url("${image.currentSrc}")`);frame.dataset.posterReady="true";}}}
               draggable="false"
             />
           </picture>
@@ -92,6 +93,8 @@ function SceneStage({
   onReady,
   onError,
   onVideoPlaying,
+  artworkRequested,
+  onRequestArtwork,
 }: {
   mode: HeroRenderMode;
   sceneReady: boolean;
@@ -99,6 +102,8 @@ function SceneStage({
   onReady: () => void;
   onError: () => void;
   onVideoPlaying: (playing: boolean) => void;
+  artworkRequested: boolean;
+  onRequestArtwork: () => void;
 }) {
   const interactionRef = useRef<HTMLDivElement>(null);
   const pulseTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
@@ -157,7 +162,7 @@ function SceneStage({
       <div ref={interactionRef} className="hero-interaction-surface">
         <div className="hero-3d-stage-grid" aria-hidden="true" />
         <StaticScene />
-        {mode === "mobile-poster" ? (
+        {mode === "mobile-poster" && artworkRequested ? (
           <Suspense fallback={null}><HeroLoopVideo onPlaying={onVideoPlaying} /></Suspense>
         ) : null}
         {webglEnabled ? (
@@ -180,7 +185,10 @@ function SceneStage({
             type="button"
             className="hero-illuminate"
             aria-label="Illuminate the Z artwork"
+            onPointerEnter={event=>{if(event.pointerType==="mouse")onRequestArtwork();}}
+            onFocus={onRequestArtwork}
             onPointerDown={(event) => {
+              onRequestArtwork();
               gesture.current = {
                 active: true,
                 id: event.pointerId,
@@ -194,7 +202,7 @@ function SceneStage({
             onPointerUp={endGesture}
             onPointerCancel={endGesture}
             onPointerLeave={(event) => { if (event.pointerType !== "touch") resetPointer(); }}
-            onClick={pulse}
+            onClick={()=>{onRequestArtwork();pulse();}}
           />
         ) : null}
       </div>
@@ -209,6 +217,8 @@ export default function Hero3D() {
   const [sceneReady, setSceneReady] = useState(false);
   const [sceneFailed, setSceneFailed] = useState(false);
   const [videoPlaying, setVideoPlaying] = useState(false);
+  const [artworkRequested,setArtworkRequested] = useState(false);
+  const requestArtwork = useCallback(()=>setArtworkRequested(true),[]);
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -255,7 +265,8 @@ export default function Hero3D() {
         && !connection?.saveData
         && connection?.effectiveType !== "2g"
         && connection?.effectiveType !== "slow-2g";
-      if (mayUseWebGL && webglSupported === undefined) webglSupported = supportsWebGL();
+      // Keep the complete poster visible; probe/load GPU work only on artwork intent.
+      if (artworkRequested && mayUseWebGL && webglSupported === undefined) webglSupported = supportsWebGL();
       const nextMode = selectHeroRenderMode({
         viewportWidth: window.innerWidth,
         coarsePointer: coarsePointerQuery.matches,
@@ -286,7 +297,7 @@ export default function Hero3D() {
       connection?.removeEventListener("change", updateMode);
       window.removeEventListener("resize", updateMode);
     };
-  }, []);
+  }, [artworkRequested]);
 
   const handleReady = useCallback(() => setSceneReady(true), []);
   const handleError = useCallback(() => {
@@ -322,7 +333,7 @@ export default function Hero3D() {
             </div>
           </div>
           <div className="hero-artwork relative z-20 mx-auto w-full max-w-[46rem]">
-            <SceneStage mode={effectiveMode} sceneReady={sceneReady} sceneFailed={sceneFailed} onReady={handleReady} onError={handleError} onVideoPlaying={setVideoPlaying} />
+            <SceneStage mode={effectiveMode} sceneReady={sceneReady} sceneFailed={sceneFailed} onReady={handleReady} onError={handleError} onVideoPlaying={setVideoPlaying} artworkRequested={artworkRequested} onRequestArtwork={requestArtwork} />
           </div>
         </div>
         <div className="hero-scroll-cue pointer-events-none absolute inset-x-0 bottom-4 z-30 justify-center" aria-hidden="true">
