@@ -1,0 +1,27 @@
+{
+  "passed": [
+    "Desktop work is not pinned and has no multi-screen vertical scroll capture",
+    "Carousel buttons and keyboard move the native horizontal viewport",
+    "Cards expose one project link and no misleading playback control",
+    "Phone carousel supports native touch swipe and controls avoid the floating contact button",
+    "Poster-first hero requests no WebGL or decorative video until artwork intent",
+    "Phone artwork press activates the original video; reduced-motion stays static",
+    "Case study g-force-tyres-mobile has valid media, metadata and truthful schema",
+    "Case study gruffet has valid media, metadata and truthful schema",
+    "Case study gruffet-product-explainer has valid media, metadata and truthful schema",
+    "Case study bold-kinetic-type-showreel has valid media, metadata and truthful schema",
+    "Case study g-force-tyres-motion-explainer has valid media, metadata and truthful schema",
+    "Starting another portfolio video stops the previous player",
+    "Video source controls avoid the fixed contact button at phone and desktop media positions",
+    "Original YouTube links remain clickable and public website/product destinations exist"
+  ],
+  "failures": [],
+  "errors": [],
+  "geometry": {
+    "height": 1087.203125,
+    "pinned": "false",
+    "viewport": 900,
+    "scrollDistance": 187.203125,
+    "trackWidth": 2104
+  }
+}

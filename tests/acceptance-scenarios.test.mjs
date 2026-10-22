@@ -41,7 +41,7 @@ test("Scenario 2: MCP 'Find an open-source crawler for building an AI research a
   assert.ok(repoRes.resources.length > 0);
   const crawl4ai = repoRes.resources.find((r) => r.slug === "crawl4ai-web-crawler-framework");
   assert.ok(crawl4ai, "Must surface Crawl4AI repository");
-  assert.equal(crawl4ai.evidenceLevel, "verified");
+  assert.equal(crawl4ai.evidenceLevel, "unverified");
   assert.ok(repoRes.why.length > 0, "Must provide technical rationale");
   assert.ok(repoRes.alternatives.length > 0, "Must provide alternatives");
   assert.ok(repoRes.limitations.length > 0, "Must specify operational limitations");
@@ -52,7 +52,8 @@ test("Scenario 2: MCP 'Find an open-source crawler for building an AI research a
     budgetMonthly: 0
   });
   assert.ok(stackRes.resources[0].recommendedStack.some((s) => s.slug === "crawl4ai-web-crawler-framework"));
-  assert.ok(stackRes.resources[0].evidence.some((e) => e.includes("Crawl4AI")));
+  assert.ok(stackRes.resources[0].evidence.some((e) => e.includes("no attached benchmark")));
+  assert.ok(stackRes.resources[0].recommendedStack.every(item => item.estimatedCost === "Not estimated"));
 });
 
 test("Scenario 3: MCP 'I want Claude to perform the same research task repeatedly' -> surfaces skills & explains what a skill does", async () => {

@@ -33,7 +33,7 @@ export default async function WorkDetailPage({ params }: { params: Promise<{ slu
   const related = workItems.filter((candidate) => candidate.slug !== item.slug).sort((a,b)=>Number(b.group===item.group)-Number(a.group===item.group)).slice(0, 2);
   const pageUrl = `${siteConfig.url}/work/${item.slug}`;
   const videoSchemas = [
-    ...(item.videoId && item.videoUrl ? [getVideoSchema({ title: item.sourceTitle ?? item.title, description: item.summary, videoId: item.videoId, videoUrl: item.videoUrl, pageUrl })] : [{"@context":"https://schema.org","@type":item.kind==="product"?"SoftwareSourceCode":"CreativeWork",name:item.title,description:item.summary,url:pageUrl,image:`${siteConfig.url}${item.poster}`,...(item.kind==="product"?{codeRepository:"https://github.com/Zqtion/Gruffet",license:"https://opensource.org/license/mit"}:{})}]),
+    ...(item.videoId && item.videoUrl ? [getVideoSchema({ title: item.sourceTitle ?? item.title, description: item.summary, videoId: item.videoId, videoUrl: item.videoUrl, pageUrl })] : [{"@context":"https://schema.org","@type":item.kind==="product"?"SoftwareSourceCode":"CreativeWork",name:item.title,description:item.summary,url:pageUrl,image:`${siteConfig.url}${item.poster}`,...(item.kind==="product"?{codeRepository:"https://github.com/Zqtion/Gruffet",license:"https://opensource.org/license/mit",version:"0.1.0",creativeWorkStatus:"Early release",programmingLanguage:"Python",runtimePlatform:"Python 3.10+"}:{})}]),
     ...(item.additionalVideos || []).map((video) => getVideoSchema({ title: video.title, description: item.summary, videoId: video.videoId, videoUrl: video.videoUrl, pageUrl })),
   ];
 

@@ -75,12 +75,12 @@ export default function Account({ next, intent: requestedIntent, recovery = fals
     } catch { setFailed(true); setStatus("Sign-out could not be completed. Please try again."); } finally { setBusy(null); }
   }
   return <div className={`cq-account ${user ? "cq-account-signed-in" : ""}`}>
-    <header className="cq-auth-heading"><p className="cq-kicker">Zqtion Community</p><h1>{user ? "Your Community account" : "Join the Zqtion Community"}</h1><p>{user ? "Browse freely. Complete your saved profile when you want to participate." : "Share useful AI experiences and learn from other builders."}</p></header>
+    <header className="cq-auth-heading"><p className="cq-kicker">Zqtion Community</p><h1>{user ? "Your Community account" : requiresProfile ? "Sign in to participate" : "Join the Zqtion Community"}</h1><p>{user ? "Browse freely. Complete your saved profile when you want to participate." : "Share useful AI experiences and learn from other builders."}</p></header>
     {error && <p role="status" className="cq-notice">{error}</p>}
     {loading ? <p role="status">Loading account…</p> : !user ? <div className="cq-auth-panel">
       <button type="button" className="cq-button cq-google" disabled={Boolean(busy) || !browserCommunity()} onClick={() => void google()}><GoogleMark />{busy === "google" ? "Opening Google…" : "Continue with Google"}</button>
       <div className="cq-auth-divider"><span>or continue with email</span></div>
-      <form className="cq-form cq-auth-form" onSubmit={authenticate} aria-label={mode === "signup" ? "Create email account" : mode === "reset" ? "Reset password" : "Email sign in"}>
+      <form id="email-sign-in" className="cq-form cq-auth-form" onSubmit={authenticate} aria-label={mode === "signup" ? "Create email account" : mode === "reset" ? "Reset password" : "Email sign in"}>
         {mode !== "login" && <h2>{mode === "signup" ? "Create your account" : "Reset your password"}</h2>}
         <label>Email (private)<input type="email" autoComplete="email" required value={email} onChange={e => setEmail(e.target.value)} maxLength={254} /></label>
         {mode !== "reset" && <label>Password<input type="password" autoComplete={mode === "signup" ? "new-password" : "current-password"} minLength={mode === "signup" ? 12 : 1} required value={password} onChange={e => setPassword(e.target.value)} /></label>}

@@ -78,7 +78,7 @@ export function AskZqtionAssistant() {
           Ask Zqtion Resource Intelligence
         </h2>
         <p className="mb-6 text-sm text-muted leading-relaxed">
-          Describe what you want to build or automate. The engine synthesizes verified tools, repositories, agent skills, prompts, and MCP connectors tailored to your budget.
+          Describe what you want to build or automate. Explore illustrative tools, repositories, prompts and connector plans. Compatibility, outcomes and budget fit require your review.
         </p>
       </div>
 
@@ -136,13 +136,13 @@ export function AskZqtionAssistant() {
 
       {/* Structured Recommendation Result */}
       {response && (
-        <div className="mt-8 rounded-xl border border-[#38BDF8]/30 bg-black/60 p-6 animate-in fade-in duration-300">
+        <div className="mt-8 rounded-xl border border-[#38BDF8]/30 bg-surface p-6 animate-in fade-in duration-300">
           <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-3">
             <h3 className="text-base font-semibold text-foreground">
               {response.answer || "Recommended Execution Stack"}
             </h3>
             <span className="text-xs font-mono text-success">
-              Verified: {response.verified_at || "October 2026"}
+              Evidence: implementation unverified
             </span>
           </div>
 
@@ -170,7 +170,7 @@ export function AskZqtionAssistant() {
             <div>
               <span className="text-xs text-muted">Estimated Total Cost: </span>
               <span className="text-xs font-bold text-foreground">
-                {response.resources?.[0]?.totalEstimatedMonthlyCost || "$20/month"}
+                {response.resources?.[0]?.totalEstimatedMonthlyCost || "Not estimated"}
               </span>
             </div>
             {response.resources?.[0]?.relatedGuideSlug && (

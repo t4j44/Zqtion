@@ -22,7 +22,7 @@ export class ZqtionMCPEngine {
     alternatives: string[] = [],
     evidence: string[] = [],
     limitations: string[] = [],
-    verifiedAt: string = "2026-10-15T00:00:00Z"
+    verifiedAt: string = ""
   ): MCPResponseEnvelope<T> {
     return {
       answer,
@@ -65,10 +65,10 @@ export class ZqtionMCPEngine {
     return this.formatEnvelope(
       `Found ${projections.length} relevant building blocks matching '${args.query}' (out of ${total} library matches).`,
       projections,
-      `Matched against verified title, technical metadata, tool taxonomy, and category.`,
+      `Matched against catalogue title, technical metadata, tool taxonomy, and category.`,
       ["Broaden search tokens or filter by specific resourceType ('tool', 'prompt', 'repository')."],
       projections.map((p) => `${p.title}: ${p.evidenceLevel}`),
-      ["Results prioritize published Zqtion-verified resources."]
+      ["Catalogue retrieval is not verification; review each record’s evidence status."]
     );
   }
 
@@ -108,7 +108,7 @@ export class ZqtionMCPEngine {
       ],
       `Engineered with strict system roles, anti-hallucination rules, and structured output formatting.`,
       items.slice(1).map((i) => i.title),
-      [`Verified by Zqtion Test Lab: ${first.evidenceLevel}`],
+      [`Catalogue evidence status: ${first.evidenceLevel}`],
       ["Ensure prompt variables are supplied before running in production."]
     );
   }
@@ -157,7 +157,7 @@ export class ZqtionMCPEngine {
         tools: i.tools,
         evidenceLevel: i.evidenceLevel
       })),
-      `Selected open-source codebases tested for active maintenance and clean license compliance.`,
+      `Repository references from the catalogue. Current maintenance and license compatibility have not been independently established.`,
       ["Self-hosting Crawl4AI or local Python agents vs paid SaaS."],
       items.map((i) => `${i.title} (Open Source)`),
       ["Verify repository dependencies and environment setup before local execution."]
@@ -181,9 +181,9 @@ export class ZqtionMCPEngine {
         summary: i.summary,
         evidenceLevel: i.evidenceLevel
       })),
-      `MCP connectors provide secure, bi-directional tool calling for Claude Code, Antigravity, and Cursor.`,
+      `MCP connectors expose tools; authentication, permissions and safety depend on the actual implementation.`,
       ["Use custom REST API calls with schema validation if no MCP server exists."],
-      items.map((i) => `${i.title}: verified connector schema`),
+      items.map((i) => `${i.title}: connector proposal; implementation unverified`),
       ["Ensure sensitive tokens are passed via environment variables, not plain text."]
     );
   }
@@ -206,7 +206,7 @@ export class ZqtionMCPEngine {
         summary: i.summary,
         evidenceLevel: i.evidenceLevel
       })),
-      `Evaluated for developer ergonomics, API availability, and pricing transparency.`,
+      `Tool references matched by catalogue metadata; no evaluation result is implied.`,
       ["Open-source alternatives listed in related repository records."],
       items.map((i) => `${i.title}: ${i.evidenceLevel}`),
       ["Third-party tool pricing subject to change; verify on official portals."]
@@ -229,45 +229,45 @@ export class ZqtionMCPEngine {
           slug: "crawl4ai-web-crawler-framework",
           role: "Data extraction & web crawling",
           resourceType: "repository",
-          estimatedCost: isBudgetConstrained ? "$0/mo" : "$10–$30/mo",
-          tradeoffs: "Requires running local Python script; zero SaaS markup."
+          estimatedCost: "Not estimated",
+          tradeoffs: "Self-hosting requires hardware, operation and maintenance."
         },
         {
           name: isBeginner ? "Claude Pro" : "Claude Code CLI / API",
           slug: "claude-code-enterprise-setup-guardrails",
           role: "Reasoning & synthesis engine",
           resourceType: "guide",
-          estimatedCost: "$20/mo",
-          tradeoffs: "Pro subscription covers unlimited conversational usage; API provides automation scale."
+          estimatedCost: "Not estimated",
+          tradeoffs: "Check current account limits and API pricing separately."
         },
         {
           name: "PostgreSQL with Supabase RLS",
           slug: "postgresql-mcp-server-integration",
           role: "Structured data storage & MCP connection",
           resourceType: "mcp_server",
-          estimatedCost: "Free tier ($0/mo)",
-          tradeoffs: "Provides SQL durability and row level security without monthly cost."
+          estimatedCost: "Not estimated",
+          tradeoffs: "Configure database access policies and verify the current hosting plan."
         }
       ],
       alternatives: [
         { name: "Firecrawl Cloud", reason: "Faster hosted setup if you do not want to manage local crawler scripts." },
         { name: "Replit Agent", reason: "Good for rapid no-code prototyping if you lack local terminal access." }
       ],
-      totalEstimatedMonthlyCost: isBudgetConstrained ? "$20/month total" : "$30–$50/month total",
+      totalEstimatedMonthlyCost: "Not estimated; budget is an input, not a validated quote",
       complexity: isBeginner ? "beginner" : "intermediate",
       limitations: [
         "Headless browser crawling requires a machine with network access.",
         "Ensure rate limits are configured to prevent target site IP blocks."
       ],
       evidence: [
-        "Crawl4AI benchmarked for clean LLM markdown output.",
-        "Supabase free tier tested for up to 500MB relational storage."
+        "Illustrative architecture; no attached benchmark.",
+        "Check current provider limits and pricing."
       ],
       relatedGuideSlug: "ai-lead-research-verification-pipeline"
     };
 
     return this.formatEnvelope(
-      `Recommended modern AI execution stack for '${args.task}' within budget.`,
+      `Recommended modern AI execution stack for '${args.task}' for evaluation; budget fit is unverified.`,
       [stack],
       `Prioritizes high leverage, minimal recurring cost, and full data ownership.`,
       stack.alternatives.map((a) => `${a.name}: ${a.reason}`),
@@ -302,7 +302,7 @@ export class ZqtionMCPEngine {
           stepNumber: 3,
           title: "Reasoning & Transformation",
           description: "Execute structured LLM prompt to transform raw input into desired format.",
-          tools: ["Claude 3.7 Sonnet"],
+          tools: ["A model selected after evaluation"],
           promptsOrSkills: ["prompt-b2b-prospect-qualification-tech-stack"]
         },
         {
@@ -320,7 +320,7 @@ export class ZqtionMCPEngine {
         "Target site layout changes -> Fallback to semantic tag parsing.",
         "API rate limit hit -> Exponential backoff with jitter retry."
       ],
-      verifiedAt: "2026-10-15T00:00:00Z"
+      verifiedAt: ""
     };
 
     return this.formatEnvelope(
@@ -328,7 +328,7 @@ export class ZqtionMCPEngine {
       [workflow],
       `Built on Zqtion's Create -> Build -> Automate execution standards.`,
       ["Run as standalone Python script or orchestrate via Next.js API cron."],
-      ["Steps verified against real Crawl4AI + Claude integration tests."],
+      ["Proposed steps; no execution evidence attached."],
       workflow.failureModes
     );
   }
@@ -386,7 +386,7 @@ export class ZqtionMCPEngine {
     return this.formatEnvelope(
       `Retrieved canonical resource: ${item.title}`,
       [item],
-      `Full verified record with relationship graph links and metadata.`,
+      `Catalogue record with relationship links and disclosed evidence status.`,
       [],
       [`Evidence Level: ${item.evidenceLevel}`],
       ["Content subject to periodic verification."]
@@ -416,8 +416,8 @@ export class ZqtionMCPEngine {
       title: item.title,
       evidenceLevel: item.evidenceLevel,
       status: item.status,
-      verifiedAt: item.verifiedAt || "2026-10-15T00:00:00Z",
-      freshness: "current",
+      verifiedAt: item.verifiedAt || "",
+      freshness: "unverified",
       isTested: item.evidenceLevel === "zqtion_tested",
       sources: item.sources || []
     };
@@ -428,7 +428,7 @@ export class ZqtionMCPEngine {
       `Assessed according to Zqtion Evidence Framework (Section 13, 27).`,
       [],
       [`Evidence rating: ${item.evidenceLevel}`],
-      ["Mutable third-party facts checked periodically."]
+      ["No scheduled verification or current execution result is established."]
     );
   }
 
@@ -442,7 +442,7 @@ export class ZqtionMCPEngine {
       [stack],
       `Synthesizes tools, skills, open-source repos, MCP connectors, prompts, and workflows to achieve the user's specific business outcome.`,
       ["Export as n8n workflow JSON or orchestrate via Next.js API cron."],
-      [`Verified by Zqtion Test Lab: ${stack.evidenceLevel}`],
+      [`Catalogue evidence status: ${stack.evidenceLevel}`],
       ["Ensure target CRM/API credentials are set in environment variables."]
     );
   }

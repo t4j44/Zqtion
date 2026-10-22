@@ -16,7 +16,7 @@ export function getOrganizationSchema(): Schema {
     logo: `${siteConfig.url}/logo.png`,
     email: siteConfig.email,
     description: siteConfig.description,
-    sameAs: [siteConfig.linkedin, siteConfig.youtube],
+    sameAs: [siteConfig.linkedin, siteConfig.github],
     contactPoint: { "@type": "ContactPoint", contactType: "sales", email: siteConfig.email, url: `${siteConfig.url}/contact` },
   };
 }

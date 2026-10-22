@@ -1,0 +1,10 @@
+// Records which unchanged modules underpin retained regression evidence when a
+// later build changes only editorial catalogue text and MCP descriptions.
+import {readFile,writeFile,stat} from 'node:fs/promises';import {execFileSync} from 'node:child_process';import {createHash} from 'node:crypto';import assert from 'node:assert/strict';
+const git=(...args)=>execFileSync('git',args,{encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();
+const buildId=(await readFile('.next/BUILD_ID','utf8')).trim(),buildTime=(await stat('.next/BUILD_ID')).mtimeMs;
+const paths=[...new Set([...git('diff','--name-only','HEAD').split('\n'),...git('ls-files','--others','--exclude-standard').split('\n')].filter(p=>/^(app\/|components\/|lib\/|data\/|content\/|public\/(?:llms|ai)\.txt$|next.config.js$)/.test(p)))];
+const later=[],files=[];for(const p of paths){const bytes=await readFile(p),info=await stat(p);files.push({path:p,sha256:createHash('sha256').update(bytes).digest('hex'),mtime:info.mtime.toISOString()});if(info.mtimeMs>buildTime)later.push(p);}
+assert.deepEqual(later.sort(),['app/api/resources/mcp/route.ts','content/resources/catalogue.json']);
+const original=git('show','HEAD:app/api/resources/mcp/route.ts'),current=await readFile('app/api/resources/mcp/route.ts','utf8');const withoutDescriptions=text=>text.replace(/description:\s*"[^"\n]*"/g,'description:""').replaceAll('\r\n','\n').trim();assert.equal(withoutDescriptions(original),withoutDescriptions(current));
+await writeFile('reports/seo/retained-regression-source-proof.json',JSON.stringify({regressionBuildId:buildId,method:'All changed application/renderer/Auth/navigation/style modules are byte-hashed and predate the regression build. The only later product edits are catalogue prose and MCP manifest descriptions; MCP handler text invariant checked against the base commit. Final rebuilt resources, metadata, API and article tests are recorded separately.',laterProductEdits:later,mcpHandlersUnchanged:true,files},null,2));console.log(JSON.stringify({buildId,laterProductEdits:later,unchangedRelatedModules:files.length-2}));

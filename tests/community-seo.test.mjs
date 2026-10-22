@@ -12,6 +12,7 @@ test("QAPage is emitted only with real visible answers to this question", () => 
   assert.equal(discussionSchema(question, [{ ...answer, parent_id: "different-question" }])["@type"], "DiscussionForumPosting");
   const qa = discussionSchema(question, [answer]); assert.equal(qa["@type"], "QAPage"); assert.equal(qa.mainEntity.acceptedAnswer.text, answer.body); assert.equal(qa.mainEntity.suggestedAnswer.length, 0);
   const notAccepted = discussionSchema({ ...question, accepted_answer_id: null }, [answer]); assert.ok(!notAccepted.mainEntity.acceptedAnswer); assert.equal(notAccepted.mainEntity.suggestedAnswer.length, 1);
+  const repeated = discussionSchema(question, [answer, answer]); assert.equal(repeated.mainEntity.suggestedAnswer.length, 0); assert.equal(repeated.mainEntity.acceptedAnswer.url, `https://zqtion.com/ai-experiences/${question.id}#entry-${answer.id}`);
 });
 test("Community metadata defaults to noindex and uses explicit canonical URLs", () => {
   const metadata = communityMetadata("A post", "A description", "/ai-experiences/id"); assert.equal(metadata.robots.index, false); assert.equal(metadata.alternates.canonical, "/ai-experiences/id");

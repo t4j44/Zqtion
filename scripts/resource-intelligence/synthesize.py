@@ -717,7 +717,13 @@ def synthesize_all() -> List[Dict[str, Any]]:
 if __name__ == "__main__":
     items = synthesize_all()
     print(f"Synthesized {len(items)} original Zqtion resources.")
-    out_path = Path(__file__).resolve().parent.parent.parent / "content" / "resources" / "catalogue.json"
+    # Never overwrite the public catalogue with unreviewed synthesis.
+    for item in items:
+        item["status"] = "review"
+        item["evidence_level"] = "unverified"
+        item["verified_at"] = None
+        item["published_at"] = None
+    out_path = Path(__file__).resolve().parent.parent.parent / "reports" / "resource-draft-candidates.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(items, f, indent=2)

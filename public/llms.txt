@@ -44,3 +44,13 @@ Zqtion does not currently publish universal fixed prices or guaranteed delivery 
 - [Original prompt library](https://zqtion.com/prompts): Editable briefs for UI, image creation and coding.
 - [Prompting methods](https://zqtion.com/prompts/methods): Definitions, structures, examples and review criteria.
 - [Prompt methodology](https://zqtion.com/prompts/methodology): Research boundaries, quality checks and preview disclosures.
+
+## Resources and Community
+
+- [Resource Library](https://zqtion.com/resources): Implementation notes with explicit evidence status. A reference link is not proof of an executed workflow.
+- [AI Experiences](https://zqtion.com/ai-experiences): Public discussions; member experiences belong to their authors. Participation requires sign-in.
+- [Community prompts](https://zqtion.com/prompts/community): Member-shared prompts and credited remixes.
+- [Gruffet](https://zqtion.com/work/gruffet): Zqtion’s open-source lead intelligence explorer. v0.1 is an early release; records need independent review before outreach.
+- [GitHub organization](https://github.com/Zqtion): Official Zqtion source projects.
+
+This optional file is a navigation aid, not a promise of search rankings or AI citations. Search crawler access and model-training access are separate policies in robots.txt. The linked YouTube channel is the founder’s creator portfolio; it is not a separate verified company identity.

@@ -4,9 +4,12 @@ import { workItems } from "@/data/work";
 import { siteConfig } from "@/data/site";
 import { careerTracks } from "@/data/careers";
 import { getLibraryRoutes, getAllPrompts } from "@/lib/prompts/service";
-import catalogue from "@/content/resources/catalogue.json";
+import { getCatalogue } from "@/lib/resources/service";
+import { resourceIndexable } from "@/lib/resources/publication";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  if (process.env.VERCEL_ENV === "preview") return [];
+  const catalogue = await getCatalogue();
   const pages = [
     "",
     "/work",
@@ -40,8 +43,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: path === "" ? ("weekly" as const) : ("monthly" as const),
       priority: path === "" ? 1 : path === "/contact" ? 0.9 : 0.8
     })),
-    ...catalogue.map((item: { resource_type?: string; resourceType?: string; slug: string }) => ({
-      url: `${siteConfig.url}/resources/${item.resource_type || item.resourceType}/${item.slug}`,
+    ...catalogue.filter(item => resourceIndexable(item)).map(item => ({
+      url: `${siteConfig.url}/resources/${item.resourceType}/${item.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.7
     })),

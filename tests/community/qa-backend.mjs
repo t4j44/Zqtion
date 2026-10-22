@@ -57,6 +57,7 @@ const fixtureState={users,resultId};
 for(const [key,receipt] of Object.entries({question,prompt,answer,experience,showcase,comment,reply})) fixtureState[key]=(await db.query("select * from community_entries where id=$1",[receipt.id])).rows[0];
 const json = (response, data, status = 200) => { response.statusCode = status; response.setHeader("Content-Type", "application/json"); response.end(JSON.stringify(data)); };
 const sqlName = s => { if (!/^[a-z_][a-z_0-9]*$/.test(s)) throw new Error("Invalid identifier"); return `"${s}"`; };
+let readMode = "normal"; // Disposable fixture transport only; never application code.
 const server = createServer(async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3219"); res.setHeader("Access-Control-Allow-Headers", "authorization,apikey,content-type,x-client-info,prefer,accept,x-supabase-api-version,accept-profile,content-profile,x-retry-count"); res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,POST,PUT,PATCH,DELETE,OPTIONS"); res.setHeader("Access-Control-Expose-Headers", "Content-Range");
   if (req.method === "OPTIONS") { res.end(); return; }
@@ -65,6 +66,12 @@ const server = createServer(async (req, res) => {
   const session = u => ({ access_token: `fixture-${Object.keys(users).find(k => users[k].id === u.id)}`, refresh_token: "fixture-refresh", token_type: "bearer", expires_in: 3600, expires_at: Math.floor(Date.now() / 1000) + 3600, user: u });
   try {
     if (url.pathname === "/__fixtures") return json(res, fixtureState);
+    if (url.pathname === "/__qa/read-mode" && req.method === "POST") {
+      const mode = JSON.parse(bytes.toString()).mode;
+      if (!["normal", "empty", "unavailable"].includes(mode)) return json(res, { error: "Invalid fixture mode" }, 400);
+      readMode = mode; return json(res, { mode });
+    }
+    if (url.pathname === "/rest/v1/rpc/community_search" && readMode !== "normal") return readMode === "empty" ? json(res, []) : json(res, { message: "Local fixture unavailable" }, 503);
     if (url.pathname.startsWith("/auth/v1/")) {
       const body = bytes.length ? JSON.parse(bytes.toString()) : {};
       if (url.pathname.endsWith("/token")) { const u = Object.values(users).find(u => u.email === body.email); return u ? json(res, session(u)) : json(res, { msg: "Invalid fixture login" }, 400); }

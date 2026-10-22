@@ -45,6 +45,9 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Enable only AFTER the hosting apex->www redirect has been removed and
+      // apex serves the intended deployment; otherwise these rules form a loop.
+      ...(process.env.ZQTION_CANONICAL_APEX_REDIRECT_ENABLED === 'true' ? [{ source: '/:path*', has: [{ type: 'host', value: 'www.zqtion.com' }], destination: 'https://zqtion.com/:path*', permanent: true }] : []),
       {
         source: '/pricing',
         destination: '/services#engagements',
@@ -54,6 +57,8 @@ const nextConfig = {
   },
   async headers() {
     return [
+      ...(process.env.VERCEL_ENV === 'preview' ? [{ source: '/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] }] : []),
+      { source: '/api/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] },
       {
         source: '/hero/:path*',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],

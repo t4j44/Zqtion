@@ -5,6 +5,7 @@ export const siteConfig = {
   phone: "+880 1340-347975",
   whatsapp: "https://wa.me/8801340347975",
   linkedin: "https://www.linkedin.com/company/zqtion/",
+  github: "https://github.com/Zqtion",
   youtube: "https://www.youtube.com/@BuildwithTajuddin/videos",
   location: "Worldwide",
   description:

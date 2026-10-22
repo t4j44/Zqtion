@@ -54,10 +54,10 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   robots: {
-    index: true,
+    index: process.env.VERCEL_ENV !== "preview",
     follow: true,
     googleBot: {
-      index: true,
+      index: process.env.VERCEL_ENV !== "preview",
       follow: true,
       "max-image-preview": "large",
       "max-video-preview": -1,

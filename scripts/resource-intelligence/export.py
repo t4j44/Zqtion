@@ -164,7 +164,14 @@ def generate_reports():
 
     # 4. Synthesize and export public catalogue
     items = synthesize_all()
-    catalogue_path = root / "content" / "resources" / "catalogue.json"
+    # Generated material is research, not an approved publication. A human must
+    # review sources, claims and reproducible evidence before editing catalogue.
+    for item in items:
+        item["status"] = "review"
+        item["evidence_level"] = "unverified"
+        item["verified_at"] = None
+        item["published_at"] = None
+    catalogue_path = root / "reports" / "resource-draft-candidates.json"
     catalogue_path.parent.mkdir(parents=True, exist_ok=True)
     with open(catalogue_path, "w", encoding="utf-8") as f:
         json.dump(items, f, indent=2)

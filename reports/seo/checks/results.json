@@ -1,0 +1,26 @@
+[
+  {
+    "command": "npm test (same node --test command, final rerun)",
+    "startedAt": "2026-10-22T13:01:30.435Z",
+    "finishedAt": "2026-10-22T13:01:58.007Z",
+    "code": 0
+  },
+  {
+    "command": "npm run lint",
+    "startedAt": "2026-10-22T12:15:56.888Z",
+    "finishedAt": "2026-10-22T12:18:15.593Z",
+    "code": 0
+  },
+  {
+    "command": "npm run typecheck",
+    "startedAt": "2026-10-22T12:18:15.594Z",
+    "finishedAt": "2026-10-22T12:18:20.577Z",
+    "code": 0
+  },
+  {
+    "command": "npm run prompts:seo",
+    "startedAt": "2026-10-22T12:18:20.578Z",
+    "finishedAt": "2026-10-22T12:18:22.885Z",
+    "code": 0
+  }
+]

@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
 
-test("Resource Intelligence catalogue contains 25 valid original resources", async () => {
+test("Resource catalogue preserves existing URLs and required content sections", async () => {
   const cataloguePath = path.join(projectRoot, "content", "resources", "catalogue.json");
   const raw = await readFile(cataloguePath, "utf8");
   const catalogue = JSON.parse(raw);
@@ -44,7 +44,7 @@ test("Resource Intelligence catalogue contains 25 valid original resources", asy
   }
 });
 
-test("Resource Intelligence reports are generated with accurate metrics", async () => {
+test("Historical research reports and content backlog remain available without certifying their claims", async () => {
   const crawlSummaryPath = path.join(projectRoot, "reports", "cindy-resource-crawl-summary.md");
   const oppGapPath = path.join(projectRoot, "reports", "zqtion-resource-opportunities.md");
   const queuePath = path.join(projectRoot, "reports", "zqtion-initial-content-queue.json");

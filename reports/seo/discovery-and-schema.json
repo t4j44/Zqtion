@@ -1,0 +1,225 @@
+{
+  "buildId": "tyDU1OUnwNDlsXxOBWzrH",
+  "scope": "Local real-browser composed HTML and JSON parsing with required-property/visible-content checks; not Google Rich Results or Schema.org external-validator certification",
+  "orphanCandidates": [],
+  "orphanMethod": "Incoming links in audited main content only; global navigation/footer excluded, so candidates require human interpretation",
+  "duplicateIndexableDescriptions": [],
+  "crawlerMatrix": [
+    {
+      "agent": "Googlebot",
+      "path": "/",
+      "allowed": true
+    },
+    {
+      "agent": "Googlebot",
+      "path": "/resources",
+      "allowed": true
+    },
+    {
+      "agent": "Googlebot",
+      "path": "/ai-experiences",
+      "allowed": true
+    },
+    {
+      "agent": "Googlebot",
+      "path": "/_next/static/example.js",
+      "allowed": true
+    },
+    {
+      "agent": "Googlebot",
+      "path": "/api/community/me",
+      "allowed": false
+    },
+    {
+      "agent": "Bingbot",
+      "path": "/",
+      "allowed": true
+    },
+    {
+      "agent": "Bingbot",
+      "path": "/resources",
+      "allowed": true
+    },
+    {
+      "agent": "Bingbot",
+      "path": "/ai-experiences",
+      "allowed": true
+    },
+    {
+      "agent": "Bingbot",
+      "path": "/_next/static/example.js",
+      "allowed": true
+    },
+    {
+      "agent": "Bingbot",
+      "path": "/api/community/me",
+      "allowed": false
+    },
+    {
+      "agent": "OAI-SearchBot",
+      "path": "/",
+      "allowed": true
+    },
+    {
+      "agent": "OAI-SearchBot",
+      "path": "/resources",
+      "allowed": true
+    },
+    {
+      "agent": "OAI-SearchBot",
+      "path": "/ai-experiences",
+      "allowed": true
+    },
+    {
+      "agent": "OAI-SearchBot",
+      "path": "/_next/static/example.js",
+      "allowed": true
+    },
+    {
+      "agent": "OAI-SearchBot",
+      "path": "/api/community/me",
+      "allowed": false
+    },
+    {
+      "agent": "GPTBot",
+      "path": "/",
+      "allowed": false
+    },
+    {
+      "agent": "GPTBot",
+      "path": "/resources",
+      "allowed": false
+    },
+    {
+      "agent": "GPTBot",
+      "path": "/ai-experiences",
+      "allowed": false
+    },
+    {
+      "agent": "GPTBot",
+      "path": "/_next/static/example.js",
+      "allowed": false
+    },
+    {
+      "agent": "GPTBot",
+      "path": "/api/community/me",
+      "allowed": false
+    },
+    {
+      "agent": "PerplexityBot",
+      "path": "/",
+      "allowed": true
+    },
+    {
+      "agent": "PerplexityBot",
+      "path": "/resources",
+      "allowed": true
+    },
+    {
+      "agent": "PerplexityBot",
+      "path": "/ai-experiences",
+      "allowed": true
+    },
+    {
+      "agent": "PerplexityBot",
+      "path": "/_next/static/example.js",
+      "allowed": true
+    },
+    {
+      "agent": "PerplexityBot",
+      "path": "/api/community/me",
+      "allowed": false
+    },
+    {
+      "agent": "ClaudeBot",
+      "path": "/",
+      "allowed": false
+    },
+    {
+      "agent": "ClaudeBot",
+      "path": "/resources",
+      "allowed": false
+    },
+    {
+      "agent": "ClaudeBot",
+      "path": "/ai-experiences",
+      "allowed": false
+    },
+    {
+      "agent": "ClaudeBot",
+      "path": "/_next/static/example.js",
+      "allowed": false
+    },
+    {
+      "agent": "ClaudeBot",
+      "path": "/api/community/me",
+      "allowed": false
+    },
+    {
+      "agent": "Claude-SearchBot",
+      "path": "/",
+      "allowed": true
+    },
+    {
+      "agent": "Claude-SearchBot",
+      "path": "/resources",
+      "allowed": true
+    },
+    {
+      "agent": "Claude-SearchBot",
+      "path": "/ai-experiences",
+      "allowed": true
+    },
+    {
+      "agent": "Claude-SearchBot",
+      "path": "/_next/static/example.js",
+      "allowed": true
+    },
+    {
+      "agent": "Claude-SearchBot",
+      "path": "/api/community/me",
+      "allowed": false
+    }
+  ],
+  "community": [
+    {
+      "route": "/ai-experiences/83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "QAPage"
+      ],
+      "visibleContentMatch": true
+    },
+    {
+      "route": "/prompts/community/5c18f9d3-ec13-42d9-852e-8571e99d09c5",
+      "schemaTypes": [
+        "BreadcrumbList",
+        "DiscussionForumPosting"
+      ],
+      "visibleContentMatch": true
+    },
+    {
+      "route": "/u/alice",
+      "schemaTypes": [
+        "ProfilePage"
+      ],
+      "visibleContentMatch": true
+    },
+    {
+      "route": "/community/sitemap-index.xml",
+      "status": 200,
+      "xml": true
+    },
+    {
+      "route": "/community/sitemaps/0",
+      "status": 200,
+      "xml": true
+    },
+    {
+      "route": "/community/profile-sitemaps/0",
+      "status": 200,
+      "xml": true
+    }
+  ],
+  "errors": []
+}

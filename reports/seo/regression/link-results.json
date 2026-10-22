@@ -1,0 +1,1097 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "status": 200
+    },
+    {
+      "route": "/about",
+      "status": 200
+    },
+    {
+      "route": "/ai-audit",
+      "status": 200
+    },
+    {
+      "route": "/careers/ai-automation-digital-execution",
+      "status": 200
+    },
+    {
+      "route": "/careers/ai-creative-prompt-engineering",
+      "status": 200
+    },
+    {
+      "route": "/careers/ai-market-research",
+      "status": 200
+    },
+    {
+      "route": "/careers/brand-graphic-design",
+      "status": 200
+    },
+    {
+      "route": "/careers/business-development-partnerships",
+      "status": 200
+    },
+    {
+      "route": "/careers/communications-social-media",
+      "status": 200
+    },
+    {
+      "route": "/careers/content-copywriting",
+      "status": 200
+    },
+    {
+      "route": "/careers/data-analysis-insights",
+      "status": 200
+    },
+    {
+      "route": "/careers/data-cleaning-operations",
+      "status": 200
+    },
+    {
+      "route": "/careers/data-visualization-reporting",
+      "status": 200
+    },
+    {
+      "route": "/careers/lead-research-prospecting",
+      "status": 200
+    },
+    {
+      "route": "/careers/reels-short-form-content",
+      "status": 200
+    },
+    {
+      "route": "/careers/sales-outreach",
+      "status": 200
+    },
+    {
+      "route": "/careers/video-editing-post-production",
+      "status": 200
+    },
+    {
+      "route": "/community/guidelines",
+      "status": 200
+    },
+    {
+      "route": "/community/moderation",
+      "status": 200
+    },
+    {
+      "route": "/insights",
+      "status": 200
+    },
+    {
+      "route": "/insights/ai-commercial-production-without-losing-the-idea",
+      "status": 200
+    },
+    {
+      "route": "/insights/brief-an-ai-execution-partner",
+      "status": 200
+    },
+    {
+      "route": "/insights/when-to-automate-a-workflow",
+      "status": 200
+    },
+    {
+      "route": "/privacy",
+      "status": 200
+    },
+    {
+      "route": "/process",
+      "status": 200
+    },
+    {
+      "route": "/prompts/image/book-cover-paper-landscape",
+      "status": 200
+    },
+    {
+      "route": "/prompts/image/ceramic-material-study",
+      "status": 200
+    },
+    {
+      "route": "/prompts/image/citrus-menu-still-life",
+      "status": 200
+    },
+    {
+      "route": "/prompts/image/modular-speaker-exploration",
+      "status": 200
+    },
+    {
+      "route": "/prompts/methods/constraint-prompting",
+      "status": 200
+    },
+    {
+      "route": "/prompts/methods/image-prompt-formula",
+      "status": 200
+    },
+    {
+      "route": "/prompts/methods/iterative-prompting",
+      "status": 200
+    },
+    {
+      "route": "/prompts/methods/structured-prompting",
+      "status": 200
+    },
+    {
+      "route": "/prompts/methods/ui-design-framework",
+      "status": 200
+    },
+    {
+      "route": "/prompts/methods/vibe-coding-framework",
+      "status": 200
+    },
+    {
+      "route": "/prompts/ui/accessible-course-navigation",
+      "status": 200
+    },
+    {
+      "route": "/prompts/ui/fieldwork-research-dashboard",
+      "status": 200
+    },
+    {
+      "route": "/prompts/ui/repair-studio-service-page",
+      "status": 200
+    },
+    {
+      "route": "/prompts/ui/transparent-pricing-comparison",
+      "status": 200
+    },
+    {
+      "route": "/prompts/vibe-coding/accessible-filterable-catalog",
+      "status": 200
+    },
+    {
+      "route": "/prompts/vibe-coding/evidence-led-bug-fix",
+      "status": 200
+    },
+    {
+      "route": "/prompts/vibe-coding/local-first-project-planner",
+      "status": 200
+    },
+    {
+      "route": "/prompts/vibe-coding/safe-csv-import-wizard",
+      "status": 200
+    },
+    {
+      "route": "/resources",
+      "status": 200
+    },
+    {
+      "route": "/resources/case_study/case-study-inbound-research-workflow-automation",
+      "status": 200
+    },
+    {
+      "route": "/resources/guide/ai-lead-research-verification-pipeline",
+      "status": 200
+    },
+    {
+      "route": "/resources/guide/claude-code-enterprise-setup-guardrails",
+      "status": 200
+    },
+    {
+      "route": "/resources/guide/crawl4ai-vs-firecrawl-web-scraping-comparison",
+      "status": 200
+    },
+    {
+      "route": "/resources/guide/mcp-production-connector-architecture",
+      "status": 200
+    },
+    {
+      "route": "/resources/guide/multi-agent-content-research-engine",
+      "status": 200
+    },
+    {
+      "route": "/resources/guide/open-source-vibe-coding-local-tools-guide",
+      "status": 200
+    },
+    {
+      "route": "/resources/guide/privacy-preserving-receipt-financial-extraction",
+      "status": 200
+    },
+    {
+      "route": "/resources/guide/visual-product-ad-coherent-lighting-workflow",
+      "status": 200
+    },
+    {
+      "route": "/resources/guide/zero-cost-browser-automation-playwright-vision",
+      "status": 200
+    },
+    {
+      "route": "/resources/mcp_server/postgresql-mcp-server-integration",
+      "status": 200
+    },
+    {
+      "route": "/resources/mcp_server/zqtion-resource-intelligence-mcp",
+      "status": 200
+    },
+    {
+      "route": "/resources/prompt/prompt-b2b-prospect-qualification-tech-stack",
+      "status": 200
+    },
+    {
+      "route": "/resources/prompt/prompt-brand-voice-persona-extractor",
+      "status": 200
+    },
+    {
+      "route": "/resources/prompt/prompt-code-refactoring-accessibility-auditor",
+      "status": 200
+    },
+    {
+      "route": "/resources/prompt/prompt-senior-code-reviewer-security-screener",
+      "status": 200
+    },
+    {
+      "route": "/resources/prompt/prompt-video-character-consistency-framing",
+      "status": 200
+    },
+    {
+      "route": "/resources/repository/crawl4ai-web-crawler-framework",
+      "status": 200
+    },
+    {
+      "route": "/resources/skill/skill-claude-repeatable-research-pipeline",
+      "status": 200
+    },
+    {
+      "route": "/resources/skill/skill-visual-hierarchy-spacing-reviewer",
+      "status": 200
+    },
+    {
+      "route": "/resources/tool/google-antigravity-ide-overview",
+      "status": 200
+    },
+    {
+      "route": "/resources/tool/reve-ai-video-studio",
+      "status": 200
+    },
+    {
+      "route": "/resources/use_case/lead-qualification-website-scraping-architecture",
+      "status": 200
+    },
+    {
+      "route": "/resources/workflow/ai-video-consistency-face-preservation-workflow",
+      "status": 200
+    },
+    {
+      "route": "/resources/workflow/automated-competitor-intelligence-tracker",
+      "status": 200
+    },
+    {
+      "route": "/resources/workflow/human-in-the-loop-content-approval-pipeline",
+      "status": 200
+    },
+    {
+      "route": "/resources/workflow/token-saving-checkpoint-strategy-coding-agents",
+      "status": 200
+    },
+    {
+      "route": "/resources/workflow/voice-cloning-script-synchronization-pipeline",
+      "status": 200
+    },
+    {
+      "route": "/services",
+      "status": 200
+    },
+    {
+      "route": "/terms",
+      "status": 200
+    },
+    {
+      "route": "/work",
+      "status": 200
+    },
+    {
+      "route": "/work/ai-microfilm-collection",
+      "status": 200
+    },
+    {
+      "route": "/work/ai-vfx-creative-lab",
+      "status": 200
+    },
+    {
+      "route": "/work/bold-kinetic-type-showreel",
+      "status": 200
+    },
+    {
+      "route": "/work/emotional-telecom-concept",
+      "status": 200
+    },
+    {
+      "route": "/work/g-force-tyres-mobile",
+      "status": 200
+    },
+    {
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200
+    },
+    {
+      "route": "/work/gruffet",
+      "status": 200
+    },
+    {
+      "route": "/work/gruffet-product-explainer",
+      "status": 200
+    },
+    {
+      "route": "/work/meeting-my-past-self",
+      "status": 200
+    },
+    {
+      "route": "/work/mojo-product-visual-lab",
+      "status": 200
+    },
+    {
+      "route": "/work/spark-dhaka-2050",
+      "status": 200
+    },
+    {
+      "route": "/work/sports-film-the-leap",
+      "status": 200
+    },
+    {
+      "route": "/careers",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply",
+      "status": 200
+    },
+    {
+      "route": "/contact",
+      "status": 200
+    },
+    {
+      "route": "/community/account",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences",
+      "status": 200
+    },
+    {
+      "route": "/prompts/community",
+      "status": 200
+    },
+    {
+      "route": "/u/alice",
+      "status": 200
+    },
+    {
+      "route": "/community/saved",
+      "status": 200
+    },
+    {
+      "route": "/share",
+      "status": 200
+    },
+    {
+      "route": "/prompts",
+      "status": 200
+    },
+    {
+      "route": "/prompts/methods",
+      "status": 200
+    },
+    {
+      "route": "/prompts/methodology",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences",
+      "status": 200
+    },
+    {
+      "route": "/contact?service=ai-strategy-prototyping",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply?track=ai-automation-digital-execution",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply?track=ai-creative-prompt-engineering",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply?track=ai-market-research",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply?track=brand-graphic-design",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply?track=business-development-partnerships",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply?track=communications-social-media",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply?track=content-copywriting",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply?track=data-analysis-insights",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply?track=data-cleaning-operations",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply?track=data-visualization-reporting",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply?track=lead-research-prospecting",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply?track=reels-short-form-content",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply?track=sales-outreach",
+      "status": 200
+    },
+    {
+      "route": "/careers/apply?track=video-editing-post-production",
+      "status": 200
+    },
+    {
+      "route": "/prompts/tools",
+      "status": 200
+    },
+    {
+      "route": "/prompts/image",
+      "status": 200
+    },
+    {
+      "route": "/prompts/tools/gemini",
+      "status": 200
+    },
+    {
+      "route": "/prompts/ui",
+      "status": 200
+    },
+    {
+      "route": "/prompts/tools/claude-code",
+      "status": 200
+    },
+    {
+      "route": "/prompts/tools/codex",
+      "status": 200
+    },
+    {
+      "route": "/prompts/tools/cursor",
+      "status": 200
+    },
+    {
+      "route": "/prompts/vibe-coding",
+      "status": 200
+    },
+    {
+      "route": "/contact?service=ai-creative-production",
+      "status": 200
+    },
+    {
+      "route": "/contact?service=web-products-mvps",
+      "status": 200
+    },
+    {
+      "route": "/contact?service=ai-automation-systems",
+      "status": 200
+    },
+    {
+      "route": "/u/qa_new_member",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/a6442810-8baa-4c62-8b24-80351a4c3300",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fa6442810-8baa-4c62-8b24-80351a4c3300&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fa6442810-8baa-4c62-8b24-80351a4c3300&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/d6603a24-7ef8-42b7-8a64-426702ed9086",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fd6603a24-7ef8-42b7-8a64-426702ed9086&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fd6603a24-7ef8-42b7-8a64-426702ed9086&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/0f08d000-06e9-41c8-9d5e-d67c8f914ad3",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences?q=packaging",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences?q=images",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F0f08d000-06e9-41c8-9d5e-d67c8f914ad3&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F0f08d000-06e9-41c8-9d5e-d67c8f914ad3&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/a29520da-0a81-4e62-ae46-e3d7ea14c69c",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fa29520da-0a81-4e62-ae46-e3d7ea14c69c&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fa29520da-0a81-4e62-ae46-e3d7ea14c69c&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/448eac12-1c9b-4e56-910d-ce6c467c3b47",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F448eac12-1c9b-4e56-910d-ce6c467c3b47&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F448eac12-1c9b-4e56-910d-ce6c467c3b47&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/42864844-f543-4994-939b-7c66323ac7a1",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F42864844-f543-4994-939b-7c66323ac7a1&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F42864844-f543-4994-939b-7c66323ac7a1&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/c638c620-ca71-4506-9424-e0ae2de4f779",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fc638c620-ca71-4506-9424-e0ae2de4f779&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fc638c620-ca71-4506-9424-e0ae2de4f779&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/fedfd1ae-95c5-4c73-99b3-ac3a2628d2cc",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Ffedfd1ae-95c5-4c73-99b3-ac3a2628d2cc&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Ffedfd1ae-95c5-4c73-99b3-ac3a2628d2cc&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/c8ead6aa-a86d-49e9-835e-59a33e7ec993",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fc8ead6aa-a86d-49e9-835e-59a33e7ec993&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fc8ead6aa-a86d-49e9-835e-59a33e7ec993&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/3cfd5e0e-bbab-4f8c-8d89-ace278368c9d",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F3cfd5e0e-bbab-4f8c-8d89-ace278368c9d&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F3cfd5e0e-bbab-4f8c-8d89-ace278368c9d&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/a02f884d-5a4f-4d34-91ac-c84ad7058192",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fa02f884d-5a4f-4d34-91ac-c84ad7058192&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fa02f884d-5a4f-4d34-91ac-c84ad7058192&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/f5d4f723-3eff-4c5a-b9f4-0fd2f819ec95",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Ff5d4f723-3eff-4c5a-b9f4-0fd2f819ec95&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Ff5d4f723-3eff-4c5a-b9f4-0fd2f819ec95&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/5d4b70cc-7dd1-4e79-8015-15248d85dd65",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F5d4b70cc-7dd1-4e79-8015-15248d85dd65&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F5d4b70cc-7dd1-4e79-8015-15248d85dd65&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/e77d3f24-a044-4bd4-8c91-daffcacd90dd",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fe77d3f24-a044-4bd4-8c91-daffcacd90dd&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fe77d3f24-a044-4bd4-8c91-daffcacd90dd&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/09fc0fb9-5971-4aa3-bf24-a301cdd07ff6",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F09fc0fb9-5971-4aa3-bf24-a301cdd07ff6&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F09fc0fb9-5971-4aa3-bf24-a301cdd07ff6&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/b183a9e4-9b4d-46b7-bd77-31f1c2b7e954",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fb183a9e4-9b4d-46b7-bd77-31f1c2b7e954&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fb183a9e4-9b4d-46b7-bd77-31f1c2b7e954&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/76a25b3d-bee1-46dd-9842-45c22c70bafc",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F76a25b3d-bee1-46dd-9842-45c22c70bafc&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F76a25b3d-bee1-46dd-9842-45c22c70bafc&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/9cd939c3-3e53-412a-a27b-b664c9d87dfc",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F9cd939c3-3e53-412a-a27b-b664c9d87dfc&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F9cd939c3-3e53-412a-a27b-b664c9d87dfc&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/47bbccc0-901a-466f-9292-5b837bd615e9",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F47bbccc0-901a-466f-9292-5b837bd615e9&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F47bbccc0-901a-466f-9292-5b837bd615e9&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences?q=&kind=experiences&category=&page=2",
+      "status": 200
+    },
+    {
+      "route": "/share?type=prompt",
+      "status": 200
+    },
+    {
+      "route": "/prompts/community/04b5f1c6-6cb9-4378-8783-fd8faf4fbf88",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fprompts%2Fcommunity%2F04b5f1c6-6cb9-4378-8783-fd8faf4fbf88&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fprompts%2Fcommunity%2F04b5f1c6-6cb9-4378-8783-fd8faf4fbf88&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/prompts/community/5c18f9d3-ec13-42d9-852e-8571e99d09c5",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fprompts%2Fcommunity%2F5c18f9d3-ec13-42d9-852e-8571e99d09c5&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fprompts%2Fcommunity%2F5c18f9d3-ec13-42d9-852e-8571e99d09c5&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/u/alice?tab=posts",
+      "status": 200
+    },
+    {
+      "route": "/u/alice?tab=prompts",
+      "status": 200
+    },
+    {
+      "route": "/u/alice?tab=experiences",
+      "status": 200
+    },
+    {
+      "route": "/u/alice?tab=results",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fprompts%2Fcommunity%2F5c18f9d3-ec13-42d9-852e-8571e99d09c5%23entry-60000000-0000-4000-8000-000000000002&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fprompts%2Fcommunity%2F5c18f9d3-ec13-42d9-852e-8571e99d09c5%23entry-60000000-0000-4000-8000-000000000002&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/u/alice?tab=all&page=2",
+      "status": 200
+    },
+    {
+      "route": "/u/qa_new_member?tab=posts",
+      "status": 200
+    },
+    {
+      "route": "/u/qa_new_member?tab=prompts",
+      "status": 200
+    },
+    {
+      "route": "/u/qa_new_member?tab=answers",
+      "status": 200
+    },
+    {
+      "route": "/u/qa_new_member?tab=experiences",
+      "status": 200
+    },
+    {
+      "route": "/u/qa_new_member?tab=results",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fprompts%2Fcommunity%2F5c18f9d3-ec13-42d9-852e-8571e99d09c5%23entry-1b839fbb-9428-4d52-9242-7a75d76711f7&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fprompts%2Fcommunity%2F5c18f9d3-ec13-42d9-852e-8571e99d09c5%23entry-1b839fbb-9428-4d52-9242-7a75d76711f7&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-3184bd30-7cb9-4439-8c31-532968571170&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-3184bd30-7cb9-4439-8c31-532968571170&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/u/bob",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-9b8ebc77-8422-470b-926f-af7282c2d11c&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-9b8ebc77-8422-470b-926f-af7282c2d11c&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-3889ff26-8f9d-404e-a8f1-667d521a5d2a&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-b86aecf8-e93e-4672-a045-7df185734381&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-0c6328ad-a13b-4ff1-9471-a5dfd7759a55&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-efde9837-941c-4f78-ae2a-6e7fb1e2a720&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-5f9579c2-5a43-409d-a6c0-767d138561aa&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-9bd63324-c5de-4e13-947b-e464fdef910c&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-1475cff8-151f-4484-b329-d613af708341&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-cbeecff3-177c-41cf-8eda-a538b1bbf9b2&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-c57cc69c-4643-4e4e-8182-68020ae26b09&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a?sort=top&page=2",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/1850614e-401e-4af9-8a14-b6b0d92b09cb",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F1850614e-401e-4af9-8a14-b6b0d92b09cb&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F1850614e-401e-4af9-8a14-b6b0d92b09cb&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/342d5a83-4e3d-4196-a087-f70bddac8fc8",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F342d5a83-4e3d-4196-a087-f70bddac8fc8&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F342d5a83-4e3d-4196-a087-f70bddac8fc8&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/7a42f661-0c32-4e46-aca7-3aeb8f422226",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F7a42f661-0c32-4e46-aca7-3aeb8f422226&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F7a42f661-0c32-4e46-aca7-3aeb8f422226&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/46ea54a4-04f4-45f9-9b84-0d0b4d6605d5",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F46ea54a4-04f4-45f9-9b84-0d0b4d6605d5&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F46ea54a4-04f4-45f9-9b84-0d0b4d6605d5&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/9c43fe65-3799-4dc9-8eaa-9cad0fb43761",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F9c43fe65-3799-4dc9-8eaa-9cad0fb43761&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F9c43fe65-3799-4dc9-8eaa-9cad0fb43761&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/8bd9c5c9-14d8-4c87-9524-f9aff7711e2a",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F8bd9c5c9-14d8-4c87-9524-f9aff7711e2a&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F8bd9c5c9-14d8-4c87-9524-f9aff7711e2a&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/1474ef37-a6e2-4b7a-9999-2107d88b3bc1",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F1474ef37-a6e2-4b7a-9999-2107d88b3bc1&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F1474ef37-a6e2-4b7a-9999-2107d88b3bc1&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/0b5b5ca1-ba79-4e1b-b845-6df50e623af8",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F0b5b5ca1-ba79-4e1b-b845-6df50e623af8&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F0b5b5ca1-ba79-4e1b-b845-6df50e623af8&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/d7c5cba9-81e0-4173-9bee-ad75a7ad28cb",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fd7c5cba9-81e0-4173-9bee-ad75a7ad28cb&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2Fd7c5cba9-81e0-4173-9bee-ad75a7ad28cb&intent=save",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences?q=&kind=experiences&category=&page=1",
+      "status": 200
+    },
+    {
+      "route": "/prompts/community?q=packaging",
+      "status": 200
+    },
+    {
+      "route": "/prompts/community?q=images",
+      "status": 200
+    },
+    {
+      "route": "/share?type=prompt&remix=04b5f1c6-6cb9-4378-8783-fd8faf4fbf88",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fprompts%2Fcommunity%2F04b5f1c6-6cb9-4378-8783-fd8faf4fbf88&intent=rate",
+      "status": 200
+    },
+    {
+      "route": "/share?type=prompt&remix=5c18f9d3-ec13-42d9-852e-8571e99d09c5",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fprompts%2Fcommunity%2F5c18f9d3-ec13-42d9-852e-8571e99d09c5&intent=rate",
+      "status": 200
+    },
+    {
+      "route": "/u/alice?tab=posts&page=2",
+      "status": 200
+    },
+    {
+      "route": "/u/alice?tab=experiences&page=2",
+      "status": 200
+    },
+    {
+      "route": "/u/alice?tab=all&page=1",
+      "status": 200
+    },
+    {
+      "route": "/u/bob?tab=answers",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-41d3a0a7-bc9d-4520-94f4-1108a23d7882&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-7fc3c62d-10db-4139-a63b-e0b53983a220&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-5a384e6b-57da-4ec6-9fa5-bcd8ef5a89bf&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-f9b8c2b5-0fe0-4fe7-9f9b-cb2fc4c79a6d&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-9a14880d-c7be-4fac-b53e-a11167cd8ac1&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/community/account?next=%2Fai-experiences%2F83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a%23entry-e6e1a28c-7890-4cd4-beaf-d587b7ce06c0&intent=vote",
+      "status": 200
+    },
+    {
+      "route": "/ai-experiences/83cd46ee-b7fd-4c0d-a9b7-2aeac862f90a?sort=top&page=1",
+      "status": 200
+    },
+    {
+      "route": "/u/alice?tab=posts&page=1",
+      "status": 200
+    },
+    {
+      "route": "/u/alice?tab=experiences&page=1",
+      "status": 200
+    }
+  ],
+  "failures": []
+}

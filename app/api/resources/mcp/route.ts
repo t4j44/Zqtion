@@ -20,12 +20,12 @@ const MCP_TOOLS_MANIFEST = [
   },
   {
     name: "find_prompt",
-    description: "Find the best independently engineered Zqtion prompt for a specific task.",
+    description: "Find catalogue prompt proposals for a task; review the evidence and suitability.",
     inputSchema: {
       type: "object",
       properties: {
         task: { type: "string", description: "Specific task to accomplish" },
-        model: { type: "string", description: "Target AI model (e.g. Claude 3.7 Sonnet, GPT-4o)" }
+        model: { type: "string", description: "Target model identifier; check current provider documentation" }
       },
       required: ["task"]
     }
@@ -44,7 +44,7 @@ const MCP_TOOLS_MANIFEST = [
   },
   {
     name: "find_repo",
-    description: "Find vetted open-source code repositories solving a specific problem.",
+    description: "Find repository references; records disclose their unverified evidence status.",
     inputSchema: {
       type: "object",
       properties: {
@@ -79,7 +79,7 @@ const MCP_TOOLS_MANIFEST = [
   },
   {
     name: "recommend_stack",
-    description: "Recommend a tailored AI execution stack with budget, tradeoffs, and guide links.",
+    description: "Propose an illustrative AI stack with tradeoffs and guide links; cost and budget fit are not validated.",
     inputSchema: {
       type: "object",
       properties: {
@@ -92,19 +92,19 @@ const MCP_TOOLS_MANIFEST = [
   },
   {
     name: "build_workflow",
-    description: "Synthesize an end-to-end multi-step AI pipeline with failure modes and tools.",
+    description: "Propose an unverified multi-step AI workflow with failure modes and candidate tools.",
     inputSchema: {
       type: "object",
       properties: {
         goal: { type: "string", description: "Outcome to achieve" },
-        constraints: { type: "array", items: { type: "string" }, description: "Optional constraints (e.g. zero-cost, local-only)" }
+        constraints: { type: "array", items: { type: "string" }, description: "Optional constraints (e.g. local-only, require human approval)" }
       },
       required: ["goal"]
     }
   },
   {
     name: "compare_resources",
-    description: "Compare two tools or resources directly on architecture, pricing, and suitability.",
+    description: "Compare two catalogue records; current pricing and suitability require independent review.",
     inputSchema: {
       type: "object",
       properties: {
@@ -138,7 +138,7 @@ const MCP_TOOLS_MANIFEST = [
   },
   {
     name: "verify_resource",
-    description: "Inspect the evidence provenance, testing status, and freshness of a resource.",
+    description: "Read a resource’s disclosed evidence status; this lookup does not run verification.",
     inputSchema: {
       type: "object",
       properties: {
@@ -149,7 +149,7 @@ const MCP_TOOLS_MANIFEST = [
   },
   {
     name: "compose_solution",
-    description: "Synthesize an end-to-end composite solution stack (Tools + Skills + Repos + MCP + Prompts + Workflow) for a high-level user goal.",
+    description: "Propose an illustrative composite resource stack for a goal; validate compatibility, costs and permissions before use.",
     inputSchema: {
       type: "object",
       properties: {

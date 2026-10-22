@@ -27,7 +27,7 @@ await page.goto(origin, { waitUntil: "networkidle" }); assert.ok(!(await page.lo
 passed.push("Desktop WebGL-unavailable fallback remains usable");
 await page.goto(origin + "/work/spark-dhaka-2050", { waitUntil: "networkidle" });
 assert.equal(await page.locator('iframe[src*="youtube"]').count(), 0);
-const play = page.getByRole("button", { name: /^Play / }).first(); await play.waitFor();
+const play = page.getByRole("button", { name: /^Watch video:/ }).first(); await play.waitFor();
 await page.route("https://www.youtube-nocookie.com/**", route => route.fulfill({ contentType: "text/html", body: "<html><body>Local video facade fixture</body></html>" }));
 await play.click(); await page.locator('iframe[src*="youtube"]').waitFor();
 passed.push("Video facade loads an iframe only after activation (external video intercepted)");

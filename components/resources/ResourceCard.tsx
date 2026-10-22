@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { evidenceLabels } from "@/lib/resources/evidence";
 import type { ResourceItem } from "@/lib/resources/types";
 
 interface ResourceCardProps {
@@ -33,23 +34,23 @@ export function ResourceCard({ resource }: ResourceCardProps) {
 
   const evidenceBadges: Record<string, { label: string; className: string }> = {
     verified: {
-      label: "Verified Source",
+      label: evidenceLabels.verified,
       className: "bg-accent-soft text-success border-[var(--line)]"
     },
     zqtion_tested: {
-      label: "Zqtion Tested",
+      label: evidenceLabels.zqtion_tested,
       className: "bg-accent-soft text-accent border-[var(--line)]"
     },
     source_reported: {
-      label: "Source Reported",
+      label: evidenceLabels.source_reported,
       className: "bg-accent-soft text-warning border-[var(--line)]"
     },
     community_reported: {
-      label: "Community",
+      label: evidenceLabels.community_reported,
       className: "bg-accent-soft text-accent border-[var(--line)]"
     },
     unverified: {
-      label: "Unverified Draft",
+      label: evidenceLabels.unverified,
       className: "bg-raised text-muted border-[var(--line)]"
     }
   };
@@ -113,7 +114,7 @@ export function ResourceCard({ resource }: ResourceCardProps) {
           </span>
           <Link
             href={detailUrl}
-            className="inline-flex items-center gap-1 text-xs font-semibold text-accent hover:text-[#60A5FA] transition-colors"
+            className="inline-flex min-h-[44px] items-center gap-1 text-xs font-semibold text-accent hover:text-[#60A5FA] transition-colors"
           >
             <span>View Architecture</span>
             <svg

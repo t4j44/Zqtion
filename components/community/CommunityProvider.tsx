@@ -4,7 +4,7 @@ import type { User } from "@supabase/supabase-js";
 import Link from "next/link";
 import { browserCommunity, communityRequest } from "@/lib/community/browser";
 import type { Profile } from "@/lib/community/types";
-import { accountPath, currentCommunityPath, type ParticipationIntent } from "@/lib/community/auth";
+import { accountPath, authCallback, currentCommunityPath, type ParticipationIntent } from "@/lib/community/auth";
 type Identity = { user: User | null; profile: Profile | null; moderator: boolean; loading: boolean; error: string; refresh: () => Promise<void> };
 const Context = createContext<Identity>({ user: null, profile: null, moderator: false, loading: true, error: "", refresh: async () => {} });
 export const useCommunity = () => useContext(Context);
@@ -39,8 +39,17 @@ export default function CommunityProvider({ children }: { children: React.ReactN
 }
 export function ParticipationGate({ children, returnTo, intent, hash }: { children: React.ReactNode; returnTo?: string; intent?: ParticipationIntent; hash?: string }) {
   const { user, profile, loading, error } = useCommunity();
+  const [busy, setBusy] = useState(false), [failure, setFailure] = useState("");
+  useEffect(() => { const returned = () => setBusy(false); window.addEventListener("pageshow", returned); return () => window.removeEventListener("pageshow", returned); }, []);
+  const destination = returnTo || currentCommunityPath("/share", hash), action = intent || "create";
+  async function google() {
+    const db = browserCommunity(); if (!db || busy) return;
+    setBusy(true); setFailure("");
+    try { const result = await db.auth.signInWithOAuth({ provider: "google", options: { scopes: "openid email profile", redirectTo: authCallback(window.location.origin, destination, action) } }); if (result.error) throw result.error; }
+    catch { setBusy(false); setFailure("Google sign-in could not start. Continue with email or try again."); }
+  }
   if (loading) return <p className="cq-notice" role="status">Loading your community profile…</p>;
-  if (!user || !user.email_confirmed_at || !profile || error) return <div className="cq-notice"><p>{error || (user ? "Complete your profile once to participate." : "Sign in to join the conversation. Your community identity is saved for next time.")}</p><Link prefetch={false} className="cq-button" href={accountPath(returnTo || currentCommunityPath("/share", hash), intent || "create")}>{user ? "Continue profile setup" : "Sign in / Join"}</Link></div>;
+  if (!user || !user.email_confirmed_at || !profile || error) return <div className="cq-notice"><p>{error || (user ? "Complete your profile once to participate." : "Sign in to participate")}</p><div className="cq-actions">{!user && <button type="button" className="cq-button cq-button-primary" disabled={busy || !browserCommunity()} onClick={() => void google()}>{busy ? "Opening Google…" : "Continue with Google"}</button>}<Link prefetch={false} className="cq-button" href={accountPath(destination, action) + (!user ? "#email-sign-in" : "")}>{user ? "Continue profile setup" : "Continue with email"}</Link></div>{failure && <p role="alert">{failure}</p>}{busy && <p role="status">Opening Google sign-in…</p>}</div>;
   return <>{children}</>;
 }
 export function AccountLink() {

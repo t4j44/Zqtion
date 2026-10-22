@@ -236,14 +236,14 @@ export function normalizeCompositeStack(raw: Record<string, unknown>): import(".
     slug: String(raw.slug || ""),
     goal: String(raw.goal || ""),
     summary: String(raw.summary || ""),
-    targetBudgetMonthly: String(raw.targetBudgetMonthly || raw.target_budget_monthly || "$100/mo"),
+    targetBudgetMonthly: "Not estimated",
     recommendedStack: Array.isArray(recommended)
       ? recommended.map((s) => ({
           role: String(s.role || ""),
           name: String(s.name || ""),
           type: String(s.type || "tool"),
           slug: s.slug ? String(s.slug) : undefined,
-          estimatedCost: String(s.estimatedCost || s.estimated_cost || "$0/mo")
+          estimatedCost: "Not estimated"
         }))
       : [],
     skills: Array.isArray(raw.skills) ? (raw.skills as Array<{ name: string; slug: string; source: string }>) : [],
@@ -269,8 +269,8 @@ export function normalizeCompositeStack(raw: Record<string, unknown>): import(".
           action: String(w.action || "")
         }))
       : [],
-    evidenceLevel: String(raw.evidenceLevel || raw.evidence_level || "verified"),
-    verifiedAt: String(raw.verifiedAt || raw.verified_at || new Date().toISOString())
+    evidenceLevel: "unverified",
+    verifiedAt: ""
   };
 }
 
@@ -306,28 +306,28 @@ export async function composeGoalSolution(
   }
 
   // Dynamic composition from graph
-  const isBudgetStrict = budgetMonthly < 50;
+  void budgetMonthly; // Budget preference is not a cost estimate.
   return {
     slug: `custom-solution-${tokens.slice(0, 3).join("-") || "goal"}`,
     goal,
-    summary: `Engineered multi-resource solution stack tailored for '${goal}' within $${budgetMonthly}/month budget.`,
-    targetBudgetMonthly: isBudgetStrict ? "$0–$20/month (Open Source)" : `$30–$${budgetMonthly}/month`,
+    summary: `Illustrative resource stack for '${goal}'. Validate compatibility, cost and permissions before use.`,
+    targetBudgetMonthly: "Not estimated",
     recommendedStack: [
-      { role: "Discovery", name: "Brave Search API / Exa", type: "tool", estimatedCost: isBudgetStrict ? "$0/mo" : "$10/mo" },
-      { role: "Crawling", name: "Crawl4AI (Self-Hosted)", type: "repository", slug: "crawl4ai-web-crawler-framework", estimatedCost: "$0/mo" },
-      { role: "Enrichment", name: "Claude 3.7 Sonnet / Qwen 2.5", type: "model", estimatedCost: "$15/mo" },
-      { role: "Orchestration", name: "n8n (Self-Hosted)", type: "workflow", slug: "n8n-b2b-lead-enrichment-hubspot", estimatedCost: "$0/mo" },
-      { role: "Persistence", name: "PostgreSQL with Supabase RLS", type: "mcp_server", slug: "postgresql-mcp-server-integration", estimatedCost: "Free tier ($0/mo)" }
+      { role: "Discovery", name: "Brave Search API / Exa", type: "tool", estimatedCost: "Not estimated" },
+      { role: "Crawling", name: "Crawl4AI (Self-Hosted)", type: "repository", slug: "crawl4ai-web-crawler-framework", estimatedCost: "Not estimated" },
+      { role: "Enrichment", name: "A model selected after evaluation", type: "model", estimatedCost: "Not estimated" },
+      { role: "Orchestration", name: "n8n (Self-Hosted)", type: "workflow", estimatedCost: "Not estimated" },
+      { role: "Persistence", name: "PostgreSQL with Supabase RLS", type: "mcp_server", slug: "postgresql-mcp-server-integration", estimatedCost: "Not estimated" }
     ],
     skills: [
       { name: "Autonomous Research Agent Skill", slug: "skill-claude-repeatable-research-pipeline", source: "anthropic-skills" }
     ],
     openSourceRepos: [
-      { name: "Crawl4AI", repo: "unclecode/crawl4ai", license: "Apache-2.0" }
+      { name: "Crawl4AI", repo: "unclecode/crawl4ai", license: "Check upstream license" }
     ],
     mcpServers: [
-      { name: "Official PostgreSQL MCP Server", slug: "official-postgresql-mcp-server", transport: "stdio" },
-      { name: "Official Filesystem MCP", slug: "official-filesystem-mcp-server", transport: "stdio" }
+      { name: "Proposed PostgreSQL MCP connector", slug: "official-postgresql-mcp-server", transport: "stdio" },
+      { name: "Proposed Filesystem MCP connector", slug: "official-filesystem-mcp-server", transport: "stdio" }
     ],
     prompts: [
       { title: "B2B Prospect Qualification & Tech Stack Analyzer", slug: "prompt-b2b-prospect-qualification-tech-stack" }
@@ -338,7 +338,7 @@ export async function composeGoalSolution(
       { step: 3, title: "LLM Processing", action: "Run structured JSON prompt with strict validation." },
       { step: 4, title: "Dispatch", action: "Persist outputs to PostgreSQL and trigger notifications." }
     ],
-    evidenceLevel: "verified",
-    verifiedAt: new Date().toISOString()
+    evidenceLevel: "unverified",
+    verifiedAt: ""
   };
 }

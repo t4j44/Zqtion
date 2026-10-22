@@ -3,226 +3,47 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import { getResourceBySlug, getRelatedResources, getCatalogue } from "@/lib/resources/service";
+import { resourceIndexable } from "@/lib/resources/publication";
+import { evidenceLabels } from "@/lib/resources/evidence";
+import { safeArticleHref } from "@/lib/resources/markdown";
+import ArticleMarkdown from "@/components/resources/ArticleMarkdown";
 import { PromptCopyBlock } from "@/components/resources/PromptCopyBlock";
 import { ResourceCard } from "@/components/resources/ResourceCard";
+import JsonLd, { getBreadcrumbSchema } from "@/components/seo/JsonLd";
+import { siteConfig } from "@/data/site";
+import "@/components/resources/article.css";
 
-interface ResourceDetailPageProps {
-  params: Promise<{
-    type: string;
-    slug: string;
-  }>;
+type Props = { params: Promise<{ type: string; slug: string }> };
+export async function generateStaticParams() { return (await getCatalogue()).filter(item => item.status === "published").map(item => ({ type: item.resourceType, slug: item.slug })); }
+async function resourceFor(params: Props["params"]) {
+  const { type, slug } = await params, resource = await getResourceBySlug(slug);
+  if (!resource || resource.resourceType !== type || resource.slug !== slug) notFound();
+  return resource;
 }
-
-export async function generateStaticParams() {
-  const catalogue = await getCatalogue();
-  return catalogue.map((item) => ({
-    type: item.resourceType,
-    slug: item.slug
-  }));
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const r = await resourceFor(params), canonical = `${siteConfig.url}/resources/${r.resourceType}/${r.slug}`, index = resourceIndexable(r);
+  return { title: r.title, description: r.summary, alternates: { canonical }, robots: { index, follow: true }, openGraph: { title: r.title, description: r.summary, url: canonical, type: "article", images: ["/og-image.png"] }, twitter: { card: "summary_large_image", title: r.title, description: r.summary, images: ["/og-image.png"] } };
 }
-
-export async function generateMetadata({ params }: ResourceDetailPageProps): Promise<Metadata> {
-  const { slug, type } = await params;
-  const resource = await getResourceBySlug(slug);
-
-  if (!resource) {
-    return {
-      title: "Resource Not Found | Zqtion",
-      description: "The requested building block could not be located."
-    };
-  }
-
-  const canonicalUrl = `https://zqtion.com/resources/${type}/${slug}`;
-
-  return {
-    title: `${resource.title} | Zqtion Resource Intelligence`,
-    description: resource.summary,
-    alternates: {
-      canonical: canonicalUrl
-    },
-    openGraph: {
-      title: `${resource.title} | Zqtion`,
-      description: resource.summary,
-      url: canonicalUrl,
-      type: "article",
-      siteName: "Zqtion"
-    }
-  };
-}
-
-export default async function ResourceDetailPage({ params }: ResourceDetailPageProps) {
-  const { slug, type } = await params;
-  const resource = await getResourceBySlug(slug);
-
-  if (!resource) {
-    notFound();
-  }
-
-  const related = await getRelatedResources(resource.slug, 3);
-
-  const evidenceBadges: Record<string, { label: string; className: string }> = {
-    verified: {
-      label: "Verified Source",
-      className: "bg-accent-soft text-success border-[var(--line)]"
-    },
-    zqtion_tested: {
-      label: "Zqtion Tested",
-      className: "bg-accent-soft text-accent border-[var(--line)]"
-    },
-    source_reported: {
-      label: "Source Reported",
-      className: "bg-accent-soft text-warning border-[var(--line)]"
-    },
-    community_reported: {
-      label: "Community",
-      className: "bg-accent-soft text-accent border-[var(--line)]"
-    },
-    unverified: {
-      label: "Unverified Draft",
-      className: "bg-raised text-muted border-[var(--line)]"
-    }
-  };
-
-  const badge = evidenceBadges[resource.evidenceLevel] || evidenceBadges.unverified;
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "TechArticle",
-    headline: resource.title,
-    description: resource.summary,
-    url: `https://zqtion.com/resources/${type}/${slug}`,
-    inLanguage: "en",
-    author: {
-      "@type": "Organization",
-      name: "Zqtion",
-      url: "https://zqtion.com"
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Zqtion",
-      url: "https://zqtion.com"
-    }
-  };
-
-  return (
-    <><main id="main-content" className="resource-page min-h-screen">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      {/* Top Breadcrumb Header */}
-      <div className="border-b border-[var(--line)] pt-28 pb-8 lg:pt-32">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <nav aria-label="Breadcrumb" className="mb-4 flex items-center gap-2 text-xs text-muted">
-            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/resources" className="hover:text-foreground transition-colors">Resources</Link>
-            <span>/</span>
-            <span className="capitalize text-secondary">{resource.category}</span>
-            <span>/</span>
-            <span className="text-muted truncate max-w-[200px]">{resource.title}</span>
-          </nav>
-
-          <div className="flex flex-wrap items-center gap-2 mb-4">
-            <span className="rounded-md bg-white/5 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-secondary border border-white/10">
-              {resource.resourceType}
-            </span>
-            <span className={`rounded-full border px-2.5 py-0.5 text-xs font-medium ${badge.className}`}>
-              {badge.label}
-            </span>
-            <span className="ml-auto text-xs text-muted font-mono">
-              Verified: {resource.verifiedAt ? new Date(resource.verifiedAt).toLocaleDateString("en-US", { month: "short", year: "numeric" }) : "October 2026"}
-            </span>
-          </div>
-
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl font-sans leading-tight">
-            {resource.title}
-          </h1>
-
-          <p className="mt-4 text-base text-secondary leading-relaxed max-w-3xl">
-            {resource.summary}
-          </p>
-
-          {/* Quick Facts Strip */}
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4 rounded-xl border border-[var(--line)] bg-surface p-4 text-xs">
-            <div>
-              <span className="text-muted block">Difficulty</span>
-              <span className="font-semibold text-foreground capitalize">{resource.difficulty}</span>
-            </div>
-            <div>
-              <span className="text-muted block">Target Audience</span>
-              <span className="font-semibold text-foreground">{String(resource.metadata?.target_user || "Engineers & Teams")}</span>
-            </div>
-            <div>
-              <span className="text-muted block">Primary Tools</span>
-              <span className="font-semibold text-foreground truncate block">
-                {resource.tools?.join(", ") || "Modern AI Stack"}
-              </span>
-            </div>
-            <div>
-              <span className="text-muted block">Estimated Cost</span>
-              <span className="font-semibold text-success">Free to $20/mo</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Body */}
-      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <article className="prose prose-invert max-w-none prose-headings:font-sans prose-headings:text-foreground prose-p:text-secondary prose-p:leading-relaxed prose-a:text-accent prose-code:text-accent prose-pre:border prose-pre:border-[var(--line)] prose-pre:bg-surface">
-          {/* Render markdown content sections */}
-          <div className="whitespace-pre-wrap font-sans text-sm leading-relaxed text-secondary">
-            {resource.contentMarkdown}
-          </div>
-        </article>
-
-        {/* Copyable MCP Tool Call Banner */}
-        <div className="mt-12">
-          <PromptCopyBlock
-            label="MCP Query for Claude Code / Antigravity"
-            code={`// Execute via Zqtion MCP Server\n{\n  "tool": "get_resource",\n  "args": {\n    "slug": "${resource.slug}"\n  }\n}`}
-          />
-        </div>
-
-        {/* Related Graph Nodes */}
-        {related.length > 0 && (
-          <section className="mt-16 border-t border-[var(--line)] pt-12">
-            <div className="mb-6 flex items-center justify-between">
-              <div>
-                <h2 className="text-xl font-bold text-foreground">Related Building Blocks</h2>
-                <p className="text-xs text-muted mt-1">
-                  Connected via shared tools, category taxonomy, and workflow graph.
-                </p>
-              </div>
-              <Link href="/resources" className="text-xs font-semibold text-accent hover:underline">
-                Explore All &rarr;
-              </Link>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-3">
-              {related.map((item) => (
-                <ResourceCard key={item.id} resource={item} />
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* Bottom Navigation */}
-        <div className="mt-16 flex items-center justify-between border-t border-[var(--line)] pt-8">
-          <Link
-            href="/resources"
-            className="inline-flex items-center gap-2 text-xs font-semibold text-muted hover:text-foreground transition-colors"
-          >
-            &larr; Back to all building blocks
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex min-h-[44px] items-center justify-center rounded-xl bg-white px-5 py-2 text-xs font-semibold text-black hover:bg-zinc-200 transition-colors"
-          >
-            Need help implementing this? Work with Zqtion &rarr;
-          </Link>
-        </div>
-      </div>
-    </main><Footer /></>
-  );
+export default async function ResourceDetailPage({ params }: Props) {
+  const r = await resourceFor(params), related = await getRelatedResources(r.slug, 3), canonical = `${siteConfig.url}/resources/${r.resourceType}/${r.slug}`, qualified = resourceIndexable(r);
+  const breadcrumbs = getBreadcrumbSchema([{ name: "Home", url: siteConfig.url }, { name: "Resources", url: `${siteConfig.url}/resources` }, { name: r.title, url: canonical }]);
+  const article = { "@context": "https://schema.org", "@type": "TechArticle", headline: r.title, description: r.summary, url: canonical, mainEntityOfPage: canonical, inLanguage: "en", image: `${siteConfig.url}/og-image.png`, author: { "@type": "Organization", name: "Zqtion", url: siteConfig.url }, publisher: { "@id": `${siteConfig.url}/#organization` }, citation: (r.sources || []).map(source => source.sourceUrl) };
+  return <><main id="main-content" className="resource-page min-h-screen">
+    <JsonLd schema={qualified ? [breadcrumbs, article] : [breadcrumbs]} />
+    <header className="border-b border-[var(--line)] pt-28 pb-8 lg:pt-32"><div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <nav aria-label="Breadcrumb" className="resource-breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/resources">Resources</Link><span>/</span><span aria-current="page">{r.resourceType.replaceAll("_", " ")}</span></nav>
+      <p className="cq-kicker">{r.category} / {evidenceLabels[r.evidenceLevel]}</p>
+      <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl leading-tight">{r.title}</h1>
+      <p className="mt-4 text-base text-secondary leading-relaxed max-w-3xl">{r.summary}</p>
+      <p className="resource-byline">By <Link href="/about">Zqtion editorial</Link> · {r.difficulty} · {String(r.metadata.target_user || "Builders evaluating this workflow")}</p>
+      {!qualified && <aside className="resource-evidence" aria-label="Evidence status"><strong>Implementation notes — review pending.</strong> This page has no documented Zqtion execution result. Treat examples as proposals, check the linked references, and test on disposable data before adoption. Pricing, compatibility and outcomes are unverified.</aside>}
+    </div></header>
+    <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+      <ArticleMarkdown markdown={r.contentMarkdown.replace(/^#\s+[^\n]+\n+/, "")} />
+      <section className="resource-sources" aria-labelledby="resource-sources"><h2 id="resource-sources">References and evidence</h2><p>Reference documentation describes the underlying tools. It does not establish that this particular workflow has been executed or that its results are reproducible.</p><ul>{(r.sources || []).filter(source => safeArticleHref(source.sourceUrl)).map(source => <li key={source.sourceUrl}><a href={source.sourceUrl} rel="noopener noreferrer">{source.sourceTitle}</a></li>)}</ul>{!r.sources?.length && <p>No supporting source URL is attached yet.</p>}</section>
+      <PromptCopyBlock label="Resource API example (MCP tool arguments)" language="json" code={JSON.stringify({ tool: "get_resource", args: { slug: r.slug } }, null, 2)} />
+      {related.length > 0 && <section className="mt-12" aria-labelledby="related-resources"><h2 className="text-xl font-bold" id="related-resources">Related resources</h2><div className="mt-5 grid gap-6 sm:grid-cols-3">{related.map(item => <ResourceCard key={item.id} resource={item} />)}</div></section>}
+      <nav className="resource-next" aria-label="Continue learning"><Link href="/resources">Resource Library</Link><Link href="/prompts/methods">Evaluate your prompts</Link><Link href="/ai-experiences">Discuss an experiment</Link><Link href="/work">See original work</Link><Link href="/services#ai-automation-systems">Implementation services</Link></nav>
+    </div>
+  </main><Footer /></>;
 }

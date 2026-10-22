@@ -108,7 +108,7 @@ export function ResourceSearchFilter({ initialItems }: ResourceSearchFilterProps
               type="button"
               aria-pressed={selectedCategory === cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`min-h-[36px] rounded-lg px-3 py-1 text-xs font-medium transition-colors ${
+              className={`min-h-[44px] rounded-lg px-3 py-1 text-xs font-medium transition-colors ${
                 selectedCategory === cat.id
                   ? "bg-white text-black font-semibold shadow"
                   : "bg-white/5 text-muted hover:bg-white/10 hover:text-secondary"
@@ -130,7 +130,7 @@ export function ResourceSearchFilter({ initialItems }: ResourceSearchFilterProps
                 type="button"
                 aria-pressed={selectedType === t.id}
                 onClick={() => setSelectedType(t.id)}
-                className={`min-h-[32px] rounded-md px-2.5 py-0.5 text-xs transition-colors ${
+                className={`min-h-[44px] rounded-md px-2.5 py-0.5 text-xs transition-colors ${
                   selectedType === t.id
                     ? "bg-[#38BDF8]/20 text-accent border border-[#38BDF8]/40"
                     : "bg-white/[0.03] text-muted hover:text-secondary border border-transparent"

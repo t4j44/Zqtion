@@ -1,0 +1,156 @@
+{
+  "regressionBuildId": "tyDU1OUnwNDlsXxOBWzrH",
+  "method": "All changed application/renderer/Auth/navigation/style modules are byte-hashed and predate the regression build. The only later product edits are catalogue prose and MCP manifest descriptions; MCP handler text invariant checked against the base commit. Final rebuilt resources, metadata, API and article tests are recorded separately.",
+  "laterProductEdits": [
+    "app/api/resources/mcp/route.ts",
+    "content/resources/catalogue.json"
+  ],
+  "mcpHandlersUnchanged": true,
+  "files": [
+    {
+      "path": "app/api/resources/mcp/route.ts",
+      "sha256": "55df1157d73103f70d98263a6b9a960cf6d0e9b8f94377c4b0b702e7cde81248",
+      "mtime": "2026-10-22T06:04:40.219Z"
+    },
+    {
+      "path": "app/layout.tsx",
+      "sha256": "dc2f973ea50c30bd6c5608b269990577aac41f894f47e581e0a8a7d68f234c72",
+      "mtime": "2026-10-22T05:13:31.139Z"
+    },
+    {
+      "path": "app/resources/[type]/[slug]/page.tsx",
+      "sha256": "b9fa86048e7eb42a2d427967c568acad03c5bfebf39913d6e482d163538a9287",
+      "mtime": "2026-10-22T05:14:33.924Z"
+    },
+    {
+      "path": "app/resources/page.tsx",
+      "sha256": "25fadc08d4466d058aaa16c89c394f753b40686999bf3f5311c42639cf45f99c",
+      "mtime": "2026-10-22T05:23:02.848Z"
+    },
+    {
+      "path": "app/robots.ts",
+      "sha256": "033d6e3dd5eefe178d8704393ab1d5581887cbe9f3482b86ce00a7d41fc2c16f",
+      "mtime": "2026-10-22T05:16:33.780Z"
+    },
+    {
+      "path": "app/sitemap.ts",
+      "sha256": "4cee1877716bd499e8696a6f20827626bd12c0dc1dd4553b8e2a566fb83f4819",
+      "mtime": "2026-10-22T05:16:34.167Z"
+    },
+    {
+      "path": "app/work/[slug]/page.tsx",
+      "sha256": "9ac80b54c4592536e1a074cc4e02ef62f28c2801374d0aa78ec09f5086139035",
+      "mtime": "2026-10-22T05:14:36.799Z"
+    },
+    {
+      "path": "components/community/Account.tsx",
+      "sha256": "d9b2e47c11eaf0f73ea9557396842c87b07486ae5177a6c2efc02e86e8ed0a46",
+      "mtime": "2026-10-22T05:21:43.643Z"
+    },
+    {
+      "path": "components/community/CommunityProvider.tsx",
+      "sha256": "4ab9a5cff97969a1a0309c34e7d191b02c6fab13fb3fdf567cee6590d5a7b29a",
+      "mtime": "2026-10-22T05:17:14.183Z"
+    },
+    {
+      "path": "components/resources/AskZqtionAssistant.tsx",
+      "sha256": "bac8b4ff279f639a0b627e360a237db2a39b95c54e7481ef2c97866bfef30002",
+      "mtime": "2026-10-22T05:16:33.298Z"
+    },
+    {
+      "path": "components/resources/PromptCopyBlock.tsx",
+      "sha256": "e0caabc84fc2450cee156d93ff384c99e71c8b03fee53e6a18a3265e4dffc989",
+      "mtime": "2026-10-22T05:14:34.605Z"
+    },
+    {
+      "path": "components/resources/ResourceCard.tsx",
+      "sha256": "67e8c51cdf3068e584d69bccbd69977e9ab68d7b9f8b418ffd8f5b2d9ae95e6a",
+      "mtime": "2026-10-22T05:28:19.424Z"
+    },
+    {
+      "path": "components/resources/ResourceSearchFilter.tsx",
+      "sha256": "053f1dcc4a5f6d439cc4e584c4e13ab85021b865ecf054e26b117e87bf805a49",
+      "mtime": "2026-10-22T05:28:18.843Z"
+    },
+    {
+      "path": "components/seo/JsonLd.tsx",
+      "sha256": "644a7295551fe84047361a20ad8384456c92d70589a393da9216f6999cf571b3",
+      "mtime": "2026-10-22T05:13:33.156Z"
+    },
+    {
+      "path": "content/resources/catalogue.json",
+      "sha256": "ab4505af23d9df1f1fdbb7887e0d62e53d08f8b7833f2d43c0209526aca3c50f",
+      "mtime": "2026-10-22T06:03:47.391Z"
+    },
+    {
+      "path": "data/site.ts",
+      "sha256": "345b93d3ea71928ccd89b6bde1d90a2b5ff79a86f6211229ebb4d4738c1d97de",
+      "mtime": "2026-10-22T05:13:32.430Z"
+    },
+    {
+      "path": "lib/community/seo.ts",
+      "sha256": "8025f26e95fc267efb1cf680a8a9867b6156b59bc2d537b5e63ade17625b7425",
+      "mtime": "2026-10-22T05:14:35.301Z"
+    },
+    {
+      "path": "lib/resources/mcp.ts",
+      "sha256": "634b30df40c61e033d6a59cbe12f7176495496977adc6fe81c851c0185c8dd14",
+      "mtime": "2026-10-22T05:16:33.293Z"
+    },
+    {
+      "path": "lib/resources/service.ts",
+      "sha256": "c9c7436578a5b3dad46dd2048b2391b947ec181ddb63f1ed1d77a816ae411016",
+      "mtime": "2026-10-22T05:16:33.296Z"
+    },
+    {
+      "path": "next.config.js",
+      "sha256": "f6a5e9ac1b6b7d6d0c8db7dfda8e04e63df1ea91349b884f347e4ebd375c62b7",
+      "mtime": "2026-10-22T05:30:35.407Z"
+    },
+    {
+      "path": "public/ai.txt",
+      "sha256": "c3a26cfcb63916a43d2999bdb135fc82093879715d7b45034e03a7fd2d9508d1",
+      "mtime": "2026-10-22T05:21:10.074Z"
+    },
+    {
+      "path": "public/llms.txt",
+      "sha256": "856fecfbd7cc10cb6135066aac35623feb4633f341b87dc8ccbec044369ae609",
+      "mtime": "2026-10-22T05:21:10.071Z"
+    },
+    {
+      "path": "app/not-found.tsx",
+      "sha256": "d5350cbc38e7006821287df235df314d070bbcbcdfccc9a2c0125f8f194dcf7e",
+      "mtime": "2026-10-22T05:27:15.394Z"
+    },
+    {
+      "path": "components/resources/ArticleMarkdown.tsx",
+      "sha256": "145ec83386a7d24f36d612d2616b1a4ca89469f45fcd2c28d4d16a86caaa1b78",
+      "mtime": "2026-10-22T05:11:46.124Z"
+    },
+    {
+      "path": "components/resources/article.css",
+      "sha256": "888ee9abf4af7c753c91a4d759da8894cf42c9038d322ec2cb2f6d4678207f90",
+      "mtime": "2026-10-22T05:14:33.445Z"
+    },
+    {
+      "path": "content/resources/editorial-reviews.json",
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "mtime": "2026-10-22T05:11:46.550Z"
+    },
+    {
+      "path": "lib/resources/evidence.ts",
+      "sha256": "b06b0a3438240b669f5d4fb26042ffc2b4991bc72ca099ac5914b2573980f69a",
+      "mtime": "2026-10-22T05:11:47.333Z"
+    },
+    {
+      "path": "lib/resources/markdown.ts",
+      "sha256": "bf267c2a98689e2f934a95ac2edb9a33c2dc2f06e7ccabf285c9636583e23004",
+      "mtime": "2026-10-22T05:11:45.707Z"
+    },
+    {
+      "path": "lib/resources/publication.ts",
+      "sha256": "18421b14b549c86396c5582952daefe0fc9f1812bc0ddf938a30263f042e8bba",
+      "mtime": "2026-10-22T05:11:46.943Z"
+    }
+  ]
+}

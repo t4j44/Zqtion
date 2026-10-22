@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { getCatalogue } from "@/lib/resources/service";
 import { ResourceSearchFilter } from "@/components/resources/ResourceSearchFilter";
@@ -5,7 +6,7 @@ import { AskZqtionAssistant } from "@/components/resources/AskZqtionAssistant";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "AI Resources, Workflows & Building Blocks | Zqtion Resource Intelligence",
+  title: "AI Resources, Workflows & Building Blocks",
   description:
     "A searchable, AI-readable knowledge layer for AI tools, prompts, skills, open-source repositories, workflows, and MCP servers. Organized around practical execution.",
   alternates: {
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AI Resources & Execution Building Blocks | Zqtion",
     description:
-      "Search verified AI tools, open-source repositories, prompts, agent skills, and production MCP servers. Built on Create, Build, Automate.",
+      "Search AI tools and implementation notes, open-source repositories, prompts, agent skills, and production MCP servers. Built on Create, Build, Automate.",
     url: "https://zqtion.com/resources",
     siteName: "Zqtion",
     type: "website"
@@ -22,14 +23,14 @@ export const metadata: Metadata = {
 };
 
 export default async function ResourcesPage() {
-  const catalogue = await getCatalogue();
+  const catalogue = (await getCatalogue()).filter(item => item.status === "published");
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Zqtion Resource Intelligence",
     description:
-      "A searchable knowledge layer of verified AI tools, open-source repositories, prompts, agent skills, and MCP connectors.",
+      "A searchable knowledge layer of AI tools and implementation notes, open-source repositories, prompts, agent skills, and MCP connectors.",
     url: "https://zqtion.com/resources",
     publisher: {
       "@type": "Organization",
@@ -64,7 +65,7 @@ export default async function ResourcesPage() {
             <div className="mt-8 flex flex-wrap items-center gap-6 text-xs font-medium text-muted">
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                <span>100% Original Zqtion Implementations</span>
+                <span>Implementation notes with evidence status</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-sky-400" />
@@ -72,7 +73,7 @@ export default async function ResourcesPage() {
               </div>
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-purple-400" />
-                <span>Zero Hallucinated Metrics</span>
+                <span>Review required before implementation</span>
               </div>
             </div>
           </div>
@@ -88,8 +89,15 @@ export default async function ResourcesPage() {
 
         {/* Universal Search & Directory */}
         <section aria-label="Resource Directory">
+          <h2 className="text-2xl font-semibold mb-4">Resource Library</h2>
           <ResourceSearchFilter initialItems={catalogue} />
         </section>
+        <nav aria-label="Explore related knowledge" className="grid gap-6 sm:grid-cols-2">
+          <section className="rounded-xl border border-[var(--line)] p-6"><h2 className="text-xl font-semibold">AI automation</h2><p className="mt-2 text-secondary">Start with the task and its failure cases before choosing tools.</p><ul className="mt-3 space-y-2"><li><Link className="inline-flex min-h-[44px] items-center text-accent" href="/insights/when-to-automate-a-workflow">Decide when to automate</Link></li><li><Link className="inline-flex min-h-[44px] items-center text-accent" href="/work/gruffet">Explore Gruffet’s original work and limits</Link></li></ul></section>
+          <section className="rounded-xl border border-[var(--line)] p-6"><h2 className="text-xl font-semibold">Prompt engineering</h2><p className="mt-2 text-secondary">Choose a brief, define success and compare the outputs.</p><ul className="mt-3 space-y-2"><li><Link className="inline-flex min-h-[44px] items-center text-accent" href="/prompts/methods">Prompt structures and evaluation methods</Link></li><li><Link className="inline-flex min-h-[44px] items-center text-accent" href="/prompts">Original editable prompt library</Link></li></ul></section>
+          <section className="rounded-xl border border-[var(--line)] p-6"><h2 className="text-xl font-semibold">Tools and open source</h2><p className="mt-2 text-secondary">Review source code, permissions and evidence before connecting systems.</p><ul className="mt-3 space-y-2"><li><Link className="inline-flex min-h-[44px] items-center text-accent" href="/resources/guide/mcp-production-connector-architecture">MCP connector planning notes</Link></li><li><Link className="inline-flex min-h-[44px] items-center text-accent" href="https://github.com/Zqtion/Gruffet">Read Gruffet’s source and limitations</Link></li></ul></section>
+          <section className="rounded-xl border border-[var(--line)] p-6"><h2 className="text-xl font-semibold">Community knowledge</h2><p className="mt-2 text-secondary">Read member experiences, ask a specific question and credit the source.</p><ul className="mt-3 space-y-2"><li><Link className="inline-flex min-h-[44px] items-center text-accent" href="/ai-experiences">Public AI experiences and discussions</Link></li><li><Link className="inline-flex min-h-[44px] items-center text-accent" href="/prompts/community">Member prompts and shared results</Link></li></ul></section>
+        </nav>
       </div>
     </main><Footer /></>
   );

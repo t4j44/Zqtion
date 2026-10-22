@@ -31,7 +31,7 @@ export function PromptCopyBlock({ code, label = "Prompt / Specification", langua
         <button
           type="button"
           onClick={handleCopy}
-          className="inline-flex min-h-[36px] items-center gap-1.5 rounded-md bg-white/5 px-3 py-1 text-xs font-medium text-secondary transition-colors hover:bg-white/10 hover:text-foreground focus:outline-none focus:ring-2 focus:ring-[#38BDF8]"
+          className="inline-flex min-h-[44px] min-w-[44px] items-center gap-1.5 rounded-md bg-white/5 px-3 py-1 text-xs font-medium text-secondary transition-colors hover:bg-white/10 hover:text-foreground focus:outline-none focus:ring-2 focus:ring-[#38BDF8]"
           aria-label="Copy prompt content"
         >
           {copied ? (
