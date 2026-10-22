@@ -323,9 +323,9 @@ export default function Hero3D() {
               <Link href="/work" className="button-primary" data-analytics="hero_primary_cta">Explore the work <ArrowUpRight className="h-4 w-4" /></Link>
               <Link href="/contact" className="button-secondary" data-analytics="hero_secondary_cta">Start a project</Link>
             </div>
-            <Link href="/community/account?next=%2Fai-experiences" className="hero-community" data-analytics="community_join_click" data-analytics-location="hero">
+            <Link href="/ai-experiences" className="hero-community" data-analytics="community_join_click" data-analytics-location="hero">
               <span className="hero-community-dot" aria-hidden="true" />
-              <span><strong>Join the community</strong><span className="hero-community-sub"> · ask, share, learn</span></span>
+              <span><strong>Explore community</strong><span className="hero-community-sub"> · browse, ask, share</span></span>
               <ArrowRight className="h-4 w-4" />
             </Link>
             <div className="hero-capability-list mt-8 flex flex-wrap gap-x-6 gap-y-3 text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-muted">
