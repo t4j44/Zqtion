@@ -6,13 +6,21 @@ import type { Card } from "@/lib/community/types";
 import { ParticipationGate, useCommunity } from "./CommunityProvider";
 import { Avatar } from "./Identity";
 export default function InlineComposer({ parent, kind = "comment", opened = false, onPosted, onCancel }: { parent: Card; kind?: "comment" | "answer"; opened?: boolean; onPosted?: (entry: Card) => void; onCancel?: () => void }) {
-  const { profile } = useCommunity(); const router = useRouter(); const [open, setOpen] = useState(opened); const [body, setBody] = useState(""); const [busy, setBusy] = useState(false); const [error, setError] = useState(""); const lock = useRef(false); const textarea = useRef<HTMLTextAreaElement>(null); const trigger = useRef<HTMLButtonElement>(null); const id = useId();
+  const { profile } = useCommunity(); const router = useRouter(); const [open, setOpen] = useState(opened); const [draft, setDraft] = useState({ key: "", body: "" }); const [busy, setBusy] = useState(false); const [error, setError] = useState(""); const lock = useRef(false); const textarea = useRef<HTMLTextAreaElement>(null); const trigger = useRef<HTMLButtonElement>(null); const id = useId();
   const key = `zqtion-community-draft:inline:${profile?.id || "guest"}:${parent.id}:${kind}`;
+  const body = draft.key === key ? draft.body : "";
+  const setBody = (value: string) => setDraft({ key, body: value });
   const [postedId, setPostedId] = useState("");
-  useEffect(() => { const timer = window.setTimeout(() => { try { setBody(sessionStorage.getItem(key) || ""); } catch { /* Optional draft recovery. */ } }, 0); return () => window.clearTimeout(timer); }, [key]);
-  useEffect(() => { if (open) textarea.current?.focus(); }, [open]);
+  const anchor = `compose-${kind}-${parent.id}`;
+  useEffect(() => {
+    const reveal = () => { if (window.location.hash === `#${anchor}`) { setOpen(true); } };
+    const timer = window.setTimeout(reveal, 0); window.addEventListener("hashchange", reveal);
+    return () => { window.clearTimeout(timer); window.removeEventListener("hashchange", reveal); };
+  }, [anchor]);
+  useEffect(() => { const timer = window.setTimeout(() => { try { setDraft({ key, body: sessionStorage.getItem(key) || "" }); } catch { /* Optional draft recovery. */ } }, 0); return () => window.clearTimeout(timer); }, [key]);
+  useEffect(() => { if (open) textarea.current?.focus(); }, [open, profile?.id]);
   const cancel = () => { setOpen(false); onCancel?.(); trigger.current?.focus(); };
-  return <div className="cq-inline-composer">{!open ? <><button ref={trigger} type="button" className="cq-composer-trigger" onClick={() => { setPostedId(""); setOpen(true); }}>{profile && <Avatar profile={profile} />}<span>{kind === "answer" ? "Write an answer" : "Write a comment…"}</span></button>{postedId && <p role="status" className="cq-hint">{kind === "answer" ? "Answer posted." : "Comment posted."} <a className="cq-text-link cq-text-button" href={`#entry-${postedId}`}>View your {kind}</a></p>}</> : <ParticipationGate><form className="cq-form" onSubmit={async e => {
+  return <div id={anchor} className="cq-inline-composer">{!open ? <><button ref={trigger} type="button" className="cq-composer-trigger" onClick={() => { setPostedId(""); setOpen(true); }}>{profile && <Avatar profile={profile} />}<span>{kind === "answer" ? "Write an answer" : "Write a comment…"}</span></button>{postedId && <p role="status" className="cq-hint">{kind === "answer" ? "Answer posted." : "Comment posted."} <a className="cq-text-link cq-text-button" href={`#entry-${postedId}`}>View your {kind}</a></p>}</> : <ParticipationGate intent={kind} hash={`#${anchor}`}><form className="cq-form" onSubmit={async e => {
     e.preventDefault(); if (lock.current || !profile) return; lock.current = true; setBusy(true); setError(""); let stored = false;
     try {
       const saved = await mutate("create", { kind, parent_id: parent.id, title: "", body, category: parent.category, tool: parent.tool, tags: [], prompt_text: "", media_ids: [] });

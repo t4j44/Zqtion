@@ -1,0 +1,117 @@
+{
+  "scope": "Real browser supabase-js implicit-session handling with local PGlite SQL/RLS and simulated OAuth redirect/Auth transport. CSP bypass only for HTTP fixture; not real Google or hosted acceptance.",
+  "passed": [
+    "Public navbar, feed, discussions, search and profiles require no login and expose no private email",
+    "Google initiation uses basic scopes, implicit callback, accessible keyboard control and persistent returning session",
+    "New Google user browses immediately, then completes LinkedIn/guidelines once at participation without a password",
+    "Direct email login defaults to the feed; invalid external returns cannot leave the app",
+    "Logout clears identity and switching accounts never inherits a moderator UI",
+    "Expired fixture session returns to sign-in without exposing stale profile actions",
+    "Account layout and controls work in both themes from 320px through desktop"
+  ],
+  "failures": [
+    {
+      "name": "Signed-out reply returns to the exact post query and answer composer without automatically posting",
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ null\n- '/ai-experiences/2f73db2b-4c88-4d4f-b9d7-36aa41e6f80f?sort=newest&page=1#compose-comment-eda6cd23-dba4-490e-8412-dd0ac26fae41'\n"
+    },
+    {
+      "name": "Signed-out save returns to the same post without replaying the action",
+      "error": "Expected values to be strictly equal:\n\nnull !== 'save'\n"
+    },
+    {
+      "name": "Signed-out vote returns to the same post without replaying the action",
+      "error": "Expected values to be strictly equal:\n\nnull !== 'vote'\n"
+    },
+    {
+      "name": "Cancelled OAuth is announced, cleans error fragments, preserves destination and permits email retry",
+      "error": "page.waitForURL: Timeout 15000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"http://localhost:3219/ai-experiences/2f73db2b-4c88-4d4f-b9d7-36aa41e6f80f#conversation\" until \"load\"\n============================================================"
+    },
+    {
+      "name": "Password reset remains available and recovery callback stays on the password form",
+      "error": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('status').filter({ hasText: 'Password updated.' }) to be visible\u001b[22m\n"
+    }
+  ],
+  "errors": [],
+  "responsive": [
+    {
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "theme": "light",
+      "width": 360,
+      "scrollWidth": 360
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "scrollWidth": 430
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "theme": "light",
+      "width": 1024,
+      "scrollWidth": 1024
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "scrollWidth": 1920
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "theme": "dark",
+      "width": 360,
+      "scrollWidth": 360
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "scrollWidth": 430
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "theme": "dark",
+      "width": 1024,
+      "scrollWidth": 1024
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "scrollWidth": 1920
+    }
+  ]
+}

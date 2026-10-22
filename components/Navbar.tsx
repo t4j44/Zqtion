@@ -10,7 +10,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 const groups = [
   { label: "Company", links: [{ href: "/", label: "Home" }, ...navigation.filter(i => ["/work", "/services", "/process", "/about"].includes(i.href)), { href: "/contact", label: "Contact" }] },
-  { label: "Discover", links: navigation.filter(i => ["/prompts", "/resources", "/ai-experiences", "/insights"].includes(i.href)) },
+  { label: "Discover", links: navigation.filter(i => ["/prompts", "/resources", "/insights"].includes(i.href)) },
   { label: "Opportunities", links: navigation.filter(i => i.href === "/careers") },
 ];
 
@@ -77,6 +77,7 @@ export default function Navbar() {
         <nav className="desktop-navigation" aria-label="Primary navigation">
           <Link href="/work" className="nav-link" aria-current={active('/work') ? "page" : undefined} onClick={close}>Work</Link>
           <Link href="/services" className="nav-link" aria-current={active('/services') ? "page" : undefined} onClick={close}>Services</Link>
+          <Link href="/ai-experiences" className="nav-link" aria-current={active('/ai-experiences') ? "page" : undefined} onClick={close}>Community</Link>
           {groups.map(group => <div className="nav-group" key={group.label}>
             <button className="nav-link" type="button" data-nav-group={group.label} aria-expanded={dropdown === group.label} aria-controls={`nav-${group.label}`} onClick={() => setDropdown(dropdown === group.label ? null : group.label)}>{group.label}<ChevronDown aria-hidden="true" className="h-3.5 w-3.5" /></button>
             {dropdown === group.label ? <div className="nav-dropdown" id={`nav-${group.label}`}><p className="nav-group-label">{group.label}</p>{group.links.map(item => <Link key={item.href} href={item.href} aria-current={active(item.href) ? "page" : undefined} onClick={close}>{item.label}<ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" /></Link>)}</div> : null}
@@ -91,6 +92,7 @@ export default function Navbar() {
     </header>
     {open ? <div ref={menuRef} id="mobile-menu" className="mobile-menu-enter mobile-navigation">
       <nav aria-label="Mobile navigation">
+        <Link href="/ai-experiences" className="mobile-community-link" onClick={close} aria-current={active('/ai-experiences') ? "page" : undefined}>Community <ArrowUpRight aria-hidden="true" className="h-4 w-4" /></Link>
         <div className="mobile-nav-groups">{groups.map(group => <section key={group.label} aria-label={group.label}><p className="nav-group-label">{group.label}</p>{group.links.map(item => <Link key={item.href} href={item.href} aria-current={active(item.href) ? "page" : undefined} onClick={close}>{item.label}<ArrowUpRight aria-hidden="true" className="h-4 w-4" /></Link>)}</section>)}</div>
         <div className="mobile-nav-actions"><Link href="/contact" className="button-primary" onClick={close} data-analytics="service_contact_click" data-analytics-location="mobile_menu">Start a project <ArrowUpRight aria-hidden="true" className="h-4 w-4" /></Link><Link href="/community/account?next=%2Fai-experiences" className="button-secondary" onClick={close}>Join the community</Link></div>
       </nav>

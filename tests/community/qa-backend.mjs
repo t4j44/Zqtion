@@ -7,7 +7,8 @@ import { pg_trgm } from "@electric-sql/pglite/contrib/pg_trgm";
 const serviceKey = process.env.COMMUNITY_QA_SERVICE_KEY;
 if (!serviceKey || serviceKey.length < 32) throw new Error("Start the local QA runner to generate a test-only service token.");
 const db = new PGlite({ extensions: { pg_trgm } });
-const users = Object.fromEntries(["alice", "bob", "new", "reviewer"].map((name, i) => [name, { id: `10000000-0000-4000-8000-${String(i + 1).padStart(12, "0")}`, email: `${name}@community.test`, aud: "authenticated", role: "authenticated", email_confirmed_at: "2026-09-25T00:00:00Z", created_at: "2026-09-25T00:00:00Z", app_metadata: {}, user_metadata: {} }]));
+const users = Object.fromEntries(["alice", "bob", "new", "reviewer", "google"].map((name, i) => [name, { id: `10000000-0000-4000-8000-${String(i + 1).padStart(12, "0")}`, email: `${name}@community.test`, aud: "authenticated", role: "authenticated", email_confirmed_at: "2026-09-25T00:00:00Z", created_at: "2026-09-25T00:00:00Z", app_metadata: {}, user_metadata: {} }]));
+users.google.identities = [{ provider: "google", identity_data: { email_verified: true, full_name: "Fixture Google Member" } }];
 await db.exec(`create role anon; create role authenticated; create role service_role bypassrls; create schema auth; create schema storage;
   create table auth.users(id uuid primary key,email text,email_confirmed_at timestamptz);
   create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
@@ -57,7 +58,7 @@ for(const [key,receipt] of Object.entries({question,prompt,answer,experience,sho
 const json = (response, data, status = 200) => { response.statusCode = status; response.setHeader("Content-Type", "application/json"); response.end(JSON.stringify(data)); };
 const sqlName = s => { if (!/^[a-z_][a-z_0-9]*$/.test(s)) throw new Error("Invalid identifier"); return `"${s}"`; };
 const server = createServer(async (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3219"); res.setHeader("Access-Control-Allow-Headers", "authorization,apikey,content-type,x-client-info,prefer,accept,x-supabase-api-version,accept-profile,content-profile,x-retry-count"); res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,POST,PATCH,DELETE,OPTIONS"); res.setHeader("Access-Control-Expose-Headers", "Content-Range");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3219"); res.setHeader("Access-Control-Allow-Headers", "authorization,apikey,content-type,x-client-info,prefer,accept,x-supabase-api-version,accept-profile,content-profile,x-retry-count"); res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,POST,PUT,PATCH,DELETE,OPTIONS"); res.setHeader("Access-Control-Expose-Headers", "Content-Range");
   if (req.method === "OPTIONS") { res.end(); return; }
   const url = new URL(req.url, "http://127.0.0.1:4319"); const chunks = []; for await (const part of req) chunks.push(part); const bytes = Buffer.concat(chunks);
   const token = (req.headers.authorization || "").replace(/^Bearer /, ""); const name = token.replace(/^fixture-/, ""); const user = users[name]; const admin = token === serviceKey;

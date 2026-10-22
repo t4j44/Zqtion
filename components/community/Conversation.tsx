@@ -13,6 +13,11 @@ async function load(parent: string, sort: string, offset: number): Promise<Page>
 }
 function Contribution({ entry, question }: { entry: Card; question: Card }) {
   const [replying, setReplying] = useState(false); const [expanded, setExpanded] = useState(false); const [replies, setReplies] = useState<Card[]>([]); const [loaded, setLoaded] = useState(false); const [more, setMore] = useState(false); const [busy, setBusy] = useState(false); const [error, setError] = useState("");
+  useEffect(() => {
+    const reveal = () => { if (window.location.hash === `#compose-comment-${entry.id}` && (entry.kind !== "comment" || entry.reply_depth < 2)) setReplying(true); };
+    const timer = window.setTimeout(reveal, 0); window.addEventListener("hashchange", reveal);
+    return () => { window.clearTimeout(timer); window.removeEventListener("hashchange", reveal); };
+  }, [entry.id, entry.kind, entry.reply_depth]);
   async function fetchReplies(append = false) {
     if (busy) return; setBusy(true); setError("");
     try { const page = await load(entry.id, "newest", append ? replies.length : 0); setReplies(current => append ? [...current, ...page.entries.filter(e => !current.some(c => c.id === e.id))] : page.entries); setMore(page.more); setLoaded(true); setExpanded(true); }
@@ -35,8 +40,8 @@ export default function Conversation({ root, initial, accepted, sort, page }: { 
   const entries = [...posted, ...initial.entries, ...extra].filter((e, i, all) => e.id !== accepted?.id && all.findIndex(a => a.id === e.id) === i);
   useEffect(() => {
     async function reveal() {
-      const target = window.location.hash.match(/^#entry-([a-f0-9-]{36})$/)?.[1];
-      if (!target || document.getElementById(`entry-${target}`)) return;
+      const target = window.location.hash.match(/^#(?:entry-|compose-(?:comment|answer)-)([a-f0-9-]{36})$/)?.[1];
+      if (!target || target === root.id || document.getElementById(`entry-${target}`)) return;
       try { const res = await fetch(`/api/community/conversation?target=${target}&root=${root.id}`); if (res.ok) { const result = await res.json(); setLinked(result.entry); window.setTimeout(() => document.getElementById(`entry-${target}`)?.scrollIntoView({ block: "start" }), 80); } } catch { /* The normal conversation remains available. */ }
     }
     void reveal(); window.addEventListener("hashchange", reveal); return () => window.removeEventListener("hashchange", reveal);

@@ -1,0 +1,7 @@
+{
+  "scope": "Known credential patterns, credential/video filenames and Git blob size in release candidates; not an exhaustive secret guarantee",
+  "files": 77,
+  "totalBytes": 7957353,
+  "excludedFixture": "Existing quoted header-only private-key rejection fixture in tests/community-validation.test.mjs; no key material",
+  "flags": []
+}

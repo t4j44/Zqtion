@@ -29,12 +29,14 @@ export function moderateCommunityContent(text: string) {
   return { decision: reasons.length ? "review" as const : "allow" as const, reasons };
 }
 export function validLinkedIn(value: string) { return value.length <= 300 && /^https:\/\/(www\.)?linkedin\.com\/in\/[A-Za-z0-9_%.-]+\/?$/.test(value); }
-export function safeReturnPath(value: string | null | undefined) {
-  if (!value || value.includes("\\") || /[\u0000-\u001f]/.test(value)) return "/share";
+export function safeReturnPath(value: unknown) {
+  const fallback = "/ai-experiences";
+  if (typeof value !== "string" || !value.startsWith("/") || value.startsWith("//") || value.includes("\\") || /[\u0000-\u001f\u007f]|%(?:0[0-9a-f]|1[0-9a-f]|7f|5c)/i.test(value)) return fallback;
   try {
     const url = new URL(value, "https://zqtion.com");
-    return url.origin === "https://zqtion.com" && /^\/(share|ai-experiences|prompts\/community|community\/saved)(\/|\?|$)/.test(value) ? `${url.pathname}${url.search}${url.hash}` : "/share";
-  } catch { return "/share"; }
+    const allowed = /^\/(?:share|ai-experiences(?:\/[a-z0-9_-]+)?|prompts\/community(?:\/[a-z0-9_-]+)?|community\/saved|u\/[a-z0-9_]+)\/?$/i;
+    return url.origin === "https://zqtion.com" && allowed.test(url.pathname) && (!url.hash || /^#[a-z0-9_%~-]+$/i.test(url.hash)) ? `${url.pathname}${url.search}${url.hash}` : fallback;
+  } catch { return fallback; }
 }
 export function imageError(file: { size: number; type: string }) {
   if (file.size < 1 || file.size > MAX_IMAGE_BYTES) return "Each image must be 1 MB (1,000,000 bytes) or smaller.";

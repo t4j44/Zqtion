@@ -1,0 +1,59 @@
+{
+  "dateLocal": "2026-10-22",
+  "branch": "feature/zqtion-community",
+  "baseCommit": "fa5f864879d09e7750f0e4ecf578016eca24d80d",
+  "buildId": "qutTBMJMZ6kP8SfFkFLv-",
+  "sourceFingerprint": "7b5d653c186d8b4e58384d58e8176a59b55b0188135cbfadf25271fca5988d61",
+  "localVerdict": "PASS",
+  "realGoogleOAuth": "UNVERIFIED: manual Google and hosted Supabase configuration required",
+  "productionReady": false,
+  "commandResults": {
+    "basis": "Observed session exit codes; this aggregator does not rerun these commands",
+    "unitTests": {
+      "passed": 121,
+      "failed": 0
+    },
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "productionBuild": {
+      "status": "PASS",
+      "staticPages": 110
+    },
+    "promptSeo": {
+      "pages": 29,
+      "failures": 0
+    },
+    "diffCheck": "PASS"
+  },
+  "browser": {
+    "auth": 14,
+    "authResponsive": 16,
+    "ui": 22,
+    "community": 15,
+    "communityPortfolio": 16,
+    "communityResponsive": 130,
+    "portfolioInteractions": 14,
+    "broadLayout": 360,
+    "layoutErrors": 0,
+    "automatedAccessibilityScans": 56,
+    "automatedViolations": 0,
+    "incompleteAccessibilityRules": [
+      "color-contrast"
+    ],
+    "linkPages": 254,
+    "linkFailures": 0
+  },
+  "webkit": {
+    "status": "BLOCKED",
+    "reason": "browserType.launch: Executable doesn't exist at C:\\Users\\hp\\AppData\\Local\\ms-playwright\\webkit-2336\\Playwright.exe"
+  },
+  "protectedChanges": [],
+  "hostedMutations": false,
+  "notes": [
+    "Auth browser tests use actual supabase-js implicit session parsing and local PGlite SQL/RLS with simulated provider/Auth transport. HTTP fixture CSP bypass is not production CSP certification.",
+    "A first Community responsive attempt timed out after 95 checks during concurrent runs. The unchanged suite was rerun serially on a fresh fixture.",
+    "Initial cancellation retry bug and test-only PUT CORS gap were corrected; navigation and composer test selectors were made explicit. Earlier failures are retained under iteration folders.",
+    "Google metadata only suggests a display name; moderation, LinkedIn and participation authorization remain server/database controlled.",
+    "No physical device, screen-reader, real Google account, hosted identity-linking, email-delivery or production acceptance is claimed."
+  ]
+}

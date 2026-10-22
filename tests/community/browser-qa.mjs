@@ -139,7 +139,7 @@ await check("Reporting and manual moderation approve images before publishing re
   await page.getByText("Report submitted privately to the moderation team.", { exact: true }).waitFor();
   await go("/community/account"); await page.getByRole("button", { name: "Sign out", exact: true }).click();
   await page.getByLabel("Email (private)").fill("reviewer@community.test"); await page.getByLabel("Password", { exact: true }).fill("fixture-password-123"); await page.getByRole("button", { name: "Sign in", exact: true }).last().click();
-  await page.getByRole("link", { name: "Moderation", exact: true }).click();
+  await page.waitForURL(base + "/ai-experiences"); await go("/community/account"); await page.getByRole("link", { name: "Moderation", exact: true }).click();
   const imageItem = page.locator("article.cq-panel").filter({ hasText: "Local QA cyan test image" });
   await imageItem.getByLabel("Moderation reason").fill("Local generated test image inspected and approved."); await imageItem.getByRole("button", { name: "Approve", exact: true }).click(); await imageItem.waitFor({ state: "detached" });
   const resultItem = page.locator("article.cq-panel").filter({ hasText: "LOCAL QA result using a small generated test image." });

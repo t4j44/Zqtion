@@ -25,7 +25,8 @@ test("LinkedIn URL validation rejects credentials, deceptive hosts, company URLs
 test("Return destinations cannot become external redirects or executable URLs", () => {
   assert.equal(safeReturnPath("/share?session=ai-bootcamp"), "/share?session=ai-bootcamp");
   assert.equal(safeReturnPath("/ai-experiences/123#entry-456"), "/ai-experiences/123#entry-456");
-  for (const path of ["//evil.example/", "https://evil.example/", "javascript:alert(1)", "/\\evil.example", "/community/moderation", "/share\n"]) assert.equal(safeReturnPath(path), "/share");
+  for (const path of [undefined, [], {}, 3, "", "//evil.example/", "https://zqtion.com/share", "https://evil.example/", "javascript:alert(1)", "/\\evil.example", "/community/moderation", "/share\n", "/share%5c", "/ai-experiences/%2e%2e/community/account", "/community/account?next=/community/account", "/share#bad%0a"]) assert.equal(safeReturnPath(path), "/ai-experiences");
+  assert.equal(safeReturnPath("/ai-experiences/123?sort=newest&page=2#compose-comment-456"), "/ai-experiences/123?sort=newest&page=2#compose-comment-456");
 });
 test("Safety rules queue high-signal content without prohibiting educational security terms", () => {
   for (const content of ["A stranger says send your password to me", "javascript:alert(1)", "Contact private@example.org", "i will kill you", "https://example.test/download/stealer.exe", "phone: +123456789012", "-----BEGIN RSA PRIVATE KEY-----"]) assert.equal(moderateCommunityContent(content).decision, "review");
