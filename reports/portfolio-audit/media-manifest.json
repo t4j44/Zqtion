@@ -142,5 +142,14 @@
     "sourceBytes": 185427,
     "bytes": 122866,
     "sourceSha256": "afd02d88cd67b67ac91adaf216027ba9ce522e7dd2ee231da0c36dbfbfb42e0c"
+  },
+  {
+    "source": "https://i.ytimg.com/vi/qIWd8cvsoKk/maxresdefault.jpg",
+    "output": "public/work/gforce-motion.webp",
+    "width": 1280,
+    "height": 720,
+    "sourceBytes": 59917,
+    "bytes": 28858,
+    "sourceSha256": "08d39c5ed072af406cc8547d9e592477a253997b5ff28c3b3b03d5ec3bf13692"
   }
 ]

@@ -13,9 +13,9 @@ test('all original case-study URLs and relationship disclosures survive the expa
 test('every portfolio entry has usable media, public destinations and case-study content',async()=>{
   for(const item of workItems){assert.ok(item.poster,item.slug);await access(new URL('../public'+item.poster,import.meta.url));assert.ok(item.challenge&&item.whatThisProved&&item.approach.length&&item.deliverables.length&&item.group,item.slug);for(const link of item.links??[])assert.equal(new URL(link.url).protocol,'https:');if(!item.kind){assert.ok(item.videoId&&item.videoUrl,item.slug);assert.ok(item.videoUrl.includes(item.videoId));}else{assert.equal(item.videoId,undefined);assert.ok(item.links?.length);}}
 });
-test('homepage features distinct disciplines and keeps both supplied videos discoverable',()=>{
+test('homepage features distinct disciplines and keeps supplied motion videos discoverable',()=>{
   assert.deepEqual(featuredWork.map(i=>i.slug),['g-force-tyres-mobile','gruffet','bold-kinetic-type-showreel','spark-dhaka-2050']);
-  for(const id of ['EKDWPiF0M6c','osWc8m3qnhI'])assert.ok(workItems.some(i=>i.videoId===id&&i.videoUrl.includes(id)));
+  for(const id of ['EKDWPiF0M6c','osWc8m3qnhI','qIWd8cvsoKk'])assert.ok(workItems.some(i=>i.videoId===id&&i.videoUrl.includes(id)&&i.group==='Motion design & commercials'));
   assert.match(workItems.find(i=>i.slug==='gruffet').disclosure,/early preview/i);
   assert.match(workItems.find(i=>i.slug==='g-force-tyres-mobile').disclosure,/supplied by the owner/);
 });

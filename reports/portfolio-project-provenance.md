@@ -16,3 +16,9 @@ Source screenshots record observed public pages. No AI-generated artwork, fake i
 ## Legacy media corrections
 
 Final image review revealed two existing title/media mismatches. Official YouTube oEmbed responses confirmed `tlUPzwuj7ck` is **MOJO VFX 4**, published by **Zqtion** at `@Zqtion-v`; `GkyqartrbWo` is **Chiceken tikka reel 3. (Photo to Reel)**, published by the same channel. The old sports and beverage descriptions were not supported by those media. Their public URLs (`sports-film-the-leap` and `mojo-product-visual-lab`) remain valid, but their titles and descriptions now reflect the actual published product studies. Both retain explicit independent/uncommissioned labels. Unsupported sportswear/Nike and beverage-collection production claims were removed; no new production-tool or client attribution was introduced. This is a correctness repair, not removal of weaker work.
+
+## Addition checked 22 October 2026
+
+**G Force Tyres — Motion Explainer** uses the owner-supplied [YouTube Short](https://www.youtube.com/shorts/qIWd8cvsoKk). Official oEmbed identifies the publisher as Tajuddin Ahamed / @BuildwithTajuddin and the exact source title as “we made a motion saas for g force tyer mobile- https://www.gforcetyres-mobile.co.uk/”. Browser playback reports 36.021 seconds and a decoded 608×1080 portrait frame. Observed scenes show fitting-location choices, tyre-size guidance, large typography and interface-led motion.
+
+The entry is separate from the delivered website, classified under Motion design & commercials and labelled Creative lab. No separate client commission, endorsement, production software or commercial outcome is inferred. The genuine YouTube thumbnail is cached as a 28,858-byte WebP; its source hash is recorded in the media manifest. Source evidence and the addition's validation are under `portfolio-audit/gforce-motion/` and [the addition report](portfolio-gforce-motion-addition.md).

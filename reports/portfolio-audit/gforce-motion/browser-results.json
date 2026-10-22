@@ -1,0 +1,294 @@
+{
+  "results": [
+    {
+      "theme": "light",
+      "width": 320,
+      "height": 640,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 320
+    },
+    {
+      "theme": "light",
+      "width": 320,
+      "height": 640,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 320,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "light",
+      "width": 360,
+      "height": 800,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 360
+    },
+    {
+      "theme": "light",
+      "width": 360,
+      "height": 800,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 360,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 390
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 390,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "height": 932,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 430
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "height": 932,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 430,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 768
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 768,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 1024
+    },
+    {
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 1024,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "height": 900,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 1440
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "height": 900,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 1440,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 1920
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 1920,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "height": 640,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 320
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "height": 640,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 320,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "dark",
+      "width": 360,
+      "height": 800,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 360
+    },
+    {
+      "theme": "dark",
+      "width": 360,
+      "height": 800,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 360,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 390
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 390,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "height": 932,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 430
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "height": 932,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 430,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 768
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 768,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 1024
+    },
+    {
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 1024,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "height": 900,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 1440
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "height": 900,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 1440,
+      "portrait": true,
+      "loaded": true
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "route": "/work",
+      "status": 200,
+      "scrollWidth": 1920
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "route": "/work/g-force-tyres-motion-explainer",
+      "status": 200,
+      "scrollWidth": 1920,
+      "portrait": true,
+      "loaded": true
+    }
+  ],
+  "errors": [],
+  "playbackScope": "Iframe URL and intentional activation verified with isolated player transport; public source inspected separately in browser"
+}

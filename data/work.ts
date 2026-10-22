@@ -287,6 +287,30 @@ const newWork: WorkItem[] = [
     whatThisProved:"The release demonstrates type-led composition, rhythmic transitions and a consistent visual vocabulary across a short landscape sequence.",
     approach:["Made typography the primary visual material.","Used repeated words, changes in scale and contrasting color fields to establish hierarchy.","Connected compositions through motion rather than adding unrelated footage."],
     deliverables:["31-second landscape showreel","Type-led compositions","Motion transitions","Published YouTube film"]
+  },
+  {
+    slug: "g-force-tyres-motion-explainer",
+    title: "G Force Tyres — Motion Explainer",
+    shortTitle: "G Force in motion",
+    year: "2026",
+    discipline: "Motion design · Service storytelling",
+    relationship: "Creative lab",
+    group: "Motion design & commercials",
+    poster: "/work/gforce-motion.webp",
+    orientation: "portrait",
+    videoId: "qIWd8cvsoKk",
+    videoUrl: "https://www.youtube.com/shorts/qIWd8cvsoKk",
+    sourceTitle: "we made a motion saas for g force tyer mobile- https://www.gforcetyres-mobile.co.uk/",
+    disclosure: "An owner-supplied motion film for G Force Tyres Mobile, published by Tajuddin Ahamed on BuildwithTajuddin. The interface sequences explain the fitting journey; no separate commissioning document, client endorsement or commercial result is claimed.",
+    summary: "A 36-second portrait explainer that turns fitting-location and tyre-size guidance into a sequence of bold type and animated interface panels.",
+    challenge: "Make a mobile tyre-fitting journey understandable in a short vertical film, from where the vehicle is to reading the tyre size.",
+    whatThisProved: "The published Short demonstrates service storytelling through readable type, interface-led motion and portrait composition. It does not establish live inventory, confirmed bookings or campaign performance.",
+    approach: [
+      "Large typography introduces each step of the fitting journey.",
+      "Interface panels connect fitting-location choices with manual tyre-size guidance.",
+      "A consistent dark and cyan visual language carries the explanation through a portrait sequence.",
+    ],
+    deliverables: ["36-second portrait explainer", "Interface-led motion", "Tyre-size guidance", "Published YouTube Short"],
   }
 ];
 
