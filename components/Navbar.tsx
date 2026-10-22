@@ -94,7 +94,7 @@ export default function Navbar() {
       <nav aria-label="Mobile navigation">
         <Link href="/ai-experiences" className="mobile-community-link" onClick={close} aria-current={active('/ai-experiences') ? "page" : undefined}>Community <ArrowUpRight aria-hidden="true" className="h-4 w-4" /></Link>
         <div className="mobile-nav-groups">{groups.map(group => <section key={group.label} aria-label={group.label}><p className="nav-group-label">{group.label}</p>{group.links.map(item => <Link key={item.href} href={item.href} aria-current={active(item.href) ? "page" : undefined} onClick={close}>{item.label}<ArrowUpRight aria-hidden="true" className="h-4 w-4" /></Link>)}</section>)}</div>
-        <div className="mobile-nav-actions"><Link href="/contact" className="button-primary" onClick={close} data-analytics="service_contact_click" data-analytics-location="mobile_menu">Start a project <ArrowUpRight aria-hidden="true" className="h-4 w-4" /></Link><Link href="/community/account?next=%2Fai-experiences" className="button-secondary" onClick={close}>Join the community</Link></div>
+        <div className="mobile-nav-actions"><Link href="/contact" className="button-primary" onClick={close} data-analytics="service_contact_click" data-analytics-location="mobile_menu">Start a project <ArrowUpRight aria-hidden="true" className="h-4 w-4" /></Link><Link href="/ai-experiences" className="button-secondary" onClick={close}>Explore community posts</Link></div>
       </nav>
     </div> : null}
   </div>;
