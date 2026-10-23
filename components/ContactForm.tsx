@@ -19,7 +19,7 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
 
   // Production-only fallback while transactional email, Storage and Turnstile
   // are not configured. Keep the full form in local/Preview QA.
-  if (process.env.VERCEL_ENV === "production" && process.env.NEXT_PUBLIC_INQUIRIES_ENABLED !== "true") {
+  if (process.env.NEXT_PUBLIC_INQUIRY_FALLBACK_ENABLED === "true") {
     return (
       <div className="grid gap-5" aria-label="Contact Zqtion">
         <h2 className="text-2xl font-semibold text-foreground">Tell us about your project.</h2>
