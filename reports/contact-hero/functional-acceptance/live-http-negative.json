@@ -1,0 +1,88 @@
+{
+  "checkedAt": "2026-10-23T15:39:31.196Z",
+  "origin": "https://zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app",
+  "method": "Actual HTTPS responses from the approved hosted Preview endpoint; no mocks or credentials; does not establish positive inquiry/mail acceptance",
+  "results": [
+    {
+      "name": "invalid-json",
+      "status": 401,
+      "body": {
+        "message": "Protected by Vercel Authentication"
+      },
+      "requestId": "bom1::n75t7-1792769968112-4560ee0a99f1",
+      "verdict": "BLOCKED",
+      "reason": "Vercel authentication prevented reaching the application; no application assertion was executed"
+    },
+    {
+      "name": "missing-required",
+      "status": 401,
+      "body": {
+        "message": "Protected by Vercel Authentication"
+      },
+      "requestId": "bom1::5jwc2-1792769968908-5cf70c8a657e",
+      "verdict": "BLOCKED",
+      "reason": "Vercel authentication prevented reaching the application; no application assertion was executed"
+    },
+    {
+      "name": "invalid-email",
+      "status": 401,
+      "body": {
+        "message": "Protected by Vercel Authentication"
+      },
+      "requestId": "bom1::5c4lr-1792769969946-f9988271a52c",
+      "verdict": "BLOCKED",
+      "reason": "Vercel authentication prevented reaching the application; no application assertion was executed"
+    },
+    {
+      "name": "short-description",
+      "status": 401,
+      "body": {
+        "message": "Protected by Vercel Authentication"
+      },
+      "requestId": "bom1::xhnw6-1792769970025-1397518ada16",
+      "verdict": "BLOCKED",
+      "reason": "Vercel authentication prevented reaching the application; no application assertion was executed"
+    },
+    {
+      "name": "unsafe-url",
+      "status": 401,
+      "body": {
+        "message": "Protected by Vercel Authentication"
+      },
+      "requestId": "bom1::hr5cm-1792769970129-490ed9d94387",
+      "verdict": "BLOCKED",
+      "reason": "Vercel authentication prevented reaching the application; no application assertion was executed"
+    },
+    {
+      "name": "oversized-body",
+      "status": 401,
+      "body": {
+        "message": "Protected by Vercel Authentication"
+      },
+      "requestId": "bom1::kznzt-1792769970698-6b492e883162",
+      "verdict": "BLOCKED",
+      "reason": "Vercel authentication prevented reaching the application; no application assertion was executed"
+    },
+    {
+      "name": "honeypot",
+      "status": 401,
+      "body": {
+        "message": "Protected by Vercel Authentication"
+      },
+      "requestId": "bom1::h994p-1792769970846-c1297196c1a3",
+      "verdict": "BLOCKED",
+      "reason": "Vercel authentication prevented reaching the application; no application assertion was executed"
+    },
+    {
+      "name": "missing-real-token",
+      "status": 401,
+      "body": {
+        "message": "Protected by Vercel Authentication"
+      },
+      "requestId": "bom1::8v9tr-1792769970960-9d8a2df4d3d6",
+      "verdict": "BLOCKED",
+      "reason": "Vercel authentication prevented reaching the application; no application assertion was executed"
+    }
+  ],
+  "providerSuccessVerified": false
+}

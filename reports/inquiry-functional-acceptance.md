@@ -11,21 +11,25 @@ The form and mobile panel are implemented. Genuine end-to-end delivery has not p
 | Typecheck, lint, tests, production build | PASS | [Checks](contact-hero/functional-acceptance/checks.json), 142 tests, isolated build `kiFZUX_EBGxjBSKXmVWGl` |
 | Previously inspected form and enlarged black panel preserved | PASS | [Source hashes](contact-hero/functional-acceptance/build-source-proof.json) match the reviewed UI; [visual report](contact-form-hero-refinement.md) contains before/after captures and measured performance |
 | Exact Preview token hostname enforcement | Unit PASS; live BLOCKED | Requires Preview environment, exact feature branch, explicit exact hostname configuration, matching request hostname, successful Cloudflare verification and `inquiry` action. Production still permits only its two existing hostnames. No wildcard or token bypass. |
-| Branch-scoped non-secret Preview configuration | SAVED; deployment verification pending | Nine Config variables saved only for this feature branch; [screenshot](contact-hero/functional-acceptance/preview-config-saved.png). Production values unchanged during this phase. |
+| Branch-scoped Preview configuration | PARTIAL | Nine Config variables saved only for this feature branch; [screenshot](contact-hero/functional-acceptance/preview-config-saved.png). Existing staging service-role key was subsequently verified against its project/role and saved as a branch-only Vercel Secret; [masked save proof](contact-hero/functional-acceptance/staging-secret-config-saved.png). Turnstile and Resend credentials remain pending. Production values unchanged during this phase. |
 | Staging database privacy and limiter | Component PASS | Existing staging tables use RLS; anonymous/authenticated SELECT denied; limiter execution restricted to service role. Genuine staging RPC returned five allowed attempts followed by rejection. [Evidence](contact-hero/functional-acceptance/staging-database.json). This is not HTTP 429 proof. |
-| Live invalid-input/anti-spam HTTP checks | Pending | Run `node scripts/contact-hero/live-inquiry-preflight.mjs` after the current source reaches Preview. It records actual responses and explicitly does not claim successful delivery. |
+| Live invalid-input/anti-spam HTTP checks | BLOCKED | Commit `527d187` reached a successful Vercel Preview build. All eight actual unauthenticated HTTPS probes returned Vercel Authentication HTTP 401 before application assertions could run; [sanitized actual responses/request IDs](contact-hero/functional-acceptance/live-http-negative.json). The script now recognizes JSON authentication responses as BLOCKED and stops after the first. |
 | Real Turnstile token | BLOCKED | Saved Cloudflare inventory still contains only Zqtion Production, with two production hostnames. No dedicated staging widget has been verified. |
-| Genuine inquiry saved in private staging database | BLOCKED | No controlled inquiry has been submitted or row accepted as evidence. |
+| Genuine inquiry saved in private staging database | BLOCKED | One genuine controlled browser attempt displayed the unavailable error. The actual subsequent read-only query still returned zero inquiry rows; [database evidence](contact-hero/functional-acceptance/staging-database.json). |
 | Both Resend requests accepted | BLOCKED | No genuine send or provider message IDs obtained. |
 | Notification and visitor confirmation actually received | BLOCKED | No mailbox receipt verified. Provider acceptance alone will not satisfy this gate. |
-| Duplicate prevention, validation, failure handling | Local PASS; live PARTIAL | Automated coverage is local/controlled. Browser submission lock and retained failure state were inspected in the original UI phase. Complete live checks remain required. |
+| Duplicate prevention, validation, failure handling | Local PASS; live PARTIAL | On actual Preview, required-field validation identified name/email/service/description; a controlled attempt disabled the fields/button while pending, then retained the brief and restored controls with safe error and direct alternatives. Inspected light/dark error screenshots: [light](contact-hero/functional-acceptance/preview-failure-light.png), [dark](contact-hero/functional-acceptance/preview-failure-dark.png). This does not prove successful delivery or a correlated API status. Complete live checks remain required. |
 | Production activation | BLOCKED | Keep `NEXT_PUBLIC_INQUIRY_FALLBACK_ENABLED=true` in Production. Only after genuine acceptance may production be activated and rebuilt. |
 
 ## Configuration boundary
 
 Approved Preview: `https://zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app`.
 
-Existing staging Supabase project: `tgjxwjstzdinrcmkpzoj`. Production project was not modified. Preview has branch-scoped URLs, exact hostname, sender/recipient `info@zqtion.com`, fallback disabled for the staging test only, and Community/analytics/Launchpad disabled. Staging server credentials and a genuine staging Turnstile key pair still need secure verification/configuration. No credentials belong in this report, chat, screenshots or Git.
+Existing staging Supabase project: `tgjxwjstzdinrcmkpzoj`. Production project was not modified. Preview has branch-scoped URLs, exact hostname, sender/recipient `info@zqtion.com`, fallback disabled for the staging test only, and Community/analytics/Launchpad disabled. Its existing legacy service-role credential was securely saved as `SUPABASE_SERVICE_ROLE_KEY` for only this feature branch; temporary in-memory values were cleared and the key page closed. It requires a new Preview build to take effect. Resend and genuine staging Turnstile credentials still need secure verification/configuration. No credentials belong in this report, chat, screenshots or Git.
+
+Authenticated connector access was explicitly authorized by the owner after automatic review initially rejected the temporary-access request. The subsequent Vercel connector call returned provider HTTP 403 at `read_protection_bypass`; no temporary access link was obtained and no protection setting changed. Existing signed-in Chrome can view the form. The local CLI is unavailable. Do not treat the connector error or raw 401 as an application failure, and do not copy browser cookies into test scripts.
+
+The latest visible page checks still showed the unsaved staging widget and Resend creation forms, with only the production widget in the saved Cloudflare inventory. New credential creation is therefore unverified. Resend's prepared key is sending-only and limited to `zqtion.com`; its final Add action remains an owner credential-creation handoff.
 
 ## Changes in this phase
 
@@ -36,7 +40,7 @@ The original visual phase report and its release-proof script describe the earli
 ## Remaining acceptance sequence
 
 1. Owner completes creation of a dedicated staging Turnstile widget for the exact Preview hostname. Credential creation is a browser handoff; do not reuse or widen the production widget.
-2. Configure/verify only branch-scoped staging Supabase server and Resend credentials and the staging Turnstile keys securely in Vercel. Do not put secret values in chat.
+2. Finish branch-scoped Resend and staging Turnstile credentials securely in Vercel. The existing staging Supabase service-role key has been saved; verify it on the next Preview build. Do not put secret values in chat.
 3. Rebuild Preview, verify real browser token and submit one clearly labelled controlled inquiry using `info@zqtion.com`.
 4. Correlate actual HTTP response, private saved row and two real Resend provider IDs; verify both messages in the mailbox. Exercise live duplicate, rate, anti-spam and failure behavior without affecting production.
 5. Keep draft and production fallback until every live gate passes. Then prepare production activation with a rebuild because public variables are compiled into the client.

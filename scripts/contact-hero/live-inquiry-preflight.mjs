@@ -26,6 +26,10 @@ for (const [name, body, expected] of checks) {
   }
   const payload = await response.json();
   assert.ok(!JSON.stringify(payload).includes('sb_secret_'));
+  if ([401, 403].includes(response.status) && (payload.message === 'Protected by Vercel Authentication' || payload.error?.message === 'Protected deployment')) {
+    results.push({ name, status: response.status, body: { message: 'Protected by Vercel Authentication' }, requestId: response.headers.get('x-vercel-id'), verdict: 'BLOCKED', reason: 'Vercel authentication prevented reaching the application; no application assertion was executed' });
+    break;
+  }
   const pass = expected.includes(response.status);
   results.push({ name, status: response.status, body: payload, requestId: response.headers.get('x-vercel-id'), verdict: pass ? 'PASS' : 'FAIL' });
   console.log(JSON.stringify(results.at(-1)));

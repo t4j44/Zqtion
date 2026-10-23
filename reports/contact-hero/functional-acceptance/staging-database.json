@@ -20,6 +20,8 @@
     "fullHttp429Verified": false
   },
   "inquirySubmitted": false,
+  "controlledBrowserAttempt": true,
+  "inquiryRowsAfterBrowserAttempt": 0,
   "providerDeliveryVerified": false,
   "productionModified": false
 }
