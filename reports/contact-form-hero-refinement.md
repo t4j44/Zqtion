@@ -4,7 +4,7 @@
 
 Base: `2b0ae84f2dcb2ca58bf8d7c8718b3f3882651bcd`. Final local production build: `BE5EYle_kNRvt9lGlpsxV` (110 static pages).
 
-**Readiness: local implementation and regression validation PASS; ready for draft PR review. Production form activation BLOCKED on genuine hosted inquiry acceptance.** No production flags, hosted database, provider settings, authentication settings or production deployment were changed. The full form is demonstrated in a credential-isolated local build; the production fallback condition remains intact.
+**Readiness: local implementation and regression validation PASS; ready for draft PR review. Production form activation BLOCKED on genuine hosted inquiry acceptance.** The initial implementation delivery changed no production configuration. A subsequent owner-authorized setup check added the genuine public Turnstile site key to Vercel Production only; see the dated follow-up below. Production feature flags, hosted database, authentication settings and production deployment remain unchanged. The full form is demonstrated in a credential-isolated local build; the production fallback condition remains intact.
 
 ## 1. Changes made
 
@@ -139,3 +139,19 @@ Logs: [command gates](contact-hero/checks/results.json), [browser suites](contac
 Resolved work is recorded in [iteration-1/owner-correction.md](contact-hero/iteration-1/owner-correction.md): the independent letter enlargement was rejected and fully reverted. The first journey run had two test timing/geometry failures; the test now compares stable layout widths rather than a transient illumination transform and waits for the existing poster visibility transition after context loss. All 18 final journeys pass. Historical failure screenshots are kept under `iteration-1/`, outside final captures.
 
 Remaining **BLOCKED** checks: genuine staging Turnstile/provider validation, hosted private insert and permissions, actual Resend acceptance, real confirmation mailbox receipt and hosted error/rate-limit acceptance. Vercel environment access was denied (403), not a successful validation. Production feature flags remain unchanged; no production deploy, main push or merge was performed. Delivery is the authorized feature branch and a draft PR to main.
+
+## Hosted setup follow-up — 2026-10-23
+
+The owner supplied `info@zqtion.com` as the controlled confirmation mailbox and authorized continuation. Vercel's connector still returns 403 for the project's team; the signed-in Chrome session can access the project. Browser inspection established:
+
+- The existing Cloudflare **Zqtion Production** widget is Managed, without pre-clearance, and covers `zqtion.com` and `www.zqtion.com`. No Cloudflare settings or keys were changed or regenerated.
+- Vercel Production lists `TURNSTILE_SECRET_KEY`, `RESEND_API_KEY`, `INQUIRY_FROM_EMAIL`, `INQUIRY_TO_EMAIL`, `SUPABASE_SECRET_KEY`, `SUPABASE_URL` and the existing rate-limit/public configuration. Their secret values were not revealed, exported or re-entered. Presence does not certify correctness or provider acceptance.
+- `NEXT_PUBLIC_TURNSTILE_SITE_KEY` was missing across the project environment list. Added the existing widget's **public site key** as **Config**, targeting **Production only**. Vercel displayed “Added Environment Variable successfully. A new deployment is needed for changes to take effect.” No Redeploy action was taken. [Saved-setting screenshot](contact-hero/hosted-setup/public-site-key-saved.png).
+- The [PR contact preview](https://zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app/contact) is accessible in the signed-in browser and renders the complete form. Its inquiry credentials/site key are not configured for this branch's Preview scope. The visible production credentials are scoped to Production; older branch-specific Preview variables do not apply to this branch.
+- A read-only visit to [production contact](https://www.zqtion.com/contact) confirmed the email/WhatsApp fallback is still active. No actual inquiry or email was submitted in this follow-up.
+
+Supabase project discovery subsequently found the existing **Zqtion Staging** project (`tgjxwjstzdinrcmkpzoj`), active and healthy. A read-only table inventory confirms `website_inquiries` and `website_rate_limits` exist with row-level security enabled and zero reported rows. No new project or database migration is needed on this evidence; private grants/functions/provider behavior still need validation. No database values were changed.
+
+Prepared an **unsaved** Cloudflare widget named **Zqtion Staging**, with only the exact PR alias hostname, Managed mode and pre-clearance disabled. [Prepared form](contact-hero/hosted-setup/staging-widget-prepared.png). No widget or security keys were created. The form is left in a marked browser handoff for the owner to perform the credential-creation step.
+
+**Remaining setup:** finish creating the staging Turnstile widget, connect the existing staging Supabase project and appropriate staging mail/Turnstile credentials to this branch's Preview environment, and configure a narrowly permitted staging hostname in the server verifier. The current production hostname policy intentionally rejects the PR's `vercel.app` hostname. Production credentials were not copied to Preview and no production database write was attempted. All genuine insertion, internal-mail acceptance, mailbox receipt, rate-limit and privacy acceptance gates remain outstanding. The public-key addition applies only to a future approved build; it has not activated or deployed the form.
