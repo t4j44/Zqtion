@@ -85,7 +85,8 @@ async function checkRateLimit(ip: string) {
 }
 
 async function verifyTurnstile(token: string, ip: string, requestHostname: string) {
-  const secret = process.env.TURNSTILE_SECRET_KEY;
+  const previewBranch = process.env.VERCEL_ENV === "preview" && process.env.VERCEL_GIT_COMMIT_REF === "fix/contact-form-and-hero-refinement";
+  const secret = process.env.TURNSTILE_SECRET_KEY || (previewBranch ? process.env.TURNSTILE_SECRET_KEY_2 : undefined);
   const hosted = process.env.NODE_ENV === "production" || ["preview", "production"].includes(process.env.VERCEL_ENV || "");
   if (!secret) return { configured: !hosted, valid: !hosted };
   if (!token) return { configured: true, valid: false };
