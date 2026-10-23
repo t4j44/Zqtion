@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { moduleUrl } from "./helpers/typescript.mjs";
 const types = await moduleUrl("lib/community/types.ts");
 const validation = await import(await moduleUrl("lib/community/validation.ts", { "./types": types }));
-const { suggestCommunityTitle, moderateCommunityContent, imageError, validLinkedIn, safeReturnPath, validateContribution, validateProfile } = validation;
+const { suggestCommunityTitle, moderateCommunityContent, imageError, validLinkedIn, normalizeLinkedIn, safeReturnPath, validateContribution, validateProfile } = validation;
 test("Title assistance never rewrites or adds claims; short, capitals and vague titles are advisory", () => {
   for (const title of ["gemini face problem", "help pls", "GEMINI CHANGES MY IMAGE LABEL", "একটি প্রশ্ন", "How can I preserve a product label in Gemini?"]) {
     const result = suggestCommunityTitle({ title, tool: "Gemini", category: "creative" });
@@ -21,6 +21,32 @@ test("Image validation uses decimal 1 MB, requires nonempty supported MIME and r
 test("LinkedIn URL validation rejects credentials, deceptive hosts, company URLs and unsafe schemes", () => {
   assert.ok(validLinkedIn("https://www.linkedin.com/in/taj-123/"));
   for (const url of ["javascript:alert(1)", "http://linkedin.com/in/test", "https://linkedin.com.evil.com/in/test", "https://attacker@linkedin.com/in/test", "https://linkedin.com/company/zqtion", "https://linkedin.com/in/test?secret=yes"]) assert.equal(validLinkedIn(url), false);
+});
+
+test("LinkedIn profile URLs are normalized for human input without accepting untrusted hosts or schemes", () => {
+  const canonical = "https://www.linkedin.com/in/sharif-ahmed-593b17440";
+  for (const pasted of [
+    "www.linkedin.com/in/sharif-ahmed-593b17440",
+    "linkedin.com/in/sharif-ahmed-593b17440",
+    "https://linkedin.com/in/sharif-ahmed-593b17440",
+    canonical,
+    "  www.linkedin.com/in/sharif-ahmed-593b17440  ",
+  ]) {
+    assert.equal(normalizeLinkedIn(pasted), canonical);
+    assert.equal(validLinkedIn(normalizeLinkedIn(pasted)), true);
+  }
+  for (const dangerous of [
+    "javascript:alert(1)",
+    "http://linkedin.com/in/test",
+    "https://attacker@linkedin.com/in/test",
+    "www.linkedin.com.evil.example/in/test",
+    "//linkedin.com/in/test",
+    "https://linkedin.com/company/zqtion",
+    "linkedin.com/in/test?redirect=https://evil.example",
+    "https://linkedin.com/in/test#fragment",
+  ]) {
+    assert.equal(validLinkedIn(normalizeLinkedIn(dangerous)), false, dangerous);
+  }
 });
 test("Return destinations cannot become external redirects or executable URLs", () => {
   assert.equal(safeReturnPath("/share?session=ai-bootcamp"), "/share?session=ai-bootcamp");

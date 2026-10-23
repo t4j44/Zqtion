@@ -28,6 +28,13 @@ export function moderateCommunityContent(text: string) {
   if ((text.match(/https:\/\//gi) || []).length > 8) reasons.push("Excessive promotion links");
   return { decision: reasons.length ? "review" as const : "allow" as const, reasons };
 }
+// Convert ordinary pasted LinkedIn profile links into the canonical safe HTTPS URL.
+ // Never upgrade an arbitrary host, URL scheme, query string, or redirect.
+export function normalizeLinkedIn(value: string) {
+  const trimmed = value.trim();
+  const match = /^(?:https:\/\/)?(?:www\.)?linkedin\.com\/in\/([A-Za-z0-9_%.-]+)\/?$/i.exec(trimmed);
+  return match ? `https://www.linkedin.com/in/${match[1]}` : trimmed;
+}
 export function validLinkedIn(value: string) { return value.length <= 300 && /^https:\/\/(www\.)?linkedin\.com\/in\/[A-Za-z0-9_%.-]+\/?$/.test(value); }
 export function safeReturnPath(value: unknown) {
   const fallback = "/ai-experiences";
