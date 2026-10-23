@@ -15,6 +15,7 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
   const startedRef = useRef(false);
+  const inFlightRef = useRef(false);
   const turnstileRef = useRef<TurnstileHandle>(null);
 
   // Production-only fallback while transactional email, Storage and Turnstile
@@ -22,7 +23,7 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
   if (process.env.NEXT_PUBLIC_INQUIRY_FALLBACK_ENABLED === "true") {
     return (
       <div className="grid gap-5" aria-label="Contact Zqtion">
-        <h2 className="text-2xl font-semibold text-foreground">Tell us about your project.</h2>
+        <h2 className="text-2xl font-semibold text-foreground">Send your brief directly.</h2>
         <p className="text-secondary">Project briefs are being accepted directly by email or WhatsApp while secure online form delivery is configured.</p>
         <a href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("New project brief for Zqtion")}`} className="button-primary inline-flex w-fit items-center gap-3">
           Email your project brief <ArrowRight className="h-4 w-4" />
@@ -37,11 +38,23 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (inFlightRef.current) return;
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const timeline = String(formData.get("timeline") || "").trim();
+    const details = String(formData.get("details") || "").trim();
+    const combinedDetails = timeline ? `${details}\n\nTimeline / desired launch: ${timeline}` : details;
+    if (combinedDetails.length > 4000) {
+      setStatus("error");
+      setMessage("Please shorten the project description and timeline to 4,000 characters in total. Your brief has not been sent.");
+      return;
+    }
+    formData.delete("timeline");
+    formData.set("details", combinedDetails);
+    inFlightRef.current = true;
     setStatus("sending");
     setMessage("");
 
-    const form = event.currentTarget;
-    const formData = new FormData(form);
     const submittedEmail = String(formData.get("email") || "the email you provided").trim();
     const payload = { ...Object.fromEntries(formData.entries()), ...getAttribution() };
     trackEvent("form_submit");
@@ -56,7 +69,12 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
       const result = await response.json();
 
       if (!response.ok || result.ok !== true) {
-        throw new Error(result.error || "The brief could not be delivered.");
+        const safeErrors: Record<number, string> = {
+          400: "Please check the required fields, project URL and human verification, then try again. Your entries are still here.",
+          413: "The brief is too large. Please shorten it before submitting again.",
+          429: `Too many attempts. Please wait before trying again, or contact ${siteConfig.email}.`,
+        };
+        throw new Error(safeErrors[response.status] || `Online brief delivery is temporarily unavailable. Please email ${siteConfig.email} or use WhatsApp.`);
       }
 
       form.reset();
@@ -64,9 +82,9 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
       setStatus("success");
       trackEvent("form_success");
       const confirmation = result.confirmation === "accepted"
-        ? `A confirmation is on its way to ${submittedEmail}.`
+        ? `Our email provider accepted the confirmation request for ${submittedEmail}. Please check your inbox; receipt has not been confirmed.`
         : "Your brief is saved, but we couldn't confirm the confirmation email was sent. You don't need to submit again.";
-      setMessage(`Brief received. ${confirmation} Our team will review the context before recommending the next step.`);
+      setMessage(`Brief received and saved. ${confirmation} We'll review your brief before recommending the next step.`);
     } catch (error) {
       turnstileRef.current?.reset();
       setStatus("error");
@@ -76,7 +94,7 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
           ? error.message
           : `We couldn't confirm whether your brief was received. Please email ${siteConfig.email} or use WhatsApp before submitting again.`,
       );
-    }
+    } finally { inFlightRef.current = false; }
   }
 
   return (
@@ -88,30 +106,35 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
           startedRef.current = true;
           trackEvent("form_start");
         }}
-        className="grid gap-5"
+        className="contact-form grid gap-5"
         aria-describedby="form-status"
+        aria-label="Project inquiry"
+        aria-busy={status === "sending"}
       >
+        <div><h2 className="text-xl font-semibold text-foreground">Project brief</h2><p className="mt-2 text-sm text-secondary">Fields marked * are required. Everything else is optional.</p></div>
+        <fieldset disabled={status === "sending"} className="grid min-w-0 gap-5">
+        <legend className="sr-only">Your project details</legend>
         <div className="grid gap-5 sm:grid-cols-2">
           <label className="text-sm font-medium text-secondary">
             Name <span className="text-accent">*</span>
             <input className={inputClass} name="name" required minLength={2} maxLength={80} autoComplete="name" />
           </label>
           <label className="text-sm font-medium text-secondary">
-            Email <span className="text-accent">*</span>
+            Email address <span className="text-accent">*</span>
             <input className={inputClass} name="email" required type="email" maxLength={160} autoComplete="email" />
           </label>
         </div>
         <label className="text-sm font-medium text-secondary">
-          Website or product link (optional)
+          Website or project URL (optional)
           <input className={inputClass} name="projectUrl" type="url" maxLength={500} inputMode="url" autoComplete="url" placeholder="https://" />
         </label>
         <div className="grid gap-5 sm:grid-cols-2">
           <label className="text-sm font-medium text-secondary">
-            Company or project
+            Company / project name (optional)
             <input className={inputClass} name="company" maxLength={120} autoComplete="organization" />
           </label>
           <label className="text-sm font-medium text-secondary">
-            What do you need? <span className="text-accent">*</span>
+            Service type <span className="text-accent">*</span>
             <select className={inputClass} name="service" required defaultValue={defaultService}>
               <option value="" disabled className="bg-[var(--background)]">Select an area</option>
               <option className="bg-[var(--background)]">AI creative production</option>
@@ -123,7 +146,7 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
           </label>
         </div>
         <label className="text-sm font-medium text-secondary">
-          Outcome, context, and deadline <span className="text-accent">*</span>
+          Project description <span className="text-accent">*</span>
           <textarea
             className={`${inputClass} min-h-40 resize-y`}
             name="details"
@@ -133,6 +156,7 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
             placeholder="What needs to change, who is it for, what already exists, and when does it matter?"
           />
         </label>
+        <div className="grid gap-5 sm:grid-cols-2">
         <label className="text-sm font-medium text-secondary">
           Budget range (optional)
           <select className={inputClass} name="budget" defaultValue="">
@@ -143,6 +167,10 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
             <option className="bg-[var(--background)]">$8,000+</option>
           </select>
         </label>
+        <label className="text-sm font-medium text-secondary">Timeline / desired launch date (optional)
+          <input className={inputClass} name="timeline" maxLength={120} placeholder="A date, timeframe, or still exploring" />
+        </label>
+        </div>
 
         <div className="sr-only" aria-hidden="true">
           <label>
@@ -150,6 +178,7 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
             <input name="fax_number" tabIndex={-1} autoComplete="off" />
           </label>
         </div>
+        </fieldset>
 
         <TurnstileWidget ref={turnstileRef} action="inquiry" />
 
@@ -157,14 +186,14 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
           <p className="max-w-md text-xs leading-5 text-muted">
             Submitting this form sends the information to Zqtion for project evaluation. No payment is requested here.
           </p>
-          <button className="button-primary shrink-0 disabled:cursor-not-allowed disabled:opacity-60" type="submit" disabled={status === "sending"}>
+          <button className="button-primary contact-submit shrink-0 disabled:cursor-not-allowed disabled:opacity-60" type="submit" disabled={status === "sending"}>
             {status === "sending" ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
             Send project brief
             {status !== "sending" ? <ArrowRight className="h-4 w-4" /> : null}
           </button>
         </div>
 
-        <div id="form-status" aria-live="polite" className="min-h-6">
+        <div id="form-status" role="status" aria-live="polite" aria-atomic="true" className="min-h-6">
           {message ? (
             <p className={`flex min-w-0 items-start gap-2 text-sm [overflow-wrap:anywhere] ${status === "success" ? "text-success" : "text-error"}`}>
               {status === "success" ? <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" /> : null}

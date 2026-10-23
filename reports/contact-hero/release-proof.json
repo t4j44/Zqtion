@@ -1,0 +1,238 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-10-23T10:02:02.731Z",
+  "base": "2b0ae84f2dcb2ca58bf8d7c8718b3f3882651bcd",
+  "buildId": "BE5EYle_kNRvt9lGlpsxV",
+  "protectedPaths": [
+    "app/api/inquiries",
+    "lib/email",
+    "supabase/migrations",
+    "components/Hero3D.tsx",
+    "components/HeroLoopVideo.tsx",
+    "components/HeroWebGLScene.tsx",
+    "lib/hero-mode.ts",
+    "components/ThemeProvider.tsx",
+    "public",
+    "package.json",
+    "package-lock.json",
+    "next.config.ts",
+    ".env.example",
+    "lib/community",
+    "app/api/community"
+  ],
+  "sourceHashesMatchBuild": true,
+  "candidateFiles": 148,
+  "secretScan": "Known private-key/token patterns and forbidden filenames: no matches. Local labelled fixture tokens are intentionally synthetic.",
+  "panels": [
+    {
+      "width": 320,
+      "viewportHeight": 568,
+      "oldPanelHeight": 220,
+      "newPanelHeight": 249.90625,
+      "panelHeightChangePercent": 13.593750000000004,
+      "originalPosterWidth": 232,
+      "finalPosterWidth": 232
+    },
+    {
+      "width": 360,
+      "viewportHeight": 800,
+      "oldPanelHeight": 295.1875,
+      "newPanelHeight": 345.59375,
+      "panelHeightChangePercent": 17.07601100995131,
+      "originalPosterWidth": 295.1875,
+      "finalPosterWidth": 295.1875
+    },
+    {
+      "width": 390,
+      "viewportHeight": 844,
+      "oldPanelHeight": 319.796875,
+      "newPanelHeight": 374.390625,
+      "panelHeightChangePercent": 17.071383202227985,
+      "originalPosterWidth": 319.796875,
+      "finalPosterWidth": 319.796875
+    },
+    {
+      "width": 430,
+      "viewportHeight": 932,
+      "oldPanelHeight": 340,
+      "newPanelHeight": 400,
+      "panelHeightChangePercent": 17.647058823529417,
+      "originalPosterWidth": 340,
+      "finalPosterWidth": 340
+    },
+    {
+      "width": 768,
+      "viewportHeight": 1024,
+      "oldPanelHeight": 360,
+      "newPanelHeight": 360,
+      "panelHeightChangePercent": 0,
+      "originalPosterWidth": 272,
+      "finalPosterWidth": 272
+    },
+    {
+      "width": 1024,
+      "viewportHeight": 768,
+      "oldPanelHeight": 407.109375,
+      "newPanelHeight": 407.109375,
+      "panelHeightChangePercent": 0,
+      "originalPosterWidth": 272,
+      "finalPosterWidth": 272
+    },
+    {
+      "width": 1440,
+      "viewportHeight": 900,
+      "oldPanelHeight": 576.109375,
+      "newPanelHeight": 576.109375,
+      "panelHeightChangePercent": 0,
+      "originalPosterWidth": 368,
+      "finalPosterWidth": 368
+    },
+    {
+      "width": 1920,
+      "viewportHeight": 1080,
+      "oldPanelHeight": 570.46875,
+      "newPanelHeight": 570.46875,
+      "panelHeightChangePercent": 0,
+      "originalPosterWidth": 368,
+      "finalPosterWidth": 368
+    }
+  ],
+  "performance": {
+    "before": {
+      "mobile": {
+        "scores": [
+          93,
+          87,
+          92
+        ],
+        "medianScore": 92,
+        "medianLcpMs": 3312.1426,
+        "medianTbtMs": 75,
+        "cls": [
+          0,
+          0,
+          0
+        ],
+        "network": [
+          {
+            "scriptBytes": 240071,
+            "poster": "/hero/z-poster-768.avif",
+            "totalBytes": 450539
+          },
+          {
+            "scriptBytes": 240071,
+            "poster": "/hero/z-poster-768.avif",
+            "totalBytes": 445249
+          },
+          {
+            "scriptBytes": 240071,
+            "poster": "/hero/z-poster-768.avif",
+            "totalBytes": 450710
+          }
+        ]
+      },
+      "desktop": {
+        "scores": [
+          100,
+          100,
+          100
+        ],
+        "medianScore": 100,
+        "medianLcpMs": 730.9725000000001,
+        "medianTbtMs": 0,
+        "cls": [
+          0,
+          0,
+          0
+        ],
+        "network": [
+          {
+            "scriptBytes": 246785,
+            "poster": "/hero/z-poster-512.avif",
+            "totalBytes": 448149
+          },
+          {
+            "scriptBytes": 246785,
+            "poster": "/hero/z-poster-512.avif",
+            "totalBytes": 446331
+          },
+          {
+            "scriptBytes": 246785,
+            "poster": "/hero/z-poster-512.avif",
+            "totalBytes": 446629
+          }
+        ]
+      }
+    },
+    "after": {
+      "mobile": {
+        "scores": [
+          93,
+          91,
+          89
+        ],
+        "medianScore": 91,
+        "medianLcpMs": 3347.0818,
+        "medianTbtMs": 112.5,
+        "cls": [
+          0,
+          0,
+          0
+        ],
+        "network": [
+          {
+            "scriptBytes": 240071,
+            "poster": "/hero/z-poster-768.avif",
+            "totalBytes": 449588
+          },
+          {
+            "scriptBytes": 240071,
+            "poster": "/hero/z-poster-768.avif",
+            "totalBytes": 449927
+          },
+          {
+            "scriptBytes": 240071,
+            "poster": "/hero/z-poster-768.avif",
+            "totalBytes": 450982
+          }
+        ]
+      },
+      "desktop": {
+        "scores": [
+          100,
+          100,
+          99
+        ],
+        "medianScore": 100,
+        "medianLcpMs": 736.9940000000001,
+        "medianTbtMs": 0,
+        "cls": [
+          0,
+          0,
+          0
+        ],
+        "network": [
+          {
+            "scriptBytes": 246785,
+            "poster": "/hero/z-poster-512.avif",
+            "totalBytes": 447818
+          },
+          {
+            "scriptBytes": 246785,
+            "poster": "/hero/z-poster-512.avif",
+            "totalBytes": 447341
+          },
+          {
+            "scriptBytes": 246785,
+            "poster": "/hero/z-poster-512.avif",
+            "totalBytes": 448400
+          }
+        ]
+      }
+    }
+  },
+  "acceptance": {
+    "local": "PASS",
+    "productionActivation": "BLOCKED: no genuine hosted Turnstile/DB/email acceptance or confirmation mailbox receipt"
+  }
+}

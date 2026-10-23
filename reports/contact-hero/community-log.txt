@@ -1,0 +1,37 @@
+PASS Public SSR question, canonical, accepted answer and genuine QAPage
+PASS Authenticated API refuses missing bearer token
+PASS Sign in and one-time onboarding return to original session action
+PASS Title guidance, preview preservation, publishing and session tagging
+PASS Comment and answer use persistent identity; vote and save persist
+PASS Prompt rating and credited remix create a new prompt
+PASS Valid result upload is saved pending moderation; oversized image rejected client-side
+PASS Search and duplicate suggestions return existing discussions
+PASS Upload API rejects actual oversize, MIME spoofing and SVG before storage
+PASS Public profile shows identity and activity without email
+PASS Private pages are noindex and sitemap emits only eligible public roots
+PASS Existing Prompt Library search, copy, customization and navigation survive
+PASS Reporting and manual moderation approve images before publishing results
+PASS Responsive layouts have no horizontal overflow at required widths
+PASS Mobile menu keyboard close and reduced-motion rendering
+{
+  "fixture": "Local PGlite SQL/RLS + simulated Supabase Auth/Storage transport. No live email or hosted Storage certification. CSP bypass used for HTTP fixture URL only.",
+  "passed": [
+    "Public SSR question, canonical, accepted answer and genuine QAPage",
+    "Authenticated API refuses missing bearer token",
+    "Sign in and one-time onboarding return to original session action",
+    "Title guidance, preview preservation, publishing and session tagging",
+    "Comment and answer use persistent identity; vote and save persist",
+    "Prompt rating and credited remix create a new prompt",
+    "Valid result upload is saved pending moderation; oversized image rejected client-side",
+    "Search and duplicate suggestions return existing discussions",
+    "Upload API rejects actual oversize, MIME spoofing and SVG before storage",
+    "Public profile shows identity and activity without email",
+    "Private pages are noindex and sitemap emits only eligible public roots",
+    "Existing Prompt Library search, copy, customization and navigation survive",
+    "Reporting and manual moderation approve images before publishing results",
+    "Responsive layouts have no horizontal overflow at required widths",
+    "Mobile menu keyboard close and reduced-motion rendering"
+  ],
+  "failures": [],
+  "consoleErrors": []
+}

@@ -1,0 +1,5 @@
+
+> zqtion-landing@0.1.0 prompts:seo
+> node scripts/prompts/seo-audit.mjs
+
+SEO HTML AUDIT: 29 pages, 0 failures

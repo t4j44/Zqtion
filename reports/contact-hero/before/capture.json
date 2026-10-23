@@ -1,0 +1,1528 @@
+{
+  "phase": "before",
+  "buildId": "XdKDGyhUb0Y70zp9z003Y",
+  "method": "Local fixture production build; verification script intercepted. No real provider acceptance.",
+  "results": [
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 320,
+      "height": 568,
+      "scrollWidth": 320,
+      "stage": {
+        "x": 21,
+        "y": 89,
+        "width": 278,
+        "height": 220,
+        "right": 299,
+        "bottom": 309
+      },
+      "poster": {
+        "x": 44,
+        "y": 89,
+        "width": 232,
+        "height": 232,
+        "right": 276,
+        "bottom": 321
+      },
+      "copy": {
+        "x": 20,
+        "y": 310,
+        "width": 280,
+        "height": 375.015625,
+        "right": 300,
+        "bottom": 685.015625
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 32.109375,
+            "y": 108.796875,
+            "right": 113.296875,
+            "bottom": 138.296875,
+            "width": 81.1875,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 221.171875,
+            "y": 185.796875,
+            "right": 290.671875,
+            "bottom": 215.296875,
+            "width": 69.5,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 34.890625,
+            "y": 259.703125,
+            "right": 135.796875,
+            "bottom": 289.203125,
+            "width": 100.90625,
+            "height": 29.5
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "width": 320,
+      "height": 568,
+      "scrollWidth": 320,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 45,
+        "y": 629.890625,
+        "width": 230,
+        "height": 1061,
+        "right": 275,
+        "bottom": 1690.890625
+      },
+      "panel": {
+        "x": 20,
+        "y": 604.890625,
+        "width": 280,
+        "height": 1111,
+        "right": 300,
+        "bottom": 1715.890625
+      }
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "stage": {
+        "x": 21,
+        "y": 89,
+        "width": 318,
+        "height": 295.1875,
+        "right": 339,
+        "bottom": 384.1875
+      },
+      "poster": {
+        "x": 32.40625,
+        "y": 89,
+        "width": 295.1875,
+        "height": 295.1875,
+        "right": 327.59375,
+        "bottom": 384.1875
+      },
+      "copy": {
+        "x": 20,
+        "y": 385.1875,
+        "width": 320,
+        "height": 354.9375,
+        "right": 340,
+        "bottom": 740.125
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 33.71875,
+            "y": 115.5625,
+            "right": 114.90625,
+            "bottom": 145.0625,
+            "width": 81.1875,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 259.96875,
+            "y": 218.875,
+            "right": 329.46875,
+            "bottom": 248.375,
+            "width": 69.5,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 36.890625,
+            "y": 328.125,
+            "right": 137.796875,
+            "bottom": 357.625,
+            "width": 100.90625,
+            "height": 29.5
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 45,
+        "y": 665,
+        "width": 270,
+        "height": 1061,
+        "right": 315,
+        "bottom": 1726
+      },
+      "panel": {
+        "x": 20,
+        "y": 640,
+        "width": 320,
+        "height": 1111,
+        "right": 340,
+        "bottom": 1751
+      }
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "stage": {
+        "x": 21,
+        "y": 89,
+        "width": 348,
+        "height": 319.796875,
+        "right": 369,
+        "bottom": 408.796875
+      },
+      "poster": {
+        "x": 35.09375,
+        "y": 89,
+        "width": 319.796875,
+        "height": 319.796875,
+        "right": 354.890625,
+        "bottom": 408.796875
+      },
+      "copy": {
+        "x": 20,
+        "y": 409.796875,
+        "width": 350,
+        "height": 357.875,
+        "right": 370,
+        "bottom": 767.671875
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 34.90625,
+            "y": 117.78125,
+            "right": 116.09375,
+            "bottom": 147.28125,
+            "width": 81.1875,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 289.0625,
+            "y": 229.703125,
+            "right": 358.5625,
+            "bottom": 259.203125,
+            "width": 69.5,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 38.390625,
+            "y": 350.515625,
+            "right": 139.296875,
+            "bottom": 380.015625,
+            "width": 100.90625,
+            "height": 29.5
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 45,
+        "y": 700.1875,
+        "width": 300,
+        "height": 1041,
+        "right": 345,
+        "bottom": 1741.1875
+      },
+      "panel": {
+        "x": 20,
+        "y": 675.1875,
+        "width": 350,
+        "height": 1091,
+        "right": 370,
+        "bottom": 1766.1875
+      }
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 430,
+      "height": 932,
+      "scrollWidth": 430,
+      "stage": {
+        "x": 21,
+        "y": 89,
+        "width": 388,
+        "height": 340,
+        "right": 409,
+        "bottom": 429
+      },
+      "poster": {
+        "x": 45,
+        "y": 89,
+        "width": 340,
+        "height": 340,
+        "right": 385,
+        "bottom": 429
+      },
+      "copy": {
+        "x": 20,
+        "y": 430,
+        "width": 390,
+        "height": 361.796875,
+        "right": 410,
+        "bottom": 791.796875
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 36.515625,
+            "y": 119.59375,
+            "right": 117.703125,
+            "bottom": 149.09375,
+            "width": 81.1875,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 327.875,
+            "y": 238.59375,
+            "right": 397.375,
+            "bottom": 268.09375,
+            "width": 69.5,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 40.390625,
+            "y": 368.90625,
+            "right": 141.296875,
+            "bottom": 398.40625,
+            "width": 100.90625,
+            "height": 29.5
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "width": 430,
+      "height": 932,
+      "scrollWidth": 430,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 45,
+        "y": 745,
+        "width": 340,
+        "height": 1041,
+        "right": 385,
+        "bottom": 1786
+      },
+      "panel": {
+        "x": 20,
+        "y": 720,
+        "width": 390,
+        "height": 1091,
+        "right": 410,
+        "bottom": 1811
+      }
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "stage": {
+        "x": 81,
+        "y": 158.796875,
+        "width": 606,
+        "height": 360,
+        "right": 687,
+        "bottom": 518.796875
+      },
+      "poster": {
+        "x": 248,
+        "y": 202.796875,
+        "width": 272,
+        "height": 272,
+        "right": 520,
+        "bottom": 474.796875
+      },
+      "copy": {
+        "x": 30.71875,
+        "y": 535.796875,
+        "width": 706.5625,
+        "height": 378.390625,
+        "right": 737.28125,
+        "bottom": 914.1875
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 105.234375,
+            "y": 191.1875,
+            "right": 186.421875,
+            "bottom": 220.6875,
+            "width": 81.1875,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 599.328125,
+            "y": 317.1875,
+            "right": 668.828125,
+            "bottom": 346.6875,
+            "width": 69.5,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 111.296875,
+            "y": 456.90625,
+            "right": 212.203125,
+            "bottom": 486.40625,
+            "width": 100.90625,
+            "height": 29.5
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 67.71875,
+        "y": 757,
+        "width": 632.5625,
+        "height": 783,
+        "right": 700.28125,
+        "bottom": 1540
+      },
+      "panel": {
+        "x": 30.71875,
+        "y": 720,
+        "width": 706.5625,
+        "height": 857,
+        "right": 737.28125,
+        "bottom": 1577
+      }
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "stage": {
+        "x": 539.515625,
+        "y": 204.4375,
+        "width": 442.515625,
+        "height": 407.109375,
+        "right": 982.03125,
+        "bottom": 611.546875
+      },
+      "poster": {
+        "x": 624.765625,
+        "y": 271.984375,
+        "width": 272,
+        "height": 272,
+        "right": 896.765625,
+        "bottom": 543.984375
+      },
+      "copy": {
+        "x": 40.953125,
+        "y": 159.859375,
+        "width": 481.5625,
+        "height": 496.265625,
+        "right": 522.515625,
+        "bottom": 656.125
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 579.328125,
+            "y": 294,
+            "right": 672.671875,
+            "bottom": 328.140625,
+            "width": 93.34375,
+            "height": 34.140625
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 870.84375,
+            "y": 367.28125,
+            "right": 951.0625,
+            "bottom": 401.421875,
+            "width": 80.21875,
+            "height": 34.140625
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 597.03125,
+            "y": 487.84375,
+            "right": 712.609375,
+            "bottom": 521.984375,
+            "width": 115.578125,
+            "height": 34.140625
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 77.953125,
+        "y": 651.390625,
+        "width": 544.859375,
+        "height": 783,
+        "right": 622.8125,
+        "bottom": 1434.390625
+      },
+      "panel": {
+        "x": 40.953125,
+        "y": 614.390625,
+        "width": 618.859375,
+        "height": 857,
+        "right": 659.8125,
+        "bottom": 1471.390625
+      }
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "stage": {
+        "x": 755.171875,
+        "y": 185.9375,
+        "width": 626.21875,
+        "height": 576.109375,
+        "right": 1381.390625,
+        "bottom": 762.046875
+      },
+      "poster": {
+        "x": 884.28125,
+        "y": 289.984375,
+        "width": 368,
+        "height": 368,
+        "right": 1252.28125,
+        "bottom": 657.984375
+      },
+      "copy": {
+        "x": 57.59375,
+        "y": 209.90625,
+        "width": 680.578125,
+        "height": 528.171875,
+        "right": 738.171875,
+        "bottom": 738.078125
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 811.53125,
+            "y": 312.671875,
+            "right": 904.875,
+            "bottom": 346.8125,
+            "width": 93.34375,
+            "height": 34.140625
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 1257.34375,
+            "y": 416.375,
+            "right": 1337.5625,
+            "bottom": 450.515625,
+            "width": 80.21875,
+            "height": 34.140625
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 836.578125,
+            "y": 601.171875,
+            "right": 952.15625,
+            "bottom": 635.3125,
+            "width": 115.578125,
+            "height": 34.140625
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 94.59375,
+        "y": 757,
+        "width": 805.109375,
+        "height": 783,
+        "right": 899.703125,
+        "bottom": 1540
+      },
+      "panel": {
+        "x": 57.59375,
+        "y": 720,
+        "width": 879.109375,
+        "height": 857,
+        "right": 936.703125,
+        "bottom": 1577
+      }
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "stage": {
+        "x": 994.90625,
+        "y": 278.765625,
+        "width": 620.078125,
+        "height": 570.46875,
+        "right": 1614.984375,
+        "bottom": 849.234375
+      },
+      "poster": {
+        "x": 1120.9375,
+        "y": 380,
+        "width": 368,
+        "height": 368,
+        "right": 1488.9375,
+        "bottom": 748
+      },
+      "copy": {
+        "x": 304,
+        "y": 263.875,
+        "width": 673.90625,
+        "height": 600.234375,
+        "right": 977.90625,
+        "bottom": 864.109375
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 1050.703125,
+            "y": 404.265625,
+            "right": 1144.046875,
+            "bottom": 438.40625,
+            "width": 93.34375,
+            "height": 34.140625
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 1491.375,
+            "y": 506.953125,
+            "right": 1571.59375,
+            "bottom": 541.09375,
+            "width": 80.21875,
+            "height": 34.140625
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 1075.515625,
+            "y": 689.59375,
+            "right": 1191.09375,
+            "bottom": 723.734375,
+            "width": 115.578125,
+            "height": 34.140625
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 341,
+        "y": 757,
+        "width": 796.390625,
+        "height": 783,
+        "right": 1137.390625,
+        "bottom": 1540
+      },
+      "panel": {
+        "x": 304,
+        "y": 720,
+        "width": 870.390625,
+        "height": 857,
+        "right": 1174.390625,
+        "bottom": 1577
+      }
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 320,
+      "height": 568,
+      "scrollWidth": 320,
+      "stage": {
+        "x": 20,
+        "y": 88,
+        "width": 280,
+        "height": 220,
+        "right": 300,
+        "bottom": 308
+      },
+      "poster": {
+        "x": 44,
+        "y": 88,
+        "width": 232,
+        "height": 232,
+        "right": 276,
+        "bottom": 320
+      },
+      "copy": {
+        "x": 20,
+        "y": 308,
+        "width": 280,
+        "height": 375.015625,
+        "right": 300,
+        "bottom": 683.015625
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 31.1875,
+            "y": 107.796875,
+            "right": 112.375,
+            "bottom": 137.296875,
+            "width": 81.1875,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 222.109375,
+            "y": 184.796875,
+            "right": 291.609375,
+            "bottom": 214.296875,
+            "width": 69.5,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 34,
+            "y": 258.703125,
+            "right": 134.90625,
+            "bottom": 288.203125,
+            "width": 100.90625,
+            "height": 29.5
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "width": 320,
+      "height": 568,
+      "scrollWidth": 320,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 45,
+        "y": 629.890625,
+        "width": 230,
+        "height": 1061,
+        "right": 275,
+        "bottom": 1690.890625
+      },
+      "panel": {
+        "x": 20,
+        "y": 604.890625,
+        "width": 280,
+        "height": 1111,
+        "right": 300,
+        "bottom": 1715.890625
+      }
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "stage": {
+        "x": 20,
+        "y": 88,
+        "width": 320,
+        "height": 295.1875,
+        "right": 340,
+        "bottom": 383.1875
+      },
+      "poster": {
+        "x": 32.40625,
+        "y": 88,
+        "width": 295.1875,
+        "height": 295.1875,
+        "right": 327.59375,
+        "bottom": 383.1875
+      },
+      "copy": {
+        "x": 20,
+        "y": 383.1875,
+        "width": 320,
+        "height": 354.9375,
+        "right": 340,
+        "bottom": 738.125
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 32.796875,
+            "y": 114.5625,
+            "right": 113.984375,
+            "bottom": 144.0625,
+            "width": 81.1875,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 260.90625,
+            "y": 217.875,
+            "right": 330.40625,
+            "bottom": 247.375,
+            "width": 69.5,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 36,
+            "y": 327.125,
+            "right": 136.90625,
+            "bottom": 356.625,
+            "width": 100.90625,
+            "height": 29.5
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "width": 360,
+      "height": 800,
+      "scrollWidth": 360,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 45,
+        "y": 665,
+        "width": 270,
+        "height": 1061,
+        "right": 315,
+        "bottom": 1726
+      },
+      "panel": {
+        "x": 20,
+        "y": 640,
+        "width": 320,
+        "height": 1111,
+        "right": 340,
+        "bottom": 1751
+      }
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "stage": {
+        "x": 20,
+        "y": 88,
+        "width": 350,
+        "height": 319.796875,
+        "right": 370,
+        "bottom": 407.796875
+      },
+      "poster": {
+        "x": 35.09375,
+        "y": 88,
+        "width": 319.796875,
+        "height": 319.796875,
+        "right": 354.890625,
+        "bottom": 407.796875
+      },
+      "copy": {
+        "x": 20,
+        "y": 407.796875,
+        "width": 350,
+        "height": 357.875,
+        "right": 370,
+        "bottom": 765.671875
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 34,
+            "y": 116.78125,
+            "right": 115.1875,
+            "bottom": 146.28125,
+            "width": 81.1875,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 290,
+            "y": 228.703125,
+            "right": 359.5,
+            "bottom": 258.203125,
+            "width": 69.5,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 37.5,
+            "y": 349.515625,
+            "right": 138.40625,
+            "bottom": 379.015625,
+            "width": 100.90625,
+            "height": 29.5
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 45,
+        "y": 700.1875,
+        "width": 300,
+        "height": 1041,
+        "right": 345,
+        "bottom": 1741.1875
+      },
+      "panel": {
+        "x": 20,
+        "y": 675.1875,
+        "width": 350,
+        "height": 1091,
+        "right": 370,
+        "bottom": 1766.1875
+      }
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 430,
+      "height": 932,
+      "scrollWidth": 430,
+      "stage": {
+        "x": 20,
+        "y": 88,
+        "width": 390,
+        "height": 340,
+        "right": 410,
+        "bottom": 428
+      },
+      "poster": {
+        "x": 45,
+        "y": 88,
+        "width": 340,
+        "height": 340,
+        "right": 385,
+        "bottom": 428
+      },
+      "copy": {
+        "x": 20,
+        "y": 428,
+        "width": 390,
+        "height": 361.796875,
+        "right": 410,
+        "bottom": 789.796875
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 35.59375,
+            "y": 118.59375,
+            "right": 116.78125,
+            "bottom": 148.09375,
+            "width": 81.1875,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 328.8125,
+            "y": 237.59375,
+            "right": 398.3125,
+            "bottom": 267.09375,
+            "width": 69.5,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 39.5,
+            "y": 367.90625,
+            "right": 140.40625,
+            "bottom": 397.40625,
+            "width": 100.90625,
+            "height": 29.5
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "width": 430,
+      "height": 932,
+      "scrollWidth": 430,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 45,
+        "y": 745,
+        "width": 340,
+        "height": 1041,
+        "right": 385,
+        "bottom": 1786
+      },
+      "panel": {
+        "x": 20,
+        "y": 720,
+        "width": 390,
+        "height": 1091,
+        "right": 410,
+        "bottom": 1811
+      }
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "stage": {
+        "x": 80,
+        "y": 158.796875,
+        "width": 608,
+        "height": 360,
+        "right": 688,
+        "bottom": 518.796875
+      },
+      "poster": {
+        "x": 248,
+        "y": 202.796875,
+        "width": 272,
+        "height": 272,
+        "right": 520,
+        "bottom": 474.796875
+      },
+      "copy": {
+        "x": 30.71875,
+        "y": 534.796875,
+        "width": 706.5625,
+        "height": 378.390625,
+        "right": 737.28125,
+        "bottom": 913.1875
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 104.3125,
+            "y": 191.1875,
+            "right": 185.5,
+            "bottom": 220.6875,
+            "width": 81.1875,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 600.265625,
+            "y": 317.1875,
+            "right": 669.765625,
+            "bottom": 346.6875,
+            "width": 69.5,
+            "height": 29.5
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 110.390625,
+            "y": 456.90625,
+            "right": 211.296875,
+            "bottom": 486.40625,
+            "width": 100.90625,
+            "height": 29.5
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "scrollWidth": 768,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 67.71875,
+        "y": 757,
+        "width": 632.5625,
+        "height": 783,
+        "right": 700.28125,
+        "bottom": 1540
+      },
+      "panel": {
+        "x": 30.71875,
+        "y": 720,
+        "width": 706.5625,
+        "height": 857,
+        "right": 737.28125,
+        "bottom": 1577
+      }
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "stage": {
+        "x": 538.515625,
+        "y": 203.515625,
+        "width": 444.515625,
+        "height": 408.953125,
+        "right": 983.03125,
+        "bottom": 612.46875
+      },
+      "poster": {
+        "x": 624.765625,
+        "y": 271.984375,
+        "width": 272,
+        "height": 272,
+        "right": 896.765625,
+        "bottom": 543.984375
+      },
+      "copy": {
+        "x": 40.953125,
+        "y": 159.859375,
+        "width": 481.5625,
+        "height": 496.265625,
+        "right": 522.515625,
+        "bottom": 656.125
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 578.515625,
+            "y": 293.484375,
+            "right": 671.859375,
+            "bottom": 327.625,
+            "width": 93.34375,
+            "height": 34.140625
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 871.703125,
+            "y": 367.09375,
+            "right": 951.921875,
+            "bottom": 401.234375,
+            "width": 80.21875,
+            "height": 34.140625
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 596.296875,
+            "y": 488.359375,
+            "right": 711.875,
+            "bottom": 522.5,
+            "width": 115.578125,
+            "height": 34.140625
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "scrollWidth": 1024,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 77.953125,
+        "y": 651.390625,
+        "width": 544.859375,
+        "height": 783,
+        "right": 622.8125,
+        "bottom": 1434.390625
+      },
+      "panel": {
+        "x": 40.953125,
+        "y": 614.390625,
+        "width": 618.859375,
+        "height": 857,
+        "right": 659.8125,
+        "bottom": 1471.390625
+      }
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "stage": {
+        "x": 754.171875,
+        "y": 185.015625,
+        "width": 628.21875,
+        "height": 577.953125,
+        "right": 1382.390625,
+        "bottom": 762.96875
+      },
+      "poster": {
+        "x": 884.28125,
+        "y": 289.984375,
+        "width": 368,
+        "height": 368,
+        "right": 1252.28125,
+        "bottom": 657.984375
+      },
+      "copy": {
+        "x": 57.59375,
+        "y": 209.90625,
+        "width": 680.578125,
+        "height": 528.171875,
+        "right": 738.171875,
+        "bottom": 738.078125
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 810.703125,
+            "y": 312.15625,
+            "right": 904.046875,
+            "bottom": 346.296875,
+            "width": 93.34375,
+            "height": 34.140625
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 1258.203125,
+            "y": 416.1875,
+            "right": 1338.421875,
+            "bottom": 450.328125,
+            "width": 80.21875,
+            "height": 34.140625
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 835.828125,
+            "y": 601.6875,
+            "right": 951.40625,
+            "bottom": 635.828125,
+            "width": 115.578125,
+            "height": 34.140625
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "width": 1440,
+      "height": 900,
+      "scrollWidth": 1440,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 94.59375,
+        "y": 757,
+        "width": 805.109375,
+        "height": 783,
+        "right": 899.703125,
+        "bottom": 1540
+      },
+      "panel": {
+        "x": 57.59375,
+        "y": 720,
+        "width": 879.109375,
+        "height": 857,
+        "right": 936.703125,
+        "bottom": 1577
+      }
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "stage": {
+        "x": 993.90625,
+        "y": 277.84375,
+        "width": 622.078125,
+        "height": 572.296875,
+        "right": 1615.984375,
+        "bottom": 850.140625
+      },
+      "poster": {
+        "x": 1120.9375,
+        "y": 379.984375,
+        "width": 368,
+        "height": 368,
+        "right": 1488.9375,
+        "bottom": 747.984375
+      },
+      "copy": {
+        "x": 304,
+        "y": 263.875,
+        "width": 673.90625,
+        "height": 600.234375,
+        "right": 977.90625,
+        "bottom": 864.109375
+      },
+      "labels": [
+        {
+          "text": "Create",
+          "rect": {
+            "x": 1049.890625,
+            "y": 403.734375,
+            "right": 1143.234375,
+            "bottom": 437.875,
+            "width": 93.34375,
+            "height": 34.140625
+          }
+        },
+        {
+          "text": "Build",
+          "rect": {
+            "x": 1492.234375,
+            "y": 506.75,
+            "right": 1572.453125,
+            "bottom": 540.890625,
+            "width": 80.21875,
+            "height": 34.140625
+          }
+        },
+        {
+          "text": "Automate",
+          "rect": {
+            "x": 1074.765625,
+            "y": 690.109375,
+            "right": 1190.34375,
+            "bottom": 724.25,
+            "width": 115.578125,
+            "height": 34.140625
+          }
+        }
+      ],
+      "form": null,
+      "panel": null
+    },
+    {
+      "route": "/contact",
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "scrollWidth": 1920,
+      "stage": null,
+      "poster": null,
+      "copy": null,
+      "labels": [],
+      "form": {
+        "x": 341,
+        "y": 757,
+        "width": 796.390625,
+        "height": 783,
+        "right": 1137.390625,
+        "bottom": 1540
+      },
+      "panel": {
+        "x": 304,
+        "y": 720,
+        "width": 870.390625,
+        "height": 857,
+        "right": 1174.390625,
+        "bottom": 1577
+      }
+    }
+  ],
+  "errors": []
+}

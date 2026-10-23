@@ -1,0 +1,22 @@
+PASS Mobile first visit starts light
+PASS 44px theme control toggles without a reload
+PASS Explicit theme survives reload and direct nested-route navigation
+PASS Theme remains selected during client-side navigation
+PASS Storage events synchronize another tab
+PASS Fresh phone and desktop defaults ignore OS changes and follow the 1024px breakpoint
+PASS Storage-disabled first paint and toggle remain functional
+PASS Theme bootstrap works with application JavaScript blocked
+PASS Mobile menu traps focus, makes background inert and restores focus on Escape
+PASS Menu scrolls on a short landscape viewport and cleanup survives resize
+PASS Desktop disclosure supports keyboard, Escape and active routes
+PASS Resource search, pressed filter state, empty results and reset work
+PASS Translucent surface utilities resolve to actual theme colors
+PASS Resource assistant provides immediate feedback and a visible error
+PASS Prompt search, reset, customization, copy and save survive theme changes
+PASS Community filter dialog supports Escape and returns focus
+PASS Contact validation and error preserve the entered brief
+PASS Contact success announces confirmed receipt without a real submission
+PASS Launchpad remains a closed preview and invalid steps explain errors
+PASS All three Launchpad steps retain edits and CV link; preview sends nothing
+PASS Reduced-motion phone does not load WebGL and reflows at 400% equivalent
+PASS Application errors and hydration mismatches are absent

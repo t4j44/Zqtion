@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "fallback": true,
+  "providersDisabled": true,
+  "buildId": "9CAT7GXjpFHD9YnHeUTXP",
+  "results": [
+    {
+      "theme": "light",
+      "width": 320,
+      "height": 568,
+      "panelHeight": 438
+    },
+    {
+      "theme": "light",
+      "width": 360,
+      "height": 800,
+      "panelHeight": 406
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "height": 844,
+      "panelHeight": 382
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "height": 932,
+      "panelHeight": 362
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "height": 1024,
+      "panelHeight": 342
+    },
+    {
+      "theme": "light",
+      "width": 1024,
+      "height": 768,
+      "panelHeight": 362
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "height": 900,
+      "panelHeight": 342
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "height": 1080,
+      "panelHeight": 342
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "height": 568,
+      "panelHeight": 438
+    },
+    {
+      "theme": "dark",
+      "width": 360,
+      "height": 800,
+      "panelHeight": 406
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "height": 844,
+      "panelHeight": 382
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "height": 932,
+      "panelHeight": 362
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "height": 1024,
+      "panelHeight": 342
+    },
+    {
+      "theme": "dark",
+      "width": 1024,
+      "height": 768,
+      "panelHeight": 362
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "height": 900,
+      "panelHeight": 342
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "height": 1080,
+      "panelHeight": 342
+    }
+  ],
+  "errors": [],
+  "apiWithoutCredentials": 503
+}

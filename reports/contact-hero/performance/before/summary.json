@@ -1,0 +1,103 @@
+{
+  "phase": "before",
+  "buildId": "XdKDGyhUb0Y70zp9z003Y",
+  "method": "Three serial cold-profile Lighthouse runs per route/device, simulated throttling; lab data, no field INP or CWV pass claim",
+  "results": [
+    {
+      "route": "/",
+      "device": "mobile",
+      "run": 1,
+      "scores": {
+        "performance": 93,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 3229.2972,
+      "cls": 0,
+      "tbtMs": 33,
+      "benchmark": 2460,
+      "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+    },
+    {
+      "route": "/",
+      "device": "mobile",
+      "run": 2,
+      "scores": {
+        "performance": 87,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 3479.1954000000005,
+      "cls": 0,
+      "tbtMs": 222,
+      "benchmark": 2523,
+      "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+    },
+    {
+      "route": "/",
+      "device": "mobile",
+      "run": 3,
+      "scores": {
+        "performance": 92,
+        "accessibility": 96,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 3312.1426,
+      "cls": 0,
+      "tbtMs": 75,
+      "benchmark": 2052.5,
+      "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+    },
+    {
+      "route": "/",
+      "device": "desktop",
+      "run": 1,
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 735.616,
+      "cls": 0,
+      "tbtMs": 0,
+      "benchmark": 2419.5,
+      "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+    },
+    {
+      "route": "/",
+      "device": "desktop",
+      "run": 2,
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 730.9725000000001,
+      "cls": 0,
+      "tbtMs": 0,
+      "benchmark": 2433,
+      "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+    },
+    {
+      "route": "/",
+      "device": "desktop",
+      "run": 3,
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 725.4767499999999,
+      "cls": 0,
+      "tbtMs": 0,
+      "benchmark": 2402,
+      "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "fallback": false,
+  "scope": "Loopback fixture providers; fake public site key. Not hosted Turnstile/email acceptance."
+}

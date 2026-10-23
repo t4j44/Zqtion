@@ -1,0 +1,60 @@
+{
+  "buildId": "BE5EYle_kNRvt9lGlpsxV",
+  "scope": "Real local browser with intercepted Turnstile and inquiry responses, plus one actual fail-closed local API call. No real email/provider acceptance.",
+  "passed": [
+    "Required fields, email and URL validation stop invalid requests",
+    "Duplicate submit lock, field compatibility, reset and provider-accepted wording",
+    "A saved inquiry survives email failure without a resubmit instruction",
+    "HTTP 400 preserves data and provides safe alternatives",
+    "HTTP 413 preserves data and provides safe alternatives",
+    "HTTP 429 preserves data and provides safe alternatives",
+    "HTTP 503 preserves data and provides safe alternatives",
+    "Unknown network outcome is not described as failed storage or success",
+    "Timeline cannot silently truncate a 4,000-character brief",
+    "Turnstile adapts to narrow space and theme; expiry resets the token",
+    "Actual local production API fails closed with fixture-only provider configuration",
+    "Form keyboard focus and both themes have no detected axe violations",
+    "Hero reduce retains static poster without video or WebGL",
+    "Hero saveData retains static poster without video or WebGL",
+    "Hero 2g retains static poster without video or WebGL",
+    "Activated phone video retains matching poster frame",
+    "Desktop GPU-unavailable fallback preserves the poster",
+    "Optional desktop WebGL renders then recovers from context loss"
+  ],
+  "failures": [],
+  "errors": [],
+  "accessibility": [
+    {
+      "theme": "light",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    }
+  ]
+}

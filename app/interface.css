@@ -66,3 +66,14 @@ input::placeholder,textarea::placeholder { color:var(--text-tertiary); opacity:1
 .resource-page :is(h2,h3) { letter-spacing:-.035em; }
 @media(max-width:430px) { .page-hero h1 { font-size:clamp(2.65rem,11.5vw,3.1rem); line-height:1.02; } .pl-hero h1 { font-size:clamp(2.5rem,11vw,3.1rem); } }
 @media(prefers-reduced-motion:reduce) { .theme-icon,.theme-toggle,.nav-link,.nav-menu-toggle { transition:none; } .nav-dropdown { animation:none; } }
+
+/* Contact: compact introduction and a form-led layout in both activation states. */
+.contact-intro { padding-top:clamp(7.5rem,11vw,10rem); padding-bottom:2.25rem; }
+.contact-intro h1 { max-width:16ch; margin-top:1.25rem; font-size:clamp(2.4rem,5vw,4.6rem); font-weight:550; line-height:1.04; letter-spacing:-.055em; }
+.contact-intro-description { max-width:43rem; margin-top:1.25rem; color:var(--text-secondary); font-size:1.05rem; line-height:1.75; }
+.contact-form-panel { align-self:start; }
+.contact-services,.contact-expectations { padding:1.25rem .25rem; border-top:1px solid var(--line); }
+.contact-services ul { margin-top:.75rem; }
+.contact-submit { width:100%; justify-content:center; }
+@media(min-width:640px) { .contact-submit { width:auto; } }
+@media(max-width:639px) { .contact-form > div:first-child p { max-width:25ch; } .contact-intro-description { font-size:1rem; } }
