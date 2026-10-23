@@ -1,0 +1,160 @@
+{
+  "measuredAt": "2026-10-22T05:18:57.255Z",
+  "method": "Sequential GETs with 15s timeout, no credentials or submissions; canonical probes use redirect:manual; no genuine-crawler firewall or authenticated account proof",
+  "results": [
+    {
+      "url": "https://docs.crawl4ai.com/",
+      "status": 200,
+      "finalUrl": "https://docs.crawl4ai.com/",
+      "verdict": "reachable"
+    },
+    {
+      "url": "https://code.claude.com/docs/en/overview",
+      "status": 200,
+      "finalUrl": "https://code.claude.com/docs/en/overview",
+      "verdict": "reachable"
+    },
+    {
+      "url": "https://modelcontextprotocol.io/docs/getting-started/intro",
+      "status": 200,
+      "finalUrl": "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "verdict": "reachable"
+    },
+    {
+      "url": "https://git-scm.com/docs/git-commit",
+      "status": 200,
+      "finalUrl": "https://git-scm.com/docs/git-commit",
+      "verdict": "reachable"
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/quickref/",
+      "status": 200,
+      "finalUrl": "https://www.w3.org/WAI/WCAG22/quickref/",
+      "verdict": "reachable"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/prompt-engineering",
+      "status": 200,
+      "finalUrl": "https://developers.openai.com/api/docs/guides/prompt-engineering",
+      "verdict": "reachable"
+    },
+    {
+      "url": "https://docs.firecrawl.dev/",
+      "status": 200,
+      "finalUrl": "https://docs.firecrawl.dev/introduction",
+      "verdict": "reachable"
+    },
+    {
+      "url": "https://antigravity.google/",
+      "status": 200,
+      "finalUrl": "https://antigravity.google/",
+      "verdict": "reachable"
+    },
+    {
+      "url": "https://docs.n8n.io/",
+      "status": 200,
+      "finalUrl": "https://docs.n8n.io/",
+      "verdict": "reachable"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/current/ddl-rowsecurity.html",
+      "status": 200,
+      "finalUrl": "https://www.postgresql.org/docs/current/ddl-rowsecurity.html",
+      "verdict": "reachable"
+    },
+    {
+      "url": "https://www.reve.com/",
+      "status": 200,
+      "finalUrl": "https://app.reve.com/",
+      "verdict": "reachable"
+    },
+    {
+      "url": "https://playwright.dev/docs/intro",
+      "status": 200,
+      "finalUrl": "https://playwright.dev/docs/intro",
+      "verdict": "reachable"
+    }
+  ],
+  "production": [
+    {
+      "url": "http://zqtion.com/",
+      "status": 308,
+      "location": "https://zqtion.com/",
+      "xRobots": null,
+      "hasGoogleVerificationMeta": false,
+      "hasBingVerificationMeta": false
+    },
+    {
+      "url": "https://www.zqtion.com/",
+      "status": 200,
+      "location": null,
+      "xRobots": null,
+      "canonical": "https://zqtion.com",
+      "hasGoogleVerificationMeta": false,
+      "hasBingVerificationMeta": false
+    },
+    {
+      "url": "https://www.zqtion.com/resources?audit=canonical",
+      "status": 404,
+      "location": null,
+      "xRobots": null,
+      "canonical": "https://zqtion.com",
+      "hasGoogleVerificationMeta": false,
+      "hasBingVerificationMeta": false
+    },
+    {
+      "url": "https://zqtion.com/",
+      "status": 307,
+      "location": "https://www.zqtion.com/",
+      "xRobots": null,
+      "hasGoogleVerificationMeta": false,
+      "hasBingVerificationMeta": false
+    },
+    {
+      "url": "https://zqtion.com/robots.txt",
+      "status": 307,
+      "location": "https://www.zqtion.com/robots.txt",
+      "xRobots": null,
+      "hasGoogleVerificationMeta": false,
+      "hasBingVerificationMeta": false,
+      "robots": "Redirecting...\n"
+    },
+    {
+      "url": "https://zqtion.com/sitemap.xml",
+      "status": 307,
+      "location": "https://www.zqtion.com/sitemap.xml",
+      "xRobots": null,
+      "hasGoogleVerificationMeta": false,
+      "hasBingVerificationMeta": false,
+      "sitemapUrls": []
+    },
+    {
+      "url": "https://zqtion.com/ai-experiences",
+      "status": 307,
+      "location": "https://www.zqtion.com/ai-experiences",
+      "xRobots": null,
+      "hasGoogleVerificationMeta": false,
+      "hasBingVerificationMeta": false
+    },
+    {
+      "url": "https://zqtion.com/resources",
+      "status": 307,
+      "location": "https://www.zqtion.com/resources",
+      "xRobots": null,
+      "hasGoogleVerificationMeta": false,
+      "hasBingVerificationMeta": false
+    },
+    {
+      "url": "https://zqtion.com/community/account",
+      "status": 307,
+      "location": "https://www.zqtion.com/community/account",
+      "xRobots": null,
+      "hasGoogleVerificationMeta": false,
+      "hasBingVerificationMeta": false
+    }
+  ],
+  "dnsVerification": {
+    "googleVerificationRecordPresent": true,
+    "note": "Record values omitted. Presence is not Search Console ownership/access proof."
+  }
+}

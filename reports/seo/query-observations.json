@@ -1,0 +1,755 @@
+[
+  {
+    "query": "How do I build a low-cost AI automation workflow?",
+    "observedAt": "2026-10-22T05:20:21.634Z",
+    "provider": "Codex web search tool (underlying engine and geography not exposed)",
+    "method": "One unquoted informational query; available returned result set only, not Google/Bing position tracking or an AI answer",
+    "results": [
+      {
+        "title": "No-Code AI Workflow: Beginner's Guide | Mamba Digital",
+        "url": "https://mambadigital.au/how-to-build-your-first-ai-workflow-without-writing-code/"
+      },
+      {
+        "title": "Best AI Automation Tools in 2026: 10 Picks With Real Prices",
+        "url": "https://the-aischool.com/guides/best-ai-automation-tools"
+      },
+      {
+        "title": "AI workflow automation: What it is + how to get started",
+        "url": "https://zapier.com/blog/ai-workflows/"
+      },
+      {
+        "title": "Build AI Automation Workflow in 30 Minutes | Tutorial",
+        "url": "https://automatenexus.com/blog/how-to-build-your-first-ai-automation-workflow-in-30-minutes"
+      },
+      {
+        "title": "Create Workflows for Dynamic Automation - Azure Logic Apps Automation | Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/azure/logic-apps/automation/quickstart-create-dynamic-automation-workflows"
+      },
+      {
+        "title": "The 7 best low-code automation platforms in 2026 | Zapier",
+        "url": "https://zapier.com/blog/best-low-code-automation-platforms/"
+      },
+      {
+        "title": "AI Automation Workflow for Beginners: Build One in 20 Minutes",
+        "url": "https://logicandlayers.com/build-first-ai-automation-workflow-20-minutes/"
+      },
+      {
+        "title": "Build Your First AI-Powered Automation Workflow — WorksAsExplained",
+        "url": "https://worksasexplained.com/articles/ai-automation-workflow-guide"
+      },
+      {
+        "title": "How to Automate Tasks with AI: Beginner Guide 2026",
+        "url": "https://ohaiknow.com/guides/how-to-automate-tasks-with-ai-a-step-by-step-guide-for-beginners/"
+      },
+      {
+        "title": "AI workflow automation: What it is + how to get started",
+        "url": "https://zapier.com/blog/ai-workflows/?trk=article-ssr-frontend-pulse_little-text-block"
+      },
+      {
+        "title": "Build AI Automation Systems for Small Businesses | LOW/CODE",
+        "url": "https://www.lowcode.agency/blog/how-to-build-an-ai-automation-builder-tailored-for-small-businesses"
+      },
+      {
+        "title": "How to Build an AI Automation Stack for Under $100/Month (The Exact Tools I Use) | Zarif Automates",
+        "url": "https://www.zarifautomates.com/blog/ai-automation-stack-under-100-per-month"
+      },
+      {
+        "title": "20 Tips for Implementing Effective AI Workflow Automations",
+        "url": "https://ainspire.ai/assets/whitepapers/20_Tips_For_Implementing_AI_Workflow_Automations.pdf"
+      },
+      {
+        "title": "A Practical Guide for Designing, Developing, and Deploying Production-Grade Agentic AI Workflows",
+        "url": "https://arxiv.org/abs/2512.08769"
+      },
+      {
+        "title": "How to automate workflows using open-source AI agents",
+        "url": "https://www.techradar.com/pro/how-to-automate-workflows-using-open-source-ai-agents"
+      },
+      {
+        "title": "I tried 70+ best AI tools in 2026",
+        "url": "https://www.techradar.com/best/best-ai-tools"
+      }
+    ],
+    "zqtionPresent": false,
+    "aiAnswerTest": "NOT RUN: no Google AI Mode, ChatGPT Search or Copilot answer sampled"
+  },
+  {
+    "query": "Best way to evaluate AI coding prompts",
+    "observedAt": "2026-10-22T05:20:21.634Z",
+    "provider": "Codex web search tool (underlying engine and geography not exposed)",
+    "method": "One unquoted informational query; available returned result set only, not Google/Bing position tracking or an AI answer",
+    "results": [
+      {
+        "title": "How to evaluate AI coding agents in 5 criteria - Vercel",
+        "url": "https://vercel.com/i/evaluating-ai-coding-agents"
+      },
+      {
+        "title": "Prompting tips: AI for formulating evaluation questions and indicators",
+        "url": "https://evaluation.treasury.gov.au/sites/evaluation.treasury.gov.au/files/2025-10/prompting-tips-ai-tools-formulating-evaluation-questions-indicators.pdf"
+      },
+      {
+        "title": "Evaluation metrics | Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/ai/playbook/technology-guidance/generative-ai/working-with-llms/evaluation/list-of-eval-metrics"
+      },
+      {
+        "title": "How to evaluate prompts: a small test set and clear criteria",
+        "url": "https://prompt-engineering.si/guides/prompt-evaluation/"
+      },
+      {
+        "title": "How to Evaluate AI Code Quality: A Practical Guide for Engineers",
+        "url": "https://www.freecodecamp.org/news/how-to-evaluate-ai-code-quality-a-practical-guide-for-engineers"
+      },
+      {
+        "title": "How to Evaluate an AI Prompt: 5 Metrics | PromptNote",
+        "url": "https://promptnote.app/blogs/how-to-evaluate-an-ai-prompt/"
+      },
+      {
+        "title": "How to Test and Evaluate Your Prompts: The Self-Critique Loop (2026) - Nesyona",
+        "url": "https://nesyona.com/articles/how-to-evaluate-prompts"
+      },
+      {
+        "title": "How to Evaluate the Quality of an AI Prompt Systematically",
+        "url": "https://appliedaihub.org/blog/how-to-evaluate-prompt-quality/"
+      },
+      {
+        "title": "GitHub - pntkrl/ai-prompt-quality: An open-source framework for evaluating AI prompt quality with a practical 7-dimension rubric, scoring model,…",
+        "url": "https://github.com/pntkrl/ai-prompt-quality",
+        "titleTruncated": true
+      },
+      {
+        "title": "Evaluate LLM Prompts | Systematic Eval Guide · LayerFlow",
+        "url": "https://layerflow.dev/blog/eval-llm-prompts-systematic"
+      },
+      {
+        "title": "Coding and Development Prompts²⁷: These prompts help in writing code, conducting code reviews, debugging, predicting errors, CSS development,…",
+        "url": "https://publications.iadb.org/publications/english/document/Tech-Report-Generative-AI.pdf",
+        "titleTruncated": true
+      },
+      {
+        "title": "AI Prompt Evaluation: How to Test Prompt Quality",
+        "url": "https://promptessor.com/blog/ai-prompt-evaluation-how-to-test-compare-and-improve-prompts"
+      },
+      {
+        "title": "How to Evaluate Prompt Quality by Its Outputs",
+        "url": "https://vantageprompt.com/guides/how-to-evaluate-a-prompt"
+      },
+      {
+        "title": "Prompt Testing Guide — How to Evaluate and Test AI Prompts Systematically | devtoolkit.sh",
+        "url": "https://devtoolkit.sh/guides/prompt-testing"
+      },
+      {
+        "title": "Assessment of Coding Skills and Programming Knowledge in the Age of Generative AI: Best Practices and Effective Strategies…",
+        "url": "https://manuelgarcia.info/media/original/ai-programming-assessment.pdf",
+        "titleTruncated": true
+      },
+      {
+        "title": "How to evaluate",
+        "url": "https://ctl.web.ox.ac.uk/sites/default/files/ctl/documents/media/how_to_evaluate_suitability_of_ai_for_academic_tasks_-_5_practical_steps_to_take_before_deciding_to_use_ai.pdf"
+      },
+      {
+        "title": "Quality Assessment of Prompts Used in Code Generation",
+        "url": "https://lsiddiqsunny.github.io/public/2404.10155v1.pdf"
+      },
+      {
+        "title": "Mastering AI Generated Text Prompts",
+        "url": "https://datasciencehorizons.com/wp-content/uploads/2023/06/Mastering_AI_Generated_Text_Prompts_Data_Science_Horizons_Final_2023.pdf"
+      },
+      {
+        "title": "What AI coding benchmarks still miss about software quality",
+        "url": "https://www.techradar.com/pro/what-ai-coding-benchmarks-still-miss-about-software-quality"
+      },
+      {
+        "title": "I tried the 'viral' ChatGPT prompts everyone is sharing - here's what actually works",
+        "url": "https://www.tomsguide.com/ai/i-tried-the-viral-chatgpt-prompts-everyone-is-sharing-heres-what-actually-works"
+      },
+      {
+        "title": "Stop telling AI it's an expert programmer, you're making it worse at its job - new research shows…",
+        "url": "https://www.techradar.com/pro/stop-telling-ai-its-an-expert-programmer-youre-making-it-worse-at-its-job-new-research-shows-the-best-results-need-specific-prompts",
+        "titleTruncated": true
+      },
+      {
+        "title": "Best Large Language Models (LLMs) for coding of 2025",
+        "url": "https://www.techradar.com/computing/artificial-intelligence/best-large-language-models-llms-for-coding"
+      }
+    ],
+    "zqtionPresent": false,
+    "aiAnswerTest": "NOT RUN: no Google AI Mode, ChatGPT Search or Copilot answer sampled"
+  },
+  {
+    "query": "How does an MCP server work?",
+    "observedAt": "2026-10-22T05:20:21.634Z",
+    "provider": "Codex web search tool (underlying engine and geography not exposed)",
+    "method": "One unquoted informational query; available returned result set only, not Google/Bing position tracking or an AI answer",
+    "results": [
+      {
+        "title": "Overview of MCP servers in Azure API Management | Microsoft Learn",
+        "url": "https://learn.microsoft.com/azure/api-management/mcp-server-overview"
+      },
+      {
+        "title": "MCP overview | Slack Developer Docs",
+        "url": "https://docs.slack.dev/ai/mcp-overview/"
+      },
+      {
+        "title": "Google Cloud MCP servers overview  |  Google Cloud Documentation",
+        "url": "https://docs.cloud.google.cn/mcp/overview"
+      },
+      {
+        "title": "What is the Model Context Protocol (MCP)? | Elastic",
+        "url": "https://www.elastic.co/what-is/mcp"
+      },
+      {
+        "title": "How Does MCP Work? The Protocol Step by Step (2026) | MCP.so",
+        "url": "https://mcp.so/blog/how-does-mcp-work"
+      },
+      {
+        "title": "MCP server: how it works, how to build and secure one — PutThrough",
+        "url": "https://www.putthrough.com/blog/mcp-server"
+      },
+      {
+        "title": "What Is MCP? Model Context Protocol and MCP Servers",
+        "url": "https://www.awlabs.com.au/guides/what-is-mcp"
+      },
+      {
+        "title": "What Is an MCP Server? A Developer’s Introduction | Browserbase",
+        "url": "https://www.browserbase.com/blog/what-is-an-mcp-server"
+      },
+      {
+        "title": "AWS Prescriptive Guidance - Model Context Protocol strategies on AWS",
+        "url": "https://docs.aws.amazon.com/pdfs/prescriptive-guidance/latest/mcp-strategies/mcp-strategies.pdf"
+      },
+      {
+        "title": "What Is an MCP Server? How One Tool Call Travels",
+        "url": "https://www.matthewswong.com/en/learn/ai-agents-mcp/what-is-mcp-how-a-tool-call-travels/"
+      },
+      {
+        "title": "What Is an MCP Server? A Practical Explanation (2026)",
+        "url": "https://browsermcp.dev/learn/what-is-an-mcp-server/"
+      },
+      {
+        "title": "MCP Servers Explained: Architecture, Tools, Transports and Security",
+        "url": "https://www.itechguides.com/mcp-servers-explained-how-model-context-protocol-connections-work/"
+      },
+      {
+        "title": "What Is an MCP Server? Definition, Uses & Security",
+        "url": "https://www.cyberhaven.com/infosec-essentials/mcp-server"
+      },
+      {
+        "title": "MCP Architecture Overview",
+        "url": "https://informaticsweb.nic.in/sites/default/files/mcp2.0.pdf"
+      },
+      {
+        "title": "How an MCP server works",
+        "url": "https://www.nextpcb.com/uploads/attach/blog/12.%20Ethan%20Chien%20-%20Context%20Engineering%20in%20AI-Powered%20KiCad%20Automation.pdf"
+      },
+      {
+        "title": "Expose an Application Integration process as an MCP server",
+        "url": "https://docs.informatica.com/content/dam/source/resources/non-cms-pdfs/integration-cloud/application-integration/Expose%20an%20Application%20Integration%20process%20as%20an%20MCP%20server.pdf"
+      },
+      {
+        "title": "MCP Server overview",
+        "url": "https://www.oracle.com/webfolder/dms/prod/d/HowMCPHelpsSuperchargeOracleDB.pdf?elqTrackId=62fc247471f44beaa2dbb93a6ca2cdff&elqaid=150155&elqak=8AF5E0D4D31912763D086851389EF21BB8CDB79995AF3F266AEFFF7C2D013AC3D9E9&elqat=2"
+      },
+      {
+        "title": "- An **MCP Server** for each tool or service you want the model to use. The server is…",
+        "url": "https://www.algolia.com/files/live/sites/algolia-assets/files/eBook/AgenticAIwhitepaper_EN.pdf",
+        "titleTruncated": true
+      },
+      {
+        "title": "MCP Server Architecture Patterns for LLM-Integrated Applications",
+        "url": "https://arxiv.org/abs/2606.30317"
+      },
+      {
+        "title": "Model Context Protocol",
+        "url": "https://en.wikipedia.org/wiki/Model_Context_Protocol"
+      },
+      {
+        "title": "What is model context protocol (MCP)?",
+        "url": "https://www.itpro.com/technology/artificial-intelligence/what-is-model-context-protocol-mcp"
+      },
+      {
+        "title": "From connection to context: Dispelling the legal industry's biggest myths about MCP",
+        "url": "https://www.techradar.com/pro/from-connection-to-context-dispelling-the-legal-industrys-biggest-myths-about-mcp"
+      },
+      {
+        "title": "The future of AI applications: MCP servers",
+        "url": "https://www.techradar.com/pro/the-future-of-ai-applications-mcp-servers"
+      },
+      {
+        "title": "ExpressVPN just gave AI agents the power to control your connection",
+        "url": "https://www.techradar.com/vpn/vpn-services/expressvpn-just-gave-ai-agents-the-power-to-control-your-connection"
+      },
+      {
+        "title": "Hot new protocol glues together AI and apps",
+        "url": "https://www.axios.com/2025/04/17/model-context-protocol-anthropic-open-source"
+      }
+    ],
+    "zqtionPresent": false,
+    "aiAnswerTest": "NOT RUN: no Google AI Mode, ChatGPT Search or Copilot answer sampled"
+  },
+  {
+    "query": "How to build an AI lead research pipeline",
+    "observedAt": "2026-10-22T05:20:21.635Z",
+    "provider": "Codex web search tool (underlying engine and geography not exposed)",
+    "method": "One unquoted informational query; available returned result set only, not Google/Bing position tracking or an AI answer",
+    "results": [
+      {
+        "title": "How to Build an AI Lead Generation Pipeline With Live Web Data | Parallel",
+        "url": "https://parallel.ai/articles/how-to-build-an-ai-lead-generation-pipeline"
+      },
+      {
+        "title": "How to Use AI for Lead Generation: 6 Practical Workflows",
+        "url": "https://www.itechguides.com/how-to-use-ai-for-lead-generation-practical-workflows-and-use-cases/"
+      },
+      {
+        "title": "How to Build AI Lead Enrichment Workflows (2026 Guide)",
+        "url": "https://origami.chat/blog/how-to-build-ai-powered-lead-enrichment-workflows"
+      },
+      {
+        "title": "AI Lead Generation: Build a Pipeline System That Scales",
+        "url": "https://www.collide.solutions/resources/ai-lead-generation-how-to-build-a-pipeline-system-that-actually-scales"
+      },
+      {
+        "title": "AI Lead Generation Workflow: From ICP to Qualified Meeting | OpenMax",
+        "url": "https://openmax.com/resources/blog/ai-lead-generation-workflow"
+      },
+      {
+        "title": "AI Lead Generation for Small Business: The 2026 Playbook",
+        "url": "https://aidev.com/guides/ai-lead-generation-for-small-business"
+      },
+      {
+        "title": "What is AI lead generation? (+tools) | Zapier",
+        "url": "https://zapier.com/blog/ai-lead-generation/"
+      },
+      {
+        "title": "Research Brief: AI-Powered Pipeline Management",
+        "url": "https://winningbydesign.com/wp-content/uploads/2025/05/Research-Brief-AI-Powered-Pipeline-Management-1.pdf"
+      },
+      {
+        "title": "How to Build a Research Agent (Step by Step) | Gravity",
+        "url": "https://gravity.fast/blog/how-to-build-research-agent-step-by-step/"
+      },
+      {
+        "title": "AI Lead Generation: How to Use AI to Find Better Leads",
+        "url": "https://unifiedplatforms.com/blogs/lead-generation/ai-lead-generation/"
+      },
+      {
+        "title": "Building a Lead Research Agent: A Step-by-Step Implementation Guide | SEM Nexus",
+        "url": "https://semnexus.com/building-a-lead-research-agent-step-by-step-implementation"
+      },
+      {
+        "title": "How to Build an AI SDR on an Enrichment API (2026) | Loice",
+        "url": "https://loice.ai/sales-hub/api-mcp-and-ai-agents/how-to-build-an-ai-sdr/"
+      },
+      {
+        "title": "An AI-Assisted Research Flow",
+        "url": "https://black-jl.github.io/Research-Project-Flow/guide.pdf"
+      },
+      {
+        "title": "9.21.23 - Pipeline Building with ChatGPT and Other AI Tools",
+        "url": "https://skaled.com/wp-content/uploads/2023/09/Pipeline-Building-with-ChatGPT-and-Other-AI-Tools.pdf"
+      },
+      {
+        "title": "6. Building a Profitable AI Service Pipeline",
+        "url": "https://gsdcdata.gsdcouncil.org/gsdc/pdf/how-professionals-can-leverage-agentic-ai-to-build-smarter-and-scalable-business-solutions.pdf"
+      },
+      {
+        "title": "How are you using AI for lead generation? (Struggling to scale deep research)",
+        "url": "https://www.reddit.com/r/coldemail/comments/1t6jfny/how_are_you_using_ai_for_lead_generation/"
+      },
+      {
+        "title": "The Pipeline for the Continuous Development of Artificial Intelligence Models -- Current State of Research and Practice",
+        "url": "https://arxiv.org/abs/2301.09001"
+      },
+      {
+        "title": "A case study of evaluating AI agents on a neuroscience data-to-discovery pipeline",
+        "url": "https://arxiv.org/abs/2606.07718"
+      },
+      {
+        "title": "I built a lead-research pipeline and deliberately did not use an AI Agent.",
+        "url": "https://www.reddit.com/r/AI_Agents/comments/1wnxog1/i_built_a_leadresearch_pipeline_and_deliberately/"
+      },
+      {
+        "title": "How can I do AI lead generation business?",
+        "url": "https://www.reddit.com/r/AIIncomeLab/comments/1tvhaq3/how_can_i_do_ai_lead_generation_business/"
+      },
+      {
+        "title": "How would you build a B2B lead database from scratch using AI / MCPs?",
+        "url": "https://www.reddit.com/r/GrowthHacking/comments/1vm85d7/how_would_you_build_a_b2b_lead_database_from/"
+      },
+      {
+        "title": "Building an AI lead research tool in public — looking for honest beta feedback",
+        "url": "https://www.reddit.com/r/micro_saas/comments/1tv4gir/building_an_ai_lead_research_tool_in_public/"
+      },
+      {
+        "title": "Building an AI lead research tool in public — looking for honest SaaS feedback",
+        "url": "https://www.reddit.com/r/buildinpublic/comments/1tv2lgz/building_an_ai_lead_research_tool_in_public/"
+      }
+    ],
+    "zqtionPresent": false,
+    "aiAnswerTest": "NOT RUN: no Google AI Mode, ChatGPT Search or Copilot answer sampled"
+  },
+  {
+    "query": "What tools can run document analysis locally?",
+    "observedAt": "2026-10-22T05:20:21.635Z",
+    "provider": "Codex web search tool (underlying engine and geography not exposed)",
+    "method": "One unquoted informational query; available returned result set only, not Google/Bing position tracking or an AI answer",
+    "results": [
+      {
+        "title": "Lawyer Assistant | Offline AI Legal Research & Document Analysis",
+        "url": "https://lawyers-assistant.github.io/"
+      },
+      {
+        "title": "GitHub - wpdlf/local-doc-analyzer: Local AI document summary & Q&A desktop app for PDF, Word (DOCX), PowerPoint (PPTX) and…",
+        "url": "https://github.com/wpdlf/local-doc-analyzer",
+        "titleTruncated": true
+      },
+      {
+        "title": "SoloScan · Private AI document analysis that runs on your computer",
+        "url": "https://www.soloscan.app/"
+      },
+      {
+        "title": "Scanning, Redaction, Pseudonymization | Docuflair Desktop",
+        "url": "https://www.docuflair.com/en/pages/products/desktop.html"
+      },
+      {
+        "title": "GitHub - Wis7Com/Docket: Docket — a local, offline AI legal workspace. Index and search your own document folders,…",
+        "url": "https://github.com/Wis7Com/Docket",
+        "titleTruncated": true
+      },
+      {
+        "title": "How to Extract PDF Text Locally: Privacy-First Guide | TabTasker",
+        "url": "https://tabtasker.com/blog/how-to-extract-pdf-text-locally-privacy-first-guide"
+      },
+      {
+        "title": "Informity AI — Chat with your documents. Private. Local. Free.",
+        "url": "https://www.informity.ai/"
+      },
+      {
+        "title": "PDF and Document Parsers for RAG · localhosted",
+        "url": "https://localhosted.com/categories/document-parsing"
+      },
+      {
+        "title": "Dowse — Local full-text file search for Windows",
+        "url": "https://lter.space/dowse/en/"
+      },
+      {
+        "title": "What is Docling?",
+        "url": "https://www.redhat.com/en/topics/ai/docling"
+      },
+      {
+        "title": "11 Best Free & Open-Source OCR Tools Compared",
+        "url": "https://www.itechguides.com/11-best-free-and-open-source-ocr-tools-compared-by-use-case/"
+      },
+      {
+        "title": "Docling Guides, Tools & Practical Reference | Docling.org",
+        "url": "https://docling.org/"
+      },
+      {
+        "title": "World Bank Document",
+        "url": "https://documents1.worldbank.org/curated/en/099011924055735846/pdf/P169141129e0ad0f618892137a09a4eb9f9.pdf"
+      },
+      {
+        "title": "List of free and open-source software packages",
+        "url": "https://en.wikipedia.org/wiki/List_of_free_and_open-source_software_packages"
+      },
+      {
+        "title": "5 AI-free writing tools that make you a better writer - without ChatGPT doing the work for you",
+        "url": "https://www.tomsguide.com/ai/5-ai-free-writing-tools-that-make-you-a-better-writer-without-chatgpt-doing-the-work-for-you"
+      },
+      {
+        "title": "Best scanning software of 2025",
+        "url": "https://www.techradar.com/best/best-scanning-software"
+      },
+      {
+        "title": "50 Microsoft tools you can use for free just in time for Build 2026",
+        "url": "https://www.techradar.com/pro/50-microsoft-tools-you-can-use-for-free-just-in-time-for-build-2026"
+      }
+    ],
+    "zqtionPresent": false,
+    "aiAnswerTest": "NOT RUN: no Google AI Mode, ChatGPT Search or Copilot answer sampled"
+  },
+  {
+    "query": "How do people use AI agents in real businesses?",
+    "observedAt": "2026-10-22T05:20:21.635Z",
+    "provider": "Codex web search tool (underlying engine and geography not exposed)",
+    "method": "One unquoted informational query; available returned result set only, not Google/Bing position tracking or an AI answer",
+    "results": [
+      {
+        "title": "AI agents are only as good as the personal information you share. That raises privacy concerns",
+        "url": "https://apnews.com/article/449734d41d3750aad7038b761faa49c9"
+      },
+      {
+        "title": "Imagine Every AI Agent on Earth Buying the Same Cheap Paper Towels",
+        "url": "https://www.theatlantic.com/technology/2026/10/ai-agent-chaos-e-commerce/689010/?utm_source=openai"
+      },
+      {
+        "title": "'The EU's next chapter in AI is agentic': New OpenAI report claims agent use is on the rise…",
+        "url": "https://www.techradar.com/pro/the-eus-next-chapter-in-ai-is-agentic-new-openai-report-claims-agent-use-is-on-the-rise-across-europe-but-it-still-has-some-way-to-catch-up-to-other-markets",
+        "titleTruncated": true
+      },
+      {
+        "title": "How agents are transforming work | OpenAI",
+        "url": "https://openai.com/index/how-agents-are-transforming-work/?lctg=6763ed49909efa5935018297&stream=top"
+      },
+      {
+        "title": "How to Deploy AI Agents Across the Enterprise | IBM",
+        "url": "https://www.ibm.com/think/topics/ai-agent-deployment"
+      },
+      {
+        "title": "AI Agent Use Cases: 10 Real-World Examples | Snowflake",
+        "url": "https://www.snowflake.com/en/artificial-intelligence/agents/examples/"
+      },
+      {
+        "title": "Companies Using AI Agents: Enterprise Deployments Log",
+        "url": "https://gravity.fast/data/companies-using-ai-agents/"
+      },
+      {
+        "title": "AI Agent Use Cases | IBM",
+        "url": "https://www.ibm.com/think/topics/ai-agent-use-cases"
+      },
+      {
+        "title": "The Adoption and Usage of AI Agents: Early Evidence from Perplexity",
+        "url": "https://arxiv.org/abs/2512.07828"
+      },
+      {
+        "title": "How Enterprises Use AI Agents: Adoption, Use Cases, Gaps",
+        "url": "https://atlan.com/know/ai-agent/how-enterprises-use-ai-agents/"
+      },
+      {
+        "title": "AI agent use cases: enterprise applications by business function",
+        "url": "https://www.algolia.com/blog/ai/ai-agent-use-cases"
+      },
+      {
+        "title": "AI Business Use Cases | IBM",
+        "url": "https://www.ibm.com/think/topics/artificial-intelligence-business-use-cases"
+      },
+      {
+        "title": "23 Real-World AI Agent Use Cases",
+        "url": "https://www.oracle.com/artificial-intelligence/ai-agents/ai-agent-use-cases/"
+      },
+      {
+        "title": "AI Business Use Cases | IBM",
+        "url": "https://www.ibm.com/think/topics/artificial-intelligence-business-use-cases/jcr%3Acontent"
+      },
+      {
+        "title": "Enterprise AI Agents: Beyond Productivity | IBM",
+        "url": "https://www.ibm.com/think/insights/enterprise-ai-agents"
+      },
+      {
+        "title": "Types of AI Agents and Their Use Cases | Microsoft Copilot",
+        "url": "https://www.microsoft.com/en-us/microsoft-copilot/copilot-101/ai-agents-types-and-uses?msockid=2de67492e7376ce3085c6227e6b56d57"
+      },
+      {
+        "title": "Enterprise AI Agents",
+        "url": "https://www.bsa.org/files/policy-filings/07302025bsaaiagents.pdf"
+      },
+      {
+        "title": "The dawn of the reasoning machines: AI agents",
+        "url": "https://assets.kpmg.com/content/dam/kpmgsites/au/pdf/2025/dawn-of-the-reasoning-machines-ai-agents.pdf"
+      },
+      {
+        "title": "How agentic AI works",
+        "url": "https://www.thomsonreuters.com/content/dam/ewp-m/documents/thomsonreuters/en/pdf/reports/agentic-ai-101-tr5737938.pdf"
+      },
+      {
+        "title": "Prompting for action | How AI agents are reshaping the future of work",
+        "url": "https://www.deloitte.com/content/dam/assets-zone3/us/en/docs/services/consulting/2024/us-ai-institute-generative-ai-agents-multiagent-systems.pdf"
+      }
+    ],
+    "zqtionPresent": false,
+    "aiAnswerTest": "NOT RUN: no Google AI Mode, ChatGPT Search or Copilot answer sampled"
+  },
+  {
+    "query": "Examples of useful open-source lead research tools",
+    "observedAt": "2026-10-22T05:20:21.635Z",
+    "provider": "Codex web search tool (underlying engine and geography not exposed)",
+    "method": "One unquoted informational query; available returned result set only, not Google/Bing position tracking or an AI answer",
+    "results": [
+      {
+        "title": "GitHub - Supersynergy/awesome-ai-lead-generation: A curated list of AI-powered tools for automated lead generation, prospecting, and sales intelligence ·…",
+        "url": "https://github.com/Supersynergy/awesome-ai-lead-generation",
+        "titleTruncated": true
+      },
+      {
+        "title": "GitHub - loootai/awesome-gtm: Curated open-source tools and building blocks for GTM engineering: prospecting, enrichment, SEO, research agents and…",
+        "url": "https://github.com/loootai/awesome-gtm",
+        "titleTruncated": true
+      },
+      {
+        "title": "Topic: lead-research - GitHubHelp",
+        "url": "https://githubhelp.com/topic/lead-research"
+      },
+      {
+        "title": "OSINT-Roadmap/tools/tool-library.md at main · imedkablavi/OSINT-Roadmap · GitHub",
+        "url": "https://github.com/imedkablavi/OSINT-Roadmap/blob/main/tools/tool-library.md"
+      },
+      {
+        "title": "AI Drug Discovery Tools 2026: 12 Open-Source Agents Compared",
+        "url": "https://claw4science.org/blog/ai-drug-discovery-tools-2026"
+      },
+      {
+        "title": "GitHub - ishandutta2007/Awesome-Sales-Intelligence: Top Sales Intelligence (Opensource) 🌟 Star if you like it! 🌟 · GitHub",
+        "url": "https://github.com/ishandutta2007/Awesome-Sales-Intelligence"
+      },
+      {
+        "title": "GitHub - Perufitlife/awesome-lead-generation: Curated list of free lead generation tools, APIs, and resources for sales teams and marketers.…",
+        "url": "https://github.com/Perufitlife/awesome-lead-generation",
+        "titleTruncated": true
+      },
+      {
+        "title": "Open Source Leads — OSS to Revenue | LeadCognition",
+        "url": "https://leadcognition.io/open-source-leads/"
+      },
+      {
+        "title": "lead-research · GitHub Topics · GitHub",
+        "url": "https://github.com/topics/lead-research"
+      },
+      {
+        "title": "QuickEnrich Tools — Free, open-source lead enrichment",
+        "url": "https://gtm.quickenrich.io/"
+      },
+      {
+        "title": "Evidence Synthesis Tools: Free Open-Source Tools & Software Directory",
+        "url": "https://evidencesynthesis-tools.github.io/index.html"
+      },
+      {
+        "title": "GitHub - openenrich/openenrich: Open-source lead enrichment waterfall. Free local engine, bring your own provider keys (~$0.01/lead), MCP server…",
+        "url": "https://github.com/openenrich/openenrich",
+        "titleTruncated": true
+      },
+      {
+        "title": "Free and Open Source Operational Research Tools for PBOR Volunteers",
+        "url": "https://www.theorsociety.com/common/Uploaded%20files/ProBono/RebrandPDFs/Free_Open_Source_OR_Tools_PBOR_Volunteers.pdf"
+      },
+      {
+        "title": "100 Popular Open-Source Infosec Tools",
+        "url": "https://oulurepo.oulu.fi/bitstream/handle/10024/30718/nbnfi-fe2021100149105.pdf?isAllowed=y&sequence=1"
+      },
+      {
+        "title": "List of open-source bioinformatics software",
+        "url": "https://en.wikipedia.org/wiki/List_of_open-source_bioinformatics_software"
+      },
+      {
+        "title": "Conducting Open Source Due Diligence",
+        "url": "https://vpresearch.usask.ca/rasi/documents/research-security/goc-ised-osint-guide.pdf"
+      },
+      {
+        "title": "Examples of Open Source Software Solutions for Low and Middle-Income Countries",
+        "url": "https://www.unicef.org/innovation/media/506/file"
+      },
+      {
+        "title": "Open Source Pharma: Tools & Trends in Drug Development",
+        "url": "https://intuitionlabs.ai/pdfs/open-source-pharma-tools-trends-in-drug-development.pdf"
+      },
+      {
+        "title": "Data Mining in Social S",
+        "url": "https://citeseerx.ist.psu.edu/document?doi=b9dbe683f40df2d342aad9638daac1bacc632425&repid=rep1&type=pdf"
+      },
+      {
+        "title": "List of data science software",
+        "url": "https://en.wikipedia.org/wiki/List_of_data_science_software"
+      },
+      {
+        "title": "AI research is getting ridiculous: 15 open-source projects that turn a question into sources, evidence, citations, and a…",
+        "url": "https://www.reddit.com/r/SATNA_PROJECT/comments/1wu3mg1/ai_research_is_getting_ridiculous_15_opensource/",
+        "titleTruncated": true
+      },
+      {
+        "title": "Comparison of research networking tools and research profiling systems",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_research_networking_tools_and_research_profiling_systems"
+      },
+      {
+        "title": "I open-sourced 24 Agent Skills for lead research, qualification and data cleanup",
+        "url": "https://www.reddit.com/r/Agentic_Marketing/comments/1us3key/i_opensourced_24_agent_skills_for_lead_research/"
+      },
+      {
+        "title": "Besides Google Scholar, what are some underrated research sources you've discovered?",
+        "url": "https://www.reddit.com/r/notebooklm/comments/1ucajiy/besides_google_scholar_what_are_some_underrated/"
+      },
+      {
+        "title": "Open science",
+        "url": "https://en.wikipedia.org/wiki/Open_science"
+      }
+    ],
+    "zqtionPresent": false,
+    "aiAnswerTest": "NOT RUN: no Google AI Mode, ChatGPT Search or Copilot answer sampled"
+  },
+  {
+    "query": "How to evaluate prompts using real-world results",
+    "observedAt": "2026-10-22T05:20:21.635Z",
+    "provider": "Codex web search tool (underlying engine and geography not exposed)",
+    "method": "One unquoted informational query; available returned result set only, not Google/Bing position tracking or an AI answer",
+    "results": [
+      {
+        "title": "How to evaluate prompts: a small test set and clear criteria",
+        "url": "https://prompt-engineering.si/guides/prompt-evaluation/"
+      },
+      {
+        "title": "SurePrompts Research: Original Data on How People Prompt AI | SurePrompts",
+        "url": "https://sureprompts.com/research"
+      },
+      {
+        "title": "Evaluation using PROMPT",
+        "url": "https://www.open.ac.uk/libraryservices/beingdigital/accessible/accessible-pdf-69-evaluation-using-prompt.pdf"
+      },
+      {
+        "title": "How to Evaluate Prompt Quality by Its Outputs",
+        "url": "https://vantageprompt.com/guides/how-to-evaluate-a-prompt"
+      },
+      {
+        "title": "Prompt and response evaluation - Andrew Maynard",
+        "url": "https://andrewmaynard.net/prompt-and-response-evaluation/"
+      },
+      {
+        "title": "Evaluating Prompts: Measuring Instead of Guessing — Samer Al-Qaisi",
+        "url": "https://sameralqaisi.me/ai/prompting/evaluating-prompts-measuring-instead-of-guessing/"
+      },
+      {
+        "title": "How to Test and Evaluate Your Prompts: The Self-Critique Loop (2026) - Nesyona",
+        "url": "https://nesyona.com/articles/how-to-evaluate-prompts"
+      },
+      {
+        "title": "Compare prompts and models fairly · PEI Learn",
+        "url": "https://learn.promptengineering.org/lessons/compare-prompts-and-models-fairly/"
+      },
+      {
+        "title": "What is prompt evaluation? How to test prompts with metrics and judges - Articles - Braintrust",
+        "url": "https://www.braintrust.dev/articles/what-is-prompt-evaluation"
+      },
+      {
+        "title": "How to Evaluate an AI Prompt: 5 Metrics | PromptNote",
+        "url": "https://promptnote.app/blogs/how-to-evaluate-an-ai-prompt/"
+      },
+      {
+        "title": "How to Evaluate AI Prompt Quality (And Score It Before You Ship) | PromptEval",
+        "url": "https://prompt-eval.com/en/blog/how-to-evaluate-ai-prompt-quality"
+      },
+      {
+        "title": "Table 9: Prompts for the realism score.",
+        "url": "https://aclanthology.org/2025.acl-long.1136.pdf"
+      },
+      {
+        "title": "Evaluate LLM Prompts | Systematic Eval Guide · LayerFlow",
+        "url": "https://layerflow.dev/blog/eval-llm-prompts-systematic"
+      },
+      {
+        "title": "One Tech Tip: Get the most out of ChatGPT and other AI chatbots with better prompts",
+        "url": "https://apnews.com/article/9decab8abe739f44bbc932f32e13ea9b"
+      },
+      {
+        "title": "I put ChatGPT vs Gemini through 7 real-world tests - the results weren't what I expected",
+        "url": "https://www.tomsguide.com/ai/i-put-chatgpt-vs-gemini-through-7-real-world-tests-the-results-werent-what-i-expected"
+      },
+      {
+        "title": "Meta AI vs. DeepSeek: I gave them 5 real-world tasks and the gap was embarrassing",
+        "url": "https://www.tomsguide.com/ai/i-tested-meta-ai-vs-deepseek-with-5-real-world-prompts-one-completely-dominated"
+      },
+      {
+        "title": "Want better answers from ChatGPT or Gemini? Here's how to tweak your prompts the right way",
+        "url": "https://www.techradar.com/ai-platforms-assistants/want-better-answers-from-chatgpt-or-gemini-heres-how-to-tweak-your-prompts-the-right-way"
+      }
+    ],
+    "zqtionPresent": false,
+    "aiAnswerTest": "NOT RUN: no Google AI Mode, ChatGPT Search or Copilot answer sampled"
+  }
+]

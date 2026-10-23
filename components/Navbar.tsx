@@ -3,132 +3,99 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { navigation } from "@/data/site";
+import ThemeToggle from "@/components/ThemeToggle";
+
+const groups = [
+  { label: "Company", links: [{ href: "/", label: "Home" }, ...navigation.filter(i => ["/work", "/services", "/process", "/about"].includes(i.href)), { href: "/contact", label: "Contact" }] },
+  { label: "Discover", links: navigation.filter(i => ["/prompts", "/resources", "/insights"].includes(i.href)) },
+  { label: "Opportunities", links: navigation.filter(i => i.href === "/careers") },
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [dropdown, setDropdown] = useState<string | null>(null);
   const pathname = usePathname();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const navRootRef = useRef<HTMLDivElement>(null);
+  const active = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
 
   useEffect(() => {
     let frame = 0;
-    const update = () => {
-      frame = 0;
-      navRootRef.current?.querySelector(".site-header")?.classList.toggle("site-header-active", window.scrollY > 24);
-    };
+    const update = () => { frame = 0; navRootRef.current?.querySelector(".site-header")?.classList.toggle("site-header-active", window.scrollY > 24 || open || Boolean(dropdown)); };
     const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
+    update(); window.addEventListener("scroll", onScroll, { passive: true });
+    return () => { cancelAnimationFrame(frame); window.removeEventListener("scroll", onScroll); };
+  }, [open, dropdown]);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (!dropdown) return;
+    const outside = (event: PointerEvent) => { if (event.target instanceof Node && !navRootRef.current?.contains(event.target)) setDropdown(null); };
+    const escape = (event: KeyboardEvent) => { if (event.key === "Escape") { navRootRef.current?.querySelector<HTMLButtonElement>(`[data-nav-group="${dropdown}"]`)?.focus(); setDropdown(null); } };
+    const focus = (event: FocusEvent) => { if (event.target instanceof Node && !navRootRef.current?.contains(event.target)) setDropdown(null); };
+    document.addEventListener("pointerdown", outside); document.addEventListener("keydown", escape); document.addEventListener("focusin", focus);
+    return () => { document.removeEventListener("pointerdown", outside); document.removeEventListener("keydown", escape); document.removeEventListener("focusin", focus); };
+  }, [dropdown]);
+
+  useEffect(() => {
     if (!open) return;
-
-    const focusableSelector = "a[href], button:not([disabled]), [tabindex]:not([tabindex='-1'])";
-    const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const siblings = Array.from(document.body.children).filter((e): e is HTMLElement => e instanceof HTMLElement && e !== navRootRef.current && !["SCRIPT", "STYLE", "LINK"].includes(e.tagName));
+    const previousInert = siblings.map(e => e.inert); siblings.forEach(e => { e.inert = true; });
     const trigger = menuButtonRef.current;
-    const focusFirst = window.requestAnimationFrame(() => {
-      menuRef.current?.querySelector<HTMLElement>(focusableSelector)?.focus();
-    });
-
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        event.preventDefault();
-        setOpen(false);
-        return;
-      }
-
-      if (event.key !== "Tab" || !navRootRef.current) return;
-      const focusable = Array.from(navRootRef.current.querySelectorAll<HTMLElement>(focusableSelector))
-        .filter((element) => element.getClientRects().length > 0);
-      if (focusable.length === 0) return;
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
+    const selector = "a[href], button:not([disabled]), [tabindex]:not([tabindex='-1'])";
+    const frame = requestAnimationFrame(() => menuRef.current?.querySelector<HTMLElement>(selector)?.focus());
+    const keydown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") { event.preventDefault(); setOpen(false); return; }
+      if (event.key !== "Tab") return;
+      const items = Array.from(navRootRef.current?.querySelectorAll<HTMLElement>(selector) || []).filter(e => e.getClientRects().length > 0);
+      const first = items[0], last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
     };
-
-    document.addEventListener("keydown", onKeyDown);
-    const desktop = window.matchMedia("(min-width: 1024px)");
-    const closeOnDesktop = () => { if (desktop.matches) setOpen(false); };
-    desktop.addEventListener("change", closeOnDesktop);
+    const desktop = matchMedia("(min-width: 1024px)");
+    const resize = () => { if (desktop.matches) setOpen(false); };
+    document.addEventListener("keydown", keydown); desktop.addEventListener("change", resize);
     return () => {
-      window.cancelAnimationFrame(focusFirst);
-      document.removeEventListener("keydown", onKeyDown);
-      desktop.removeEventListener("change", closeOnDesktop);
-      document.body.style.overflow = "";
-      (previouslyFocused || trigger)?.focus();
+      cancelAnimationFrame(frame); document.removeEventListener("keydown", keydown); desktop.removeEventListener("change", resize);
+      document.body.style.overflow = previousOverflow; siblings.forEach((e, i) => { e.inert = previousInert[i]; }); trigger?.focus();
     };
   }, [open]);
 
-  return (
-    <div ref={navRootRef} role={open ? "dialog" : undefined} aria-modal={open ? true : undefined} aria-label={open ? "Navigation menu" : undefined}>
-      <header className={`site-header fixed inset-x-0 top-0 z-50 transition duration-300 ${open ? "site-header-active" : "bg-transparent"}`}>
-        <div className="mx-auto flex h-[4.75rem] max-w-[90rem] items-center justify-between px-5 sm:px-8 lg:px-16">
-          <Link href="/" className="group flex items-center gap-3" aria-label="Zqtion home" onClick={() => setOpen(false)}>
-            <span className="relative h-9 w-9 overflow-hidden rounded-xl border border-white/10 bg-black">
-              <Image src="/logo.png" alt="" fill sizes="36px" priority className="object-cover" />
-            </span>
-            <span className="text-sm font-extrabold tracking-[0.18em] text-white">ZQTION</span>
-          </Link>
-
-          <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
-            {navigation.map((item) => {
-              const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
-              return (
-                <Link key={item.href} href={item.href} className={`text-sm transition ${active ? "text-white" : "text-white/52 hover:text-white"}`} aria-current={active ? "page" : undefined}>
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          <div className="hidden lg:block">
-            <Link href="/contact" className="button-primary" data-analytics="service_contact_click" data-analytics-location="navbar">
-              Start a project <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </div>
-
-          <button ref={menuButtonRef} type="button" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] lg:hidden" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close menu" : "Open menu"}>
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+  const close = () => { setOpen(false); setDropdown(null); };
+  return <div ref={navRootRef} role={open ? "dialog" : undefined} aria-modal={open ? true : undefined} aria-label={open ? "Navigation menu" : undefined}>
+    <header className={`site-header fixed z-50 ${open || dropdown ? "site-header-active" : ""}`}>
+      <div className="nav-bar">
+        <Link href="/" className="nav-brand" aria-label="Zqtion home" onClick={close}>
+          <span className="nav-logo"><Image src="/logo.png" alt="" fill sizes="36px" priority className="object-cover" /></span>
+          <span>ZQTION</span>
+        </Link>
+        <nav className="desktop-navigation" aria-label="Primary navigation">
+          <Link href="/work" className="nav-link" aria-current={active('/work') ? "page" : undefined} onClick={close}>Work</Link>
+          <Link href="/services" className="nav-link" aria-current={active('/services') ? "page" : undefined} onClick={close}>Services</Link>
+          <Link href="/ai-experiences" className="nav-link" aria-current={active('/ai-experiences') ? "page" : undefined} onClick={close}>Community</Link>
+          {groups.map(group => <div className="nav-group" key={group.label}>
+            <button className="nav-link" type="button" data-nav-group={group.label} aria-expanded={dropdown === group.label} aria-controls={`nav-${group.label}`} onClick={() => setDropdown(dropdown === group.label ? null : group.label)}>{group.label}<ChevronDown aria-hidden="true" className="h-3.5 w-3.5" /></button>
+            {dropdown === group.label ? <div className="nav-dropdown" id={`nav-${group.label}`}><p className="nav-group-label">{group.label}</p>{group.links.map(item => <Link key={item.href} href={item.href} aria-current={active(item.href) ? "page" : undefined} onClick={close}>{item.label}<ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" /></Link>)}</div> : null}
+          </div>)}
+        </nav>
+        <div className="nav-actions">
+          <ThemeToggle />
+          <Link href="/contact" className="button-primary nav-project" onClick={close} data-analytics="service_contact_click" data-analytics-location="navbar">Start a project <ArrowUpRight aria-hidden="true" className="h-4 w-4" /></Link>
+          <button ref={menuButtonRef} type="button" className="nav-menu-toggle" onClick={() => { setDropdown(null); setOpen(value => !value); }} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close menu" : "Open menu"}>{open ? <X aria-hidden="true" className="h-5 w-5" /> : <Menu aria-hidden="true" className="h-5 w-5" />}</button>
         </div>
-      </header>
-
-      {open ? (
-          <div
-            ref={menuRef}
-            id="mobile-menu"
-            className="mobile-menu-enter fixed inset-0 z-40 flex bg-[#050608] px-5 pb-10 pt-28 lg:hidden"
-          >
-            <nav className="flex w-full flex-col justify-between" aria-label="Mobile navigation">
-              <div className="border-t border-white/10">
-                {navigation.map((item, index) => (
-                  <div className="mobile-menu-item" key={item.href} style={{ "--menu-index": index } as React.CSSProperties}>
-                    <Link href={item.href} onClick={() => setOpen(false)} className="flex items-center justify-between border-b border-white/10 py-5 text-3xl font-semibold tracking-[-0.04em]">
-                      {item.label}<span className="text-sm text-white/35">0{index + 1}</span>
-                    </Link>
-                  </div>
-                ))}
-              </div>
-              <Link href="/contact" onClick={() => setOpen(false)} className="button-primary w-full" data-analytics="service_contact_click" data-analytics-location="mobile_menu">Start a project <ArrowUpRight className="h-4 w-4" /></Link>
-            </nav>
-          </div>
-      ) : null}
-    </div>
-  );
+      </div>
+    </header>
+    {open ? <div ref={menuRef} id="mobile-menu" className="mobile-menu-enter mobile-navigation">
+      <nav aria-label="Mobile navigation">
+        <Link href="/ai-experiences" className="mobile-community-link" onClick={close} aria-current={active('/ai-experiences') ? "page" : undefined}>Community <ArrowUpRight aria-hidden="true" className="h-4 w-4" /></Link>
+        <div className="mobile-nav-groups">{groups.map(group => <section key={group.label} aria-label={group.label}><p className="nav-group-label">{group.label}</p>{group.links.map(item => <Link key={item.href} href={item.href} aria-current={active(item.href) ? "page" : undefined} onClick={close}>{item.label}<ArrowUpRight aria-hidden="true" className="h-4 w-4" /></Link>)}</section>)}</div>
+        <div className="mobile-nav-actions"><Link href="/contact" className="button-primary" onClick={close} data-analytics="service_contact_click" data-analytics-location="mobile_menu">Start a project <ArrowUpRight aria-hidden="true" className="h-4 w-4" /></Link><Link href="/ai-experiences" className="button-secondary" onClick={close}>Explore community posts</Link></div>
+      </nav>
+    </div> : null}
+  </div>;
 }

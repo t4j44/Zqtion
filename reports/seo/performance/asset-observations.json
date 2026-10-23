@@ -1,0 +1,49 @@
+{
+  "method": "First valid mobile sample per route/phase; diagnostic comparison, not causal proof. Differing CPU benchmarks and run variability limit attribution.",
+  "results": [
+    {
+      "phase": "before",
+      "route": "home",
+      "benchmark": 993.5,
+      "totalBytes": 449864,
+      "requests": 30,
+      "scriptBytes": 239740,
+      "mainThreadMs": 2127.564,
+      "bootupMs": 796.0359999999997,
+      "serverResponseMs": 15
+    },
+    {
+      "phase": "before",
+      "route": "resource",
+      "benchmark": 1378,
+      "totalBytes": 309182,
+      "requests": 21,
+      "scriptBytes": 174158,
+      "mainThreadMs": 2013.4879999999987,
+      "bootupMs": 828.132,
+      "serverResponseMs": 11
+    },
+    {
+      "phase": "after",
+      "route": "home",
+      "benchmark": 712.5,
+      "totalBytes": 448706,
+      "requests": 30,
+      "scriptBytes": 240071,
+      "mainThreadMs": 6390.22799999999,
+      "bootupMs": 2251.8359999999975,
+      "serverResponseMs": 137
+    },
+    {
+      "phase": "after",
+      "route": "resource",
+      "benchmark": 874,
+      "totalBytes": 328672,
+      "requests": 24,
+      "scriptBytes": 174216,
+      "mainThreadMs": 2346.9799999999973,
+      "bootupMs": 948.2119999999976,
+      "serverResponseMs": 82
+    }
+  ]
+}

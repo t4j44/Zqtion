@@ -55,8 +55,9 @@ ContactForm
       -> honeypot
       -> Supabase persistent rate-limit RPC using a hashed IP key
       -> Turnstile server verification
-      -> Supabase inquiry insert and Resend notification in parallel
-      -> success if either configured delivery path succeeds
+      -> Supabase inquiry insert (required before acceptance)
+      -> internal alert and customer confirmation via Resend in parallel
+      -> success after storage; confirmation UI reflects provider acceptance
 ```
 
 Lead attribution stores landing path, referrer, and UTM fields. It never stores personal form values in analytics.

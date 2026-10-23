@@ -11,5 +11,8 @@ export default defineConfig([
     "build/**",
     "next-env.d.ts",
     ".gstack/**",
+    "artifacts/**",
+    "brag-output/**",
+    "brag-output-*/**",
   ]),
 ]);

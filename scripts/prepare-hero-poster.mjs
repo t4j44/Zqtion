@@ -64,7 +64,7 @@ for (let index = 0; index < width * height; index += 1) {
 const transparentMaster = sharp(rgba, { raw: { width, height, channels: 4 } });
 await transparentMaster.clone().png({ compressionLevel: 9 }).toFile(masterOutput);
 
-for (const size of [512, 768, 1280]) {
+for (const size of [512, 768, 1024, 1280]) {
   const resized = transparentMaster.clone().resize(size, size, { fit: "contain" });
   await resized.clone().avif({ quality: 66, effort: 6 }).toFile(`public/hero/z-poster-${size}.avif`);
   await resized.clone().webp({ quality: 78, effort: 6, alphaQuality: 90 }).toFile(`public/hero/z-poster-${size}.webp`);

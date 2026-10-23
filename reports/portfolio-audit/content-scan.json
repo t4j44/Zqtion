@@ -1,0 +1,7 @@
+{
+  "scope": "Known credential-pattern and filename scan of release candidates; not a comprehensive secret guarantee",
+  "files": 599,
+  "textFiles": 182,
+  "totalBytes": 368759726,
+  "flags": []
+}

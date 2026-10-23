@@ -1,0 +1,256 @@
+{
+  "method": "Deduplicated sequential GETs from audited main-content links plus all catalogue source links; 15s timeout. Earlier identical source URLs reuse their timestamped observation. Synthetic fixture profiles excluded. HTTP reachability does not certify video playback, factual accuracy or a genuine crawler IP.",
+  "results": [
+    {
+      "url": "https://docs.crawl4ai.com/",
+      "status": 200,
+      "finalUrl": "https://docs.crawl4ai.com/",
+      "verdict": "reachable",
+      "observedAt": "2026-10-22T05:18:57.255Z"
+    },
+    {
+      "url": "https://code.claude.com/docs/en/overview",
+      "status": 200,
+      "finalUrl": "https://code.claude.com/docs/en/overview",
+      "verdict": "reachable",
+      "observedAt": "2026-10-22T05:18:57.255Z"
+    },
+    {
+      "url": "https://modelcontextprotocol.io/docs/getting-started/intro",
+      "status": 200,
+      "finalUrl": "https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro",
+      "verdict": "reachable",
+      "observedAt": "2026-10-22T05:18:57.255Z"
+    },
+    {
+      "url": "https://git-scm.com/docs/git-commit",
+      "status": 200,
+      "finalUrl": "https://git-scm.com/docs/git-commit",
+      "verdict": "reachable",
+      "observedAt": "2026-10-22T05:18:57.255Z"
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/quickref/",
+      "status": 200,
+      "finalUrl": "https://www.w3.org/WAI/WCAG22/quickref/",
+      "verdict": "reachable",
+      "observedAt": "2026-10-22T05:18:57.255Z"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/prompt-engineering",
+      "status": 200,
+      "finalUrl": "https://developers.openai.com/api/docs/guides/prompt-engineering",
+      "verdict": "reachable",
+      "observedAt": "2026-10-22T05:18:57.255Z"
+    },
+    {
+      "url": "https://docs.firecrawl.dev/",
+      "status": 200,
+      "finalUrl": "https://docs.firecrawl.dev/introduction",
+      "verdict": "reachable",
+      "observedAt": "2026-10-22T05:18:57.255Z"
+    },
+    {
+      "url": "https://antigravity.google/",
+      "status": 200,
+      "finalUrl": "https://antigravity.google/",
+      "verdict": "reachable",
+      "observedAt": "2026-10-22T05:18:57.255Z"
+    },
+    {
+      "url": "https://docs.n8n.io/",
+      "status": 200,
+      "finalUrl": "https://docs.n8n.io/",
+      "verdict": "reachable",
+      "observedAt": "2026-10-22T05:18:57.255Z"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/current/ddl-rowsecurity.html",
+      "status": 200,
+      "finalUrl": "https://www.postgresql.org/docs/current/ddl-rowsecurity.html",
+      "verdict": "reachable",
+      "observedAt": "2026-10-22T05:18:57.255Z"
+    },
+    {
+      "url": "https://www.reve.com/",
+      "status": 200,
+      "finalUrl": "https://app.reve.com/",
+      "verdict": "reachable",
+      "observedAt": "2026-10-22T05:18:57.255Z"
+    },
+    {
+      "url": "https://playwright.dev/docs/intro",
+      "status": 200,
+      "finalUrl": "https://playwright.dev/docs/intro",
+      "verdict": "reachable",
+      "observedAt": "2026-10-22T05:18:57.255Z"
+    },
+    {
+      "url": "https://blog.google/products-and-platforms/products/gemini/image-generation-prompting-tips/",
+      "status": 200,
+      "finalUrl": "https://blog.google/products-and-platforms/products/gemini/image-generation-prompting-tips/",
+      "observedAt": "2026-10-22T06:08:20.905Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://cursor.com/docs/agent/overview",
+      "status": 200,
+      "finalUrl": "https://cursor.com/docs/agent/overview",
+      "observedAt": "2026-10-22T06:08:22.407Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://developers.openai.com/codex/",
+      "status": 200,
+      "finalUrl": "https://learn.chatgpt.com/docs",
+      "observedAt": "2026-10-22T06:08:24.879Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://github.com/Zqtion/Gruffet",
+      "status": 200,
+      "finalUrl": "https://github.com/Zqtion/Gruffet",
+      "observedAt": "2026-10-22T06:08:26.766Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://github.com/Zqtion/Gruffet#-quick-start",
+      "status": 200,
+      "finalUrl": "https://github.com/Zqtion/Gruffet",
+      "observedAt": "2026-10-22T06:08:27.241Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://wa.me/8801340347975?text=I%20want%20to%20discuss%20a%20project%20with%20Zqtion.",
+      "status": 200,
+      "finalUrl": "https://api.whatsapp.com/send/?phone=8801340347975&text=I+want+to+discuss+a+project+with+Zqtion.&type=phone_number&app_absent=0",
+      "observedAt": "2026-10-22T06:08:28.865Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/claude-code-best-practices",
+      "status": 200,
+      "finalUrl": "https://code.claude.com/docs/en/best-practices",
+      "observedAt": "2026-10-22T06:08:30.402Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://www.gforcetyres-mobile.co.uk/",
+      "status": 200,
+      "finalUrl": "https://www.gforcetyres-mobile.co.uk/",
+      "observedAt": "2026-10-22T06:08:33.435Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://www.linkedin.com/company/zqtion/",
+      "status": 200,
+      "finalUrl": "https://www.linkedin.com/company/zqtion/",
+      "observedAt": "2026-10-22T06:08:34.451Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://www.youtube.com/@BuildwithTajuddin/videos",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/@BuildwithTajuddin/videos",
+      "observedAt": "2026-10-22T06:08:35.754Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://www.youtube.com/shorts/qIWd8cvsoKk",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/shorts/qIWd8cvsoKk",
+      "observedAt": "2026-10-22T06:08:36.197Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=8UU5R8v3XMk",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/watch?v=8UU5R8v3XMk",
+      "observedAt": "2026-10-22T06:08:36.739Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=GkyqartrbWo",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/watch?v=GkyqartrbWo",
+      "observedAt": "2026-10-22T06:08:37.152Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=myz4yRXFE2M",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/watch?v=myz4yRXFE2M",
+      "observedAt": "2026-10-22T06:08:37.622Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=tlUPzwuj7ck",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/watch?v=tlUPzwuj7ck",
+      "observedAt": "2026-10-22T06:08:38.119Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://youtu.be/EKDWPiF0M6c",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/watch?v=EKDWPiF0M6c&feature=youtu.be",
+      "observedAt": "2026-10-22T06:08:39.131Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://youtu.be/Jspxt8bE6T0",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/watch?v=Jspxt8bE6T0&feature=youtu.be",
+      "observedAt": "2026-10-22T06:08:39.796Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://youtu.be/RtBa4fjEjbc",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/watch?v=RtBa4fjEjbc&feature=youtu.be",
+      "observedAt": "2026-10-22T06:08:40.467Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://youtu.be/osWc8m3qnhI",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/watch?v=osWc8m3qnhI&feature=youtu.be",
+      "observedAt": "2026-10-22T06:08:41.173Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://youtu.be/q_4me0VwaZo",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/watch?v=q_4me0VwaZo&feature=youtu.be",
+      "observedAt": "2026-10-22T06:08:41.888Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://youtube.com/shorts/WX2XbBxSDG0",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/shorts/WX2XbBxSDG0",
+      "observedAt": "2026-10-22T06:08:43.389Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://youtube.com/shorts/d9apZlb22gE",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/shorts/d9apZlb22gE",
+      "observedAt": "2026-10-22T06:08:43.987Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    },
+    {
+      "url": "https://youtube.com/shorts/f7FYYLeFbqQ",
+      "status": 200,
+      "finalUrl": "https://www.youtube.com/shorts/f7FYYLeFbqQ",
+      "observedAt": "2026-10-22T06:08:44.590Z",
+      "verdict": "reachable HTML (not media playback or factual validation)"
+    }
+  ],
+  "excluded": [
+    {
+      "url": "https://www.linkedin.com/in/fixture-alice",
+      "reason": "Synthetic local fixture identity; not a real external profile"
+    }
+  ]
+}

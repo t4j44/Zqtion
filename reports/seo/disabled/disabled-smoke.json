@@ -1,0 +1,19 @@
+{
+  "passed": [
+    "/ai-experiences: 200, one H1, actual production CSP active",
+    "/prompts/community: 200, one H1, actual production CSP active",
+    "/community/account: 200, one H1, actual production CSP active",
+    "/share: 200, one H1, actual production CSP active",
+    "/prompts: 200, one H1, actual production CSP active",
+    "/contact: 200, one H1, actual production CSP active",
+    "/services: 200, one H1, actual production CSP active",
+    "/community/guidelines: 200, one H1, actual production CSP active",
+    "Disabled mutation fails closed with HTTP 503",
+    "Homepage reduced-motion mobile fallback has no WebGL canvas or horizontal overflow",
+    "Desktop WebGL-unavailable fallback remains usable",
+    "Video facade loads an iframe only after activation (external video intercepted)"
+  ],
+  "errors": [],
+  "csp": [],
+  "note": "No CSP bypass. Community disabled. External video intercepted; not a YouTube provider test."
+}

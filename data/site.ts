@@ -1,10 +1,11 @@
 export const siteConfig = {
   name: "Zqtion",
   url: "https://zqtion.com",
-  email: "zqtioncontact@gmail.com",
+  email: "info@zqtion.com",
   phone: "+880 1340-347975",
   whatsapp: "https://wa.me/8801340347975",
   linkedin: "https://www.linkedin.com/company/zqtion/",
+  github: "https://github.com/Zqtion",
   youtube: "https://www.youtube.com/@BuildwithTajuddin/videos",
   location: "Worldwide",
   description:
@@ -17,6 +18,9 @@ export const navigation = [
   { href: "/process", label: "Process" },
   { href: "/about", label: "About" },
   { href: "/insights", label: "Insights" },
+  { href: "/resources", label: "Resources" },
+  { href: "/prompts", label: "Prompts" },
+  { href: "/ai-experiences", label: "Community" },
   { href: "/careers", label: "Careers" },
 ] as const;
 

@@ -1,0 +1,107 @@
+{
+  "scope": "Real browser supabase-js implicit-session handling with local PGlite SQL/RLS and simulated OAuth redirect/Auth transport. CSP bypass only for HTTP fixture; not real Google or hosted acceptance.",
+  "passed": [
+    "Public navbar, feed, discussions, search and profiles require no login and expose no private email",
+    "Google initiation uses basic scopes, implicit callback, accessible keyboard control and persistent returning session",
+    "New Google user browses immediately, then completes LinkedIn/guidelines once at participation without a password",
+    "Signed-out reply returns to the exact post query and answer composer without automatically posting",
+    "Signed-out save returns to the same post without replaying the action",
+    "Signed-out vote returns to the same post without replaying the action",
+    "Cancelled OAuth is announced, cleans error fragments, preserves destination and permits email retry",
+    "Direct email login defaults to the feed; invalid external returns cannot leave the app",
+    "Password reset remains available and recovery callback stays on the password form",
+    "Logout clears identity and switching accounts never inherits a moderator UI",
+    "Email account creation remains secondary and keeps password and privacy requirements",
+    "Expired fixture session returns to sign-in without exposing stale profile actions",
+    "Account layout and controls work in both themes from 320px through desktop"
+  ],
+  "failures": [
+    {
+      "name": "Cross-tab account switching clears the prior user draft before the new identity can compose",
+      "error": "locator.waitFor: Error: strict mode violation: getByRole('link', { name: 'Sign in / Join', exact: true }) resolved to 2 elements:\n    1) <a href=\"/community/account\">Sign in / Join</a> aka getByLabel('Community navigation').getByRole('link', { name: 'Sign in / Join' })\n    2) <a class=\"cq-button\" href=\"/community/account?next=%2Fai-experiences%2F8ac385f8-ee12-4d85-ac57-6a881a1ae5ec%23compose-comment-8ac385f8-ee12-4d85-ac57-6a881a1ae5ec&intent=comment\">Sign in / Join</a> aka getByLabel('Answers').getByRole('link', { name: 'Sign in / Join' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Sign in / Join', exact: true }) to be visible\u001b[22m\n"
+    }
+  ],
+  "errors": [],
+  "responsive": [
+    {
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "theme": "light",
+      "width": 360,
+      "scrollWidth": 360
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "theme": "light",
+      "width": 430,
+      "scrollWidth": 430
+    },
+    {
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "theme": "light",
+      "width": 1024,
+      "scrollWidth": 1024
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "theme": "light",
+      "width": 1920,
+      "scrollWidth": 1920
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "theme": "dark",
+      "width": 360,
+      "scrollWidth": 360
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "theme": "dark",
+      "width": 430,
+      "scrollWidth": 430
+    },
+    {
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "theme": "dark",
+      "width": 1024,
+      "scrollWidth": 1024
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "theme": "dark",
+      "width": 1920,
+      "scrollWidth": 1920
+    }
+  ]
+}

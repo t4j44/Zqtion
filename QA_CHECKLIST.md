@@ -23,9 +23,9 @@ Perform these checks in a real browser (Desktop & Mobile viewports) before final
 
 ### 3. Contact & Conversions
 - [ ] **WhatsApp Button**: Floating WhatsApp button opens the correct chat with prepopulated message.
-- [ ] **Email Links**: Direct email links (`mailto:zqtioncontact@gmail.com`) open the default mail client.
-- [ ] **Contact Delivery**: A controlled form submission creates a Supabase row and sends a Resend notification.
-- [ ] **Failure State**: Missing configuration, invalid Turnstile tokens, and provider failure show an honest error and never claim delivery.
+- [ ] **Email Links**: Direct email links (`mailto:info@zqtion.com`) open the default mail client.
+- [ ] **Contact Delivery**: A controlled form submission creates a Supabase row and sends an internal alert plus visitor confirmation. Check both Reply-To addresses using `docs/INQUIRY_EMAIL_SETUP.md`.
+- [ ] **Failure State**: Failed storage, limiter or Turnstile shows an honest error. Email-only failure retains the saved lead, logs channel status and never claims unconfirmed email delivery.
 - [ ] **Attribution**: Landing path, referrer, and available UTM fields reach the inquiry record without entering anonymous analytics metadata.
 - [ ] **Rate Limit**: The sixth inquiry attempt inside ten minutes is rejected across separate server instances; the database stores only a hashed key.
 - [ ] **Analytics**: Named CTA, work, contact, WhatsApp, email, form, and Web Vital events are anonymous, and Do Not Track disables client sending.

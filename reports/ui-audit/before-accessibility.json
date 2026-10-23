@@ -1,0 +1,1071 @@
+[
+  {
+    "route": "/",
+    "theme": "dark",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 114
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/work",
+    "theme": "dark",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 32
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/services",
+    "theme": "dark",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 90
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/about",
+    "theme": "dark",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 34
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "theme": "dark",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 28
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers",
+    "theme": "dark",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 231
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers/apply",
+    "theme": "dark",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 9
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/prompts",
+    "theme": "dark",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 11
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".pl-preview-landing > .pl-preview-caption"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.67 (foreground color: #d5dce7, background color: #9fafa0, font size: 5.3pt (7px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-preview-caption\">ZQTION CONCEPT</span>"
+          },
+          {
+            "target": [
+              ".pl-mini-pricing > small"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.49 (foreground color: #48576c, background color: #10151c, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<small>EXAMPLE PRICING</small>"
+          },
+          {
+            "target": [
+              ".pl-still-citrus > .pl-composition-mark"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #3a5353, background color: #b6c2a9, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-composition-mark\">MATERIAL / LIGHT / FORM</span>"
+          },
+          {
+            "target": [
+              ".pl-still-speaker > .pl-composition-mark"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.17 (foreground color: #3a5353, background color: #c2b7a4, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-composition-mark\">MATERIAL / LIGHT / FORM</span>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/prompts/ui/fieldwork-research-dashboard",
+    "theme": "dark",
+    "width": 390,
+    "passes": 30,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 8
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".pl-mini-pricing > small"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.49 (foreground color: #48576c, background color: #10151c, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<small>EXAMPLE PRICING</small>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/ai-experiences",
+    "theme": "dark",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 20
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 22
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/u/alice",
+    "theme": "dark",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 23
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 25
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/community/account",
+    "theme": "dark",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 2
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources",
+    "theme": "dark",
+    "width": 390,
+    "passes": 23,
+    "incomplete": [],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".gap-2.flex-wrap.items-center > .text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500\">Try asking:</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(1) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(2) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(3) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">advanced<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(4) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(5) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(6) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(7) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(8) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">beginner<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(9) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(10) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">advanced<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(11) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">beginner<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(12) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(13) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(14) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(15) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(16) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(17) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(18) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(19) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">beginner<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(20) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(21) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(22) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(23) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(24) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">beginner<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(25) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(26) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">advanced<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(27) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(28) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          }
+        ]
+      },
+      {
+        "id": "select-name",
+        "impact": "critical",
+        "help": "Select element must have an accessible name",
+        "nodes": [
+          {
+            "target": [
+              "select"
+            ],
+            "summary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+            "html": "<select class=\"min-h-[36px] rounded-lg border border-white/10 bg-black px-2.5 py-1 text-xs text-zinc-300 focus:border-[#38BDF8] focus:outline-none\">"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/resources/guide/ai-lead-research-verification-pipeline",
+    "theme": "dark",
+    "width": 390,
+    "passes": 21,
+    "incomplete": [],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".max-w-\\[200px\\]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #71717a, background color: #0d0d0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-zinc-500 truncate max-w-[200px]\">Build an AI Lead Research and Website Verification Pipeline</span>"
+          },
+          {
+            "target": [
+              ".ml-auto.text-zinc-500.font-mono"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #71717a, background color: #0d0d0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"ml-auto text-xs text-zinc-500 font-mono\">Verified: <!-- -->October 2026</span>"
+          },
+          {
+            "target": [
+              "div:nth-child(1) > .block.text-zinc-500"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-zinc-500 block\">Difficulty</span>"
+          },
+          {
+            "target": [
+              "div:nth-child(2) > .block.text-zinc-500"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-zinc-500 block\">Target Audience</span>"
+          },
+          {
+            "target": [
+              "div:nth-child(3) > .block.text-zinc-500"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-zinc-500 block\">Primary Tools</span>"
+          },
+          {
+            "target": [
+              "div:nth-child(4) > .block.text-zinc-500"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-zinc-500 block\">Estimated Cost</span>"
+          },
+          {
+            "target": [
+              ".flex-col.p-6.transition-all:nth-child(1) > div:nth-child(2) > .pt-2.justify-between.flex > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".flex-col.p-6.transition-all:nth-child(2) > div:nth-child(2) > .pt-2.justify-between.flex > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".flex-col.p-6.transition-all:nth-child(3) > div:nth-child(2) > .pt-2.justify-between.flex > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          }
+        ]
+      },
+      {
+        "id": "scrollable-region-focusable",
+        "impact": "serious",
+        "help": "Scrollable region must have keyboard access",
+        "nodes": [
+          {
+            "target": [
+              "pre"
+            ],
+            "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable",
+            "html": "<pre class=\"max-h-[480px] overflow-x-auto p-4 font-mono text-xs leading-relaxed text-zinc-300\"><code class=\"language-text\">// Execute via Zqtion MCP Server\n{\n  \"tool\": \"get_resource\",\n  \"args\": {\n    \"slug\": \"ai-lead-research-verification-pipeline\"\n  }\n}</code></pre>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 26,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 114
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/work",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 23,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 41
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/services",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 22,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 99
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/about",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 22,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 43
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 37
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 23,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 240
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers/apply",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 18
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/prompts",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 9
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".pl-mini-pricing > small"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.49 (foreground color: #48576c, background color: #10151c, font size: 3.8pt (5px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<small>EXAMPLE PRICING</small>"
+          },
+          {
+            "target": [
+              ".pl-still-citrus > .pl-composition-mark"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #3a5353, background color: #b6c2a9, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-composition-mark\">MATERIAL / LIGHT / FORM</span>"
+          },
+          {
+            "target": [
+              ".pl-still-speaker > .pl-composition-mark"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.17 (foreground color: #3a5353, background color: #c2b7a4, font size: 4.5pt (6px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"pl-composition-mark\">MATERIAL / LIGHT / FORM</span>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/prompts/ui/fieldwork-research-dashboard",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 8
+      }
+    ],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".pl-mini-pricing > small"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.49 (foreground color: #48576c, background color: #10151c, font size: 3.8pt (5px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<small>EXAMPLE PRICING</small>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/ai-experiences",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 20
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 22
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/u/alice",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": 23
+      },
+      {
+        "id": "color-contrast",
+        "nodes": 25
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/community/account",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 2
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 23,
+    "incomplete": [],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".gap-2.flex-wrap.items-center > .text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500\">Try asking:</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(1) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(2) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(3) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">advanced<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(4) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(5) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(6) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(7) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(8) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">beginner<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(9) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(10) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">advanced<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(11) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">beginner<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(12) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(13) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(14) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(15) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(16) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(17) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(18) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(19) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">beginner<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(20) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(21) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(22) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(23) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(24) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">beginner<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(25) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(26) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">advanced<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(27) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".duration-200.hover\\:-translate-y-0\\.5.hover\\:border-\\[\\#38BDF8\\]\\/40:nth-child(28) > div:nth-child(2) > .pt-2.justify-between.items-center > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          }
+        ]
+      },
+      {
+        "id": "select-name",
+        "impact": "critical",
+        "help": "Select element must have an accessible name",
+        "nodes": [
+          {
+            "target": [
+              "select"
+            ],
+            "summary": "Fix any of the following:\n  Element does not have an implicit (wrapped) <label>\n  Element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+            "html": "<select class=\"min-h-[36px] rounded-lg border border-white/10 bg-black px-2.5 py-1 text-xs text-zinc-300 focus:border-[#38BDF8] focus:outline-none\">"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/resources/guide/ai-lead-research-verification-pipeline",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 21,
+    "incomplete": [],
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": [
+          {
+            "target": [
+              ".max-w-\\[200px\\]"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #71717a, background color: #0d0d0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-zinc-500 truncate max-w-[200px]\">Build an AI Lead Research and Website Verification Pipeline</span>"
+          },
+          {
+            "target": [
+              ".ml-auto.text-zinc-500.font-mono"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 4.01 (foreground color: #71717a, background color: #0d0d0e, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"ml-auto text-xs text-zinc-500 font-mono\">Verified: <!-- -->October 2026</span>"
+          },
+          {
+            "target": [
+              "div:nth-child(1) > .block.text-zinc-500"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-zinc-500 block\">Difficulty</span>"
+          },
+          {
+            "target": [
+              "div:nth-child(2) > .block.text-zinc-500"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-zinc-500 block\">Target Audience</span>"
+          },
+          {
+            "target": [
+              "div:nth-child(3) > .block.text-zinc-500"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-zinc-500 block\">Primary Tools</span>"
+          },
+          {
+            "target": [
+              "div:nth-child(4) > .block.text-zinc-500"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-zinc-500 block\">Estimated Cost</span>"
+          },
+          {
+            "target": [
+              ".flex-col.p-6.transition-all:nth-child(1) > div:nth-child(2) > .pt-2.justify-between.flex > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".flex-col.p-6.transition-all:nth-child(2) > div:nth-child(2) > .pt-2.justify-between.flex > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          },
+          {
+            "target": [
+              ".flex-col.p-6.transition-all:nth-child(3) > div:nth-child(2) > .pt-2.justify-between.flex > .capitalize.text-zinc-500.text-xs"
+            ],
+            "summary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #71717a, background color: #121316, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "html": "<span class=\"text-xs text-zinc-500 capitalize\">intermediate<!-- --> difficulty</span>"
+          }
+        ]
+      }
+    ]
+  }
+]

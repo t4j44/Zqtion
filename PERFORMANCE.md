@@ -69,3 +69,22 @@ The performance, TBT, CLS, accessibility, best-practices, and SEO gates pass in 
 - At 390 px the poster is 319.8 px wide and the headline begins immediately below it without overlap.
 - Passed desktop-to-mobile and mobile-to-desktop live transitions, offscreen pause, reduced-motion, Save Data, and WebGL-failure checks.
 - `npm test`: 25/25 passed. `npm run typecheck`, `npm run lint`, and `npm run build`: passed. Production dependency audit: 0 vulnerabilities.
+
+## Phone video, 3D loops and desktop startup — 2026-10-10
+
+Measured with the Lighthouse CLI against a clean local production build (`next start`, localhost, one machine; indicative, not certification).
+
+| Run | Performance | LCP | TBT | CLS | A11y / BP / SEO |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Mobile, 3 runs | 90, 90, 91 | 3.5–3.6 s | 70–80 ms | 0 | 100 / 100 / 100 |
+| Desktop, 2 runs | 95, 96 | 0.8 s | 150–170 ms | 0 | 100 / 100 / 100 |
+
+- Phones play a pre-rendered 345 KB loop (`public/3d/hero.mp4`) after `load` and idle. Its box equals the poster's box; a larger box made the video the LCP element and cost about 0.4 s.
+- Service and closing loops (108–225 KB each) mount only within 300 px of the viewport and pause offscreen. See `scripts/render-3d/README.md`.
+- Desktop WebGL: `renderer.compileAsync` plus creating every light before the first compile reduced the main-thread block from about 480 ms to about 150 ms (desktop score 77–79 to 95–96).
+- The mobile LCP target (≤ 2.5 s) is still not met in the Lighthouse slow-phone simulation.
+- Safari/iOS behaviour of the blended phone video was not tested.
+
+### Second pass — Work reel, footer, icon tiles (2026-10-10)
+
+Lighthouse CLI, clean local production build. Mobile (3 runs): 88, 91, 91, LCP 3.3–3.5 s, TBT 60–150 ms, CLS 0. Desktop (2 runs): 99, 99, LCP 0.8 s, TBT 60–80 ms. Accessibility, best practices and SEO are 100. The pinned Work reel uses one passive scroll listener (rAF-throttled) and transforms only; phones, touch and reduced motion use a native swipe row. Section icons are 5 KB stills. Mobile LCP is still above the 2.5 s target.

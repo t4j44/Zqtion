@@ -1,0 +1,52 @@
+{
+  "baseCommit": "fa5f864879d09e7750f0e4ecf578016eca24d80d",
+  "buildId": "qutTBMJMZ6kP8SfFkFLv-",
+  "algorithm": "sha256 of newline-joined path:sha256 raw file entries",
+  "aggregateSha256": "7b5d653c186d8b4e58384d58e8176a59b55b0188135cbfadf25271fca5988d61",
+  "files": [
+    {
+      "path": "app/community/account/page.tsx",
+      "sha256": "5a2879081069774e0cfc140e0a5adfa3a6fabfd81c004f1097e438129fb11179"
+    },
+    {
+      "path": "components/Navbar.tsx",
+      "sha256": "a3833dd8d13ee445edb80fb85b055a4e038e19e3a3258a978b3cbc30a02f64af"
+    },
+    {
+      "path": "components/community/Account.tsx",
+      "sha256": "1ed029d79faa3ee51feeb017f6d5f0580aeca39f2d8edb7ddb634c57713a6d4c"
+    },
+    {
+      "path": "components/community/CommunityProvider.tsx",
+      "sha256": "bf47547566d69bbcfb0aca66d227eb55aa53e609e188af9a94eca6f2c604e7e3"
+    },
+    {
+      "path": "components/community/Conversation.tsx",
+      "sha256": "068fb076d3c42964863c7009a490ec0ea06cab31cd9f8b4b683b155c4333b3fc"
+    },
+    {
+      "path": "components/community/EntryActions.tsx",
+      "sha256": "5582ab0b9400f0002bbc9fd7365bab1b4cd5427c7a36cd1e24f6d441b98516d3"
+    },
+    {
+      "path": "components/community/InlineComposer.tsx",
+      "sha256": "b2769e2363852588c29fa24dd109993c560cfb2fc56c07f016524a4fc5be06b9"
+    },
+    {
+      "path": "components/community/community.css",
+      "sha256": "dfc79752fc9e9bf80b4dec5c16a2aca9b39805f58bd79fbf2d2dcd3f6a048f1f"
+    },
+    {
+      "path": "lib/community/auth.ts",
+      "sha256": "05ff7a4f8578d1485b40332b0deefef39866a27fa93df5e8ce81813d452e59c0"
+    },
+    {
+      "path": "lib/community/browser.ts",
+      "sha256": "39e045c210305023f5feb99ba553e4a7f5b1780133f483c511934bcf0647eefe"
+    },
+    {
+      "path": "lib/community/validation.ts",
+      "sha256": "7ff6652a38c62a38f35f7e23f1a15f2498135a2ab86667bda323b1af012a01ba"
+    }
+  ]
+}

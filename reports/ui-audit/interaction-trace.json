@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "name": "pointerdown",
+      "duration": 120,
+      "interactionId": 9348,
+      "inputDelay": 2.5
+    },
+    {
+      "name": "pointerup",
+      "duration": 120,
+      "interactionId": 9348,
+      "inputDelay": 3.5
+    },
+    {
+      "name": "click",
+      "duration": 120,
+      "interactionId": 9348,
+      "inputDelay": 3.7000000178813934
+    },
+    {
+      "name": "pointerdown",
+      "duration": 232,
+      "interactionId": 9355,
+      "inputDelay": 7
+    },
+    {
+      "name": "pointerup",
+      "duration": 232,
+      "interactionId": 9355,
+      "inputDelay": 9.199999988079071
+    },
+    {
+      "name": "click",
+      "duration": 232,
+      "interactionId": 9355,
+      "inputDelay": 9.399999976158142
+    }
+  ],
+  "heroMode": "mobile-poster",
+  "canvasCount": 0,
+  "theme": "light",
+  "jsRequests": [
+    "http://127.0.0.1:3219/_next/static/chunks/0jvhpaew_uadu.js",
+    "http://127.0.0.1:3219/_next/static/chunks/19mx3mg6lkumu.js",
+    "http://127.0.0.1:3219/_next/static/chunks/12_celfi3iros.js",
+    "http://127.0.0.1:3219/_next/static/chunks/0pcbw8141big_.js",
+    "http://127.0.0.1:3219/_next/static/chunks/turbopack-1_v_7-l07stlo.js",
+    "http://127.0.0.1:3219/_next/static/chunks/0uqkp296puy-w.js",
+    "http://127.0.0.1:3219/_next/static/chunks/07i7pfqgcw1mj.js",
+    "http://127.0.0.1:3219/_next/static/chunks/3w96t3o-j7clt.js",
+    "http://127.0.0.1:3219/_next/static/chunks/3p14n3g2z5yhn.js",
+    "http://127.0.0.1:3219/_next/static/chunks/33z9y27f5qt6o.js",
+    "http://127.0.0.1:3219/_next/static/chunks/2gx232vkwy9by.js",
+    "http://127.0.0.1:3219/_next/static/chunks/0ajfwcvs77r_4.js",
+    "http://127.0.0.1:3219/_next/static/chunks/3o7zbvrjbvz4b.js",
+    "http://127.0.0.1:3219/_next/static/chunks/42ga1nk_fgu-r.js"
+  ],
+  "conditions": "Unthrottled installed Chrome, synthetic touch phone at 390x844, normal motion. Event entries below 16ms are omitted. This is not field INP."
+}

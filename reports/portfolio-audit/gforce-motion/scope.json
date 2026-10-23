@@ -1,0 +1,19 @@
+{
+  "planning": "compact",
+  "context_depth": "dependency",
+  "verification_depth": "impact",
+  "delegation": "none",
+  "reason_codes": [
+    "portfolio-content",
+    "existing-media-facade"
+  ],
+  "baseCommit": "eeb29442b19a4e62ce0cbcc6a941284496601d1b",
+  "observedVideo": {
+    "durationSeconds": 36.021,
+    "width": 608,
+    "height": 1080,
+    "channel": "@BuildwithTajuddin",
+    "sourceTitle": "we made a motion saas for g force tyer mobile- https://www.gforcetyres-mobile.co.uk/"
+  },
+  "publicationBoundary": "feature/zqtion-community only; no main merge or production deploy"
+}

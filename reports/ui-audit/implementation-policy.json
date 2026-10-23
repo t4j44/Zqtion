@@ -1,0 +1,10 @@
+{
+  "planning": "deep",
+  "context_depth": "dependency",
+  "verification_depth": "impact",
+  "delegation": "none",
+  "reason_codes": ["shared-style-fanout", "theme-first-paint", "responsive-navigation", "preserve-provider-logic"],
+  "allowed_write_scope": ["app public UI and styles", "components public UI", "lib/theme.ts", "scripts local UI QA", "tests UI behavior", "reports", "DESIGN_SYSTEM.md", "tailwind.config.ts"],
+  "prohibited": ["provider mutations", "migrations", "feature activation", "commit", "push", "merge", "deploy", "DNS"],
+  "acceptance": ["persistent system-aware themes", "no first-paint theme flash", "keyboard navigation", "both-theme responsive screenshots", "existing regression suite", "truthful measured reports"]
+}

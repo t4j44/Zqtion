@@ -1,0 +1,6 @@
+import {spawn} from 'node:child_process';import {mkdir,writeFile,readFile} from 'node:fs/promises';
+await mkdir('reports/seo',{recursive:true});const resume=process.argv[2];const results=resume?JSON.parse(await readFile('reports/seo/browser-command-results.json','utf8')).filter(r=>r.code===0):[];
+let commands=[['scripts/seo/audit.mjs','after'],...['auth','profiles','community','ui','layout','axe','links','portfolio'].map(s=>['scripts/seo/regression.mjs',s]),['scripts/seo/article-browser.mjs']];
+if(resume){const index=commands.findIndex(args=>args[1]===resume);if(index<0)throw Error('Unknown resume suite');commands=commands.slice(index);}
+if(process.argv.includes('--defer-articles'))commands=commands.filter(args=>args[0]!=='scripts/seo/article-browser.mjs');
+for(const args of commands){const startedAt=new Date().toISOString();const code=await new Promise((resolve,reject)=>{const child=spawn(process.execPath,args,{stdio:'inherit',windowsHide:true});child.on('error',reject);child.on('exit',resolve);});results.push({args,startedAt,finishedAt:new Date().toISOString(),code});await writeFile('reports/seo/browser-command-results.json',JSON.stringify(results,null,2));if(code!==0){process.exitCode=1;break;}}

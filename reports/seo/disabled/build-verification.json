@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "snapshot": "artifacts\\seo-disabled-1792671524593",
+  "buildId": "cs9eo99iJBF1eZ9GgHIIu",
+  "flag": false,
+  "providersDisabled": true,
+  "method": "Separate production build with Community flag false; existing disabled browser suite, assertions retained, port and evidence paths relocated. Not a hosted-provider test."
+}

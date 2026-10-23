@@ -1,0 +1,1712 @@
+[
+  {
+    "name": "resend-home",
+    "url": "https://resend.com/",
+    "width": 1440,
+    "height": 900,
+    "styles": {
+      "title": "Resend · Email for developers",
+      "headings": [
+        {
+          "text": "Email fordevelopers",
+          "font": "domaine, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "96px",
+          "lineHeight": "96px",
+          "letterSpacing": "-0.96px",
+          "width": 480,
+          "x": 168
+        },
+        {
+          "text": "Integrate",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "56px",
+          "lineHeight": "67.2px",
+          "letterSpacing": "-2.8px",
+          "width": 1232,
+          "x": 104
+        },
+        {
+          "text": "First-class developer experience",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "56px",
+          "lineHeight": "67.2px",
+          "letterSpacing": "-2.8px",
+          "width": 1232,
+          "x": 104
+        },
+        {
+          "text": "Test mode",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 302.125,
+          "x": 145
+        },
+        {
+          "text": "Modular webhooks",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 322.25,
+          "x": 777
+        },
+        {
+          "text": "Write using a delightful editor",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "56px",
+          "lineHeight": "67.2px",
+          "letterSpacing": "-2.8px",
+          "width": 1232,
+          "x": 104
+        },
+        {
+          "text": "Go beyond editing",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "56px",
+          "lineHeight": "67.2px",
+          "letterSpacing": "-2.8px",
+          "width": 1232,
+          "x": 104
+        },
+        {
+          "text": "Contact management",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 302.125,
+          "x": 145
+        },
+        {
+          "text": "Broadcast analytics",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 322.25,
+          "x": 777
+        },
+        {
+          "text": "Develop emails using React",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "56px",
+          "lineHeight": "67.2px",
+          "letterSpacing": "-2.8px",
+          "width": 1232,
+          "x": 104
+        }
+      ],
+      "navigation": [
+        "",
+        "",
+        "Pricing",
+        "Log in",
+        "Get started"
+      ],
+      "bodyBackground": "rgb(0, 0, 0)"
+    }
+  },
+  {
+    "name": "resend-home",
+    "url": "https://resend.com/",
+    "width": 768,
+    "height": 1024,
+    "styles": {
+      "title": "Resend · Email for developers",
+      "headings": [
+        {
+          "text": "Email fordevelopers",
+          "font": "domaine, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "96px",
+          "lineHeight": "96px",
+          "letterSpacing": "-0.96px",
+          "width": 480,
+          "x": 24
+        },
+        {
+          "text": "Integrate",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "56px",
+          "lineHeight": "67.2px",
+          "letterSpacing": "-2.8px",
+          "width": 720,
+          "x": 24
+        },
+        {
+          "text": "First-class developer experience",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "56px",
+          "lineHeight": "67.2px",
+          "letterSpacing": "-2.8px",
+          "width": 720,
+          "x": 24
+        },
+        {
+          "text": "Test mode",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 302.125,
+          "x": 65
+        },
+        {
+          "text": "Modular webhooks",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 322.25,
+          "x": 65
+        },
+        {
+          "text": "Write using a delightful editor",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "56px",
+          "lineHeight": "67.2px",
+          "letterSpacing": "-2.8px",
+          "width": 720,
+          "x": 24
+        },
+        {
+          "text": "Go beyond editing",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "56px",
+          "lineHeight": "67.2px",
+          "letterSpacing": "-2.8px",
+          "width": 720,
+          "x": 24
+        },
+        {
+          "text": "Contact management",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 302.125,
+          "x": 65
+        },
+        {
+          "text": "Broadcast analytics",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 322.25,
+          "x": 65
+        },
+        {
+          "text": "Develop emails using React",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "56px",
+          "lineHeight": "67.2px",
+          "letterSpacing": "-2.8px",
+          "width": 720,
+          "x": 24
+        }
+      ],
+      "navigation": [
+        "",
+        "",
+        "Pricing",
+        "Log in",
+        "Get started"
+      ],
+      "bodyBackground": "rgb(0, 0, 0)"
+    }
+  },
+  {
+    "name": "resend-home",
+    "url": "https://resend.com/",
+    "width": 390,
+    "height": 844,
+    "styles": {
+      "title": "Resend · Email for developers",
+      "headings": [
+        {
+          "text": "Email fordevelopers",
+          "font": "domaine, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "64px",
+          "lineHeight": "64px",
+          "letterSpacing": "-0.64px",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Integrate",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "48px",
+          "lineHeight": "57.6px",
+          "letterSpacing": "-2.4px",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "First-class developer experience",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "48px",
+          "lineHeight": "57.6px",
+          "letterSpacing": "-2.4px",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Test mode",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 340,
+          "x": 25
+        },
+        {
+          "text": "Modular webhooks",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 340,
+          "x": 25
+        },
+        {
+          "text": "Write using a delightful editor",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "48px",
+          "lineHeight": "57.6px",
+          "letterSpacing": "-2.4px",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Go beyond editing",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "48px",
+          "lineHeight": "57.6px",
+          "letterSpacing": "-2.4px",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Contact management",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 340,
+          "x": 25
+        },
+        {
+          "text": "Broadcast analytics",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 340,
+          "x": 25
+        },
+        {
+          "text": "Develop emails using React",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "48px",
+          "lineHeight": "57.6px",
+          "letterSpacing": "-2.4px",
+          "width": 342,
+          "x": 24
+        }
+      ],
+      "navigation": [
+        "",
+        "",
+        "Pricing",
+        "Log in",
+        "Get started"
+      ],
+      "bodyBackground": "rgb(0, 0, 0)"
+    }
+  },
+  {
+    "name": "resend-pricing",
+    "url": "https://resend.com/pricing",
+    "width": 1440,
+    "height": 900,
+    "styles": {
+      "title": "Pricing · Resend",
+      "headings": [
+        {
+          "text": "Pricing",
+          "font": "domaine, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "76.8px",
+          "lineHeight": "76.8px",
+          "letterSpacing": "-0.768px",
+          "width": 1232,
+          "x": 104
+        },
+        {
+          "text": "Pay-as-you-go",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 1024,
+          "x": 208
+        },
+        {
+          "text": "Add-ons",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 1024,
+          "x": 208
+        },
+        {
+          "text": "Domains - $20 / mo",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 958,
+          "x": 241
+        },
+        {
+          "text": "Dedicated IPs - $30 / mo",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 958,
+          "x": 241
+        },
+        {
+          "text": "Single Sign-On - $150 / mo",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 958,
+          "x": 241
+        },
+        {
+          "text": "Sending & receiving",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 1024,
+          "x": 208
+        },
+        {
+          "text": "Inboxes",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 1024,
+          "x": 208
+        },
+        {
+          "text": "Deliverability & reliability",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 1024,
+          "x": 208
+        },
+        {
+          "text": "Security & privacy",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 1024,
+          "x": 208
+        }
+      ],
+      "navigation": [
+        "",
+        "",
+        "Pricing",
+        "Log in",
+        "Get started"
+      ],
+      "bodyBackground": "rgb(0, 0, 0)"
+    }
+  },
+  {
+    "name": "resend-pricing",
+    "url": "https://resend.com/pricing",
+    "width": 768,
+    "height": 1024,
+    "styles": {
+      "title": "Pricing · Resend",
+      "headings": [
+        {
+          "text": "Pricing",
+          "font": "domaine, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "76.8px",
+          "lineHeight": "76.8px",
+          "letterSpacing": "-0.768px",
+          "width": 720,
+          "x": 24
+        },
+        {
+          "text": "Pay-as-you-go",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 720,
+          "x": 24
+        },
+        {
+          "text": "Add-ons",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 720,
+          "x": 24
+        },
+        {
+          "text": "Domains - $20 / mo",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 654,
+          "x": 57
+        },
+        {
+          "text": "Dedicated IPs - $30 / mo",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 654,
+          "x": 57
+        },
+        {
+          "text": "Single Sign-On - $150 / mo",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 654,
+          "x": 57
+        },
+        {
+          "text": "Sending & receiving",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 720,
+          "x": 24
+        },
+        {
+          "text": "Inboxes",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 720,
+          "x": 24
+        },
+        {
+          "text": "Deliverability & reliability",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 720,
+          "x": 24
+        },
+        {
+          "text": "Security & privacy",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 720,
+          "x": 24
+        }
+      ],
+      "navigation": [
+        "",
+        "",
+        "Pricing",
+        "Log in",
+        "Get started"
+      ],
+      "bodyBackground": "rgb(0, 0, 0)"
+    }
+  },
+  {
+    "name": "resend-pricing",
+    "url": "https://resend.com/pricing",
+    "width": 390,
+    "height": 844,
+    "styles": {
+      "title": "Pricing · Resend",
+      "headings": [
+        {
+          "text": "Pricing",
+          "font": "domaine, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "64px",
+          "lineHeight": "64px",
+          "letterSpacing": "-0.64px",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Pay-as-you-go",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Add-ons",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Domains - $20 / mo",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 276,
+          "x": 57
+        },
+        {
+          "text": "Dedicated IPs - $30 / mo",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 276,
+          "x": 57
+        },
+        {
+          "text": "Single Sign-On - $150 / mo",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 276,
+          "x": 57
+        },
+        {
+          "text": "Sending & receiving",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Inboxes",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Deliverability & reliability",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Security & privacy",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "46.8px",
+          "letterSpacing": "-1.8px",
+          "width": 342,
+          "x": 24
+        }
+      ],
+      "navigation": [
+        "",
+        "",
+        "Pricing",
+        "Log in",
+        "Get started"
+      ],
+      "bodyBackground": "rgb(0, 0, 0)"
+    }
+  },
+  {
+    "name": "resend-blog",
+    "url": "https://resend.com/blog",
+    "width": 1440,
+    "height": 900,
+    "styles": {
+      "title": "Blog · Resend",
+      "headings": [
+        {
+          "text": "Blog",
+          "font": "domaine, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "76.8px",
+          "lineHeight": "76.8px",
+          "letterSpacing": "-0.768px",
+          "width": 130.875,
+          "x": 104
+        },
+        {
+          "text": "The Headless Dashboard Initiative",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "45px",
+          "letterSpacing": "-1.8px",
+          "width": 604,
+          "x": 104
+        },
+        {
+          "text": "3,000,000 users",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "45px",
+          "letterSpacing": "-1.8px",
+          "width": 604,
+          "x": 732
+        },
+        {
+          "text": "Latest Posts",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 1232,
+          "x": 104
+        },
+        {
+          "text": "Design Email for Humans and Agents",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 394.65625,
+          "x": 104
+        },
+        {
+          "text": "Warmup Services Harm Your Deliverability",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 394.671875,
+          "x": 522.65625
+        },
+        {
+          "text": "Welcoming Allie Sperry, our new Customer Success Engineer",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 394.65625,
+          "x": 941.328125
+        },
+        {
+          "text": "Welcoming Gaby Garcia, our new Recruiter",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 394.65625,
+          "x": 104
+        },
+        {
+          "text": "The Headless Dashboard Initiative",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 394.671875,
+          "x": 522.65625
+        },
+        {
+          "text": "Welcoming Roberto Braga, our new Growth Marketer",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 394.65625,
+          "x": 941.328125
+        }
+      ],
+      "navigation": [
+        "",
+        "",
+        "Pricing",
+        "Log in",
+        "Get started"
+      ],
+      "bodyBackground": "rgb(0, 0, 0)"
+    }
+  },
+  {
+    "name": "resend-blog",
+    "url": "https://resend.com/blog",
+    "width": 768,
+    "height": 1024,
+    "styles": {
+      "title": "Blog · Resend",
+      "headings": [
+        {
+          "text": "Blog",
+          "font": "domaine, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "76.8px",
+          "lineHeight": "76.8px",
+          "letterSpacing": "-0.768px",
+          "width": 130.875,
+          "x": 24
+        },
+        {
+          "text": "The Headless Dashboard Initiative",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "45px",
+          "letterSpacing": "-1.8px",
+          "width": 348,
+          "x": 24
+        },
+        {
+          "text": "3,000,000 users",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "45px",
+          "letterSpacing": "-1.8px",
+          "width": 348,
+          "x": 396
+        },
+        {
+          "text": "Latest Posts",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 720,
+          "x": 24
+        },
+        {
+          "text": "Design Email for Humans and Agents",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 348,
+          "x": 24
+        },
+        {
+          "text": "Warmup Services Harm Your Deliverability",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 348,
+          "x": 396
+        },
+        {
+          "text": "Welcoming Allie Sperry, our new Customer Success Engineer",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 348,
+          "x": 24
+        },
+        {
+          "text": "Welcoming Gaby Garcia, our new Recruiter",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 348,
+          "x": 396
+        },
+        {
+          "text": "The Headless Dashboard Initiative",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 348,
+          "x": 24
+        },
+        {
+          "text": "Welcoming Roberto Braga, our new Growth Marketer",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 348,
+          "x": 396
+        }
+      ],
+      "navigation": [
+        "",
+        "",
+        "Pricing",
+        "Log in",
+        "Get started"
+      ],
+      "bodyBackground": "rgb(0, 0, 0)"
+    }
+  },
+  {
+    "name": "resend-blog",
+    "url": "https://resend.com/blog",
+    "width": 390,
+    "height": 844,
+    "styles": {
+      "title": "Blog · Resend",
+      "headings": [
+        {
+          "text": "Blog",
+          "font": "domaine, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "64px",
+          "lineHeight": "64px",
+          "letterSpacing": "-0.64px",
+          "width": 109.0625,
+          "x": 140.46875
+        },
+        {
+          "text": "The Headless Dashboard Initiative",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "45px",
+          "letterSpacing": "-1.8px",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "3,000,000 users",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "36px",
+          "lineHeight": "45px",
+          "letterSpacing": "-1.8px",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Latest Posts",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "26px",
+          "letterSpacing": "normal",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Design Email for Humans and Agents",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Warmup Services Harm Your Deliverability",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Welcoming Allie Sperry, our new Customer Success Engineer",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Welcoming Gaby Garcia, our new Recruiter",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "The Headless Dashboard Initiative",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 342,
+          "x": 24
+        },
+        {
+          "text": "Welcoming Roberto Braga, our new Growth Marketer",
+          "font": "aBCFavorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "size": "20px",
+          "lineHeight": "25px",
+          "letterSpacing": "normal",
+          "width": 342,
+          "x": 24
+        }
+      ],
+      "navigation": [
+        "",
+        "",
+        "Pricing",
+        "Log in",
+        "Get started"
+      ],
+      "bodyBackground": "rgb(0, 0, 0)"
+    }
+  },
+  {
+    "name": "resend-docs",
+    "url": "https://resend.com/docs/introduction",
+    "width": 1440,
+    "height": 900,
+    "styles": {
+      "title": "Introduction - Resend",
+      "headings": [
+        {
+          "text": "Documentation Index",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 1,
+          "x": -1
+        },
+        {
+          "text": "On this page",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "14px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 264,
+          "x": 1076
+        },
+        {
+          "text": "Introduction",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "36px",
+          "lineHeight": "40px",
+          "letterSpacing": "-0.9px",
+          "width": 200.890625,
+          "x": 412
+        },
+        {
+          "text": "​Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "24px",
+          "lineHeight": "31.9999px",
+          "letterSpacing": "-0.6px",
+          "width": 576,
+          "x": 412
+        },
+        {
+          "text": "Node.js Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 131.328125,
+          "x": 437
+        },
+        {
+          "text": "Next.js Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 131.328125,
+          "x": 634.328125
+        },
+        {
+          "text": "Express Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 131.328125,
+          "x": 831.65625
+        },
+        {
+          "text": "PHP Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 131.328125,
+          "x": 437
+        },
+        {
+          "text": "Laravel Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 131.328125,
+          "x": 634.328125
+        },
+        {
+          "text": "Python Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 131.328125,
+          "x": 831.65625
+        }
+      ],
+      "navigation": [
+        "Resend home page",
+        "Documentation",
+        "Guides",
+        "API Reference",
+        "Sign In",
+        "Get Started",
+        "Get Started",
+        "Introduction",
+        "Create API key",
+        "Add domain",
+        "Email types",
+        "AI onboarding",
+        "SDKs",
+        "CLI",
+        "MCP Server",
+        "Integrations",
+        "Examples",
+        "Quickstart",
+        "Explore",
+        "Create an API keyNext"
+      ],
+      "bodyBackground": "rgba(0, 0, 0, 0)"
+    }
+  },
+  {
+    "name": "resend-docs",
+    "url": "https://resend.com/docs/introduction",
+    "width": 768,
+    "height": 1024,
+    "styles": {
+      "title": "Introduction - Resend",
+      "headings": [
+        {
+          "text": "Documentation Index",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 1,
+          "x": -1
+        },
+        {
+          "text": "On this page",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "14px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 0,
+          "x": 0
+        },
+        {
+          "text": "Introduction",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "36px",
+          "lineHeight": "40px",
+          "letterSpacing": "-0.9px",
+          "width": 200.890625,
+          "x": 96
+        },
+        {
+          "text": "​Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "24px",
+          "lineHeight": "31.9999px",
+          "letterSpacing": "-0.6px",
+          "width": 576,
+          "x": 96
+        },
+        {
+          "text": "Node.js Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 131.328125,
+          "x": 121
+        },
+        {
+          "text": "Next.js Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 131.328125,
+          "x": 318.328125
+        },
+        {
+          "text": "Express Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 131.328125,
+          "x": 515.65625
+        },
+        {
+          "text": "PHP Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 131.328125,
+          "x": 121
+        },
+        {
+          "text": "Laravel Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 131.328125,
+          "x": 318.328125
+        },
+        {
+          "text": "Python Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 131.328125,
+          "x": 515.65625
+        }
+      ],
+      "navigation": [
+        "Resend home page",
+        "Documentation",
+        "Guides",
+        "API Reference",
+        "Sign In",
+        "Get Started",
+        "Get Started",
+        "Introduction",
+        "Create API key",
+        "Add domain",
+        "Email types",
+        "AI onboarding",
+        "SDKs",
+        "CLI",
+        "MCP Server",
+        "Integrations",
+        "Examples",
+        "Quickstart",
+        "Explore",
+        "Create an API keyNext"
+      ],
+      "bodyBackground": "rgba(0, 0, 0, 0)"
+    }
+  },
+  {
+    "name": "resend-docs",
+    "url": "https://resend.com/docs/introduction",
+    "width": 390,
+    "height": 844,
+    "styles": {
+      "title": "Introduction - Resend",
+      "headings": [
+        {
+          "text": "Documentation Index",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 1,
+          "x": -1
+        },
+        {
+          "text": "On this page",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "14px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 0,
+          "x": 0
+        },
+        {
+          "text": "Introduction",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "30px",
+          "lineHeight": "36px",
+          "letterSpacing": "-0.75px",
+          "width": 167.40625,
+          "x": 25
+        },
+        {
+          "text": "​Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "24px",
+          "lineHeight": "31.9999px",
+          "letterSpacing": "-0.6px",
+          "width": 340,
+          "x": 25
+        },
+        {
+          "text": "Node.js Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 290,
+          "x": 50
+        },
+        {
+          "text": "Next.js Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 290,
+          "x": 50
+        },
+        {
+          "text": "Express Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 290,
+          "x": 50
+        },
+        {
+          "text": "PHP Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 290,
+          "x": 50
+        },
+        {
+          "text": "Laravel Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 290,
+          "x": 50
+        },
+        {
+          "text": "Python Quickstart",
+          "font": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif, -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif",
+          "size": "16px",
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "width": 290,
+          "x": 50
+        }
+      ],
+      "navigation": [
+        "Resend home page",
+        "Documentation",
+        "Guides",
+        "API Reference",
+        "Sign In",
+        "Get Started",
+        "Get Started",
+        "Introduction",
+        "Create API key",
+        "Add domain",
+        "Email types",
+        "AI onboarding",
+        "SDKs",
+        "CLI",
+        "MCP Server",
+        "Integrations",
+        "Examples",
+        "Quickstart",
+        "Explore",
+        "Create an API keyNext"
+      ],
+      "bodyBackground": "rgba(0, 0, 0, 0)"
+    }
+  },
+  {
+    "name": "zqtion-live",
+    "url": "https://zqtion.com",
+    "width": 1440,
+    "height": 900,
+    "styles": {
+      "title": "Create. Build. Automate.",
+      "headings": [
+        {
+          "text": "Create what gets noticed.Build what gets used.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "82.08px",
+          "lineHeight": "73.872px",
+          "letterSpacing": "-4.9248px",
+          "width": 680.578125,
+          "x": 57.59375
+        },
+        {
+          "text": "An idea finds its form.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "67.68px",
+          "lineHeight": "66.3264px",
+          "letterSpacing": "-3.7224px",
+          "width": 622.65625,
+          "x": 57.59375
+        },
+        {
+          "text": "The form becomes useful.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "67.68px",
+          "lineHeight": "66.3264px",
+          "letterSpacing": "-3.7224px",
+          "width": 622.65625,
+          "x": 57.59375
+        },
+        {
+          "text": "Useful becomes repeatable.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "67.68px",
+          "lineHeight": "66.3264px",
+          "letterSpacing": "-3.7224px",
+          "width": 622.65625,
+          "x": 57.59375
+        },
+        {
+          "text": "One execution system.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "67.68px",
+          "lineHeight": "66.3264px",
+          "letterSpacing": "-3.7224px",
+          "width": 622.65625,
+          "x": 57.59375
+        },
+        {
+          "text": "One company across the gap between idea and execution.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "72px",
+          "lineHeight": "72px",
+          "letterSpacing": "-3.24px",
+          "width": 896,
+          "x": 57.59375
+        },
+        {
+          "text": "Proof with the relationship made clear.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "72px",
+          "lineHeight": "72px",
+          "letterSpacing": "-3.24px",
+          "width": 896,
+          "x": 57.59375
+        },
+        {
+          "text": "Choose the outcome. The execution model follows.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "72px",
+          "lineHeight": "72px",
+          "letterSpacing": "-3.24px",
+          "width": 896,
+          "x": 57.59375
+        },
+        {
+          "text": "The risky part gets tested first.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "72px",
+          "lineHeight": "72px",
+          "letterSpacing": "-3.24px",
+          "width": 896,
+          "x": 57.59375
+        },
+        {
+          "text": "No fictional menu pricing. A scope you can evaluate.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "72px",
+          "lineHeight": "72px",
+          "letterSpacing": "-3.24px",
+          "width": 896,
+          "x": 57.59375
+        }
+      ],
+      "navigation": [
+        "ZQTION",
+        "Work",
+        "Services",
+        "Process",
+        "About",
+        "Insights",
+        "Careers",
+        "Start a project",
+        "Work",
+        "Services",
+        "Process",
+        "About",
+        "Insights",
+        "Careers",
+        "Contact"
+      ],
+      "bodyBackground": "rgb(5, 6, 8)"
+    }
+  },
+  {
+    "name": "zqtion-live",
+    "url": "https://zqtion.com",
+    "width": 768,
+    "height": 1024,
+    "styles": {
+      "title": "Create. Build. Automate.",
+      "headings": [
+        {
+          "text": "Create what gets noticed.Build what gets used.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "58.4px",
+          "lineHeight": "52.56px",
+          "letterSpacing": "-3.504px",
+          "width": 706.5625,
+          "x": 30.71875
+        },
+        {
+          "text": "An idea finds its form.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "41.6px",
+          "lineHeight": "40.768px",
+          "letterSpacing": "-2.288px",
+          "width": 332.078125,
+          "x": 30.71875
+        },
+        {
+          "text": "The form becomes useful.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "41.6px",
+          "lineHeight": "40.768px",
+          "letterSpacing": "-2.288px",
+          "width": 332.078125,
+          "x": 30.71875
+        },
+        {
+          "text": "Useful becomes repeatable.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "41.6px",
+          "lineHeight": "40.768px",
+          "letterSpacing": "-2.288px",
+          "width": 332.078125,
+          "x": 30.71875
+        },
+        {
+          "text": "One execution system.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "41.6px",
+          "lineHeight": "40.768px",
+          "letterSpacing": "-2.288px",
+          "width": 332.078125,
+          "x": 30.71875
+        },
+        {
+          "text": "One company across the gap between idea and execution.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "48px",
+          "lineHeight": "48px",
+          "letterSpacing": "-2.16px",
+          "width": 706.5625,
+          "x": 30.71875
+        },
+        {
+          "text": "Proof with the relationship made clear.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "48px",
+          "lineHeight": "48px",
+          "letterSpacing": "-2.16px",
+          "width": 554.265625,
+          "x": 30.71875
+        },
+        {
+          "text": "Choose the outcome. The execution model follows.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "48px",
+          "lineHeight": "48px",
+          "letterSpacing": "-2.16px",
+          "width": 706.5625,
+          "x": 30.71875
+        },
+        {
+          "text": "The risky part gets tested first.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "48px",
+          "lineHeight": "48px",
+          "letterSpacing": "-2.16px",
+          "width": 706.5625,
+          "x": 30.71875
+        },
+        {
+          "text": "No fictional menu pricing. A scope you can evaluate.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "48px",
+          "lineHeight": "48px",
+          "letterSpacing": "-2.16px",
+          "width": 706.5625,
+          "x": 30.71875
+        }
+      ],
+      "navigation": [
+        "ZQTION",
+        "Work",
+        "Services",
+        "Process",
+        "About",
+        "Insights",
+        "Careers",
+        "Start a project",
+        "Work",
+        "Services",
+        "Process",
+        "About",
+        "Insights",
+        "Careers",
+        "Contact"
+      ],
+      "bodyBackground": "rgb(5, 6, 8)"
+    }
+  },
+  {
+    "name": "zqtion-live",
+    "url": "https://zqtion.com",
+    "width": 390,
+    "height": 844,
+    "styles": {
+      "title": "Create. Build. Automate.",
+      "headings": [
+        {
+          "text": "Create what gets noticed.Build what gets used.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "45.6px",
+          "lineHeight": "41.952px",
+          "letterSpacing": "-2.508px",
+          "width": 350,
+          "x": 20
+        },
+        {
+          "text": "An idea finds its form.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "33.6px",
+          "lineHeight": "32.928px",
+          "letterSpacing": "-1.848px",
+          "width": 294.3125,
+          "x": 20
+        },
+        {
+          "text": "The form becomes useful.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "33.6px",
+          "lineHeight": "32.928px",
+          "letterSpacing": "-1.848px",
+          "width": 294.3125,
+          "x": 20
+        },
+        {
+          "text": "Useful becomes repeatable.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "33.6px",
+          "lineHeight": "32.928px",
+          "letterSpacing": "-1.848px",
+          "width": 294.3125,
+          "x": 20
+        },
+        {
+          "text": "One execution system.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "33.6px",
+          "lineHeight": "32.928px",
+          "letterSpacing": "-1.848px",
+          "width": 294.3125,
+          "x": 20
+        },
+        {
+          "text": "One company across the gap between idea and execution.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "36px",
+          "lineHeight": "35.28px",
+          "letterSpacing": "-1.62px",
+          "width": 350,
+          "x": 20
+        },
+        {
+          "text": "Proof with the relationship made clear.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "36px",
+          "lineHeight": "35.28px",
+          "letterSpacing": "-1.62px",
+          "width": 350,
+          "x": 20
+        },
+        {
+          "text": "Choose the outcome. The execution model follows.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "36px",
+          "lineHeight": "35.28px",
+          "letterSpacing": "-1.62px",
+          "width": 350,
+          "x": 20
+        },
+        {
+          "text": "The risky part gets tested first.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "36px",
+          "lineHeight": "35.28px",
+          "letterSpacing": "-1.62px",
+          "width": 350,
+          "x": 20
+        },
+        {
+          "text": "No fictional menu pricing. A scope you can evaluate.",
+          "font": "instrumentSans, \"instrumentSans Fallback\", Arial, sans-serif",
+          "size": "36px",
+          "lineHeight": "35.28px",
+          "letterSpacing": "-1.62px",
+          "width": 350,
+          "x": 20
+        }
+      ],
+      "navigation": [
+        "ZQTION",
+        "Work",
+        "Services",
+        "Process",
+        "About",
+        "Insights",
+        "Careers",
+        "Start a project",
+        "Work",
+        "Services",
+        "Process",
+        "About",
+        "Insights",
+        "Careers",
+        "Contact"
+      ],
+      "bodyBackground": "rgb(5, 6, 8)"
+    }
+  }
+]

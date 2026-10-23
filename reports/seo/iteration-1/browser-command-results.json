@@ -1,0 +1,29 @@
+[
+  {
+    "args": [
+      "scripts/seo/audit.mjs",
+      "after"
+    ],
+    "startedAt": "2026-10-22T05:35:47.483Z",
+    "finishedAt": "2026-10-22T05:35:58.545Z",
+    "code": 0
+  },
+  {
+    "args": [
+      "scripts/seo/regression.mjs",
+      "auth"
+    ],
+    "startedAt": "2026-10-22T05:35:58.548Z",
+    "finishedAt": "2026-10-22T05:37:14.164Z",
+    "code": 0
+  },
+  {
+    "args": [
+      "scripts/seo/regression.mjs",
+      "profiles"
+    ],
+    "startedAt": "2026-10-22T05:37:14.166Z",
+    "finishedAt": "2026-10-22T05:45:17.340Z",
+    "code": 1
+  }
+]

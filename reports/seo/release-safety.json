@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "scope": "Only changed/untracked allowlisted release files; known credential/verification-token patterns and forbidden file types. Not exhaustive secret detection.",
+  "files": 202,
+  "bytes": 41351613,
+  "largest": [
+    {
+      "path": "reports/seo/regression/screenshots/after/ai-experiences-light-1440.png",
+      "bytes": 1165338
+    },
+    {
+      "path": "reports/seo/regression/screenshots/after/ai-experiences-dark-1440.png",
+      "bytes": 1149741
+    },
+    {
+      "path": "reports/seo/community/desktop.png",
+      "bytes": 1094053
+    },
+    {
+      "path": "reports/seo/regression/screenshots/after/resources-light-390.png",
+      "bytes": 1010478
+    },
+    {
+      "path": "reports/seo/regression/screenshots/after/resources-dark-390.png",
+      "bytes": 1005665
+    }
+  ],
+  "findings": [],
+  "protected": "No .env, original media, dependency tree, local build snapshot, hosted settings or migration is staged."
+}

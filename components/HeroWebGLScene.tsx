@@ -183,8 +183,13 @@ export default function HeroWebGLScene({
         let atmosphereMaterial: MeshBasicMaterial | null = null;
         let satellites: Group | null = null;
         let particles: Points<BufferGeometry, PointsMaterial> | null = null;
-        let cyanLight: PointLight | null = null;
-        let blueLight: PointLight | null = null;
+        // Created up-front so the light count (and therefore every shader program) is final before the first compile.
+        const cyanLight: PointLight = new THREE.PointLight(0x53e3ff, 2, 12, 2);
+        cyanLight.position.set(-3.4, -0.8, 4.2);
+        scene.add(cyanLight);
+        const blueLight: PointLight = new THREE.PointLight(0x5878c8, 1.5, 12, 2);
+        blueLight.position.set(3.2, 1.4, 2.2);
+        scene.add(blueLight);
 
         const createDecorations = () => {
           if (disposed) return;
@@ -236,12 +241,6 @@ export default function HeroWebGLScene({
           particleGeometry.setAttribute("position", new THREE.BufferAttribute(particlePositions, 3));
           particles = new THREE.Points(particleGeometry, new THREE.PointsMaterial({ color: 0x9ceeff, size: 0.022, transparent: true, opacity: 0.24, sizeAttenuation: true, blending: THREE.AdditiveBlending }));
           scene.add(particles);
-          cyanLight = new THREE.PointLight(0x53e3ff, 2, 12, 2);
-          cyanLight.position.set(-3.4, -0.8, 4.2);
-          scene.add(cyanLight);
-          blueLight = new THREE.PointLight(0x5878c8, 1.5, 12, 2);
-          blueLight.position.set(3.2, 1.4, 2.2);
-          scene.add(blueLight);
         };
 
         const pointer = { x: 0, y: 0 };
@@ -302,8 +301,8 @@ export default function HeroWebGLScene({
           rimLight.position.x = 3.8 + pointer.x * 0.55;
           rimLight.position.y = 0.8 - pointer.y * 0.5;
           rimLight.intensity = 5 + spotlight * 5;
-          if (cyanLight) cyanLight.intensity = 2 + spotlight * 2;
-          if (blueLight) blueLight.intensity = 1.5 + spotlight;
+          cyanLight.intensity = 2 + spotlight * 2;
+          blueLight.intensity = 1.5 + spotlight;
           if (satellites) satellites.rotation.z = elapsed * 0.065;
           if (particles) particles.rotation.y = elapsed * 0.012;
           renderer.render(scene, camera);
@@ -363,6 +362,8 @@ export default function HeroWebGLScene({
           renderer.domElement.remove();
         };
 
+        await renderer.compileAsync(scene, camera);
+        if (disposed) return;
         if (!resize() || renderer.getContext().isContextLost()) throw new Error("WebGL first frame failed");
         animationFrame = requestAnimationFrame(() => {
           animationFrame = 0;

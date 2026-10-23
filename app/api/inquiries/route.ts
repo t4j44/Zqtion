@@ -1,9 +1,14 @@
 import { createClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
-import { createHmac } from "node:crypto";
+import { createHmac, randomUUID } from "node:crypto";
 import { readJsonObject, RequestBodyError, safePath, safeReferrer } from "@/lib/request-validation";
+import { siteConfig } from "@/data/site";
+import { isSingleMailbox, sendInquiryEmails } from "@/lib/email/resend";
 
 export const runtime = "nodejs";
+// Three sequential 8s checks (limiter, verification, storage), then two parallel 8s sends.
+export const maxDuration = 60;
+const unavailable = `Online brief delivery is temporarily unavailable. Please email ${siteConfig.email} or use WhatsApp.`;
 
 type Inquiry = {
   name: string;
@@ -47,10 +52,6 @@ function parseInquiry(body: Record<string, unknown>): Inquiry {
     utmCampaign: clean(body.utmCampaign, 160),
     utmContent: clean(body.utmContent, 160),
   };
-}
-
-function escapeHtml(value: string) {
-  return value.replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character] || character);
 }
 
 function memoryRateLimited(key: string) {
@@ -97,13 +98,15 @@ async function verifyTurnstile(token: string, ip: string) {
   return { configured: true, valid: result.success === true && result.action === "inquiry" && hosts.includes(result.hostname || "") };
 }
 
-async function saveToSupabase(inquiry: Inquiry, userAgent: string) {
+async function saveToSupabase(inquiry: Inquiry, userAgent: string, inquiryId: string, submittedAt: string) {
   const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) return { configured: false, ok: false };
 
   const client = createClient(url, key, { auth: { persistSession: false, autoRefreshToken: false }, global: { fetch: (input, init) => fetch(input, { ...init, signal: AbortSignal.timeout(8000) }) } });
   const { error } = await client.from("website_inquiries").insert({
+    id: inquiryId,
+    created_at: submittedAt,
     name: inquiry.name,
     email: inquiry.email,
     company: inquiry.company || null,
@@ -123,37 +126,16 @@ async function saveToSupabase(inquiry: Inquiry, userAgent: string) {
   return { configured: true, ok: !error };
 }
 
-async function sendWithResend(inquiry: Inquiry) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.INQUIRY_TO_EMAIL;
-  const from = process.env.INQUIRY_FROM_EMAIL;
-  if (!apiKey || !to || !from) return { configured: false, ok: false };
-
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
-    body: JSON.stringify({
-      from,
-      to: [to],
-      reply_to: inquiry.email,
-      subject: `New Zqtion brief: ${inquiry.service} — ${inquiry.name}`,
-      text: `Name: ${inquiry.name}\nEmail: ${inquiry.email}\nCompany: ${inquiry.company || "Not provided"}\nService: ${inquiry.service}\nBudget: ${inquiry.budget || "Not provided"}\nProject link: ${inquiry.projectUrl || "Not provided"}\nLanding page: ${inquiry.landingPath || "Unknown"}\nReferrer: ${inquiry.referrer || "Unknown"}\nCampaign: ${[inquiry.utmSource, inquiry.utmMedium, inquiry.utmCampaign, inquiry.utmContent].filter(Boolean).join(" / ") || "None"}\n\n${inquiry.details}`,
-      html: `<h2>New Zqtion project brief</h2><p><strong>Name:</strong> ${escapeHtml(inquiry.name)}</p><p><strong>Email:</strong> ${escapeHtml(inquiry.email)}</p><p><strong>Company:</strong> ${escapeHtml(inquiry.company || "Not provided")}</p><p><strong>Service:</strong> ${escapeHtml(inquiry.service)}</p><p><strong>Budget:</strong> ${escapeHtml(inquiry.budget || "Not provided")}</p><p><strong>Project link:</strong> ${escapeHtml(inquiry.projectUrl || "Not provided")}</p><p><strong>Landing page:</strong> ${escapeHtml(inquiry.landingPath || "Unknown")}</p><p><strong>Referrer:</strong> ${escapeHtml(inquiry.referrer || "Unknown")}</p><p><strong>Campaign:</strong> ${escapeHtml([inquiry.utmSource, inquiry.utmMedium, inquiry.utmCampaign, inquiry.utmContent].filter(Boolean).join(" / ") || "None")}</p><hr><p>${escapeHtml(inquiry.details).replace(/\n/g, "<br>")}</p>`,
-    }),
-    cache: "no-store",
-    signal: AbortSignal.timeout(8000),
-  });
-  return { configured: true, ok: response.ok };
-}
-
 export async function POST(request: Request) {
+  const inquiryId = randomUUID();
+  let saved = false;
   try {
     const body = await readJsonObject(request, 20_000);
     const inquiry = parseInquiry(body);
     if (inquiry.honeypot) return NextResponse.json({ ok: true });
 
     const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inquiry.email);
+    const validEmail = isSingleMailbox(inquiry.email);
     if (inquiry.name.length < 2 || !validEmail || !inquiry.service || inquiry.details.length < 30) {
       return NextResponse.json({ error: "Please complete the required fields with a valid email and enough project context." }, { status: 400 });
     }
@@ -170,34 +152,40 @@ export async function POST(request: Request) {
     const limit = await checkRateLimit(ip);
     if (!limit.allowed) {
       const status = limit.configured && !limit.error ? 429 : 503;
-      const error = status === 429 ? "Too many attempts. Please wait or use email." : "Online brief delivery is temporarily unavailable. Please use email or WhatsApp.";
+      const error = status === 429 ? `Too many attempts. Please wait or email ${siteConfig.email}.` : unavailable;
       return NextResponse.json({ error }, { status });
     }
 
     const turnstile = await verifyTurnstile(inquiry.turnstileToken, ip);
     if (!turnstile.configured) {
-      return NextResponse.json({ error: "Online brief delivery is temporarily unavailable. Please use email or WhatsApp." }, { status: 503 });
+      return NextResponse.json({ error: unavailable }, { status: 503 });
     }
     if (!turnstile.valid) {
       return NextResponse.json({ error: "Human verification failed. Please refresh and try again." }, { status: 400 });
     }
 
-    const [databaseResult, emailResult] = await Promise.allSettled([
-      saveToSupabase(inquiry, request.headers.get("user-agent") || ""),
-      sendWithResend(inquiry),
-    ]);
-    const database = databaseResult.status === "fulfilled" ? databaseResult.value : { configured: true, ok: false };
-    const email = emailResult.status === "fulfilled" ? emailResult.value : { configured: true, ok: false };
-    const configured = database.configured || email.configured;
-    const delivered = database.ok || email.ok;
-
-    if (!configured) return NextResponse.json({ error: "Online brief delivery is not configured yet. Please email zqtioncontact@gmail.com or use WhatsApp." }, { status: 503 });
-    if (!delivered) return NextResponse.json({ error: "The brief could not be delivered. Please use email or WhatsApp." }, { status: 502 });
-    return NextResponse.json({ ok: true });
+    const submittedAt = new Date().toISOString();
+    const database = await saveToSupabase(inquiry, request.headers.get("user-agent") || "", inquiryId, submittedAt);
+    if (!database.ok) {
+      console.error("inquiry_storage_failed", { inquiryId, configured: database.configured });
+      return NextResponse.json({ error: unavailable }, { status: 503 });
+    }
+    saved = true;
+    console.info("inquiry_saved", { inquiryId });
+    const delivery = await sendInquiryEmails(inquiry, submittedAt, inquiryId);
+    if (delivery.internal.status === "accepted" && delivery.confirmation.status === "accepted") {
+      console.info("inquiry_email_status", { inquiryId, ...delivery });
+    } else {
+      console.error("inquiry_email_attention", { inquiryId, ...delivery });
+    }
+    return NextResponse.json({ ok: true, confirmation: delivery.confirmation.status === "accepted" ? "accepted" : "unavailable" });
   } catch (error) {
     if (error instanceof RequestBodyError) {
       return NextResponse.json({ error: error.status === 413 ? "The brief is too large." : "Please send a valid project brief." }, { status: error.status });
     }
-    return NextResponse.json({ error: "The brief could not be processed. Please use email or WhatsApp." }, { status: 500 });
+    console.error("inquiry_processing_failed", { inquiryId, saved });
+    // Once stored, an unexpected secondary failure must not prompt a duplicate submission.
+    if (saved) return NextResponse.json({ ok: true, confirmation: "unavailable" });
+    return NextResponse.json({ error: unavailable }, { status: 503 });
   }
 }

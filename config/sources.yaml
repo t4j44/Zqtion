@@ -1,0 +1,761 @@
+version: "1.0"
+description: "Zqtion Resource Intelligence — Multi-Source Registry Configuration"
+
+defaults:
+  rate_limit_seconds: 1.0
+  max_retries: 3
+  backoff_multiplier: 2.0
+  storage_layer_a: ".resource-research/raw/"
+  storage_layer_b: "content/resources/catalogue.json"
+  verify_originality: true
+  min_5gram_overlap_threshold: 0.15
+
+sources:
+  # ==============================================================================
+  # TIER A — PRIMARY / AUTHORITATIVE (Official docs, repositories, registries)
+  # ==============================================================================
+  - id: "openai-cookbook"
+    name: "OpenAI Cookbook"
+    domain: "developers.openai.com"
+    source_type: "official_docs"
+    authority_level: "A_PRIMARY"
+    discovery_weight: 5
+    active: true
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: true
+    github_available: true
+    rss_available: false
+    llms_txt_available: true
+    sitemap_available: true
+    content_license: "MIT"
+    license_verified: true
+    allowed_paths:
+      - "/cookbook/**"
+      - "/cookbook/topic/agents/**"
+    blocked_paths:
+      - "/pricing"
+      - "/login"
+    crawl_frequency: "weekly"
+    requires_primary_verification: false
+    publication_policy: "extract_architecture_and_synthesize_original"
+    notes: "Official OpenAI agent recipes, eval frameworks, function-calling patterns, and RAG pipelines."
+
+  - id: "anthropic-skills"
+    name: "Anthropic Agent Skills Repository"
+    domain: "github.com"
+    source_type: "github_repository"
+    authority_level: "A_PRIMARY"
+    discovery_weight: 5
+    active: true
+    ingestion_method: "github_api"
+    crawl_allowed: true
+    api_available: true
+    github_available: true
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: false
+    content_license: "MIT"
+    license_verified: true
+    allowed_paths:
+      - "/anthropics/skills/**"
+    blocked_paths: []
+    crawl_frequency: "weekly"
+    requires_primary_verification: false
+    publication_policy: "index_skill_metadata_and_sandbox_verify"
+    notes: "Canonical source for SKILL.md architecture, computer-use tools, and agent execution patterns."
+
+  - id: "mcp-official-registry"
+    name: "Official Model Context Protocol Registry"
+    domain: "registry.modelcontextprotocol.io"
+    source_type: "registry"
+    authority_level: "A_PRIMARY"
+    discovery_weight: 5
+    active: true
+    ingestion_method: "registry_api"
+    crawl_allowed: true
+    api_available: true
+    github_available: true
+    rss_available: false
+    llms_txt_available: true
+    sitemap_available: true
+    content_license: "Apache-2.0"
+    license_verified: true
+    allowed_paths:
+      - "/v0/**"
+      - "/servers/**"
+    blocked_paths: []
+    crawl_frequency: "daily"
+    requires_primary_verification: false
+    publication_policy: "direct_schema_sync"
+    notes: "Official registry for standard MCP servers, versions, transport specifications, and maintainers."
+
+  - id: "huggingface-agents"
+    name: "Hugging Face Agents & Smolagents Ecosystem"
+    domain: "huggingface.co"
+    source_type: "ecosystem"
+    authority_level: "A_PRIMARY"
+    discovery_weight: 5
+    active: true
+    ingestion_method: "ecosystem_api"
+    crawl_allowed: true
+    api_available: true
+    github_available: true
+    rss_available: true
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Apache-2.0"
+    license_verified: true
+    allowed_paths:
+      - "/docs/hub/agents/**"
+      - "/docs/smolagents/**"
+    blocked_paths:
+      - "/join"
+      - "/settings"
+    crawl_frequency: "weekly"
+    requires_primary_verification: false
+    publication_policy: "index_models_tools_and_spaces"
+    notes: "Connects models, datasets, Spaces, MCP connectors, and Python code-calling agent tooling."
+
+  - id: "huggingface-hub"
+    name: "Hugging Face Hub (Models & Spaces)"
+    domain: "huggingface.co"
+    source_type: "ecosystem"
+    authority_level: "A_PRIMARY"
+    discovery_weight: 5
+    active: false
+    ingestion_method: "ecosystem_api"
+    crawl_allowed: true
+    api_available: true
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Various Open Source"
+    license_verified: true
+    allowed_paths:
+      - "/models?pipeline_tag=text-generation"
+      - "/spaces?sort=trending"
+    blocked_paths: []
+    crawl_frequency: "weekly"
+    requires_primary_verification: true
+    publication_policy: "metadata_only"
+    notes: "Broader repository for open-source foundation weights, LoRAs, and interactive web demos."
+
+  - id: "github-agent-ecosystem"
+    name: "GitHub Open-Source AI Agent Repositories"
+    domain: "github.com"
+    source_type: "github_repository"
+    authority_level: "A_PRIMARY"
+    discovery_weight: 5
+    active: true
+    ingestion_method: "github_api"
+    crawl_allowed: true
+    api_available: true
+    github_available: true
+    rss_available: true
+    llms_txt_available: false
+    sitemap_available: false
+    content_license: "Open Source Allowlist"
+    license_verified: true
+    allowed_paths:
+      - "/unclecode/crawl4ai"
+      - "/modelcontextprotocol/servers"
+      - "/anthropics/courses"
+    blocked_paths: []
+    crawl_frequency: "daily"
+    requires_primary_verification: false
+    publication_policy: "verify_license_and_summarize"
+    notes: "Core open-source engines, crawlers, local frameworks, and developer utilities."
+
+  # ==============================================================================
+  # TIER B — STRUCTURED ECOSYSTEM (Workflows, registries, prompt datasets)
+  # ==============================================================================
+  - id: "n8n-workflows"
+    name: "n8n Workflow Library"
+    domain: "n8n.io"
+    source_type: "workflow_library"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 5
+    active: true
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: true
+    github_available: true
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Sustainable Use License / Community"
+    license_verified: true
+    allowed_paths:
+      - "/workflows/**"
+      - "/workflows/categories/ai/**"
+    blocked_paths:
+      - "/pricing"
+      - "/cloud"
+    crawl_frequency: "weekly"
+    requires_primary_verification: true
+    publication_policy: "extract_node_graph_and_synthesize_zqtion_blueprint"
+    notes: "Over 13,000 production automation templates across CRM, sales intelligence, and multi-node AI."
+
+  - id: "prompts-chat"
+    name: "prompts.chat / Awesome ChatGPT Prompts"
+    domain: "github.com"
+    source_type: "prompt_dataset"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 5
+    active: true
+    ingestion_method: "dataset_ingest"
+    crawl_allowed: true
+    api_available: true
+    github_available: true
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: false
+    content_license: "CC0-1.0"
+    license_verified: true
+    allowed_paths:
+      - "/f/awesome-chatgpt-prompts/**"
+      - "https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/main/prompts.csv"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: false
+    publication_policy: "transform_cc0_patterns_into_structured_prompts"
+    notes: "Public domain (CC0) prompt dataset; safe for adaptation, structural analysis, and synthesis."
+
+  - id: "make-templates"
+    name: "Make.com Template Library"
+    domain: "make.com"
+    source_type: "workflow_library"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 4
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Proprietary / Community"
+    license_verified: true
+    allowed_paths:
+      - "/en/templates/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "extract_app_combinations_only"
+    notes: "8,000+ templates. Extracts integration pairing patterns and business use cases."
+
+  - id: "zapier-ai-templates"
+    name: "Zapier AI Templates"
+    domain: "zapier.com"
+    source_type: "workflow_library"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 4
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Proprietary"
+    license_verified: true
+    allowed_paths:
+      - "/templates/ai/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "use_case_discovery_only"
+    notes: "Business automation use cases and no-code app orchestration combinations."
+
+  - id: "skill-navigator"
+    name: "Skill Navigator"
+    domain: "skillnavigator.ai"
+    source_type: "skills_directory"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 4
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: true
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Aggregated Community"
+    license_verified: false
+    allowed_paths:
+      - "/skills/**"
+    blocked_paths: []
+    crawl_frequency: "weekly"
+    requires_primary_verification: true
+    publication_policy: "discovery_only_verify_underlying_repo"
+    notes: "Indexes 98,000+ skills with agent compatibility and safety flags."
+
+  - id: "skills-directory"
+    name: "SkillsDirectory.com"
+    domain: "skillsdirectory.com"
+    source_type: "skills_directory"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 4
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Aggregated"
+    license_verified: false
+    allowed_paths:
+      - "/skills/**"
+    blocked_paths: []
+    crawl_frequency: "weekly"
+    requires_primary_verification: true
+    publication_policy: "discovery_only"
+    notes: "Agent skill discovery with safety, execution requirements, and author metadata."
+
+  - id: "skills-claude"
+    name: "SkillsClaude"
+    domain: "skillsclaude.com"
+    source_type: "skills_directory"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 3
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Aggregated"
+    license_verified: false
+    allowed_paths:
+      - "/skills/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "discovery_only"
+    notes: "Claude, Codex, and Cursor skills curated with community trust ratings."
+
+  - id: "ai-skill-index"
+    name: "AI Skill Index"
+    domain: "aiskillindex.com"
+    source_type: "skills_directory"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 3
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Aggregated"
+    license_verified: false
+    allowed_paths:
+      - "/index/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "discovery_only"
+    notes: "Skills and prompt pairings indexed around specific enterprise use cases."
+
+  - id: "get-claude-skills"
+    name: "GetClaudeSkills"
+    domain: "getclaudeskills.com"
+    source_type: "skills_directory"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 3
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Aggregated"
+    license_verified: false
+    allowed_paths:
+      - "/catalog/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "discovery_only"
+    notes: "Cross-agent skills compatible with Antigravity, Cursor, and Claude."
+
+  - id: "smithery"
+    name: "Smithery MCP Registry"
+    domain: "smithery.ai"
+    source_type: "mcp_registry"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 4
+    active: false
+    ingestion_method: "registry_api"
+    crawl_allowed: true
+    api_available: true
+    github_available: true
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Open Source Registry"
+    license_verified: true
+    allowed_paths:
+      - "/servers/**"
+    blocked_paths: []
+    crawl_frequency: "weekly"
+    requires_primary_verification: true
+    publication_policy: "index_mcp_endpoints"
+    notes: "MCP hosting and connector discovery engine."
+
+  - id: "glama-mcp"
+    name: "Glama MCP Explorer"
+    domain: "glama.ai"
+    source_type: "mcp_registry"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 4
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: true
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Aggregated"
+    license_verified: true
+    allowed_paths:
+      - "/mcp/servers/**"
+    blocked_paths: []
+    crawl_frequency: "weekly"
+    requires_primary_verification: true
+    publication_policy: "index_mcp_endpoints"
+    notes: "MCP discovery with tool schemas and endpoint metadata."
+
+  - id: "mcp-so"
+    name: "mcp.so"
+    domain: "mcp.so"
+    source_type: "mcp_registry"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 3
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Community"
+    license_verified: false
+    allowed_paths:
+      - "/server/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "discovery_only"
+    notes: "Community-submitted MCP servers and client setups."
+
+  - id: "pulse-mcp"
+    name: "PulseMCP"
+    domain: "pulsemcp.com"
+    source_type: "mcp_registry"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 3
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Community"
+    license_verified: false
+    allowed_paths:
+      - "/servers/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "discovery_only"
+    notes: "MCP activity and uptime monitoring directory."
+
+  - id: "mcp-find"
+    name: "MCPFind"
+    domain: "mcpfind.com"
+    source_type: "mcp_registry"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 3
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Community"
+    license_verified: false
+    allowed_paths:
+      - "/explore/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "discovery_only"
+    notes: "MCP server comparison and local installation guidance."
+
+  - id: "prompt-engineering-guide"
+    name: "DAIR.AI Prompt Engineering Guide"
+    domain: "promptingguide.ai"
+    source_type: "educational_guide"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 4
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: true
+    rss_available: false
+    llms_txt_available: true
+    sitemap_available: true
+    content_license: "MIT"
+    license_verified: true
+    allowed_paths:
+      - "/techniques/**"
+      - "/research/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: false
+    publication_policy: "synthesize_methodologies"
+    notes: "Academic and practical prompting patterns, reasoning frameworks, and jailbreak defenses."
+
+  - id: "learn-prompting"
+    name: "Learn Prompting"
+    domain: "learnprompting.org"
+    source_type: "educational_guide"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 3
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Educational"
+    license_verified: true
+    allowed_paths:
+      - "/docs/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "synthesize_concepts"
+    notes: "Introductory and intermediate AI safety and prompt structure course material."
+
+  - id: "futurepedia"
+    name: "Futurepedia"
+    domain: "futurepedia.io"
+    source_type: "tool_directory"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 3
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Proprietary"
+    license_verified: false
+    allowed_paths:
+      - "/ai-tools/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "discovery_only_verify_official_site"
+    notes: "AI tool category intelligence; pricing and capabilities must be verified against official tool portal."
+
+  - id: "theres-an-ai-for-that"
+    name: "There's An AI For That"
+    domain: "theresanaiforthat.com"
+    source_type: "tool_directory"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 3
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Proprietary"
+    license_verified: false
+    allowed_paths:
+      - "/tasks/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "discovery_only_verify_official_site"
+    notes: "Task-to-tool ontology mapping."
+
+  - id: "product-hunt"
+    name: "Product Hunt AI"
+    domain: "producthunt.com"
+    source_type: "product_directory"
+    authority_level: "B_STRUCTURED"
+    discovery_weight: 3
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: true
+    github_available: false
+    rss_available: true
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Proprietary"
+    license_verified: false
+    allowed_paths:
+      - "/topics/artificial-intelligence/**"
+    blocked_paths: []
+    crawl_frequency: "weekly"
+    requires_primary_verification: true
+    publication_policy: "discovery_only"
+    notes: "Emerging AI product launches, market positioning, and founder claims."
+
+  # ==============================================================================
+  # TIER C — INDEPENDENT EXPERT (Practical guides, creator workflows, use cases)
+  # ==============================================================================
+  - id: "cindy-guides"
+    name: "Cindy Zhu Guides (Source #001)"
+    domain: "cindyzhu.com.au"
+    source_type: "expert_guides"
+    authority_level: "C_EXPERT"
+    discovery_weight: 5
+    active: true
+    ingestion_method: "crawl4ai"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "All Rights Reserved (Research Corpus Only)"
+    license_verified: true
+    allowed_paths:
+      - "/guides/**"
+    blocked_paths:
+      - "/contact"
+      - "/about"
+    crawl_frequency: "weekly"
+    requires_primary_verification: true
+    publication_policy: "strict_layer_a_isolation_and_original_synthesis"
+    notes: "Seed Source #001. High-value practical workflows, prompt structures, tools, and creator challenges."
+
+  - id: "awesome-claude"
+    name: "Awesome Claude Prompts & Skills"
+    domain: "github.com"
+    source_type: "skills_directory"
+    authority_level: "C_EXPERT"
+    discovery_weight: 3
+    active: false
+    ingestion_method: "github_api"
+    crawl_allowed: true
+    api_available: true
+    github_available: true
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: false
+    content_license: "MIT / CC-BY"
+    license_verified: true
+    allowed_paths:
+      - "/*/awesome-claude*/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "verify_repo_links"
+    notes: "Curated community collections of Claude tips and skills."
+
+  # ==============================================================================
+  # TIER D — COMMUNITY (Demand signal discovery, public prompt marketplaces)
+  # ==============================================================================
+  - id: "flowgpt"
+    name: "FlowGPT"
+    domain: "flowgpt.com"
+    source_type: "community_prompts"
+    authority_level: "D_COMMUNITY"
+    discovery_weight: 2
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Community Submissions"
+    license_verified: false
+    allowed_paths:
+      - "/explore/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "demand_signal_discovery_only_never_copy_prompts"
+    notes: "Popular community use cases; treat as market signal, not verified prompts."
+
+  - id: "prompthero"
+    name: "PromptHero"
+    domain: "prompthero.com"
+    source_type: "community_prompts"
+    authority_level: "D_COMMUNITY"
+    discovery_weight: 2
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Community"
+    license_verified: false
+    allowed_paths:
+      - "/prompts/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "creative_intent_extraction_only"
+    notes: "Creative diffusion and video prompt keywords."
+
+  - id: "promptbase"
+    name: "PromptBase"
+    domain: "promptbase.com"
+    source_type: "community_prompts"
+    authority_level: "D_COMMUNITY"
+    discovery_weight: 2
+    active: false
+    ingestion_method: "structured_web"
+    crawl_allowed: true
+    api_available: false
+    github_available: false
+    rss_available: false
+    llms_txt_available: false
+    sitemap_available: true
+    content_license: "Commercial Marketplace"
+    license_verified: false
+    allowed_paths:
+      - "/marketplace/**"
+    blocked_paths: []
+    crawl_frequency: "monthly"
+    requires_primary_verification: true
+    publication_policy: "category_demand_analysis_only"
+    notes: "Commercial prompt marketplace. Ingest only high-level problem tags, never paid prompt text."

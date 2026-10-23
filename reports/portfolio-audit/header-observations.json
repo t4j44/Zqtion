@@ -1,0 +1,87 @@
+{
+  "scope": "Read-only local API bounds/header observations and public site headers. No hosted database, provider configuration or CDN changes.",
+  "results": [
+    {
+      "url": "http://127.0.0.1:3219/",
+      "method": "GET",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "s-maxage=31536000",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "age": null,
+        "x-vercel-cache": null,
+        "x-cache": null
+      },
+      "responseBytes": 127784
+    },
+    {
+      "url": "http://127.0.0.1:3219/work",
+      "method": "GET",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "s-maxage=31536000",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding",
+        "age": null,
+        "x-vercel-cache": null,
+        "x-cache": null
+      },
+      "responseBytes": 72640
+    },
+    {
+      "url": "http://127.0.0.1:3219/api/prompts",
+      "method": "GET",
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": "no-store",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "age": null,
+        "x-vercel-cache": null,
+        "x-cache": null
+      },
+      "responseBytes": 4130
+    },
+    {
+      "url": "http://127.0.0.1:3219/api/resources",
+      "method": "GET",
+      "status": 200,
+      "headers": {
+        "content-type": "application/json",
+        "cache-control": null,
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "age": null,
+        "x-vercel-cache": null,
+        "x-cache": null
+      },
+      "responseBytes": 114065
+    },
+    {
+      "url": "https://zqtion.com/",
+      "method": "HEAD",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "age": "969169",
+        "x-vercel-cache": "HIT",
+        "x-cache": null
+      }
+    },
+    {
+      "url": "https://www.gforcetyres-mobile.co.uk/",
+      "method": "HEAD",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "age": "0",
+        "x-vercel-cache": "MISS",
+        "x-cache": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "before": {
+    "performance": 89.0,
+    "accessibility": 100,
+    "benchmarkIndex": 1818,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 1382.13315,
+        "display": "1.4\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 3500.1331500000006,
+        "display": "3.5\u00a0s"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.0001701921698805303,
+        "display": "0"
+      },
+      "total-blocking-time": {
+        "value": 150.57790000000023,
+        "display": "150\u00a0ms"
+      },
+      "speed-index": {
+        "value": 2359.0813366686684,
+        "display": "2.4\u00a0s"
+      }
+    },
+    "javascriptTransferBytes": 169066,
+    "javascriptDecodedBytes": 515962,
+    "javascriptRequests": 10,
+    "lighthouseVersion": "13.5.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36"
+  },
+  "iteration2": {
+    "performance": 70.0,
+    "accessibility": 100,
+    "benchmarkIndex": 801,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 1201.10875,
+        "display": "1.2\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 3895.4349999999995,
+        "display": "3.9\u00a0s"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "total-blocking-time": {
+        "value": 713.4999999999995,
+        "display": "710\u00a0ms"
+      },
+      "speed-index": {
+        "value": 3028.8578783649136,
+        "display": "3.0\u00a0s"
+      }
+    },
+    "javascriptTransferBytes": 169917,
+    "javascriptDecodedBytes": 519203,
+    "javascriptRequests": 10,
+    "lighthouseVersion": "13.5.0",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36"
+  },
+  "after": {
+    "performance": 85.0,
+    "accessibility": 100,
+    "benchmarkIndex": 1593,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 1116.4269,
+        "display": "1.1\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 3678.5692,
+        "display": "3.7\u00a0s"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "total-blocking-time": {
+        "value": 246.5,
+        "display": "250\u00a0ms"
+      },
+      "speed-index": {
+        "value": 2007.5668324857781,
+        "display": "2.0\u00a0s"
+      }
+    },
+    "javascriptTransferBytes": 169917,
+    "javascriptDecodedBytes": 519203,
+    "javascriptRequests": 10,
+    "lighthouseVersion": "13.5.0"
+  },
+  "preCTA": {
+    "performance": 90.0,
+    "accessibility": 100,
+    "benchmarkIndex": 1488,
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 1122.1131,
+        "display": "1.1\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 3536.6507999999994,
+        "display": "3.5\u00a0s"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "total-blocking-time": {
+        "value": 95,
+        "display": "100\u00a0ms"
+      },
+      "speed-index": {
+        "value": 2291.7666127712355,
+        "display": "2.3\u00a0s"
+      }
+    },
+    "javascriptTransferBytes": 169917,
+    "javascriptDecodedBytes": 519203,
+    "javascriptRequests": 10,
+    "lighthouseVersion": "13.5.0"
+  }
+}

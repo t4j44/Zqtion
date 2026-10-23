@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "count": 12,
+  "digest": "ab4449ca8e2ef76658a2baaf94cde614e4c2d92af9449d52fe1da19495811d9e",
+  "routes": [
+    "/prompts/ui/fieldwork-research-dashboard",
+    "/prompts/ui/repair-studio-service-page",
+    "/prompts/ui/transparent-pricing-comparison",
+    "/prompts/ui/accessible-course-navigation",
+    "/prompts/image/ceramic-material-study",
+    "/prompts/image/citrus-menu-still-life",
+    "/prompts/image/modular-speaker-exploration",
+    "/prompts/image/book-cover-paper-landscape",
+    "/prompts/vibe-coding/local-first-project-planner",
+    "/prompts/vibe-coding/accessible-filterable-catalog",
+    "/prompts/vibe-coding/evidence-led-bug-fix",
+    "/prompts/vibe-coding/safe-csv-import-wizard"
+  ],
+  "categories": [
+    "ui",
+    "image",
+    "vibe-coding"
+  ],
+  "tools": [
+    "claude-code",
+    "codex",
+    "cursor",
+    "gemini"
+  ]
+}

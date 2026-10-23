@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <main id="main-content">
       <PageHero eyebrow="About Zqtion" title="Independent by design. Accountable by default." description="Zqtion is a founder-led AI execution company working globally across creative, digital products, and automation with a small-team operating model and explicit project truth." primary={{ href: "/contact", label: "Work with Zqtion" }} secondary={{ href: siteConfig.linkedin, label: "LinkedIn" }} />
-      <section className="section-shell section-pad border-t border-white/10"><Reveal className="grid gap-10 lg:grid-cols-[0.65fr_1fr]"><SectionIntro eyebrow="Why it exists" title="The space between a deck and a shipped result." /><div className="grid gap-6 text-lg leading-8 text-white/58"><p>AI has reduced the cost of producing options. It has not removed the need for direction, product judgment, narrative, quality control, or honest claims.</p><p>Zqtion exists to close that execution gap: framing the outcome, testing the risk, producing the work, and building systems that the client or team can understand after launch.</p><p>The company is intentionally early. Public work includes independent concepts, a competition entry, creative experiments, and founder-venture execution. Those relationships are disclosed rather than presented as a larger client history.</p></div></Reveal></section>
+      <section className="section-shell section-pad border-t border-white/10"><Reveal className="grid gap-10 lg:grid-cols-[0.65fr_1fr]"><SectionIntro eyebrow="Why it exists" title="The space between a deck and a shipped result." /><div className="grid gap-6 text-lg leading-8 text-muted"><p>AI has reduced the cost of producing options. It has not removed the need for direction, product judgment, narrative, quality control, or honest claims.</p><p>Zqtion exists to close that execution gap: framing the outcome, testing the risk, producing the work, and building systems that the client or team can understand after launch.</p><p>The company is intentionally early. Public work includes independent concepts, a competition entry, creative experiments, and founder-venture execution. Those relationships are disclosed rather than presented as a larger client history.</p></div></Reveal></section>
       <section className="border-y border-white/10 bg-white/[0.02]">
         <div className="section-shell section-pad">
           <Reveal>
@@ -27,17 +27,17 @@ export default function AboutPage() {
             {team.map((member, index) => (
               <Reveal key={member.name} delay={index * 0.08} className="h-full">
                 <div className="panel h-full flex items-start gap-5 sm:gap-6 p-7 sm:p-8 transition-all duration-300 ease-out hover:border-cyan-300/30 hover:bg-white/[0.035] hover:-translate-y-0.5 motion-reduce:hover:translate-y-0 motion-reduce:transition-none">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.06] text-sm font-bold text-cyan-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/[0.06] text-sm font-bold text-accent shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
                     {member.initials}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-cyan-300 leading-relaxed">
+                    <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent leading-relaxed">
                       {member.role}
                     </p>
-                    <h3 className="mt-2 text-2xl font-semibold tracking-[-0.035em] text-white">
+                    <h3 className="mt-2 text-2xl font-semibold tracking-[-0.035em] text-foreground">
                       {member.name}
                     </h3>
-                    <p className="mt-4 leading-7 text-white/52 text-pretty">
+                    <p className="mt-4 leading-7 text-muted text-pretty">
                       {member.description}
                     </p>
                   </div>
@@ -52,7 +52,7 @@ export default function AboutPage() {
         ["Human judgment stays named", "AI can accelerate output; ownership and important approvals cannot disappear."],
         ["Prototype before scale", "Test the fragile part before creating a large inventory of work."],
         ["Speed includes performance", "A rich experience that is slow, inaccessible, or fragile is not finished."],
-      ].map(([title, text]) => <Reveal key={title} className="bg-[#050608] p-8"><h3 className="text-2xl font-semibold tracking-[-0.035em]">{title}</h3><p className="mt-4 leading-7 text-white/52">{text}</p></Reveal>)}</div></section>
+      ].map(([title, text]) => <Reveal key={title} className="bg-[var(--background)] p-8"><h3 className="text-2xl font-semibold tracking-[-0.035em]">{title}</h3><p className="mt-4 leading-7 text-muted">{text}</p></Reveal>)}</div></section>
       <section className="section-shell pb-12"><Reveal className="panel flex flex-col gap-8 p-8 sm:p-12 lg:flex-row lg:items-end lg:justify-between"><div><p className="eyebrow">Remote by design · Working globally</p><h2 className="mt-6 max-w-4xl text-4xl font-semibold tracking-[-0.045em] sm:text-6xl">Build with a small team that shows its assumptions.</h2></div><Link href="/contact" className="button-primary shrink-0" data-analytics="service_contact_click" data-analytics-location="about_cta">Start a conversation <ArrowUpRight className="h-4 w-4" /></Link></Reveal></section>
       <Footer />
     </main>

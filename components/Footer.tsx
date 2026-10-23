@@ -1,47 +1,82 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { navigation, siteConfig } from "@/data/site";
+import { siteConfig } from "@/data/site";
+
+const columns = [
+  {
+    title: "Studio",
+    links: [
+      { href: "/work", label: "Work" },
+      { href: "/services", label: "Services" },
+      { href: "/process", label: "Process" },
+      { href: "/about", label: "About" },
+      { href: "/contact", label: "Contact" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { href: "/resources", label: "Resource Intelligence" },
+      { href: "/insights", label: "Insights" },
+      { href: "/prompts", label: "Prompts" },
+      { href: "/prompts/methods", label: "Prompting methods" },
+      { href: "/prompts/methodology", label: "Prompt methodology" },
+    ],
+  },
+  {
+    title: "Community",
+    links: [
+      { href: "/ai-experiences", label: "Community" },
+      { href: "/community/account?next=%2Fai-experiences", label: "Join the community", analytics: "community_join_click" },
+      { href: "/careers", label: "Careers" },
+    ],
+  },
+] as const;
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#050608]">
-      <div className="section-shell py-16 sm:py-20">
-        <div className="grid gap-14 lg:grid-cols-[1.35fr_0.65fr_0.65fr]">
-          <div>
-            <Link href="/" className="flex w-fit items-center gap-3" aria-label="Zqtion home">
-              <span className="relative h-11 w-11 overflow-hidden rounded-xl border border-white/10 bg-black">
-                <Image src="/logo.png" alt="" fill sizes="44px" className="object-cover" />
+    <footer className="site-footer relative overflow-hidden border-t border-white/10 bg-[var(--background)]">
+      <div className="footer-wordmark" aria-hidden="true">ZQTION</div>
+      <div className="section-shell relative z-10 pb-8 pt-10 sm:pt-14">
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <Link href="/" className="inline-flex min-h-11 items-center gap-3" aria-label="Zqtion home">
+              <span className="relative h-10 w-10 overflow-hidden rounded-xl border border-white/10 bg-black">
+                <Image src="/logo.png" alt="" fill sizes="40px" className="object-cover" />
               </span>
               <span className="font-extrabold tracking-[0.18em]">ZQTION</span>
             </Link>
-            <p className="mt-6 max-w-md text-2xl font-medium leading-tight tracking-[-0.035em] text-white/78">
+            <p className="mt-5 max-w-sm text-lg font-medium leading-snug tracking-[-0.02em] text-secondary">
               Founder-led execution for creative, digital products, and practical automation.
             </p>
-            <p className="mt-5 text-sm text-white/42">Remote collaboration for teams worldwide.</p>
-          </div>
-
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/35">Explore</p>
-            <nav className="mt-5 flex flex-col items-start gap-3" aria-label="Footer navigation">
-              {navigation.map((item) => <Link key={item.href} href={item.href} className="text-sm text-white/62 transition hover:text-white">{item.label}</Link>)}
-              <Link href="/contact" className="text-sm text-white/62 transition hover:text-white" data-analytics="service_contact_click" data-analytics-location="footer">Contact</Link>
-            </nav>
-          </div>
-
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/35">Connect</p>
-            <div className="mt-5 flex flex-col items-start gap-3">
-              <a href={`mailto:${siteConfig.email}`} className="text-sm text-white/62 transition hover:text-white" data-analytics="email_click" data-analytics-location="footer">Email</a>
-              <a href={siteConfig.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm text-white/62 transition hover:text-white">LinkedIn <ArrowUpRight className="h-3.5 w-3.5" /></a>
-              <a href={siteConfig.youtube} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm text-white/62 transition hover:text-white">YouTube <ArrowUpRight className="h-3.5 w-3.5" /></a>
+            <p className="mt-3 text-sm text-secondary">Remote collaboration for teams worldwide.</p>
+            <div className="footer-connect mt-6 flex flex-wrap items-center gap-2">
+              <a href={`mailto:${siteConfig.email}`} className="footer-pill" data-analytics="email_click" data-analytics-location="footer">{siteConfig.email}</a>
+              <a href={siteConfig.linkedin} target="_blank" rel="noreferrer" className="footer-pill">LinkedIn <ArrowUpRight className="h-3.5 w-3.5" /></a>
+              <a href={siteConfig.youtube} target="_blank" rel="noreferrer" className="footer-pill">YouTube <ArrowUpRight className="h-3.5 w-3.5" /></a>
             </div>
           </div>
+
+          <nav className="footer-columns" aria-label="Footer navigation">
+            {columns.map((column) => (
+              <div key={column.title}>
+                <p className="footer-heading">{column.title}</p>
+                <ul>
+                  {column.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="footer-link" {...(link.href === "/contact" ? { "data-analytics": "service_contact_click", "data-analytics-location": "footer" } : "analytics" in link ? { "data-analytics": link.analytics, "data-analytics-location": "footer" } : {})}>{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/35 sm:flex-row sm:items-center sm:justify-between">
+        <div className="footer-legal mt-10 flex flex-col gap-1 border-t border-white/10 pt-4 text-xs text-secondary sm:mt-14 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Zqtion. Execution, automated.</p>
-          <div className="flex gap-5"><Link href="/privacy" className="hover:text-white">Privacy</Link><Link href="/terms" className="hover:text-white">Terms</Link></div>
+          <div className="flex gap-2"><Link href="/privacy" className="hover:text-foreground">Privacy</Link><Link href="/terms" className="hover:text-foreground">Terms</Link></div>
         </div>
       </div>
     </footer>

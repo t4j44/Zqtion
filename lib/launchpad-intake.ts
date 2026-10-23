@@ -8,7 +8,7 @@ export type IntakeDependencies = {
   rateLimit: (ip: string) => Promise<boolean>;
   verify: (token: string, ip: string) => Promise<boolean>;
   save: (application: LaunchpadApplication) => Promise<string>;
-  notify: (reference: string, track: string) => Promise<void>;
+  notify: (reference: string, track: string, applicantEmail?: string) => Promise<void>;
 };
 const json = (body: unknown, status = 200) => Response.json(body, { status, headers: { "Cache-Control": "no-store" } });
 
@@ -29,7 +29,7 @@ export async function handleLaunchpadApplication(request: Request, deps: IntakeD
     if (!await deps.verify(token, ip)) return json({ error: "Human verification failed or expired. Please verify again." }, 400);
     const reference = await deps.save(parsed.application);
     // A stored application is accepted even if an internal notification is unavailable.
-    await deps.notify(reference, parsed.application.primaryTrack).catch(() => undefined);
+    await deps.notify(reference, parsed.application.primaryTrack, parsed.application.email).catch(() => undefined);
     return json({ ok: true, reference });
   } catch (error) {
     if (error instanceof RequestBodyError) return json({ error: error.status === 413 ? "The application is too large." : "Please send a valid application." }, error.status);

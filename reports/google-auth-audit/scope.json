@@ -1,0 +1,29 @@
+{
+  "planning": "deep",
+  "context_depth": "dependency",
+  "verification_depth": "full-regression",
+  "delegation": "none",
+  "reason_codes": [
+    "auth-return-path-security",
+    "existing-browser-implicit-sessions",
+    "public-private-boundary"
+  ],
+  "baseCommit": "fa5f864879d09e7750f0e4ecf578016eca24d80d",
+  "authorization": "User explicitly requested Google sign-in, return handling, navigation, profile gating, tests, documentation and feature-branch commit/push.",
+  "hostedMutations": "prohibited; none planned",
+  "schemaChanges": "none",
+  "critique": [
+    "Reject external and account-loop return paths before building callbacks.",
+    "Do not authorize from Google metadata.",
+    "Do not auto-submit queued actions.",
+    "Keep password recovery out of automatic auth redirects.",
+    "Discard stale identity loads after sign-out/account switches."
+  ],
+  "sources": [
+    "https://supabase.com/docs/guides/auth/social-login/auth-google",
+    "https://supabase.com/docs/reference/javascript/auth-signinwithoauth",
+    "https://supabase.com/docs/guides/auth/redirect-urls",
+    "https://supabase.com/changelog.md"
+  ],
+  "changelogNote": "Reviewed official current index; relevant TLS cipher removal does not change browser implicit-flow integration. No hosted or transport configuration changed."
+}

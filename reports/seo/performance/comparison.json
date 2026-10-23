@@ -1,0 +1,103 @@
+{
+  "beforeBuild": "ula_4u7mOH2NeIN9A0Q6S",
+  "afterBuild": "mVbL-NgMsO19eaONBe5ol",
+  "method": "Three serial cold-profile Lighthouse runs per route/device, simulated throttling; lab data, no field INP or CWV pass claim",
+  "rows": [
+    {
+      "route": "/",
+      "device": "mobile",
+      "before": {
+        "performance": 88,
+        "range": "88/83/92",
+        "lcpMs": 3430,
+        "cls": 0,
+        "tbtMs": 183,
+        "accessibility": 96,
+        "seo": 100,
+        "bestPractices": 100
+      },
+      "after": {
+        "performance": 84,
+        "range": "47/88/84",
+        "lcpMs": 3496,
+        "cls": 0,
+        "tbtMs": 308,
+        "accessibility": 96,
+        "seo": 100,
+        "bestPractices": 100
+      }
+    },
+    {
+      "route": "/resources/guide/ai-lead-research-verification-pipeline",
+      "device": "mobile",
+      "before": {
+        "performance": 91,
+        "range": "91/91/95",
+        "lcpMs": 2819,
+        "cls": 0,
+        "tbtMs": 216,
+        "accessibility": 100,
+        "seo": 100,
+        "bestPractices": 100
+      },
+      "after": {
+        "performance": 85,
+        "range": "85/82/91",
+        "lcpMs": 2969,
+        "cls": 0,
+        "tbtMs": 402,
+        "accessibility": 100,
+        "seo": 69,
+        "bestPractices": 100
+      }
+    },
+    {
+      "route": "/",
+      "device": "desktop",
+      "before": {
+        "performance": 99,
+        "range": "99/98/99",
+        "lcpMs": 809,
+        "cls": 0,
+        "tbtMs": 17,
+        "accessibility": 100,
+        "seo": 100,
+        "bestPractices": 100
+      },
+      "after": {
+        "performance": 77,
+        "range": "99/61/77",
+        "lcpMs": 772,
+        "cls": 0,
+        "tbtMs": 544,
+        "accessibility": 100,
+        "seo": 100,
+        "bestPractices": 100
+      }
+    },
+    {
+      "route": "/resources/guide/ai-lead-research-verification-pipeline",
+      "device": "desktop",
+      "before": {
+        "performance": 100,
+        "range": "100/100/100",
+        "lcpMs": 602,
+        "cls": 0,
+        "tbtMs": 0,
+        "accessibility": 100,
+        "seo": 100,
+        "bestPractices": 100
+      },
+      "after": {
+        "performance": 79,
+        "range": "78/79/100",
+        "lcpMs": 1121,
+        "cls": 0,
+        "tbtMs": 413,
+        "accessibility": 100,
+        "seo": 69,
+        "bestPractices": 100
+      }
+    }
+  ]
+}

@@ -1,0 +1,491 @@
+[
+  {
+    "slug": "ai-lead-research-verification-pipeline",
+    "type": "guide",
+    "title": "Build an AI Lead Research and Website Verification Pipeline",
+    "summary": "Automating web scraping with Crawl4AI and LLM extraction reduces cost from $500/mo tools to cents per verified lead.",
+    "evidence": "verified",
+    "sourceUrls": [],
+    "words": 566,
+    "bodyHash": "35439b6f6d0241a37782a7e94adc1a3e572fb69ec5ebdcaae1512b51d0eac0a9",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Manual prospecting takes hours and results in broken links, stale team data, and generic outreach.",
+    "tools": [
+      "Crawl4AI",
+      "Claude",
+      "Exa"
+    ]
+  },
+  {
+    "slug": "crawl4ai-web-crawler-framework",
+    "type": "repository",
+    "title": "Crawl4AI Open-Source Web Crawler and Extraction Framework",
+    "summary": "Crawl4AI generates clean, token-efficient markdown ready for LLM consumption with native async concurrency.",
+    "evidence": "verified",
+    "sourceUrls": [],
+    "words": 553,
+    "bodyHash": "87acc93114b0e2a72b3f62639be0be1c08d01e283af781b0b130c3b84f3b0a89",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Generic headless browsers are heavy, expensive, and trigger aggressive anti-bot blocks when feeding LLMs.",
+    "tools": [
+      "Crawl4AI"
+    ]
+  },
+  {
+    "slug": "multi-agent-content-research-engine",
+    "type": "guide",
+    "title": "Architecting a Resilient Multi-Agent Content Research Engine",
+    "summary": "Decoupling discovery, fact verification, angle ideation, and draft generation creates campaign-grade creative.",
+    "evidence": "zqtion_tested",
+    "sourceUrls": [],
+    "words": 561,
+    "bodyHash": "5eaf8613d6ab8c4ebb873416f3d561f16b5d8c1dcf91d3bff3948f02a77d34d3",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Single-prompt content generation sounds repetitive, hallucinations go unchecked, and brand voice decays.",
+    "tools": [
+      "Claude Code",
+      "Antigravity",
+      "Notion"
+    ]
+  },
+  {
+    "slug": "mcp-production-connector-architecture",
+    "type": "guide",
+    "title": "Model Context Protocol (MCP) Production Connector Architecture",
+    "summary": "MCP standardizes bi-directional context exchange between agents and internal company systems safely.",
+    "evidence": "verified",
+    "sourceUrls": [],
+    "words": 561,
+    "bodyHash": "86196e5a15d2bf2163fbb6728c559c083ed3e292e5a1941f1e09fedeb01a24ef",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "AI assistants are isolated from production databases, local filesystems, and proprietary APIs.",
+    "tools": [
+      "Claude Code",
+      "VS Code",
+      "PostgreSQL"
+    ]
+  },
+  {
+    "slug": "token-saving-checkpoint-strategy-coding-agents",
+    "type": "workflow",
+    "title": "Token-Saving Checkpoint Strategy for Long-Running Coding Agents",
+    "summary": "Atomic git checkpointing and fresh-context handoffs reduce token usage by 60-80% without losing progress.",
+    "evidence": "zqtion_tested",
+    "sourceUrls": [],
+    "words": 568,
+    "bodyHash": "cb5b9e7cabf5688925c582d067951a83ada74edba9c00ed227986a08170ed63b",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Long conversation histories balloon context windows, degrade model reasoning, and 10x API bills.",
+    "tools": [
+      "Claude Code",
+      "Git",
+      "VS Code"
+    ]
+  },
+  {
+    "slug": "prompt-b2b-prospect-qualification-tech-stack",
+    "type": "prompt",
+    "title": "Prompt: B2B Prospect Qualification and Tech Stack Analyzer",
+    "summary": "Extracts tech stack, recent company pivots, and concrete pain points from scraped website copy.",
+    "evidence": "zqtion_tested",
+    "sourceUrls": [],
+    "words": 555,
+    "bodyHash": "07766354e213d182857b9e45058d938543f4123fbe3090d4fa764a892293ad04",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Generic sales outreach messages fail because prospect research is superficial or outdated.",
+    "tools": [
+      "Claude",
+      "ChatGPT"
+    ]
+  },
+  {
+    "slug": "skill-visual-hierarchy-spacing-reviewer",
+    "type": "skill",
+    "title": "Agent Skill: Apple-Grade Visual Hierarchy and Spacing Reviewer",
+    "summary": "Enforces strict mathematical grid rhythms, minimum 44px touch targets, and AA contrast ratios automatically.",
+    "evidence": "verified",
+    "sourceUrls": [],
+    "words": 558,
+    "bodyHash": "b4f34fde9661691261132469dca4e05ed84be791cadab8c603f067bbfb3cc11e",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "AI coding tools routinely produce cluttered layouts, inconsistent margins, and poor typographic scale.",
+    "tools": [
+      "Claude Code",
+      "Antigravity"
+    ]
+  },
+  {
+    "slug": "zqtion-resource-intelligence-mcp",
+    "type": "mcp_server",
+    "title": "Zqtion Resource Intelligence MCP Server",
+    "summary": "Enables any MCP-compatible agent to search, query, and verify tools, prompts, skills, and workflows in real time.",
+    "evidence": "zqtion_tested",
+    "sourceUrls": [],
+    "words": 558,
+    "bodyHash": "95c7f436b0430f3e43f5b93153605d6fa0b814d172dd97ef389acb3a63e7d6d5",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "LLMs lack up-to-date, verified intelligence on real AI building blocks, pricing, and failure modes.",
+    "tools": [
+      "Claude",
+      "Antigravity",
+      "Cursor"
+    ]
+  },
+  {
+    "slug": "privacy-preserving-receipt-financial-extraction",
+    "type": "guide",
+    "title": "Building a Privacy-Preserving Receipt and Financial Extraction Engine",
+    "summary": "Local vision models or sandboxed private parsers extract line items and totals with zero external data leakage.",
+    "evidence": "verified",
+    "sourceUrls": [],
+    "words": 559,
+    "bodyHash": "0de6ab8422a48e7ae64e75d85e14cac9df4ec068be993c22a8a2dfa3285bc995",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Cloud-based OCR services require uploading sensitive tax and banking documents to third-party endpoints.",
+    "tools": [
+      "Claude",
+      "Python",
+      "SQLite"
+    ]
+  },
+  {
+    "slug": "ai-video-consistency-face-preservation-workflow",
+    "type": "workflow",
+    "title": "AI Video Consistency and Face-Preservation Workflow",
+    "summary": "Combining high-resolution seed portraits, reference image conditioning, and multi-pass upscaling yields coherent cuts.",
+    "evidence": "source_reported",
+    "sourceUrls": [],
+    "words": 563,
+    "bodyHash": "0b312cf37fa081e5838ae56113a20b855f6c6251ca9b4654a4f542fa1abcba3f",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Generative video tools alter facial features, hair, and clothing between cuts, ruining realism.",
+    "tools": [
+      "Reve",
+      "Higgsfield",
+      "Fish Audio"
+    ]
+  },
+  {
+    "slug": "open-source-vibe-coding-local-tools-guide",
+    "type": "guide",
+    "title": "Open-Source Vibe Coding: 5 Local Tools Replacing Expensive SaaS Subscriptions",
+    "summary": "Pairing open-source frameworks with local runners allows unlimited builds for zero incremental software cost.",
+    "evidence": "verified",
+    "sourceUrls": [],
+    "words": 569,
+    "bodyHash": "cb8a1437c13f57492457d719e8466f567c48b52a4192c8d23351c4874b0f3228",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Monthly subscriptions for multiple AI coding assistants, website builders, and scraping APIs stack up rapidly.",
+    "tools": [
+      "VS Code",
+      "Antigravity",
+      "Crawl4AI"
+    ]
+  },
+  {
+    "slug": "prompt-code-refactoring-accessibility-auditor",
+    "type": "prompt",
+    "title": "Prompt: Systematic Code Refactoring and Accessibility Auditor",
+    "summary": "Audits DOM trees against WCAG 2.2 AA standards, ensuring keyboard navigation and screen-reader compatibility.",
+    "evidence": "zqtion_tested",
+    "sourceUrls": [],
+    "words": 558,
+    "bodyHash": "997f6344f4fc4d43bc396423a06bedf6b4256b41a99e1dfa82b2b7d5ac27abba",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Fast-paced vibe coding frequently introduces accessibility regressions, unsemantic tags, and missing focus rings.",
+    "tools": [
+      "Claude Code",
+      "Cursor"
+    ]
+  },
+  {
+    "slug": "crawl4ai-vs-firecrawl-web-scraping-comparison",
+    "type": "guide",
+    "title": "Autonomous Web Data Extraction: Crawl4AI vs Firecrawl Comparison",
+    "summary": "Provides objective benchmark data on latency, proxy handling, token cleanup, and hosting trade-offs.",
+    "evidence": "verified",
+    "sourceUrls": [],
+    "words": 558,
+    "bodyHash": "0813a304651e523ea2d0432724faea80f457120bd03af214e0ea259a661c09ac",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Choosing the wrong scraping infrastructure leads to unexpected bill spikes or unmaintainable self-hosted stacks.",
+    "tools": [
+      "Crawl4AI",
+      "Firecrawl"
+    ]
+  },
+  {
+    "slug": "claude-code-enterprise-setup-guardrails",
+    "type": "guide",
+    "title": "Claude Code: Enterprise Setup and Guardrail Engineering",
+    "summary": "Establishes permission boundaries, custom hooks, and context files (`CLAUDE.md`) for reliable team execution.",
+    "evidence": "verified",
+    "sourceUrls": [],
+    "words": 565,
+    "bodyHash": "e21ca3f4ed31209dcc30ccff43f10ec2f33151846ff0bb9b0d77ee307b3cb271",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Developers installing autonomous terminal agents without guardrails risk catastrophic file overwrites or secret leaks.",
+    "tools": [
+      "Claude Code",
+      "VS Code",
+      "Git"
+    ]
+  },
+  {
+    "slug": "automated-competitor-intelligence-tracker",
+    "type": "workflow",
+    "title": "Automated Competitor Intelligence Tracker with Exa and LLM Synthesis",
+    "summary": "Monitors changes across competitor domains and delivers an executive diff summary every Monday morning.",
+    "evidence": "zqtion_tested",
+    "sourceUrls": [],
+    "words": 557,
+    "bodyHash": "accc3968fe0324c1259b57c78aa8692a172e3c9d8c67196b2f1729250fd2bb68",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Competitors change pricing, drop features, or pivot positioning without public announcement.",
+    "tools": [
+      "Exa",
+      "Claude",
+      "Crawl4AI"
+    ]
+  },
+  {
+    "slug": "google-antigravity-ide-overview",
+    "type": "tool",
+    "title": "Antigravity IDE: Modern AI Agent Development Environment",
+    "summary": "Built specifically for agentic execution with background tasks, subagent orchestration, and reactive event wakeups.",
+    "evidence": "verified",
+    "sourceUrls": [],
+    "words": 561,
+    "bodyHash": "22aa6c7c5530b3c10c31a31e46c964f71063f901e60b01e098e4215277d8c528",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Traditional IDEs treat AI as a sidebar chatbot rather than a primary pairing partner with task lifecycle management.",
+    "tools": [
+      "Antigravity"
+    ]
+  },
+  {
+    "slug": "human-in-the-loop-content-approval-pipeline",
+    "type": "workflow",
+    "title": "Building a Human-in-the-Loop Content Approval Pipeline",
+    "summary": "Combines AI generation with a one-click Telegram/Slack review gate before publishing.",
+    "evidence": "zqtion_tested",
+    "sourceUrls": [],
+    "words": 554,
+    "bodyHash": "c2f45226ba00ff1cf189ab53bfb230e1743096c1b9ca9b3ca3f7e870cc60d9e9",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Fully automated posting pipelines inevitably publish off-brand, hallucinated, or embarrassing content.",
+    "tools": [
+      "Claude",
+      "Supabase",
+      "Resend"
+    ]
+  },
+  {
+    "slug": "voice-cloning-script-synchronization-pipeline",
+    "type": "workflow",
+    "title": "Voice Cloning and Script Synchronization Pipeline",
+    "summary": "Generates natural speech cadence matched to video timeline cuts using clean reference audio.",
+    "evidence": "source_reported",
+    "sourceUrls": [],
+    "words": 557,
+    "bodyHash": "fbf631f1da999161a51869530b4fe9f0c5cff5768163f2798e2a07829aa4b43c",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Voice actors are expensive and reshooting audio changes delays campaigns by days.",
+    "tools": [
+      "Fish Audio",
+      "Claude"
+    ]
+  },
+  {
+    "slug": "prompt-brand-voice-persona-extractor",
+    "type": "prompt",
+    "title": "Prompt: Comprehensive Brand Voice and Persona Extractor",
+    "summary": "Extracts tone, sentence rhythm, taboo phrases, and formatting rules from existing top-performing copy.",
+    "evidence": "zqtion_tested",
+    "sourceUrls": [],
+    "words": 560,
+    "bodyHash": "b8ab3510f33b7009a94c89fa9ec8d4b175f95d4aa617db403584e060149f248c",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Onboarding copywriters to a brand takes weeks of reading guidelines that are rarely followed in practice.",
+    "tools": [
+      "Claude",
+      "ChatGPT"
+    ]
+  },
+  {
+    "slug": "postgresql-mcp-server-integration",
+    "type": "mcp_server",
+    "title": "PostgreSQL MCP Server: Secure Database Integration for AI Agents",
+    "summary": "Enforces read-only schema inspection, bounded queries, and row-level security for agent queries.",
+    "evidence": "verified",
+    "sourceUrls": [],
+    "words": 563,
+    "bodyHash": "a990fe5916fd26ed0dcaa36c124f15416dc45a66fd8ef97fe747296ad453de77",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Giving AI agents raw SQL access can result in accidental data deletion or schema corruption.",
+    "tools": [
+      "PostgreSQL",
+      "Claude Code"
+    ]
+  },
+  {
+    "slug": "lead-qualification-website-scraping-architecture",
+    "type": "use_case",
+    "title": "Lead Qualification and Website Scraping Architecture",
+    "summary": "Automates lead enrichment and scoring, delivering verified prospect briefs straight to CRM.",
+    "evidence": "zqtion_tested",
+    "sourceUrls": [],
+    "words": 561,
+    "bodyHash": "7e9150e0a219db16ffad18461084188aa59654226a7779130feec1080722aee3",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Qualifying 500 inbound leads manually requires days of browser tab switching and manual data entry.",
+    "tools": [
+      "Crawl4AI",
+      "Claude",
+      "Supabase"
+    ]
+  },
+  {
+    "slug": "visual-product-ad-coherent-lighting-workflow",
+    "type": "guide",
+    "title": "Visual Product Ad and Video Generation with Coherent Lighting and Consistency",
+    "summary": "Combines 3D asset bounding boxes with diffusion controlnets for commercial-grade visual consistency in video and product ads.",
+    "evidence": "source_reported",
+    "sourceUrls": [],
+    "words": 575,
+    "bodyHash": "5967bb08d2ca3598460e296348cdce0f5f87b0bba2e2480f2f574ed1c4fdd943",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "AI video and image tools float products and characters without consistent lighting, ground contact shadows, or camera perspective.",
+    "tools": [
+      "Reve",
+      "Lovart",
+      "Midjourney"
+    ]
+  },
+  {
+    "slug": "prompt-video-character-consistency-framing",
+    "type": "prompt",
+    "title": "Prompt: Consistent Character Framing, Camera Angles and Lighting for Generative Video",
+    "summary": "Enforces camera angle syntax, seed retention, and consistent key lighting constraints across video consistency scene generations.",
+    "evidence": "verified",
+    "sourceUrls": [],
+    "words": 567,
+    "bodyHash": "ffea7f0fca2ff10c7114cd3e3926c6347f6ac91fc819a8bb697d3f5020be023b",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "AI video generators change facial proportions and lighting across multiple prompt iterations and shots.",
+    "tools": [
+      "Reve",
+      "Runway Gen-3",
+      "ComfyUI"
+    ]
+  },
+  {
+    "slug": "reve-ai-video-studio",
+    "type": "tool",
+    "title": "Reve AI: Consistent Character Video Generation Studio",
+    "summary": "Provides dedicated character reference anchors and video consistency controls for commercial-grade generative video.",
+    "evidence": "verified",
+    "sourceUrls": [],
+    "words": 551,
+    "bodyHash": "94452e2c71acba7b24c7b0117660f14dfd06bbbeb7812d35e4dcf7a0dfb0e38a",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Traditional video diffusion tools lack native multi-angle character locking and consistent camera control.",
+    "tools": [
+      "Reve"
+    ]
+  },
+  {
+    "slug": "skill-claude-repeatable-research-pipeline",
+    "type": "skill",
+    "title": "Agent Skill: Autonomous Research and Web Extraction Pipeline",
+    "summary": "Packages repeatable research behaviors, Crawl4AI extraction, and structured fact-checking into an invokable agent skill.",
+    "evidence": "verified",
+    "sourceUrls": [],
+    "words": 567,
+    "bodyHash": "24de93827aeeb6de92f6facd3a27d050c2b10950fb82b276ac8bed3014204466",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Having Claude perform the same research task repeatedly requires tedious instruction pasting every session.",
+    "tools": [
+      "Claude Code",
+      "Antigravity",
+      "Crawl4AI"
+    ]
+  },
+  {
+    "slug": "prompt-senior-code-reviewer-security-screener",
+    "type": "prompt",
+    "title": "Prompt: Senior Code Reviewer and Security Vulnerability Screener",
+    "summary": "Acts as an unforgiving staff engineer reviewing pull requests before merge.",
+    "evidence": "zqtion_tested",
+    "sourceUrls": [],
+    "words": 563,
+    "bodyHash": "0203369b6791962b9262e303f9faeaa2067c5ce2fc7247053973f4680d953fc8",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "AI code generation often introduces subtle timing attacks, unescaped queries, or secret leakage into repositories.",
+    "tools": [
+      "Claude Code",
+      "Cursor"
+    ]
+  },
+  {
+    "slug": "zero-cost-browser-automation-playwright-vision",
+    "type": "guide",
+    "title": "Zero-Cost Browser Automation with Playwright and LLM Vision",
+    "summary": "Runs scheduled headless browser tasks locally or in edge containers with visual error recovery.",
+    "evidence": "verified",
+    "sourceUrls": [],
+    "words": 557,
+    "bodyHash": "4752c38a28695c53cec0f2f990cc68dfc1543f3a745b23f62935ed9f03ff0567",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Cloud-hosted RPA platforms charge thousands per month for simple form submissions and portal downloads.",
+    "tools": [
+      "Playwright",
+      "Claude"
+    ]
+  },
+  {
+    "slug": "case-study-inbound-research-workflow-automation",
+    "type": "case_study",
+    "title": "Case Study: Reducing Inbound Research Time by 85% with Custom LLM Workflows",
+    "summary": "Demonstrates the practical ROI of building a tailored Crawl4AI + Claude enrichment pipeline.",
+    "evidence": "zqtion_tested",
+    "sourceUrls": [],
+    "words": 564,
+    "bodyHash": "01ca587c0aeeccd6f91e89877beb5424a20b86e1bce316e9e441a5caf106bb0f",
+    "genericTestClaim": true,
+    "genericCost": true,
+    "metadataProblem": "Agency staff spent 12 hours per week manually researching prospective clients before introductory calls.",
+    "tools": [
+      "Crawl4AI",
+      "Claude",
+      "Supabase"
+    ]
+  }
+]

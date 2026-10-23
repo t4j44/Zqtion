@@ -15,15 +15,29 @@ npm start
 
 Complete `QA_CHECKLIST.md` against the production server.
 
-## 2. Supabase
+## 2. Supabase (separate staging and production projects)
 
-Apply in order:
+Use the **Zqtion** Supabase organization only (not Second Brain). Identify the project ref before every migration. As of 23 October 2026, Staging `tgjxwjstzdinrcmkpzoj` has all **11** application migrations; Production `vvmobcpkmrghigaurswe` has not been migrated by this release.
+
+On a fresh project, inspect and apply **exactly these tracked files in order**, once each:
 
 1. `supabase/migrations/001_website_inquiries.sql`
 2. `supabase/migrations/002_analytics_attribution_rate_limits.sql`
-3. `supabase/migrations/003_launchpad_applications.sql`, only when Launchpad intake preparation is approved
+3. `supabase/migrations/003_launchpad_applications.sql` (schema only; intake stays disabled)
+4. `supabase/migrations/004_community_v1.sql`
+5. `supabase/migrations/005_community_similarity.sql`
+6. `supabase/migrations/006_community_profile_portfolio.sql`
+7. `supabase/migrations/007_community_public_search_hardening.sql`
+8. `supabase/migrations/008_resource_intelligence.sql`
+9. `supabase/migrations/009_source_registry_and_knowledge_graph.sql`
+10. `supabase/migrations/010_release_hardening.sql`
+11. `supabase/migrations/011_private_inquiry_grants.sql`
 
-Confirm Row Level Security is enabled, no anonymous policies exist, the service role can execute `consume_website_inquiry_rate_limit`, and an over-limit request is rejected.
+Never replay all migrations on an existing database without schema/history inspection. Maintain a reviewed backup and recovery plan **before** executing any production migration; SQL rollback is not a substitute for restoring changed data. Production migrations require explicit separate approval after hosted staging acceptance.
+
+Verify all tables have the intended RLS state, sensitive table grants deny `anon`/`authenticated`, and the `community` bucket is **private** (1 MB maximum; JPEG/PNG/WebP). Some deliberately private tables have RLS with no public policies. Public Community read aggregates use bounded `SECURITY DEFINER` RPCs with explicit visibility predicates; review their exact function bodies rather than indiscriminately revoking access. Review Supabase Security and Performance Advisors, real two-user isolation, and the full permission/hosted test checklist. Confirm the server-only credential can write private inquiries and enforce rate limits; the client-facing publishable/anon key **must not** be a service-role credential.
+
+For Google sign-in, follow `docs/GOOGLE_OAUTH_SETUP.md`, configure the actual provider and Auth URLs in the environment's Supabase dashboard, and test real browser sessions. Email verification/reset requires a verified SMTP sender and actual delivery. Do not claim hosted acceptance from local mocked provider tests.
 
 ## 3. Environment
 
@@ -32,7 +46,7 @@ Use `.env.example` as the name-only source. Never commit values. Production requ
 - `NEXT_PUBLIC_SITE_URL=https://zqtion.com`
 - Supabase URL and server secret
 - `RATE_LIMIT_SECRET`
-- Resend sender/recipient configuration if email delivery is enabled
+- Resend sender/recipient configuration for both internal alerts and customer confirmations; see `docs/INQUIRY_EMAIL_SETUP.md` for the storage-first acceptance policy, monitoring, and Zoho-safe DNS setup
 - public and secret Turnstile keys
 - `NEXT_PUBLIC_ANALYTICS_ENABLED=true` only when measurement is approved and migration 002 is applied
 
@@ -47,9 +61,9 @@ The production-mode application API intentionally permits only the approved prod
 ## 4. Preview acceptance
 
 - Every generated route returns the expected status.
-- A controlled form submission creates an attributed inquiry and sends the expected notification.
+- A controlled form submission creates an attributed inquiry and sends both the internal alert and visitor confirmation with correct Reply-To addresses.
 - Anonymous events contain no form content.
-- Missing or invalid Turnstile, failed providers, and rate limits show honest fallback messages.
+- Missing or invalid Turnstile, failed storage, and rate limits show honest fallback messages. Email-only failures preserve a saved inquiry and report channel status in server logs; the UI never claims a confirmation was sent without provider acceptance.
 - Mobile uses native scroll and the CSS hero; desktop progressively loads Three.js.
 - Menu focus trap, Escape close, focus restoration, video keyboard controls, and skip link work.
 - No console/hydration errors, broken links, horizontal overflow, or early YouTube iframe.

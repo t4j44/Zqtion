@@ -1,0 +1,1390 @@
+{
+  "buildId": "mVbL-NgMsO19eaONBe5ol",
+  "results": [
+    {
+      "route": "/resources/guide/ai-lead-research-verification-pipeline",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/ai-lead-research-verification-pipeline",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/ai-lead-research-verification-pipeline",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/ai-lead-research-verification-pipeline",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/repository/crawl4ai-web-crawler-framework",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/repository/crawl4ai-web-crawler-framework",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/repository/crawl4ai-web-crawler-framework",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/repository/crawl4ai-web-crawler-framework",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/multi-agent-content-research-engine",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/multi-agent-content-research-engine",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/multi-agent-content-research-engine",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/multi-agent-content-research-engine",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/mcp-production-connector-architecture",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/mcp-production-connector-architecture",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/mcp-production-connector-architecture",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/mcp-production-connector-architecture",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/workflow/token-saving-checkpoint-strategy-coding-agents",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/workflow/token-saving-checkpoint-strategy-coding-agents",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/workflow/token-saving-checkpoint-strategy-coding-agents",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/workflow/token-saving-checkpoint-strategy-coding-agents",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/prompt/prompt-b2b-prospect-qualification-tech-stack",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/prompt/prompt-b2b-prospect-qualification-tech-stack",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/prompt/prompt-b2b-prospect-qualification-tech-stack",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/prompt/prompt-b2b-prospect-qualification-tech-stack",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/skill/skill-visual-hierarchy-spacing-reviewer",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/skill/skill-visual-hierarchy-spacing-reviewer",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/skill/skill-visual-hierarchy-spacing-reviewer",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/skill/skill-visual-hierarchy-spacing-reviewer",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/mcp_server/zqtion-resource-intelligence-mcp",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/mcp_server/zqtion-resource-intelligence-mcp",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/mcp_server/zqtion-resource-intelligence-mcp",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/mcp_server/zqtion-resource-intelligence-mcp",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/privacy-preserving-receipt-financial-extraction",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/privacy-preserving-receipt-financial-extraction",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/privacy-preserving-receipt-financial-extraction",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/privacy-preserving-receipt-financial-extraction",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/workflow/ai-video-consistency-face-preservation-workflow",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/workflow/ai-video-consistency-face-preservation-workflow",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/workflow/ai-video-consistency-face-preservation-workflow",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/workflow/ai-video-consistency-face-preservation-workflow",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/open-source-vibe-coding-local-tools-guide",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/open-source-vibe-coding-local-tools-guide",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/open-source-vibe-coding-local-tools-guide",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/open-source-vibe-coding-local-tools-guide",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/prompt/prompt-code-refactoring-accessibility-auditor",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/prompt/prompt-code-refactoring-accessibility-auditor",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/prompt/prompt-code-refactoring-accessibility-auditor",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/prompt/prompt-code-refactoring-accessibility-auditor",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/crawl4ai-vs-firecrawl-web-scraping-comparison",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/crawl4ai-vs-firecrawl-web-scraping-comparison",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/crawl4ai-vs-firecrawl-web-scraping-comparison",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/crawl4ai-vs-firecrawl-web-scraping-comparison",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/claude-code-enterprise-setup-guardrails",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/claude-code-enterprise-setup-guardrails",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/claude-code-enterprise-setup-guardrails",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/claude-code-enterprise-setup-guardrails",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/workflow/automated-competitor-intelligence-tracker",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/workflow/automated-competitor-intelligence-tracker",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/workflow/automated-competitor-intelligence-tracker",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/workflow/automated-competitor-intelligence-tracker",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/tool/google-antigravity-ide-overview",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/tool/google-antigravity-ide-overview",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/tool/google-antigravity-ide-overview",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/tool/google-antigravity-ide-overview",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/workflow/human-in-the-loop-content-approval-pipeline",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/workflow/human-in-the-loop-content-approval-pipeline",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/workflow/human-in-the-loop-content-approval-pipeline",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/workflow/human-in-the-loop-content-approval-pipeline",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/workflow/voice-cloning-script-synchronization-pipeline",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/workflow/voice-cloning-script-synchronization-pipeline",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/workflow/voice-cloning-script-synchronization-pipeline",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/workflow/voice-cloning-script-synchronization-pipeline",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/prompt/prompt-brand-voice-persona-extractor",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/prompt/prompt-brand-voice-persona-extractor",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/prompt/prompt-brand-voice-persona-extractor",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/prompt/prompt-brand-voice-persona-extractor",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/mcp_server/postgresql-mcp-server-integration",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/mcp_server/postgresql-mcp-server-integration",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/mcp_server/postgresql-mcp-server-integration",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/mcp_server/postgresql-mcp-server-integration",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/use_case/lead-qualification-website-scraping-architecture",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/use_case/lead-qualification-website-scraping-architecture",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/use_case/lead-qualification-website-scraping-architecture",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/use_case/lead-qualification-website-scraping-architecture",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/visual-product-ad-coherent-lighting-workflow",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/visual-product-ad-coherent-lighting-workflow",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/visual-product-ad-coherent-lighting-workflow",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/visual-product-ad-coherent-lighting-workflow",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/prompt/prompt-video-character-consistency-framing",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/prompt/prompt-video-character-consistency-framing",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/prompt/prompt-video-character-consistency-framing",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/prompt/prompt-video-character-consistency-framing",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/tool/reve-ai-video-studio",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/tool/reve-ai-video-studio",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/tool/reve-ai-video-studio",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/tool/reve-ai-video-studio",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/skill/skill-claude-repeatable-research-pipeline",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/skill/skill-claude-repeatable-research-pipeline",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/skill/skill-claude-repeatable-research-pipeline",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/skill/skill-claude-repeatable-research-pipeline",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/prompt/prompt-senior-code-reviewer-security-screener",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/prompt/prompt-senior-code-reviewer-security-screener",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/prompt/prompt-senior-code-reviewer-security-screener",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/prompt/prompt-senior-code-reviewer-security-screener",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/zero-cost-browser-automation-playwright-vision",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/zero-cost-browser-automation-playwright-vision",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/zero-cost-browser-automation-playwright-vision",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/zero-cost-browser-automation-playwright-vision",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/case_study/case-study-inbound-research-workflow-automation",
+      "theme": "light",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/case_study/case-study-inbound-research-workflow-automation",
+      "theme": "light",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/case_study/case-study-inbound-research-workflow-automation",
+      "theme": "light",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/case_study/case-study-inbound-research-workflow-automation",
+      "theme": "light",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/ai-lead-research-verification-pipeline",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/ai-lead-research-verification-pipeline",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/ai-lead-research-verification-pipeline",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/ai-lead-research-verification-pipeline",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/repository/crawl4ai-web-crawler-framework",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/repository/crawl4ai-web-crawler-framework",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/repository/crawl4ai-web-crawler-framework",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/repository/crawl4ai-web-crawler-framework",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/multi-agent-content-research-engine",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/multi-agent-content-research-engine",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/multi-agent-content-research-engine",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/multi-agent-content-research-engine",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/mcp-production-connector-architecture",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/mcp-production-connector-architecture",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/mcp-production-connector-architecture",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/mcp-production-connector-architecture",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/workflow/token-saving-checkpoint-strategy-coding-agents",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/workflow/token-saving-checkpoint-strategy-coding-agents",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/workflow/token-saving-checkpoint-strategy-coding-agents",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/workflow/token-saving-checkpoint-strategy-coding-agents",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/prompt/prompt-b2b-prospect-qualification-tech-stack",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/prompt/prompt-b2b-prospect-qualification-tech-stack",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/prompt/prompt-b2b-prospect-qualification-tech-stack",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/prompt/prompt-b2b-prospect-qualification-tech-stack",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/skill/skill-visual-hierarchy-spacing-reviewer",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/skill/skill-visual-hierarchy-spacing-reviewer",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/skill/skill-visual-hierarchy-spacing-reviewer",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/skill/skill-visual-hierarchy-spacing-reviewer",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/mcp_server/zqtion-resource-intelligence-mcp",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/mcp_server/zqtion-resource-intelligence-mcp",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/mcp_server/zqtion-resource-intelligence-mcp",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/mcp_server/zqtion-resource-intelligence-mcp",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/privacy-preserving-receipt-financial-extraction",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/privacy-preserving-receipt-financial-extraction",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/privacy-preserving-receipt-financial-extraction",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/privacy-preserving-receipt-financial-extraction",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/workflow/ai-video-consistency-face-preservation-workflow",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/workflow/ai-video-consistency-face-preservation-workflow",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/workflow/ai-video-consistency-face-preservation-workflow",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/workflow/ai-video-consistency-face-preservation-workflow",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/open-source-vibe-coding-local-tools-guide",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/open-source-vibe-coding-local-tools-guide",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/open-source-vibe-coding-local-tools-guide",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/open-source-vibe-coding-local-tools-guide",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/prompt/prompt-code-refactoring-accessibility-auditor",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/prompt/prompt-code-refactoring-accessibility-auditor",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/prompt/prompt-code-refactoring-accessibility-auditor",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/prompt/prompt-code-refactoring-accessibility-auditor",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/crawl4ai-vs-firecrawl-web-scraping-comparison",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/crawl4ai-vs-firecrawl-web-scraping-comparison",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/crawl4ai-vs-firecrawl-web-scraping-comparison",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/crawl4ai-vs-firecrawl-web-scraping-comparison",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/claude-code-enterprise-setup-guardrails",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/claude-code-enterprise-setup-guardrails",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/claude-code-enterprise-setup-guardrails",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/claude-code-enterprise-setup-guardrails",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/workflow/automated-competitor-intelligence-tracker",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/workflow/automated-competitor-intelligence-tracker",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/workflow/automated-competitor-intelligence-tracker",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/workflow/automated-competitor-intelligence-tracker",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/tool/google-antigravity-ide-overview",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/tool/google-antigravity-ide-overview",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/tool/google-antigravity-ide-overview",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/tool/google-antigravity-ide-overview",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/workflow/human-in-the-loop-content-approval-pipeline",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/workflow/human-in-the-loop-content-approval-pipeline",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/workflow/human-in-the-loop-content-approval-pipeline",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/workflow/human-in-the-loop-content-approval-pipeline",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/workflow/voice-cloning-script-synchronization-pipeline",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/workflow/voice-cloning-script-synchronization-pipeline",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/workflow/voice-cloning-script-synchronization-pipeline",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/workflow/voice-cloning-script-synchronization-pipeline",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/prompt/prompt-brand-voice-persona-extractor",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/prompt/prompt-brand-voice-persona-extractor",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/prompt/prompt-brand-voice-persona-extractor",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/prompt/prompt-brand-voice-persona-extractor",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/mcp_server/postgresql-mcp-server-integration",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/mcp_server/postgresql-mcp-server-integration",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/mcp_server/postgresql-mcp-server-integration",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/mcp_server/postgresql-mcp-server-integration",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/use_case/lead-qualification-website-scraping-architecture",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/use_case/lead-qualification-website-scraping-architecture",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/use_case/lead-qualification-website-scraping-architecture",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/use_case/lead-qualification-website-scraping-architecture",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/visual-product-ad-coherent-lighting-workflow",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/visual-product-ad-coherent-lighting-workflow",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/visual-product-ad-coherent-lighting-workflow",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/visual-product-ad-coherent-lighting-workflow",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/prompt/prompt-video-character-consistency-framing",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/prompt/prompt-video-character-consistency-framing",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/prompt/prompt-video-character-consistency-framing",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/prompt/prompt-video-character-consistency-framing",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/tool/reve-ai-video-studio",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/tool/reve-ai-video-studio",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/tool/reve-ai-video-studio",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/tool/reve-ai-video-studio",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/skill/skill-claude-repeatable-research-pipeline",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/skill/skill-claude-repeatable-research-pipeline",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/skill/skill-claude-repeatable-research-pipeline",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/skill/skill-claude-repeatable-research-pipeline",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/prompt/prompt-senior-code-reviewer-security-screener",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/prompt/prompt-senior-code-reviewer-security-screener",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/prompt/prompt-senior-code-reviewer-security-screener",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/prompt/prompt-senior-code-reviewer-security-screener",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/guide/zero-cost-browser-automation-playwright-vision",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/guide/zero-cost-browser-automation-playwright-vision",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/guide/zero-cost-browser-automation-playwright-vision",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/guide/zero-cost-browser-automation-playwright-vision",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    },
+    {
+      "route": "/resources/case_study/case-study-inbound-research-workflow-automation",
+      "theme": "dark",
+      "width": 320,
+      "scrollWidth": 320
+    },
+    {
+      "route": "/resources/case_study/case-study-inbound-research-workflow-automation",
+      "theme": "dark",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "route": "/resources/case_study/case-study-inbound-research-workflow-automation",
+      "theme": "dark",
+      "width": 768,
+      "scrollWidth": 768
+    },
+    {
+      "route": "/resources/case_study/case-study-inbound-research-workflow-automation",
+      "theme": "dark",
+      "width": 1440,
+      "scrollWidth": 1440
+    }
+  ],
+  "journeys": [
+    "Homepage public feed 320",
+    "Mobile navigation public feed 320",
+    "Homepage public feed 390",
+    "Mobile navigation public feed 390"
+  ],
+  "accessibility": [
+    {
+      "theme": "light",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "theme": "light",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "theme": "dark",
+      "width": 1440,
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    }
+  ],
+  "errors": []
+}

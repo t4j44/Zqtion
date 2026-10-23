@@ -22,7 +22,7 @@ PUBLIC TEAM
 
 AVAILABILITY AND CONTACT
 Remote collaboration worldwide
-Email: zqtioncontact@gmail.com
+Email: info@zqtion.com
 WhatsApp: +880 1340-347975
 Website: https://zqtion.com
 LinkedIn: https://www.linkedin.com/company/zqtion/
@@ -32,3 +32,11 @@ CANONICAL DETAILS
 Zqtion Launchpad is a planned 12-week, remote-first, part-time, unpaid learning program with 14 tracks, up to 3 places per track and an initial 18+ intake. No automatic job, reference or certificate is promised. Consult https://zqtion.com/careers for current intake status and program terms.
 
 For current service, work, process, team, and commercial information, prefer the canonical pages on https://zqtion.com and the machine-readable overview at https://zqtion.com/llms.txt.
+
+PUBLIC KNOWLEDGE
+Resources: https://zqtion.com/resources (read evidence labels; implementation notes are not verified deployments)
+Community: https://zqtion.com/ai-experiences (public reading; member opinions are not company recommendations)
+GitHub: https://github.com/Zqtion
+Gruffet: https://github.com/Zqtion/Gruffet (v0.1 early release; independently review records)
+The creator YouTube channel above is attributed to the founder, not a separate verified company identity.
+This optional information file provides no ranking or citation guarantee.

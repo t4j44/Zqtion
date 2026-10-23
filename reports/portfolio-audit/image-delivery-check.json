@@ -1,0 +1,158 @@
+{
+  "images": [
+    {
+      "src": "http://127.0.0.1:3219/_next/image?url=%2Fwork%2Fgforce-desktop.webp&w=750&q=75",
+      "attributeSrc": "/_next/image?url=%2Fwork%2Fgforce-desktop.webp&w=3840&q=75",
+      "loading": "lazy",
+      "complete": true,
+      "width": 720,
+      "height": 450,
+      "rect": {
+        "width": 648.40625,
+        "height": 364.71875
+      },
+      "alt": "Genuine screenshot of G Force Tyres"
+    },
+    {
+      "src": "http://127.0.0.1:3219/work/gruffet-mark.svg",
+      "attributeSrc": "/work/gruffet-mark.svg",
+      "loading": "lazy",
+      "complete": true,
+      "width": 150,
+      "height": 150,
+      "rect": {
+        "width": 164,
+        "height": 164
+      },
+      "alt": "Gruffet's original ferret mark"
+    },
+    {
+      "src": "http://127.0.0.1:3219/_next/image?url=%2Fwork%2Fgruffet-explainer.webp&w=750&q=75",
+      "attributeSrc": "/_next/image?url=%2Fwork%2Fgruffet-explainer.webp&w=3840&q=75",
+      "loading": "lazy",
+      "complete": true,
+      "width": 720,
+      "height": 405,
+      "rect": {
+        "width": 648.40625,
+        "height": 364.71875
+      },
+      "alt": "Video still from Gruffet — Product Motion Explainer"
+    },
+    {
+      "src": "http://127.0.0.1:3219/_next/image?url=%2Fwork%2Fkinetic-type.webp&w=750&q=75",
+      "attributeSrc": "/_next/image?url=%2Fwork%2Fkinetic-type.webp&w=3840&q=75",
+      "loading": "lazy",
+      "complete": true,
+      "width": 720,
+      "height": 405,
+      "rect": {
+        "width": 648.40625,
+        "height": 364.71875
+      },
+      "alt": "Video still from Bold Kinetic Type Showreel"
+    },
+    {
+      "src": "http://127.0.0.1:3219/_next/image?url=%2Fwork%2Fthe-leap.webp&w=750&q=75",
+      "attributeSrc": "/_next/image?url=%2Fwork%2Fthe-leap.webp&w=3840&q=75",
+      "loading": "lazy",
+      "complete": true,
+      "width": 720,
+      "height": 405,
+      "rect": {
+        "width": 648.40625,
+        "height": 364.71875
+      },
+      "alt": "Video still from MOJO — VFX Product Study"
+    },
+    {
+      "src": "http://127.0.0.1:3219/_next/image?url=%2Fwork%2Fproduct-lab.webp&w=750&q=75",
+      "attributeSrc": "/_next/image?url=%2Fwork%2Fproduct-lab.webp&w=3840&q=75",
+      "loading": "lazy",
+      "complete": true,
+      "width": 720,
+      "height": 405,
+      "rect": {
+        "width": 648.40625,
+        "height": 364.71875
+      },
+      "alt": "Video still from Chicken Tikka — Photo-to-Reel Study"
+    },
+    {
+      "src": "http://127.0.0.1:3219/_next/image?url=%2Fwork%2Fspark.webp&w=750&q=75",
+      "attributeSrc": "/_next/image?url=%2Fwork%2Fspark.webp&w=3840&q=75",
+      "loading": "lazy",
+      "complete": true,
+      "width": 720,
+      "height": 405,
+      "rect": {
+        "width": 648.40625,
+        "height": 364.71875
+      },
+      "alt": "Video still from SPARK — A Social Fiction Short Film"
+    },
+    {
+      "src": "http://127.0.0.1:3219/_next/image?url=%2Fwork%2Fthe-call.webp&w=750&q=75",
+      "attributeSrc": "/_next/image?url=%2Fwork%2Fthe-call.webp&w=3840&q=75",
+      "loading": "lazy",
+      "complete": true,
+      "width": 720,
+      "height": 405,
+      "rect": {
+        "width": 648.40625,
+        "height": 364.71875
+      },
+      "alt": "Video still from Emotional Telecom Film — Independent Concept"
+    },
+    {
+      "src": "http://127.0.0.1:3219/_next/image?url=%2Fwork%2Fpast-self.webp&w=750&q=75",
+      "attributeSrc": "/_next/image?url=%2Fwork%2Fpast-self.webp&w=3840&q=75",
+      "loading": "lazy",
+      "complete": true,
+      "width": 720,
+      "height": 405,
+      "rect": {
+        "width": 648.40625,
+        "height": 364.71875
+      },
+      "alt": "Video still from Meeting My Past Self in the AI Future"
+    },
+    {
+      "src": "http://127.0.0.1:3219/_next/image?url=%2Fwork%2Fmicrofilms.webp&w=750&q=75",
+      "attributeSrc": "/_next/image?url=%2Fwork%2Fmicrofilms.webp&w=3840&q=75",
+      "loading": "lazy",
+      "complete": true,
+      "width": 720,
+      "height": 405,
+      "rect": {
+        "width": 648.40625,
+        "height": 364.71875
+      },
+      "alt": "Video still from AI Microfilm Collection — Play and City Life"
+    },
+    {
+      "src": "http://127.0.0.1:3219/_next/image?url=%2Fwork%2Fcreative-lab.webp&w=750&q=75",
+      "attributeSrc": "/_next/image?url=%2Fwork%2Fcreative-lab.webp&w=3840&q=75",
+      "loading": "lazy",
+      "complete": true,
+      "width": 720,
+      "height": 405,
+      "rect": {
+        "width": 648.40625,
+        "height": 364.71875
+      },
+      "alt": "Video still from AI VFX Creative Lab"
+    }
+  ],
+  "failures": [],
+  "prefetchAborts": [
+    {
+      "url": "http://127.0.0.1:3219/contact?_rsc=2w9-JQzBEdMnhII4",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "url": "http://127.0.0.1:3219/contact?_rsc=ebxhI9ek-oKkZVJy",
+      "error": "net::ERR_ABORTED"
+    }
+  ]
+}
