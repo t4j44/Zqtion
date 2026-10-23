@@ -8,10 +8,12 @@ const templates = await import(templatesUrl);
 const resendUrl = await moduleUrl("lib/email/resend.ts", {
   "server-only": "data:text/javascript,export{}", "@/data/site": siteUrl, "./templates": templatesUrl,
 });
+const urlInputUrl = await moduleUrl("lib/url-input.ts");
 const { POST } = await import(await moduleUrl("app/api/inquiries/route.ts", {
   "@supabase/supabase-js": import.meta.resolve("@supabase/supabase-js"),
   "next/server": import.meta.resolve("next/server.js"),
   "@/lib/request-validation": await moduleUrl("lib/request-validation.ts"),
+  "@/lib/url-input": urlInputUrl,
   "@/data/site": siteUrl, "@/lib/email/resend": resendUrl,
 }));
 const originalFetch = globalThis.fetch;
@@ -288,4 +290,32 @@ test("Production rejects localhost tokens even with a nonproduction NODE_ENV", a
   behavior.turnstile = { hostname: "localhost" };
   assert.equal((await POST(request())).status, 400);
   assert.ok(!calls.some(call => call.kind === "save"));
+});
+
+test("website field stores normalized domains with no protocol or www prefix", async () => {
+  for (const [value, expected] of [
+    ["zqtion.com", "https://zqtion.com"],
+    ["example.test/path?q=1", "https://example.test/path?q=1"],
+    ["www.linkedin.com/in/someone", "https://www.linkedin.com/in/someone"],
+    ["linkedin.com/in/someone", "https://linkedin.com/in/someone"],
+  ]) {
+    calls = [];
+    const result = await POST(request({ ...brief(), projectUrl: value }));
+    assert.equal(result.status, 200, value);
+    assert.equal(calls.find(call => call.kind === "save")?.body.project_url, expected, value);
+  }
+});
+
+test("website field rejects unsafe values before the rate limiter or downstream services", async () => {
+  for (const value of [
+    "javascript:alert(1)", "//evil.example/link", "data:text/html,bad",
+    "http://user:password@example.test", "https://example.test.evil\\domain",
+    "localhost", "file:///etc/passwd", "zqtion.com@evil.example",
+    "not a url", "http://localhost", "https://127.0.0.1",
+  ]) {
+    calls = [];
+    const result = await POST(request({ ...brief(), projectUrl: value }));
+    assert.equal(result.status, 400, value);
+    assert.equal(calls.length, 0, value);
+  }
 });
