@@ -1,5 +1,7 @@
 # Contact form and hero refinement
 
+**Current functional acceptance follow-up:** [PR #2 evidence ledger](inquiry-functional-acceptance.md). The sections below record the earlier visual/UI phase; current API hostname hardening and its 142-test build are documented separately. Genuine provider delivery remains blocked and PR #2 remains draft.
+
 2026-10-23 · `fix/contact-form-and-hero-refinement` → `main`
 
 Base: `2b0ae84f2dcb2ca58bf8d7c8718b3f3882651bcd`. Final local production build: `BE5EYle_kNRvt9lGlpsxV` (110 static pages).

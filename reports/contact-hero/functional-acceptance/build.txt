@@ -1,0 +1,102 @@
+
+> zqtion-landing@0.1.0 build
+> next build
+
+▲ Next.js 16.3.6 (Turbopack)
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of E:\zqtion\website of zqtion\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles:
+   * E:\zqtion\website of zqtion\artifacts\inquiry-acceptance-build-1792755143434\package-lock.json
+
+✓ Running next.config.js took 63ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 20.8s
+  Running TypeScript ...
+  Finished TypeScript in 28.2s ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/110) ...
+  Generating static pages using 11 workers (27/110)
+  Generating static pages using 11 workers (54/110)
+  Generating static pages using 11 workers (82/110)
+✓ Generating static pages using 11 workers (110/110) in 5.0s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /ai-audit
+├ ƒ /ai-experiences
+├ ƒ /ai-experiences/[id]
+├ ƒ /api/analytics
+├ ƒ /api/applications
+├ ƒ /api/community/actions
+├ ƒ /api/community/conversation
+├ ƒ /api/community/me
+├ ƒ /api/community/media/[id]
+├ ƒ /api/community/similar
+├ ƒ /api/community/upload
+├ ƒ /api/community/workspace
+├ ƒ /api/inquiries
+├ ƒ /api/prompts
+├ ƒ /api/prompts/[slug]
+├ ƒ /api/resources
+├ ƒ /api/resources/mcp
+├ ƒ /careers
+├   /careers/[track]
+│ ├ ● /careers/ai-creative-prompt-engineering
+│ ├ ● /careers/video-editing-post-production
+│ ├ ● /careers/reels-short-form-content
+│ └ ● [+11 more paths]
+├ ƒ /careers/apply
+├ ƒ /community/account
+├ ○ /community/guidelines
+├ ○ /community/moderation
+├ ƒ /community/profile-sitemaps/[page]
+├ ƒ /community/saved
+├ ƒ /community/sitemap-index.xml
+├ ƒ /community/sitemaps/[page]
+├ ƒ /contact
+├ ○ /insights
+├   /insights/[slug]
+│ ├ ● /insights/ai-commercial-production-without-losing-the-idea
+│ ├ ● /insights/brief-an-ai-execution-partner
+│ └ ● /insights/when-to-automate-a-workflow
+├ ○ /privacy
+├ ○ /process
+├ ƒ /prompts
+├ ƒ /prompts/[category]
+├ ƒ /prompts/[category]/[slug]
+├   /prompts/[category]/[slug]
+│ ├ ● /prompts/ui/fieldwork-research-dashboard
+│ ├ ● /prompts/ui/repair-studio-service-page
+│ ├ ● /prompts/ui/transparent-pricing-comparison
+│ └ ● [+15 more paths]
+├ ƒ /prompts/community
+├ ƒ /prompts/community/[id]
+├ ○ /resources
+├   /resources/[type]/[slug]
+│ ├ ● /resources/guide/ai-lead-research-verification-pipeline
+│ ├ ● /resources/repository/crawl4ai-web-crawler-framework
+│ ├ ● /resources/guide/multi-agent-content-research-engine
+│ └ ● [+25 more paths]
+├ ○ /robots.txt
+├ ○ /services
+├ ƒ /share
+├ ○ /sitemap.xml
+├ ○ /terms
+├ ƒ /u/[username]
+├ ○ /work
+└   /work/[slug]
+  ├ ● /work/g-force-tyres-mobile
+  ├ ● /work/gruffet
+  ├ ● /work/gruffet-product-explainer
+  └ ● [+9 more paths]
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand

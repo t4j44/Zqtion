@@ -1,0 +1,26 @@
+[
+  {
+    "name": "typecheck",
+    "startedAt": "2026-10-23T11:31:09.601Z",
+    "finishedAt": "2026-10-23T11:31:15.411Z",
+    "code": 0
+  },
+  {
+    "name": "lint",
+    "startedAt": "2026-10-23T11:31:15.414Z",
+    "finishedAt": "2026-10-23T11:31:54.843Z",
+    "code": 0
+  },
+  {
+    "name": "test",
+    "startedAt": "2026-10-23T11:31:54.845Z",
+    "finishedAt": "2026-10-23T11:32:23.432Z",
+    "code": 0
+  },
+  {
+    "name": "build",
+    "startedAt": "2026-10-23T11:32:24.160Z",
+    "finishedAt": "2026-10-23T11:33:30.243Z",
+    "code": 0
+  }
+]

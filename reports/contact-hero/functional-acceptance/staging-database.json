@@ -1,0 +1,25 @@
+{
+  "checkedOn": "2026-10-23",
+  "projectId": "tgjxwjstzdinrcmkpzoj",
+  "environment": "existing Zqtion Staging project",
+  "method": "Actual Supabase connector metadata queries and genuine limiter RPC; not a mock or full HTTP acceptance test",
+  "tables": [
+    { "name": "website_inquiries", "rlsEnabled": true, "anonSelect": false, "authenticatedSelect": false, "serviceRoleInsert": true, "initialRows": 0 },
+    { "name": "website_rate_limits", "rlsEnabled": true, "anonSelect": false, "authenticatedSelect": false, "serviceRoleInsert": true, "initialRows": 0 }
+  ],
+  "limiter": {
+    "function": "consume_website_inquiry_rate_limit(text,integer,integer)",
+    "securityDefiner": true,
+    "anonExecute": false,
+    "authenticatedExecute": false,
+    "serviceRoleExecute": true,
+    "testKey": "zqtion-staging-functional-acceptance-20261023-1139-rpc-only",
+    "windowSeconds": 600,
+    "maxAttempts": 5,
+    "observedResults": [true, true, true, true, true, false],
+    "fullHttp429Verified": false
+  },
+  "inquirySubmitted": false,
+  "providerDeliveryVerified": false,
+  "productionModified": false
+}
