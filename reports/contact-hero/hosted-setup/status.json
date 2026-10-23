@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-23",
+  "project": "zqtion",
+  "branch": "fix/contact-form-and-hero-refinement",
+  "controlledConfirmationMailbox": "info@zqtion.com",
+  "access": {
+    "vercelConnector": "403 forbidden for project team",
+    "signedInBrowser": "Project environment list and PR preview accessible"
+  },
+  "productionVariableMetadataObserved": [
+    "TURNSTILE_SECRET_KEY",
+    "RESEND_API_KEY",
+    "INQUIRY_FROM_EMAIL",
+    "INQUIRY_TO_EMAIL",
+    "SUPABASE_SECRET_KEY",
+    "SUPABASE_URL",
+    "RATE_LIMIT_SECRET"
+  ],
+  "change": {
+    "key": "NEXT_PUBLIC_TURNSTILE_SITE_KEY",
+    "type": "Config",
+    "target": "Production only",
+    "source": "Existing Cloudflare Zqtion Production widget; public site key only",
+    "result": "Vercel confirmed save; new deployment required to apply",
+    "proof": "public-site-key-saved.png"
+  },
+  "cloudflareHostnamesObserved": ["zqtion.com", "www.zqtion.com"],
+  "stagingDatabase": {
+    "name": "Zqtion Staging",
+    "projectId": "tgjxwjstzdinrcmkpzoj",
+    "status": "ACTIVE_HEALTHY",
+    "inquiryTableExists": true,
+    "rateLimitTableExists": true,
+    "rowLevelSecurityEnabledOnBoth": true,
+    "reportedRowsOnBoth": 0,
+    "inspection": "Read-only project and table metadata; no writes or key retrieval"
+  },
+  "stagingWidget": {
+    "name": "Zqtion Staging",
+    "hostname": "zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app",
+    "mode": "Managed",
+    "preClearance": false,
+    "created": false,
+    "state": "Prepared unsaved form; owner handoff at Create",
+    "proof": "staging-widget-prepared.png"
+  },
+  "cloudflareModified": false,
+  "secretValuesRevealedOrExported": false,
+  "productionFlagsChanged": false,
+  "productionDatabaseWritten": false,
+  "productionDeployed": false,
+  "liveProductionFallbackObserved": true,
+  "realInquirySubmitted": false,
+  "realConfirmationReceived": "NOT TESTED",
+  "readiness": "PARTIAL: public key saved; genuine staging inquiry acceptance BLOCKED",
+  "remaining": [
+    "Owner completes staging widget credential creation",
+    "Connect existing Zqtion Staging Supabase and appropriate staging mail/Turnstile credentials to this branch's Preview scope",
+    "Staging hostname permitted by Cloudflare widget and server inquiry verifier",
+    "Real Turnstile, private insert, internal notification acceptance and confirmation mailbox receipt",
+    "Hosted error/rate-limit/privacy acceptance"
+  ]
+}

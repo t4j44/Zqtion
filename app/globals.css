@@ -1524,7 +1524,21 @@ textarea.launchpad-input { resize: vertical; min-height: 7rem; }
 @media(min-width:768px) { .work-project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .work-card-content { padding:1.5rem; } }
 @media(prefers-reduced-motion:reduce) { .work-card,.work-card-image { transition:none; } .work-card:hover,.work-card:hover .work-card-image { transform:none; } }
 
-/* Phone hero: pre-rendered 3D loop (scripts/render-3d). Same box as the poster (so it never becomes a larger LCP paint); its background equals the page colour. */
+/* Mobile display panel: more breathing room, with the original poster/video size. */
+@media(max-width:767px) {
+  .hero-artwork { overflow:hidden; border:1px solid var(--line); border-radius:2rem; background:radial-gradient(ellipse at 45% 35%,#192535,#050608 75%); }
+  .hero-3d-local-stage { height:clamp(322px,96vw,400px); }
+  .hero-3d-static { grid-template-columns:minmax(0,1fr); grid-template-rows:minmax(0,1fr); }
+  .hero-copy { padding-top:.75rem; }
+  .hero-layout { padding-bottom:1.5rem; }
+  .hero-scroll-cue { display:none; }
+}
+/* Short phones use available viewport space; the Z is never independently zoomed. */
+@media(max-width:767px) and (max-height:700px) {
+  .hero-3d-local-stage { height:clamp(248px,44svh,306px); }
+}
+
+/* Phone hero: pre-rendered 3D loop; same responsive square as the poster. */
 .hero-loop-video {
   position: absolute;
   left: 50%;

@@ -1,0 +1,31 @@
+{
+  "buildId": "kiFZUX_EBGxjBSKXmVWGl",
+  "method": "npm run build in credential-isolated source snapshot; no .env files copied; no provider acceptance claim",
+  "reviewedUiHashesUnchanged": true,
+  "files": [
+    {
+      "path": "app/api/inquiries/route.ts",
+      "sha256": "b7d27598b0e6a2112504e7640316bb1441d565884cafdfff4959620b2ec48408"
+    },
+    {
+      "path": "app/contact/page.tsx",
+      "sha256": "ba53ce94019a936cb3e44198498f2b47e3b87e92a246fda7d5bacd16c6824ee3"
+    },
+    {
+      "path": "app/globals.css",
+      "sha256": "4ce8244373566877606f9436036686c2777c56d67acdd528f116fcd2b70a7403"
+    },
+    {
+      "path": "app/interface.css",
+      "sha256": "5d2e90a31fdd218b73cf7833e892ce7ca900d0ccd5322d718ef0a19ac31003ea"
+    },
+    {
+      "path": "components/ContactForm.tsx",
+      "sha256": "93d09460bedf2d7855939f31972fcf36d7d9578fcb030c20073e89e85775492e"
+    },
+    {
+      "path": "components/TurnstileWidget.tsx",
+      "sha256": "56d82f4634bbcd4de010a5ceade37934ec7f7ccfa8a6a45104740d8a19db55ca"
+    }
+  ]
+}

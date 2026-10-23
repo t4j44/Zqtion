@@ -14,7 +14,8 @@ export function isSingleMailbox(value: string) {
 }
 
 async function sendWithResend(content: EmailContent, to: string, replyTo: string, idempotencyKey: string): Promise<DeliveryResult> {
-  const apiKey = process.env.RESEND_API_KEY;
+  const previewBranch = process.env.VERCEL_ENV === "preview" && process.env.VERCEL_GIT_COMMIT_REF === "fix/contact-form-and-hero-refinement";
+  const apiKey = process.env.RESEND_API_KEY || (previewBranch ? process.env.RESEND_API_KEY_2 : undefined);
   const from = process.env.INQUIRY_FROM_EMAIL || `Zqtion <${siteConfig.email}>`;
   const senderAddress = from.match(/^[^<>\r\n]+<([^<>]+)>$/)?.[1] || from;
   if (!apiKey || !isSingleMailbox(senderAddress) || /[\r\n]/.test(from) || !isSingleMailbox(to) || !isSingleMailbox(replyTo)) {

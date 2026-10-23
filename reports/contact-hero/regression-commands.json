@@ -1,0 +1,32 @@
+[
+  {
+    "suite": "ui",
+    "startedAt": "2026-10-23T09:52:29.412Z",
+    "finishedAt": "2026-10-23T09:52:54.428Z",
+    "code": 0
+  },
+  {
+    "suite": "layout",
+    "startedAt": "2026-10-23T09:52:54.429Z",
+    "finishedAt": "2026-10-23T09:55:01.754Z",
+    "code": 0
+  },
+  {
+    "suite": "axe",
+    "startedAt": "2026-10-23T09:55:01.755Z",
+    "finishedAt": "2026-10-23T09:56:46.163Z",
+    "code": 0
+  },
+  {
+    "suite": "community",
+    "startedAt": "2026-10-23T09:56:46.163Z",
+    "finishedAt": "2026-10-23T09:58:14.797Z",
+    "code": 0
+  },
+  {
+    "suite": "portfolio",
+    "startedAt": "2026-10-23T09:58:14.797Z",
+    "finishedAt": "2026-10-23T09:58:32.476Z",
+    "code": 0
+  }
+]

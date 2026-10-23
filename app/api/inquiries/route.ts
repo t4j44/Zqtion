@@ -69,7 +69,7 @@ async function checkRateLimit(ip: string) {
   const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) {
-    if (process.env.NODE_ENV === "production") return { configured: false, allowed: false };
+    if (process.env.NODE_ENV === "production" || ["preview", "production"].includes(process.env.VERCEL_ENV || "")) return { configured: false, allowed: false };
     return { configured: false, allowed: !memoryRateLimited(ip) };
   }
 
@@ -84,9 +84,11 @@ async function checkRateLimit(ip: string) {
   return { configured: true, allowed: data === true };
 }
 
-async function verifyTurnstile(token: string, ip: string) {
-  const secret = process.env.TURNSTILE_SECRET_KEY;
-  if (!secret) return { configured: process.env.NODE_ENV !== "production", valid: process.env.NODE_ENV !== "production" };
+async function verifyTurnstile(token: string, ip: string, requestHostname: string) {
+  const previewBranch = process.env.VERCEL_ENV === "preview" && process.env.VERCEL_GIT_COMMIT_REF === "fix/contact-form-and-hero-refinement";
+  const secret = process.env.TURNSTILE_SECRET_KEY || (previewBranch ? process.env.TURNSTILE_SECRET_KEY_2 : undefined);
+  const hosted = process.env.NODE_ENV === "production" || ["preview", "production"].includes(process.env.VERCEL_ENV || "");
+  if (!secret) return { configured: !hosted, valid: !hosted };
   if (!token) return { configured: true, valid: false };
 
   const form = new URLSearchParams({ secret, response: token });
@@ -94,7 +96,15 @@ async function verifyTurnstile(token: string, ip: string) {
   const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body: form, cache: "no-store", signal: AbortSignal.timeout(8000) });
   if (!response.ok) return { configured: true, valid: false };
   const result = (await response.json()) as { success?: boolean; action?: string; hostname?: string };
-  const hosts = process.env.NODE_ENV === "production" ? ["zqtion.com", "www.zqtion.com"] : ["zqtion.com", "www.zqtion.com", "localhost", "127.0.0.1"];
+  const approvedPreviewHostname = "zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app";
+  const previewConfigured = process.env.INQUIRY_PREVIEW_HOSTNAME === approvedPreviewHostname
+    && process.env.VERCEL_GIT_COMMIT_REF === "fix/contact-form-and-hero-refinement"
+    && requestHostname === approvedPreviewHostname;
+  // A Preview never accepts production tokens or arbitrary deployment aliases.
+  // The explicit opt-in is ignored by Production, even if accidentally configured there.
+  const hosts = process.env.VERCEL_ENV === "preview"
+    ? (previewConfigured ? [approvedPreviewHostname] : [])
+    : hosted ? ["zqtion.com", "www.zqtion.com"] : ["zqtion.com", "www.zqtion.com", "localhost", "127.0.0.1"];
   return { configured: true, valid: result.success === true && result.action === "inquiry" && hosts.includes(result.hostname || "") };
 }
 
@@ -156,13 +166,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ error }, { status });
     }
 
-    const turnstile = await verifyTurnstile(inquiry.turnstileToken, ip);
+    const turnstile = await verifyTurnstile(inquiry.turnstileToken, ip, new URL(request.url).hostname);
     if (!turnstile.configured) {
       return NextResponse.json({ error: unavailable }, { status: 503 });
     }
     if (!turnstile.valid) {
       return NextResponse.json({ error: "Human verification failed. Please refresh and try again." }, { status: 400 });
     }
+    console.info("inquiry_verification_passed", { inquiryId });
 
     const submittedAt = new Date().toISOString();
     const database = await saveToSupabase(inquiry, request.headers.get("user-agent") || "", inquiryId, submittedAt);
@@ -178,7 +189,11 @@ export async function POST(request: Request) {
     } else {
       console.error("inquiry_email_attention", { inquiryId, ...delivery });
     }
-    return NextResponse.json({ ok: true, confirmation: delivery.confirmation.status === "accepted" ? "accepted" : "unavailable" });
+    const result = { ok: true, confirmation: delivery.confirmation.status === "accepted" ? "accepted" : "unavailable" };
+    const response = NextResponse.json(result);
+    // Correlate the public response with private storage/provider IDs without logging the brief or token.
+    console.info("inquiry_response", { inquiryId, status: response.status, body: result });
+    return response;
   } catch (error) {
     if (error instanceof RequestBodyError) {
       return NextResponse.json({ error: error.status === 413 ? "The brief is too large." : "Please send a valid project brief." }, { status: error.status });

@@ -14,6 +14,7 @@ export type TurnstileHandle = { reset: () => void };
 const TurnstileWidget = forwardRef<TurnstileHandle, { action: "inquiry" | "launchpad" }>(function TurnstileWidget({ action }, ref) {
   const hostRef = useRef<HTMLDivElement>(null);
   const widgetRef = useRef<string | null>(null);
+  const configurationRef = useRef("");
   const [token, setToken] = useState("");
   const [message, setMessage] = useState("");
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -26,8 +27,11 @@ const TurnstileWidget = forwardRef<TurnstileHandle, { action: "inquiry" | "launc
 
   const mount = useCallback(() => {
     if (!siteKey || !hostRef.current || !window.turnstile || widgetRef.current !== null) return;
+    const theme = document.documentElement.dataset.theme === "light" ? "light" : "dark";
+    const size = hostRef.current.clientWidth < 300 ? "compact" : "flexible";
+    configurationRef.current = `${theme}:${size}`;
     widgetRef.current = window.turnstile.render(hostRef.current, {
-      sitekey: siteKey, theme: "dark", size: "flexible", action, "response-field": false,
+      sitekey: siteKey, theme, size, action, "response-field": false,
       callback: (value: string) => { setToken(value); setMessage(""); },
       "expired-callback": () => { setToken(""); setMessage("Verification expired. Please verify again before submitting."); },
       "error-callback": () => { setToken(""); setMessage("Verification could not load. Check your connection and try again."); },
@@ -36,7 +40,25 @@ const TurnstileWidget = forwardRef<TurnstileHandle, { action: "inquiry" | "launc
 
   useEffect(() => {
     mount();
+    const host = hostRef.current;
+    if (!host) return;
+    const adapt = () => {
+      const theme = document.documentElement.dataset.theme === "light" ? "light" : "dark";
+      const size = host.clientWidth < 300 ? "compact" : "flexible";
+      if (widgetRef.current !== null && configurationRef.current !== `${theme}:${size}`) {
+        window.turnstile?.remove(widgetRef.current);
+        widgetRef.current = null;
+        setToken("");
+      }
+      mount();
+    };
+    const resize = new ResizeObserver(adapt);
+    resize.observe(host);
+    const theme = new MutationObserver(adapt);
+    theme.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     return () => {
+      resize.disconnect();
+      theme.disconnect();
       if (widgetRef.current !== null) window.turnstile?.remove(widgetRef.current);
       widgetRef.current = null;
     };

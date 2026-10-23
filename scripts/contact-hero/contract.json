@@ -1,0 +1,20 @@
+{
+  "planning": "replan",
+  "context_depth": "dependency",
+  "verification_depth": "impact",
+  "delegation": "none",
+  "base": "2b0ae84f2dcb2ca58bf8d7c8718b3f3882651bcd",
+  "branch": "fix/contact-form-and-hero-refinement",
+  "scope": "Existing contact form/page/Turnstile UI and scoped hero framing; functional acceptance follow-up may add only the exact approved branch-scoped Preview hostname to the existing inquiry verifier, safe response logging, tests and configuration documentation. Preserve endpoint/payload, storage schema, provider routing, Community Auth, media, dependencies and production activation flags until genuine acceptance.",
+  "decisions": [
+    "Keep fallback activation conditional until genuine hosted acceptance; improve both form and fallback layouts.",
+    "Keep timeline in the existing details field to preserve storage/API contracts.",
+    "Use a synchronous client submission lock, safe failure messages and truthful provider-accepted wording.",
+    "Owner correction: enlarge the mobile black panel around 15–20 percent where space permits. Revert all independent poster/video/WebGL Z scaling and retain original assets, sizes and proportions. Adapt short-phone height and centering together.",
+    "Record baseline before product mutations, compare same build settings, validate local and hosted evidence separately.",
+    "Commit/push feature branch and keep PR 2 draft while any genuine provider gate remains blocked.",
+    "Functional acceptance: pin staging to the exact approved PR alias, require Vercel Preview and the feature branch plus explicit server configuration and matching request hostname; production hostname acceptance stays unchanged.",
+    "Only real provider/browser/row/mailbox evidence can satisfy hosted acceptance. Credential presence, local tests and provider acceptance do not prove inbox receipt."
+  ],
+  "required": ["Existing inquiry and security tests", "All requested responsive sizes and render modes", "Before/after screenshots and matching performance samples", "Typecheck, lint, tests, build, prompt SEO, diff check", "Provider acceptance blockers explicit"]
+}

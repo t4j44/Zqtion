@@ -1,0 +1,21 @@
+{
+  "checkedOn": "2026-10-23",
+  "origin": "https://zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app",
+  "sourceCommit": "527d187",
+  "method": "Actual signed-in Chrome interaction through the form UI, without response interception, mock token or provider fixture",
+  "requiredFieldsBlockedEmptySubmit": ["name", "email", "service", "details"],
+  "controlledAttempt": {
+    "disabledFieldsWhilePending": true,
+    "disabledSubmitWhilePending": true,
+    "resultText": "Online brief delivery is temporarily unavailable. Please email info@zqtion.com or use WhatsApp.",
+    "entriesRetained": true,
+    "controlsRestoredAfterFailure": true,
+    "directAlternativesVisible": true,
+    "correlatedApplicationHttpResponseVerified": false,
+    "successfulInquiryVerified": false,
+    "emailAcceptanceVerified": false,
+    "emailReceiptVerified": false
+  },
+  "settledDarkControlColors": {"foreground": "rgb(245, 247, 251)", "background": "rgb(16, 21, 29)"},
+  "screenshots": ["preview-failure-light.png", "preview-failure-dark.png"]
+}

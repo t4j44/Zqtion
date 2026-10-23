@@ -1,0 +1,730 @@
+[
+  {
+    "route": "/",
+    "theme": "dark",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 92
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/work",
+    "theme": "dark",
+    "width": 390,
+    "passes": 25,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 14
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/services",
+    "theme": "dark",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 88
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/about",
+    "theme": "dark",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 33
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "theme": "dark",
+    "width": 390,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 31
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers",
+    "theme": "dark",
+    "width": 390,
+    "passes": 25,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 230
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers/apply",
+    "theme": "dark",
+    "width": 390,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 9
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/prompts",
+    "theme": "dark",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 11
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/prompts/ui/fieldwork-research-dashboard",
+    "theme": "dark",
+    "width": 390,
+    "passes": 31,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 8
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/ai-experiences",
+    "theme": "dark",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 22
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/u/alice",
+    "theme": "dark",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 25
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/community/account",
+    "theme": "dark",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources",
+    "theme": "dark",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources/guide/ai-lead-research-verification-pipeline",
+    "theme": "dark",
+    "width": 390,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 4
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 92
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/work",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 25,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 19
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/services",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 93
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/about",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 39
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 37
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 25,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 236
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers/apply",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 15
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/prompts",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 9
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/prompts/ui/fieldwork-research-dashboard",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 30,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 8
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/ai-experiences",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 22
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/u/alice",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 25
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/community/account",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources/guide/ai-lead-research-verification-pipeline",
+    "theme": "dark",
+    "width": 1440,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/",
+    "theme": "light",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 92
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/work",
+    "theme": "light",
+    "width": 390,
+    "passes": 25,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 14
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/services",
+    "theme": "light",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 88
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/about",
+    "theme": "light",
+    "width": 390,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 33
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "theme": "light",
+    "width": 390,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 31
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers",
+    "theme": "light",
+    "width": 390,
+    "passes": 25,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 230
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers/apply",
+    "theme": "light",
+    "width": 390,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 9
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/prompts",
+    "theme": "light",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 11
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/prompts/ui/fieldwork-research-dashboard",
+    "theme": "light",
+    "width": 390,
+    "passes": 31,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 8
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/ai-experiences",
+    "theme": "light",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 22
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/u/alice",
+    "theme": "light",
+    "width": 390,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 25
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/community/account",
+    "theme": "light",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources",
+    "theme": "light",
+    "width": 390,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources/guide/ai-lead-research-verification-pipeline",
+    "theme": "light",
+    "width": 390,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 4
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/",
+    "theme": "light",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 92
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/work",
+    "theme": "light",
+    "width": 1440,
+    "passes": 25,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 19
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/services",
+    "theme": "light",
+    "width": 1440,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 93
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/about",
+    "theme": "light",
+    "width": 1440,
+    "passes": 24,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 39
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "theme": "light",
+    "width": 1440,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 37
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers",
+    "theme": "light",
+    "width": 1440,
+    "passes": 25,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 236
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/careers/apply",
+    "theme": "light",
+    "width": 1440,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 15
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/prompts",
+    "theme": "light",
+    "width": 1440,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 9
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/prompts/ui/fieldwork-research-dashboard",
+    "theme": "light",
+    "width": 1440,
+    "passes": 30,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 8
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/ai-experiences",
+    "theme": "light",
+    "width": 1440,
+    "passes": 29,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 22
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/u/alice",
+    "theme": "light",
+    "width": 1440,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 25
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/community/account",
+    "theme": "light",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources",
+    "theme": "light",
+    "width": 1440,
+    "passes": 27,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  },
+  {
+    "route": "/resources/guide/ai-lead-research-verification-pipeline",
+    "theme": "light",
+    "width": 1440,
+    "passes": 28,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "violations": []
+  }
+]

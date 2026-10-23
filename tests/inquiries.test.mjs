@@ -17,7 +17,7 @@ const { POST } = await import(await moduleUrl("app/api/inquiries/route.ts", {
 const originalFetch = globalThis.fetch;
 const originalInfo = console.info;
 const originalError = console.error;
-const envNames = ["NODE_ENV", "SUPABASE_URL", "SUPABASE_SECRET_KEY", "SUPABASE_SERVICE_ROLE_KEY", "NEXT_PUBLIC_SUPABASE_URL", "TURNSTILE_SECRET_KEY", "RESEND_API_KEY", "INQUIRY_FROM_EMAIL", "INQUIRY_TO_EMAIL", "RATE_LIMIT_SECRET"];
+const envNames = ["NODE_ENV", "SUPABASE_URL", "SUPABASE_SECRET_KEY", "SUPABASE_SERVICE_ROLE_KEY", "NEXT_PUBLIC_SUPABASE_URL", "TURNSTILE_SECRET_KEY", "TURNSTILE_SECRET_KEY_2", "RESEND_API_KEY", "RESEND_API_KEY_2", "INQUIRY_FROM_EMAIL", "INQUIRY_TO_EMAIL", "RATE_LIMIT_SECRET", "VERCEL_ENV", "VERCEL_GIT_COMMIT_REF", "INQUIRY_PREVIEW_HOSTNAME"];
 let envBefore, calls, logs, behavior;
 const brief = () => ({
   name: "Sarah Ahmed", email: "Sarah@Example.test", company: "Example project", service: "AI automation or system",
@@ -25,7 +25,7 @@ const brief = () => ({
   projectUrl: "https://example.test/product", landingPath: "/services?private=secret", referrer: "https://example.test/path?private=secret",
   utmSource: "newsletter", utmMedium: "email", utmCampaign: "launch", utmContent: "cta", "cf-turnstile-response": "synthetic-token",
 });
-const request = (body = brief(), headers = {}) => new Request("https://www.zqtion.com/api/inquiries", {
+const request = (body = brief(), headers = {}, hostname = "www.zqtion.com") => new Request(`https://${hostname}/api/inquiries`, {
   method: "POST", headers: { "content-type": "application/json", "x-forwarded-for": "192.0.2.1", "user-agent": "Synthetic test", ...headers },
   body: typeof body === "string" ? body : JSON.stringify(body),
 });
@@ -197,4 +197,95 @@ test("server defaults route to company; invalid server recipient never becomes a
   process.env.INQUIRY_TO_EMAIL = "a@example.test,b@example.test"; calls = [];
   assert.deepEqual(await (await POST(request())).json(), { ok: true, confirmation: "accepted" });
   assert.ok(!calls.some((call) => call.kind === "internal"));
+});
+
+const previewHostname = "zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app";
+function configurePreview() {
+  Object.assign(process.env, { VERCEL_ENV: "preview", VERCEL_GIT_COMMIT_REF: "fix/contact-form-and-hero-refinement", INQUIRY_PREVIEW_HOSTNAME: previewHostname });
+  behavior.turnstile = { hostname: previewHostname };
+}
+
+test("only explicitly configured feature-branch Preview accepts its exact request/token hostname", async () => {
+  configurePreview();
+  const result = await POST(request(brief(), {}, previewHostname));
+  assert.equal(result.status, 200);
+  assert.deepEqual(await result.json(), { ok: true, confirmation: "accepted" });
+  assert.ok(logs.some(([event]) => event === "inquiry_verification_passed"));
+  const responseLog = logs.find(([event]) => event === "inquiry_response");
+  assert.equal(responseLog[1].status, 200);
+  assert.deepEqual(responseLog[1].body, { ok: true, confirmation: "accepted" });
+  assert.ok(!JSON.stringify(logs).includes("synthetic-token"));
+});
+
+for (const configured of [undefined, "*.vercel.app", `https://${previewHostname}`, `${previewHostname}/`, `other.${previewHostname}`, "attacker.example", `${previewHostname},attacker.example`]) {
+  test(`Preview rejects missing, malformed or unapproved hostname setting: ${configured}`, async () => {
+    configurePreview();
+    if (configured === undefined) delete process.env.INQUIRY_PREVIEW_HOSTNAME;
+    else process.env.INQUIRY_PREVIEW_HOSTNAME = configured;
+    assert.equal((await POST(request(brief(), {}, previewHostname))).status, 400);
+    assert.ok(!calls.some(call => call.kind === "save"));
+  });
+}
+
+test("Preview rejects wrong branch, request host, token host, failed verification and wrong action", async () => {
+  configurePreview();
+  process.env.VERCEL_GIT_COMMIT_REF = "main";
+  assert.equal((await POST(request(brief(), {}, previewHostname))).status, 400);
+  configurePreview();
+  assert.equal((await POST(request())).status, 400);
+  for (const tokenResult of [{ hostname: "www.zqtion.com" }, { hostname: "other.vercel.app" }, { success: false }, { action: "launchpad" }]) {
+    configurePreview(); behavior.turnstile = { hostname: previewHostname, ...tokenResult };
+    assert.equal((await POST(request(brief(), {}, previewHostname))).status, 400);
+  }
+  configurePreview();
+  delete process.env.TURNSTILE_SECRET_KEY;
+  assert.equal((await POST(request(brief(), {}, previewHostname))).status, 503);
+  assert.ok(!calls.some(call => call.kind === "save"));
+});
+
+test("Preview-only provider aliases permit configured _2 keys without enabling them in Production", async () => {
+  configurePreview();
+  delete process.env.TURNSTILE_SECRET_KEY;
+  delete process.env.RESEND_API_KEY;
+  process.env.TURNSTILE_SECRET_KEY_2 = "synthetic-staging-turnstile";
+  process.env.RESEND_API_KEY_2 = "synthetic-staging-resend";
+  const preview = await POST(request(brief(), {}, previewHostname));
+  assert.equal(preview.status, 200);
+  assert.deepEqual(await preview.json(), { ok: true, confirmation: "accepted" });
+  assert.equal(calls.filter(call => call.kind === "save").length, 1);
+  calls = [];
+  process.env.VERCEL_ENV = "production";
+  behavior.turnstile = { hostname: "www.zqtion.com" };
+  const production = await POST(request());
+  assert.equal(production.status, 503);
+  assert.deepEqual(calls.map(call => call.kind), ["limit"]);
+});
+
+test("Production ignores Preview opt-in and keeps only its original two hostnames", async () => {
+  configurePreview(); process.env.VERCEL_ENV = "production";
+  assert.equal((await POST(request(brief(), {}, previewHostname))).status, 400);
+  for (const hostname of ["zqtion.com", "www.zqtion.com"]) {
+    behavior.turnstile = { hostname };
+    assert.equal((await POST(request(brief(), {}, hostname))).status, 200);
+  }
+});
+
+test("hosted environments cannot use local credential bypasses when NODE_ENV is misconfigured", async () => {
+  for (const deployment of ["preview", "production"]) {
+    configurePreview(); process.env.NODE_ENV = "development"; process.env.VERCEL_ENV = deployment;
+    process.env.SUPABASE_SECRET_KEY = "synthetic-service-key";
+    delete process.env.TURNSTILE_SECRET_KEY;
+    assert.equal((await POST(request(brief(), {}, previewHostname))).status, 503);
+    process.env.TURNSTILE_SECRET_KEY = "synthetic-turnstile-key";
+    delete process.env.SUPABASE_SECRET_KEY;
+    assert.equal((await POST(request(brief(), {}, previewHostname))).status, 503);
+  }
+  assert.ok(!calls.some(call => call.kind === "save"));
+});
+
+test("Production rejects localhost tokens even with a nonproduction NODE_ENV", async () => {
+  process.env.NODE_ENV = "development"; process.env.VERCEL_ENV = "production";
+  behavior.turnstile = { hostname: "localhost" };
+  assert.equal((await POST(request())).status, 400);
+  assert.ok(!calls.some(call => call.kind === "save"));
 });
