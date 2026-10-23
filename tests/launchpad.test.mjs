@@ -3,7 +3,8 @@ import test from "node:test";
 import { moduleUrl } from "./helpers/typescript.mjs";
 
 const careers = await import(await moduleUrl("data/careers.ts"));
-const validationUrl = await moduleUrl("lib/launchpad-validation.ts");
+const urlInputUrl = await moduleUrl("lib/url-input.ts");
+const validationUrl = await moduleUrl("lib/launchpad-validation.ts", { "./url-input": urlInputUrl });
 const validation = await import(validationUrl);
 const requestUrl = await moduleUrl("lib/request-validation.ts");
 const intakeUrl = await moduleUrl("lib/launchpad-intake.ts", { "./request-validation": requestUrl, "./launchpad-validation": validationUrl });
@@ -306,4 +307,22 @@ test("duplicate application submission returns existing reference idempotently",
   assert.equal(res2.status, 200);
   assert.deepEqual(await res2.json(), { ok: true, reference: payload.submissionId });
   assert.equal(saveCount, 2);
+});
+
+test("Launchpad accepts LinkedIn, portfolio, GitHub, CV and other links without protocol or www", () => {
+  const data = {
+    ...valid(),
+    linkedin: "linkedin.com/in/a-builder",
+    portfolio: "zqtion.com/work",
+    github: "github.com/t4j44",
+    resumeUrl: "drive.google.com/file/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/view",
+    otherLinks: "example.org/project\nwww.example.net/article",
+  };
+  const result = validation.validateApplication(data, tracks);
+  assert.equal(result.valid, true, JSON.stringify(result.errors));
+  assert.equal(result.application.linkedin, "https://linkedin.com/in/a-builder");
+  assert.equal(result.application.portfolio, "https://zqtion.com/work");
+  assert.equal(result.application.github, "https://github.com/t4j44");
+  assert.match(result.application.resumeUrl, /^https:\/\/drive\.google\.com/);
+  assert.equal(result.application.otherLinks, "https://example.org/project\nhttps://www.example.net/article");
 });
