@@ -6,7 +6,7 @@ export function Avatar({ profile }: { profile: Pick<Profile, "avatar" | "photo_i
   return <span className="cq-avatar" aria-hidden="true">
     {profile.avatar === "photo"
       ? profile.photo_id ? <ProfilePhoto id={profile.photo_id} /> : <svg className="cq-avatar-art cq-avatar-upload-art" viewBox="0 0 120 120" focusable="false" aria-hidden="true"><circle cx="60" cy="60" r="60" fill="#E6F3F4" /><rect x="34" y="45" width="52" height="36" rx="9" fill="none" stroke="#377C84" strokeWidth="5" /><circle cx="60" cy="63" r="10" fill="none" stroke="#377C84" strokeWidth="5" /><path d="M46 45l5-8h18l5 8" fill="none" stroke="#377C84" strokeWidth="5" strokeLinejoin="round" /></svg>
-      : <AvatarArtwork variant={profile.avatar} /> || <span>Z</span>}
+      : ["orbit", "spark", "grid", "wave"].includes(profile.avatar) ? <AvatarArtwork variant={profile.avatar} /> : "Z"}
   </span>;
 }
 export function Picture({ id, alt }: { id: string; alt: string }) {
