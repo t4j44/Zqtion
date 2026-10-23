@@ -40,3 +40,20 @@ test("Required profile and contribution fields are validated without silently tr
   assert.ok(validateContribution({ ...data, media_ids: Array(5).fill("00000000-0000-4000-8000-000000000001") }).length);
   assert.ok(validateContribution({ ...data, kind: "answer", parent_id: "not-a-uuid" }).length);
 });
+
+
+test("Illustrated avatar redesign preserves all four stored preset IDs and photo validation", () => {
+  const required = {
+    display_name: "Community Builder",
+    username: "community_builder",
+    linkedin_url: "https://www.linkedin.com/in/community-builder",
+    bio: "",
+    guidelines: "2026-09-v1",
+    photo_id: null,
+  };
+  for (const avatar of ["orbit", "spark", "grid", "wave"]) {
+    assert.deepEqual(validateProfile({ ...required, avatar }), [], `existing ${avatar} profiles remain valid`);
+  }
+  assert.ok(validateProfile({ ...required, avatar: "photo" }).length, "photo still needs an uploaded ID");
+  assert.ok(validateProfile({ ...required, avatar: "untrusted" }).length, "unknown presets are rejected");
+});
