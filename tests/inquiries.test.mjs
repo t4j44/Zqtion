@@ -17,7 +17,7 @@ const { POST } = await import(await moduleUrl("app/api/inquiries/route.ts", {
 const originalFetch = globalThis.fetch;
 const originalInfo = console.info;
 const originalError = console.error;
-const envNames = ["NODE_ENV", "SUPABASE_URL", "SUPABASE_SECRET_KEY", "SUPABASE_SERVICE_ROLE_KEY", "NEXT_PUBLIC_SUPABASE_URL", "TURNSTILE_SECRET_KEY", "RESEND_API_KEY", "INQUIRY_FROM_EMAIL", "INQUIRY_TO_EMAIL", "RATE_LIMIT_SECRET", "VERCEL_ENV", "VERCEL_GIT_COMMIT_REF", "INQUIRY_PREVIEW_HOSTNAME"];
+const envNames = ["NODE_ENV", "SUPABASE_URL", "SUPABASE_SECRET_KEY", "SUPABASE_SERVICE_ROLE_KEY", "NEXT_PUBLIC_SUPABASE_URL", "TURNSTILE_SECRET_KEY", "TURNSTILE_SECRET_KEY_2", "RESEND_API_KEY", "RESEND_API_KEY_2", "INQUIRY_FROM_EMAIL", "INQUIRY_TO_EMAIL", "RATE_LIMIT_SECRET", "VERCEL_ENV", "VERCEL_GIT_COMMIT_REF", "INQUIRY_PREVIEW_HOSTNAME"];
 let envBefore, calls, logs, behavior;
 const brief = () => ({
   name: "Sarah Ahmed", email: "Sarah@Example.test", company: "Example project", service: "AI automation or system",
@@ -241,6 +241,24 @@ test("Preview rejects wrong branch, request host, token host, failed verificatio
   delete process.env.TURNSTILE_SECRET_KEY;
   assert.equal((await POST(request(brief(), {}, previewHostname))).status, 503);
   assert.ok(!calls.some(call => call.kind === "save"));
+});
+
+test("Preview-only provider aliases permit configured _2 keys without enabling them in Production", async () => {
+  configurePreview();
+  delete process.env.TURNSTILE_SECRET_KEY;
+  delete process.env.RESEND_API_KEY;
+  process.env.TURNSTILE_SECRET_KEY_2 = "synthetic-staging-turnstile";
+  process.env.RESEND_API_KEY_2 = "synthetic-staging-resend";
+  const preview = await POST(request(brief(), {}, previewHostname));
+  assert.equal(preview.status, 200);
+  assert.deepEqual(await preview.json(), { ok: true, confirmation: "accepted" });
+  assert.equal(calls.filter(call => call.kind === "save").length, 1);
+  calls = [];
+  process.env.VERCEL_ENV = "production";
+  behavior.turnstile = { hostname: "www.zqtion.com" };
+  const production = await POST(request());
+  assert.equal(production.status, 503);
+  assert.deepEqual(calls.map(call => call.kind), ["limit"]);
 });
 
 test("Production ignores Preview opt-in and keeps only its original two hostnames", async () => {
