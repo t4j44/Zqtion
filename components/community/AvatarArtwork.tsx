@@ -1,5 +1,3 @@
-import type { ReactNode } from "react";
-
 type PortraitId = "orbit" | "spark" | "grid" | "wave";
 
 export const avatarNames: Record<PortraitId, string> = {
