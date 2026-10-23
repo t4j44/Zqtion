@@ -6,6 +6,7 @@ import { useRef, useState, type FormEvent } from "react";
 import TurnstileWidget, { type TurnstileHandle } from "@/components/TurnstileWidget";
 import { trackEvent } from "@/components/Analytics";
 import { availabilityOptions, laptopOptions, studyOptions, validateApplication, type ApplicationErrors, type ApplicationFields } from "@/lib/launchpad-validation";
+import { normalizeWebsiteLink } from "@/lib/url-input";
 
 type TrackOption = { slug: string; title: string; question: string };
 type FieldProps = { name: keyof ApplicationFields; label: string; required?: boolean; min?: number; max?: number; type?: string; autoComplete?: string; multiline?: boolean; hint?: string; errors: ApplicationErrors };
@@ -13,7 +14,8 @@ const inputClass = "launchpad-input";
 
 function Field({ name, label, required = false, min, max = 500, type = "text", autoComplete, multiline = false, hint, errors }: FieldProps) {
   const props = { id: `application-${name}`, name, required, minLength: min, maxLength: max, autoComplete, className: inputClass, "aria-invalid": Boolean(errors[name]), "aria-describedby": `${name}-hint ${name}-error` };
-  return <div className={multiline ? "sm:col-span-2" : ""}><label htmlFor={props.id}>{label}{required ? <span className="text-accent"> *</span> : <span className="font-normal text-secondary"> (optional)</span>}</label>{multiline ? <textarea {...props} rows={4} /> : <input {...props} type={type} />}<p id={`${name}-hint`} className="launchpad-field-hint">{hint}</p><p id={`${name}-error`} className="launchpad-field-error">{errors[name]}</p></div>;
+  const linkField = ["linkedin", "portfolio", "github", "resumeUrl"].includes(name);
+  return <div className={multiline ? "sm:col-span-2" : ""}><label htmlFor={props.id}>{label}{required ? <span className="text-accent"> *</span> : <span className="font-normal text-secondary"> (optional)</span>}</label>{multiline ? <textarea {...props} rows={4} onBlur={name === "otherLinks" ? event => { event.currentTarget.value = event.currentTarget.value.trim().split(/\s+/).map(normalizeWebsiteLink).join("\n"); } : undefined} /> : <input {...props} type={linkField ? "text" : type} inputMode={linkField ? "url" : undefined} autoCapitalize={linkField ? "none" : undefined} spellCheck={linkField ? false : undefined} onBlur={linkField ? event => { event.currentTarget.value = normalizeWebsiteLink(event.currentTarget.value); } : undefined} />}<p id={`${name}-hint`} className="launchpad-field-hint">{hint}</p><p id={`${name}-error`} className="launchpad-field-error">{errors[name]}</p></div>;
 }
 
 function SelectField({ name, label, options, errors, required = true }: { name: "studyLevel" | "weeklyAvailability" | "laptopAccess"; label: string; options: readonly string[]; errors: ApplicationErrors; required?: boolean }) {
@@ -112,7 +114,7 @@ export default function LaunchpadApplicationForm({ tracks, defaultTrack, accepti
       <Field name="portfolio" label="Portfolio or work sample" type="url" errors={errors} hint="A learning experiment is enough. A polished portfolio is not required." />
       <Field name="github" label="GitHub profile, if relevant" type="url" errors={errors} />
       <Field name="resumeUrl" label="Resume / CV — Google Drive link" type="url" errors={errors} hint="Upload your resume to Google Drive, grant viewing access to Zqtion's designated reviewer, and paste the link here. You can also apply without a CV." />
-      <Field name="otherLinks" label="Other project or social links" multiline max={1200} hint="Up to three complete http(s) links, one per line. Share only what you have permission to share." errors={errors} />
+      <Field name="otherLinks" label="Other project or social links" multiline max={1200} hint="Up to three links, one per line. You can paste a domain without https:// or www. Share only what you have permission to share." errors={errors} />
       <Field name="whyZqtion" label="Why Zqtion Launchpad?" required multiline min={20} max={1500} errors={errors} />
       <Field name="learningGoals" label="What do you want to learn?" required multiline min={20} max={1500} errors={errors} />
       <Field name="priorExperiment" label="Something you have made, built or tried" required multiline min={10} max={1500} hint="It can be small, unfinished or unsuccessful. Explain what you tried and learned." errors={errors} />

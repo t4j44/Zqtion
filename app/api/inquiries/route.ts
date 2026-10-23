@@ -2,6 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
 import { createHmac, randomUUID } from "node:crypto";
 import { readJsonObject, RequestBodyError, safePath, safeReferrer } from "@/lib/request-validation";
+import { isPublicWebsiteLink, normalizeWebsiteLink } from "@/lib/url-input";
 import { siteConfig } from "@/data/site";
 import { isSingleMailbox, sendInquiryEmails } from "@/lib/email/resend";
 
@@ -42,7 +43,7 @@ function parseInquiry(body: Record<string, unknown>): Inquiry {
     service: clean(body.service, 120),
     details: clean(body.details, 4000),
     budget: clean(body.budget, 80),
-    projectUrl: clean(body.projectUrl, 500),
+    projectUrl: normalizeWebsiteLink(clean(body.projectUrl, 500)),
     honeypot: clean(body.fax_number, 200),
     turnstileToken: clean(body["cf-turnstile-response"], 2048),
     landingPath: safePath(body.landingPath),
@@ -150,13 +151,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Please complete the required fields with a valid email and enough project context." }, { status: 400 });
     }
 
-    if (inquiry.projectUrl) {
-      try {
-        const url = new URL(inquiry.projectUrl);
-        if (!['http:', 'https:'].includes(url.protocol)) throw new Error("Unsupported URL");
-      } catch {
-        return NextResponse.json({ error: "Please enter a valid website or product link." }, { status: 400 });
-      }
+    if (inquiry.projectUrl && !isPublicWebsiteLink(inquiry.projectUrl)) {
+      return NextResponse.json({ error: "Please enter a valid public website or product link." }, { status: 400 });
     }
 
     const limit = await checkRateLimit(ip);

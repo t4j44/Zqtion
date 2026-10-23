@@ -1,3 +1,5 @@
+import { normalizeWebsiteLink } from "./url-input";
+
 export const availabilityOptions = ["8–12 hours", "More than 12 hours", "Less than 8 hours — please discuss"] as const;
 export const laptopOptions = ["Yes, reliable access", "Shared access", "No — please discuss"] as const;
 export const studyOptions = ["First-year university student", "University student — later year", "Recent graduate", "Self-taught learner", "Career switcher", "School/college student aged 18+", "Other legally eligible beginner"] as const;
@@ -64,7 +66,13 @@ export function validateApplication(body: Record<string, unknown>, trackSlugs: r
   for (const [key, [minimum, maximum]] of Object.entries(fieldRules)) {
     const name = key as keyof ApplicationFields;
     const raw = name === "resumeUrl" ? (body.resumeUrl ?? body.resumeLink) : body[name];
-    const value = typeof raw === "string" ? raw.trim() : "";
+    const value = typeof raw === "string"
+      ? name === "otherLinks"
+        ? raw.trim().split(/\s+/).map(normalizeWebsiteLink).join("\n")
+        : ["linkedin", "portfolio", "github", "resumeUrl"].includes(name)
+          ? normalizeWebsiteLink(raw)
+          : raw.trim()
+      : "";
     fields[name] = value;
     if (raw !== undefined && typeof raw !== "string") errors[name] = "Please enter a text value.";
     else if (value.length < minimum) errors[name] = `Please enter at least ${minimum} characters.`;
@@ -79,12 +87,12 @@ export function validateApplication(body: Record<string, unknown>, trackSlugs: r
   if (!(laptopOptions as readonly string[]).includes(fields.laptopAccess)) errors.laptopAccess = "Choose your laptop/desktop access.";
   if (!(studyOptions as readonly string[]).includes(fields.studyLevel)) errors.studyLevel = "Choose your current learning or career stage.";
   for (const name of ["linkedin", "portfolio", "github"] as const) {
-    if (fields[name] && !isPublicLink(fields[name])) errors[name] = "Use a complete http(s) link without embedded credentials.";
+    if (fields[name] && !isPublicLink(fields[name])) errors[name] = "Enter a public website link, with or without https:// or www.";
   }
   if (fields.resumeUrl && !isGoogleDriveResumeLink(fields.resumeUrl)) {
     errors.resumeUrl = "Provide a valid HTTPS Google Drive or Google Docs sharing link, or leave this field empty.";
   }
-  if (fields.otherLinks && (fields.otherLinks.split(/\s+/).length > 3 || fields.otherLinks.split(/\s+/).some((link) => !isPublicLink(link)))) errors.otherLinks = "Use up to three complete http(s) links, one per line.";
+  if (fields.otherLinks && (fields.otherLinks.split(/\s+/).length > 3 || fields.otherLinks.split(/\s+/).some((link) => !isPublicLink(link)))) errors.otherLinks = "Use up to three public website links, one per line; https:// is optional.";
   if (!/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(fields.submissionId)) errors.submissionId = "Please retry the application.";
   if (body.ageConfirmed !== true) errors.ageConfirmed = "The initial cohort is limited to applicants aged 18 or older.";
   if (body.acknowledgement !== true) errors.acknowledgement = "Please acknowledge the unpaid program and no-employment-guarantee terms.";
