@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import TurnstileWidget, { type TurnstileHandle } from "@/components/TurnstileWidget";
 import { getAttribution, trackEvent } from "@/components/Analytics";
 import { siteConfig } from "@/data/site";
+import { normalizeWebsiteLink } from "@/lib/url-input";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -51,6 +52,8 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
     }
     formData.delete("timeline");
     formData.set("details", combinedDetails);
+    const projectUrl = String(formData.get("projectUrl") || "");
+    if (projectUrl) formData.set("projectUrl", normalizeWebsiteLink(projectUrl));
     inFlightRef.current = true;
     setStatus("sending");
     setMessage("");
@@ -126,7 +129,7 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
         </div>
         <label className="text-sm font-medium text-secondary">
           Website or project URL (optional)
-          <input className={inputClass} name="projectUrl" type="url" maxLength={500} inputMode="url" autoComplete="url" placeholder="https://" />
+          <input className={inputClass} name="projectUrl" type="text" maxLength={500} inputMode="url" autoComplete="url" autoCapitalize="none" autoCorrect="off" spellCheck={false} placeholder="example.com or linkedin.com/in/name" onBlur={event => { event.currentTarget.value = normalizeWebsiteLink(event.currentTarget.value); }} />
         </label>
         <div className="grid gap-5 sm:grid-cols-2">
           <label className="text-sm font-medium text-secondary">
