@@ -19,7 +19,7 @@
     "observedResults": [true, true, true, true, true, false],
     "fullHttp429Verified": false
   },
-  "inquirySubmitted": false,
+  "successfulInquirySaved": false,
   "controlledBrowserAttempt": true,
   "inquiryRowsAfterBrowserAttempt": 0,
   "providerDeliveryVerified": false,

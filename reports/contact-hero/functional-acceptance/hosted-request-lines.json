@@ -1,0 +1,14 @@
+{
+  "checkedOn": "2026-10-23",
+  "method": "Visible actual Vercel request log rows after controlled browser tests",
+  "rows": [
+    "Oct 23 21:57:11.80POST400zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app/api/inquiries",
+    "Oct 23 21:55:43.11POST429zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app/api/inquiries",
+    "Oct 23 21:55:41.82POST503zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app/api/inquiries",
+    "Oct 23 21:55:39.79POST503zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app/api/inquiries",
+    "Oct 23 21:55:38.22POST503zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app/api/inquiries",
+    "Oct 23 21:55:36.22POST503zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app/api/inquiries",
+    "Oct 23 21:54:21.58POST503zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app/api/inquiries",
+    "Oct 23 21:42:12.08POST503zqtion-git-fix-contact-form-and-hero-re-0f1026-t4j-44s-projects.vercel.app/api/inquiries"
+  ]
+}
