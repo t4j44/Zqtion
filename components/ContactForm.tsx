@@ -17,6 +17,24 @@ export default function ContactForm({ defaultService = "" }: { defaultService?: 
   const startedRef = useRef(false);
   const turnstileRef = useRef<TurnstileHandle>(null);
 
+  // Production-only fallback while transactional email, Storage and Turnstile
+  // are not configured. Keep the full form in local/Preview QA.
+  if (process.env.VERCEL_ENV === "production" && process.env.NEXT_PUBLIC_INQUIRIES_ENABLED !== "true") {
+    return (
+      <div className="grid gap-5" aria-label="Contact Zqtion">
+        <h2 className="text-2xl font-semibold text-foreground">Tell us about your project.</h2>
+        <p className="text-secondary">Project briefs are being accepted directly by email or WhatsApp while secure online form delivery is configured.</p>
+        <a href={`mailto:${siteConfig.email}?subject=${encodeURIComponent("New project brief for Zqtion")}`} className="button-primary inline-flex w-fit items-center gap-3">
+          Email your project brief <ArrowRight className="h-4 w-4" />
+        </a>
+        <a href={siteConfig.whatsapp} target="_blank" rel="noreferrer" className="button-secondary inline-flex w-fit items-center gap-3">
+          Discuss on WhatsApp <ArrowRight className="h-4 w-4" />
+        </a>
+        <p className="text-xs leading-5 text-muted">Include your goal, expected outcome, relevant links, timeline and contact details. No payment is requested here.</p>
+      </div>
+    );
+  }
+
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("sending");
