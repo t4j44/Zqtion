@@ -1,9 +1,13 @@
 import Link from "next/link";
 import type { Profile, PublicIdentity } from "@/lib/community/types";
 import ProfilePhoto from "./ProfilePhoto";
+import AvatarArtwork from "./AvatarArtwork";
 export function Avatar({ profile }: { profile: Pick<Profile, "avatar" | "photo_id" | "display_name"> }) {
-  const symbols: Record<string, string> = { orbit: "◎", spark: "✦", grid: "▦", wave: "≈", photo: "Z" };
-  return <span className="cq-avatar" aria-hidden="true">{profile.avatar === "photo" && profile.photo_id ? <ProfilePhoto id={profile.photo_id} /> : symbols[profile.avatar] || "Z"}</span>;
+  return <span className="cq-avatar" aria-hidden="true">
+    {profile.avatar === "photo"
+      ? profile.photo_id ? <ProfilePhoto id={profile.photo_id} /> : <svg className="cq-avatar-art cq-avatar-upload-art" viewBox="0 0 120 120" focusable="false" aria-hidden="true"><circle cx="60" cy="60" r="60" fill="#E6F3F4" /><rect x="34" y="45" width="52" height="36" rx="9" fill="none" stroke="#377C84" strokeWidth="5" /><circle cx="60" cy="63" r="10" fill="none" stroke="#377C84" strokeWidth="5" /><path d="M46 45l5-8h18l5 8" fill="none" stroke="#377C84" strokeWidth="5" strokeLinejoin="round" /></svg>
+      : ["orbit", "spark", "grid", "wave"].includes(profile.avatar) ? <AvatarArtwork variant={profile.avatar} /> : "Z"}
+  </span>;
 }
 export function Picture({ id, alt }: { id: string; alt: string }) {
   // Same-origin media proxy enforces RLS and avoids unbounded image transformation cache.
